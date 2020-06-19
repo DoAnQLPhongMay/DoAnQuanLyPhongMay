@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radTrangThai = new System.Windows.Forms.RadioButton();
             this.radTenMay = new System.Windows.Forms.RadioButton();
@@ -37,7 +39,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.tbnThem = new System.Windows.Forms.Button();
+            this.tbnThemMoi = new System.Windows.Forms.Button();
             this.cbTrangThai = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -103,10 +105,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
-            this.groupBox1.Controls.Add(this.tbnThem);
+            this.groupBox1.Controls.Add(this.tbnThemMoi);
             this.groupBox1.Controls.Add(this.cbTrangThai);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -117,10 +121,30 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(899, 444);
+            this.groupBox1.Size = new System.Drawing.Size(957, 444);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý Máy";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Mới",
+            "Cũ"});
+            this.comboBox2.Location = new System.Drawing.Point(596, 33);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(112, 21);
+            this.comboBox2.TabIndex = 26;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(502, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 13);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Trạng Thái: ";
             // 
             // groupBox3
             // 
@@ -197,16 +221,16 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             // 
-            // tbnThem
+            // tbnThemMoi
             // 
-            this.tbnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.tbnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnThem.Location = new System.Drawing.Point(767, 92);
-            this.tbnThem.Name = "tbnThem";
-            this.tbnThem.Size = new System.Drawing.Size(97, 34);
-            this.tbnThem.TabIndex = 21;
-            this.tbnThem.Text = "Thêm";
-            this.tbnThem.UseVisualStyleBackColor = false;
+            this.tbnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tbnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnThemMoi.Location = new System.Drawing.Point(767, 92);
+            this.tbnThemMoi.Name = "tbnThemMoi";
+            this.tbnThemMoi.Size = new System.Drawing.Size(97, 34);
+            this.tbnThemMoi.TabIndex = 21;
+            this.tbnThemMoi.Text = "Thêm Mới";
+            this.tbnThemMoi.UseVisualStyleBackColor = false;
             // 
             // cbTrangThai
             // 
@@ -214,7 +238,7 @@
             this.cbTrangThai.Items.AddRange(new object[] {
             "Mới",
             "Cũ"});
-            this.cbTrangThai.Location = new System.Drawing.Point(624, 33);
+            this.cbTrangThai.Location = new System.Drawing.Point(833, 34);
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(112, 21);
             this.cbTrangThai.TabIndex = 20;
@@ -222,7 +246,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(541, 37);
+            this.label13.Location = new System.Drawing.Point(739, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 13);
             this.label13.TabIndex = 5;
@@ -466,7 +490,7 @@
             // 
             // txtNhapTenMay
             // 
-            this.txtNhapTenMay.Location = new System.Drawing.Point(352, 34);
+            this.txtNhapTenMay.Location = new System.Drawing.Point(328, 31);
             this.txtNhapTenMay.Name = "txtNhapTenMay";
             this.txtNhapTenMay.Size = new System.Drawing.Size(143, 20);
             this.txtNhapTenMay.TabIndex = 3;
@@ -474,7 +498,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(271, 37);
+            this.label3.Location = new System.Drawing.Point(247, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 2;
@@ -527,7 +551,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(1, 532);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(899, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(957, 205);
             this.dataGridView1.TabIndex = 2;
             // 
             // MaMay
@@ -638,7 +662,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 739);
+            this.ClientSize = new System.Drawing.Size(958, 739);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -687,7 +711,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button tbnThem;
+        private System.Windows.Forms.Button tbnThemMoi;
         private System.Windows.Forms.ComboBox cbTrangThai;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbHeDieuHanh;
@@ -715,5 +739,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HeDieuHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label16;
     }
 }

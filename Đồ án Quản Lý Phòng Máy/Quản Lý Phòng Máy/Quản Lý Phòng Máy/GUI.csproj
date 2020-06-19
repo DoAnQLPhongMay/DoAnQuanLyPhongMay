@@ -62,6 +62,18 @@
     <Compile Include="frmQLMay.Designer.cs">
       <DependentUpon>frmQLMay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLNhapMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLNhapMay.Designer.cs">
+      <DependentUpon>frmQLNhapMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLPhongMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLPhongMay.Designer.cs">
+      <DependentUpon>frmQLPhongMay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLMay.resx">
       <DependentUpon>frmQLMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLNhapMay.resx">
+      <DependentUpon>frmQLNhapMay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLPhongMay.resx">
+      <DependentUpon>frmQLPhongMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>

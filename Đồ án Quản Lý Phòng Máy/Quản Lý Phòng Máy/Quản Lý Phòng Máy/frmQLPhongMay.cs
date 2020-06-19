@@ -10,23 +10,13 @@ using System.Windows.Forms;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frmQLMay : Form
+    public partial class frmQLPhongMay : Form
     {
-        public frmQLMay()
+        public frmQLPhongMay()
         {
             InitializeComponent();
         }
 
         
-
-      
-
-        
-
-      
-
-    
-
-      
     }
 }
