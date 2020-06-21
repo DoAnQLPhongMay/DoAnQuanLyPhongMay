@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frmQLPhongMay : Form
+    public partial class frm_QLTaiKhoan : Form
     {
-        public frmQLPhongMay()
+        public frm_QLTaiKhoan()
         {
             InitializeComponent();
         }
 
-        
+        private void dgv_DSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Quản_Lý_Phòng_Máy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQLMay());
+            Application.Run(new frm_QLMay());
         }
     }
 }

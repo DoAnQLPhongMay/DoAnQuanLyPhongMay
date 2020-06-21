@@ -10,23 +10,20 @@ using System.Windows.Forms;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frmQLMay : Form
+    public partial class frm_DangNhap : Form
     {
-        public frmQLMay()
+        public frm_DangNhap()
         {
             InitializeComponent();
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         
-
       
-
-        
-
-      
-
-    
-
-      
+     
     }
 }
