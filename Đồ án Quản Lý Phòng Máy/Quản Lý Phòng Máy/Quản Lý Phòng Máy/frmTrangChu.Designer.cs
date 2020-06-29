@@ -128,11 +128,11 @@
             // lbl_PhongMay
             // 
             this.lbl_PhongMay.AutoSize = true;
-            this.lbl_PhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PhongMay.Font = new System.Drawing.Font("UTM Loko", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PhongMay.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_PhongMay.Location = new System.Drawing.Point(98, 33);
             this.lbl_PhongMay.Name = "lbl_PhongMay";
-            this.lbl_PhongMay.Size = new System.Drawing.Size(159, 31);
+            this.lbl_PhongMay.Size = new System.Drawing.Size(181, 43);
             this.lbl_PhongMay.TabIndex = 2;
             this.lbl_PhongMay.Text = "Phòng Máy";
             // 
@@ -143,7 +143,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 

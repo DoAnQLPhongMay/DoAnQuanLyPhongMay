@@ -96,10 +96,10 @@
             // lbl_QLMay
             // 
             this.lbl_QLMay.AutoSize = true;
-            this.lbl_QLMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLMay.Font = new System.Drawing.Font("UTM Aurora", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLMay.Location = new System.Drawing.Point(12, 9);
             this.lbl_QLMay.Name = "lbl_QLMay";
-            this.lbl_QLMay.Size = new System.Drawing.Size(339, 61);
+            this.lbl_QLMay.Size = new System.Drawing.Size(266, 66);
             this.lbl_QLMay.TabIndex = 0;
             this.lbl_QLMay.Text = "Quản Lý Máy";
             // 

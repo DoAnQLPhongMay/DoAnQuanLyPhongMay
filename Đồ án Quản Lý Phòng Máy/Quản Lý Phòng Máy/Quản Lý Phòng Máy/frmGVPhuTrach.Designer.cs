@@ -61,6 +61,7 @@
             this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.grp_ThongTinGV.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
@@ -69,10 +70,10 @@
             // lbl_QLTaiKhoan
             // 
             this.lbl_QLTaiKhoan.AutoSize = true;
-            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("UTM Aurora", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(1, 9);
             this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
-            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(478, 61);
+            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(364, 66);
             this.lbl_QLTaiKhoan.TabIndex = 0;
             this.lbl_QLTaiKhoan.Text = "Quản Lý Tài Khoản";
             // 
@@ -142,12 +143,13 @@
             // 
             // grp_TimKiem
             // 
+            this.grp_TimKiem.Controls.Add(this.button1);
             this.grp_TimKiem.Controls.Add(this.rad_SDT);
             this.grp_TimKiem.Controls.Add(this.rad_TenTaiKhoan);
             this.grp_TimKiem.Controls.Add(this.txt_TiemKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(13, 196);
             this.grp_TimKiem.Name = "grp_TimKiem";
-            this.grp_TimKiem.Size = new System.Drawing.Size(530, 61);
+            this.grp_TimKiem.Size = new System.Drawing.Size(655, 61);
             this.grp_TimKiem.TabIndex = 18;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
@@ -394,11 +396,23 @@
             this.username.Name = "username";
             this.username.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(552, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 29);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Tìm Kiếm";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frm_QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 644);
+            this.ClientSize = new System.Drawing.Size(734, 636);
             this.Controls.Add(this.dgv_DSTaiKhoan);
             this.Controls.Add(this.grp_ThongTinGV);
             this.Controls.Add(this.lbl_QLTaiKhoan);
@@ -449,5 +463,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.Button button1;
     }
 }
