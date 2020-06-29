@@ -78,11 +78,11 @@
             // 
             // txt_Username
             // 
-            this.txt_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.txt_Username.BackColor = System.Drawing.Color.LightCoral;
             this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Username.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Username.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_Username.Location = new System.Drawing.Point(67, 94);
+            this.txt_Username.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txt_Username.Location = new System.Drawing.Point(67, 93);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(125, 19);
             this.txt_Username.TabIndex = 2;
@@ -90,11 +90,11 @@
             // 
             // txt_Password
             // 
-            this.txt_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.txt_Password.BackColor = System.Drawing.Color.LightCoral;
             this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Password.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_Password.Location = new System.Drawing.Point(64, 139);
+            this.txt_Password.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txt_Password.Location = new System.Drawing.Point(67, 138);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(125, 19);
             this.txt_Password.TabIndex = 4;
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(256, 291);
             this.Controls.Add(this.btn_Thoat);
             this.Controls.Add(this.btn_DangNhap);
