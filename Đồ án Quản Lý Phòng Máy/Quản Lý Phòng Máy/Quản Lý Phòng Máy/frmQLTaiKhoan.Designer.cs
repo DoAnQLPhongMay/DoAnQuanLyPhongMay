@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
-            this.grp_ThongTinGV = new System.Windows.Forms.GroupBox();
+            this.grp_ThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_CapNhat = new System.Windows.Forms.Button();
-            this.btn_ThemMoi = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
+            this.btn_TimKiem = new System.Windows.Forms.Button();
             this.rad_SDT = new System.Windows.Forms.RadioButton();
             this.rad_TenTaiKhoan = new System.Windows.Forms.RadioButton();
             this.txt_TiemKiem = new System.Windows.Forms.TextBox();
@@ -61,8 +62,7 @@
             this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.grp_ThongTinGV.SuspendLayout();
+            this.grp_ThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
             this.SuspendLayout();
@@ -70,43 +70,43 @@
             // lbl_QLTaiKhoan
             // 
             this.lbl_QLTaiKhoan.AutoSize = true;
-            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("UTM Aurora", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(1, 9);
             this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
-            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(364, 66);
+            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(478, 61);
             this.lbl_QLTaiKhoan.TabIndex = 0;
             this.lbl_QLTaiKhoan.Text = "Quản Lý Tài Khoản";
             // 
-            // grp_ThongTinGV
+            // grp_ThongTinTaiKhoan
             // 
-            this.grp_ThongTinGV.Controls.Add(this.btn_Xoa);
-            this.grp_ThongTinGV.Controls.Add(this.btn_CapNhat);
-            this.grp_ThongTinGV.Controls.Add(this.btn_ThemMoi);
-            this.grp_ThongTinGV.Controls.Add(this.grp_TimKiem);
-            this.grp_ThongTinGV.Controls.Add(this.txt_Password);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_Password);
-            this.grp_ThongTinGV.Controls.Add(this.txt_Username);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_Username);
-            this.grp_ThongTinGV.Controls.Add(this.dtm_NgaySinh);
-            this.grp_ThongTinGV.Controls.Add(this.txt_DiaChi);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_DiaChi);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_NgaySinh);
-            this.grp_ThongTinGV.Controls.Add(this.txt_SDT);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_SDT);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_GioiTinh);
-            this.grp_ThongTinGV.Controls.Add(this.rad_Nu);
-            this.grp_ThongTinGV.Controls.Add(this.rad_Nam);
-            this.grp_ThongTinGV.Controls.Add(this.txt_TenTaiKhoan);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_TenTaiKhoan);
-            this.grp_ThongTinGV.Controls.Add(this.txt_MaTaiKhoan);
-            this.grp_ThongTinGV.Controls.Add(this.lbl_MaTaiKhoan);
-            this.grp_ThongTinGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_ThongTinGV.Location = new System.Drawing.Point(3, 94);
-            this.grp_ThongTinGV.Name = "grp_ThongTinGV";
-            this.grp_ThongTinGV.Size = new System.Drawing.Size(729, 280);
-            this.grp_ThongTinGV.TabIndex = 1;
-            this.grp_ThongTinGV.TabStop = false;
-            this.grp_ThongTinGV.Text = "Thông Tin Tài Khoản";
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_Xoa);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_CapNhat);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_Them);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.grp_TimKiem);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_Password);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_Password);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_Username);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_Username);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.dtm_NgaySinh);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_DiaChi);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_DiaChi);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_NgaySinh);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_SDT);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_SDT);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_GioiTinh);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.rad_Nu);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.rad_Nam);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_TenTaiKhoan);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_TenTaiKhoan);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txt_MaTaiKhoan);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_MaTaiKhoan);
+            this.grp_ThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_ThongTinTaiKhoan.Location = new System.Drawing.Point(3, 94);
+            this.grp_ThongTinTaiKhoan.Name = "grp_ThongTinTaiKhoan";
+            this.grp_ThongTinTaiKhoan.Size = new System.Drawing.Size(729, 280);
+            this.grp_ThongTinTaiKhoan.TabIndex = 1;
+            this.grp_ThongTinTaiKhoan.TabStop = false;
+            this.grp_ThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
             // 
             // btn_Xoa
             // 
@@ -130,20 +130,20 @@
             this.btn_CapNhat.Text = "Cập Nhật";
             this.btn_CapNhat.UseVisualStyleBackColor = false;
             // 
-            // btn_ThemMoi
+            // btn_Them
             // 
-            this.btn_ThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_ThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(618, 31);
-            this.btn_ThemMoi.Name = "btn_ThemMoi";
-            this.btn_ThemMoi.Size = new System.Drawing.Size(101, 37);
-            this.btn_ThemMoi.TabIndex = 19;
-            this.btn_ThemMoi.Text = "Thêm Mới";
-            this.btn_ThemMoi.UseVisualStyleBackColor = false;
+            this.btn_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them.Location = new System.Drawing.Point(618, 31);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(101, 37);
+            this.btn_Them.TabIndex = 19;
+            this.btn_Them.Text = "Thêm Mới";
+            this.btn_Them.UseVisualStyleBackColor = false;
             // 
             // grp_TimKiem
             // 
-            this.grp_TimKiem.Controls.Add(this.button1);
+            this.grp_TimKiem.Controls.Add(this.btn_TimKiem);
             this.grp_TimKiem.Controls.Add(this.rad_SDT);
             this.grp_TimKiem.Controls.Add(this.rad_TenTaiKhoan);
             this.grp_TimKiem.Controls.Add(this.txt_TiemKiem);
@@ -153,6 +153,18 @@
             this.grp_TimKiem.TabIndex = 18;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
+            // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.BackColor = System.Drawing.Color.Lime;
+            this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TimKiem.Location = new System.Drawing.Point(552, 20);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(86, 29);
+            this.btn_TimKiem.TabIndex = 3;
+            this.btn_TimKiem.Text = "Tìm Kiếm";
+            this.btn_TimKiem.UseVisualStyleBackColor = false;
             // 
             // rad_SDT
             // 
@@ -396,30 +408,18 @@
             this.username.Name = "username";
             this.username.ReadOnly = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(552, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frm_QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 636);
             this.Controls.Add(this.dgv_DSTaiKhoan);
-            this.Controls.Add(this.grp_ThongTinGV);
+            this.Controls.Add(this.grp_ThongTinTaiKhoan);
             this.Controls.Add(this.lbl_QLTaiKhoan);
             this.Name = "frm_QLTaiKhoan";
             this.Text = "Quản Lý Tài Khoản";
-            this.grp_ThongTinGV.ResumeLayout(false);
-            this.grp_ThongTinGV.PerformLayout();
+            this.grp_ThongTinTaiKhoan.ResumeLayout(false);
+            this.grp_ThongTinTaiKhoan.PerformLayout();
             this.grp_TimKiem.ResumeLayout(false);
             this.grp_TimKiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).EndInit();
@@ -431,7 +431,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_QLTaiKhoan;
-        private System.Windows.Forms.GroupBox grp_ThongTinGV;
+        private System.Windows.Forms.GroupBox grp_ThongTinTaiKhoan;
         private System.Windows.Forms.RadioButton rad_Nu;
         private System.Windows.Forms.RadioButton rad_Nam;
         private System.Windows.Forms.TextBox txt_TenTaiKhoan;
@@ -441,7 +441,7 @@
         private System.Windows.Forms.Label lbl_GioiTinh;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_CapNhat;
-        private System.Windows.Forms.Button btn_ThemMoi;
+        private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.GroupBox grp_TimKiem;
         private System.Windows.Forms.RadioButton rad_SDT;
         private System.Windows.Forms.RadioButton rad_TenTaiKhoan;
@@ -463,6 +463,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_TimKiem;
     }
 }

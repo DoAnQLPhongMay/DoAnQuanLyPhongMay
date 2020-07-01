@@ -30,18 +30,16 @@
         {
             this.lbl_QLMay = new System.Windows.Forms.Label();
             this.grp_QLMay = new System.Windows.Forms.GroupBox();
-            this.cbo_TrangThai2 = new System.Windows.Forms.ComboBox();
-            this.lbl_TrangThai2 = new System.Windows.Forms.Label();
+            this.cbo_TrangThai = new System.Windows.Forms.ComboBox();
+            this.lbl_TrangThai = new System.Windows.Forms.Label();
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
             this.rad_TrangThai = new System.Windows.Forms.RadioButton();
             this.rad_TenMay = new System.Windows.Forms.RadioButton();
             this.rad_MaMay = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_ThemMoi = new System.Windows.Forms.Button();
-            this.cbo_TrangThai = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.grp_ChiTietMay = new System.Windows.Forms.GroupBox();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
             this.lbl_GhiChu = new System.Windows.Forms.Label();
@@ -96,23 +94,21 @@
             // lbl_QLMay
             // 
             this.lbl_QLMay.AutoSize = true;
-            this.lbl_QLMay.Font = new System.Drawing.Font("UTM Aurora", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLMay.Location = new System.Drawing.Point(12, 9);
             this.lbl_QLMay.Name = "lbl_QLMay";
-            this.lbl_QLMay.Size = new System.Drawing.Size(266, 66);
+            this.lbl_QLMay.Size = new System.Drawing.Size(339, 61);
             this.lbl_QLMay.TabIndex = 0;
             this.lbl_QLMay.Text = "Quản Lý Máy";
             // 
             // grp_QLMay
             // 
-            this.grp_QLMay.Controls.Add(this.cbo_TrangThai2);
-            this.grp_QLMay.Controls.Add(this.lbl_TrangThai2);
+            this.grp_QLMay.Controls.Add(this.cbo_TrangThai);
+            this.grp_QLMay.Controls.Add(this.lbl_TrangThai);
             this.grp_QLMay.Controls.Add(this.grp_TimKiem);
             this.grp_QLMay.Controls.Add(this.btn_Xoa);
             this.grp_QLMay.Controls.Add(this.btn_Sua);
             this.grp_QLMay.Controls.Add(this.btn_ThemMoi);
-            this.grp_QLMay.Controls.Add(this.cbo_TrangThai);
-            this.grp_QLMay.Controls.Add(this.label13);
             this.grp_QLMay.Controls.Add(this.grp_ChiTietMay);
             this.grp_QLMay.Controls.Add(this.txt_TenMay);
             this.grp_QLMay.Controls.Add(this.lbl_TenMay);
@@ -121,37 +117,37 @@
             this.grp_QLMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_QLMay.Location = new System.Drawing.Point(1, 92);
             this.grp_QLMay.Name = "grp_QLMay";
-            this.grp_QLMay.Size = new System.Drawing.Size(957, 444);
+            this.grp_QLMay.Size = new System.Drawing.Size(879, 434);
             this.grp_QLMay.TabIndex = 1;
             this.grp_QLMay.TabStop = false;
             this.grp_QLMay.Text = "Quản Lý Máy";
             // 
-            // cbo_TrangThai2
+            // cbo_TrangThai
             // 
-            this.cbo_TrangThai2.FormattingEnabled = true;
-            this.cbo_TrangThai2.Items.AddRange(new object[] {
+            this.cbo_TrangThai.FormattingEnabled = true;
+            this.cbo_TrangThai.Items.AddRange(new object[] {
             "Mới",
             "Cũ"});
-            this.cbo_TrangThai2.Location = new System.Drawing.Point(596, 33);
-            this.cbo_TrangThai2.Name = "cbo_TrangThai2";
-            this.cbo_TrangThai2.Size = new System.Drawing.Size(112, 21);
-            this.cbo_TrangThai2.TabIndex = 26;
+            this.cbo_TrangThai.Location = new System.Drawing.Point(596, 33);
+            this.cbo_TrangThai.Name = "cbo_TrangThai";
+            this.cbo_TrangThai.Size = new System.Drawing.Size(112, 21);
+            this.cbo_TrangThai.TabIndex = 26;
             // 
-            // lbl_TrangThai2
+            // lbl_TrangThai
             // 
-            this.lbl_TrangThai2.AutoSize = true;
-            this.lbl_TrangThai2.Location = new System.Drawing.Point(502, 36);
-            this.lbl_TrangThai2.Name = "lbl_TrangThai2";
-            this.lbl_TrangThai2.Size = new System.Drawing.Size(77, 13);
-            this.lbl_TrangThai2.TabIndex = 25;
-            this.lbl_TrangThai2.Text = "Trạng Thái: ";
+            this.lbl_TrangThai.AutoSize = true;
+            this.lbl_TrangThai.Location = new System.Drawing.Point(502, 36);
+            this.lbl_TrangThai.Name = "lbl_TrangThai";
+            this.lbl_TrangThai.Size = new System.Drawing.Size(77, 13);
+            this.lbl_TrangThai.TabIndex = 25;
+            this.lbl_TrangThai.Text = "Trạng Thái: ";
             // 
             // grp_TimKiem
             // 
             this.grp_TimKiem.Controls.Add(this.rad_TrangThai);
             this.grp_TimKiem.Controls.Add(this.rad_TenMay);
             this.grp_TimKiem.Controls.Add(this.rad_MaMay);
-            this.grp_TimKiem.Controls.Add(this.textBox1);
+            this.grp_TimKiem.Controls.Add(this.txt_TimKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(22, 358);
             this.grp_TimKiem.Name = "grp_TimKiem";
             this.grp_TimKiem.Size = new System.Drawing.Size(700, 65);
@@ -192,12 +188,12 @@
             this.rad_MaMay.Text = "Mã Máy";
             this.rad_MaMay.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_TimKiem
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_TimKiem.Location = new System.Drawing.Point(10, 28);
+            this.txt_TimKiem.Name = "txt_TimKiem";
+            this.txt_TimKiem.Size = new System.Drawing.Size(212, 20);
+            this.txt_TimKiem.TabIndex = 0;
             // 
             // btn_Xoa
             // 
@@ -231,26 +227,6 @@
             this.btn_ThemMoi.TabIndex = 21;
             this.btn_ThemMoi.Text = "Thêm Mới";
             this.btn_ThemMoi.UseVisualStyleBackColor = false;
-            // 
-            // cbo_TrangThai
-            // 
-            this.cbo_TrangThai.FormattingEnabled = true;
-            this.cbo_TrangThai.Items.AddRange(new object[] {
-            "Mới",
-            "Cũ"});
-            this.cbo_TrangThai.Location = new System.Drawing.Point(833, 34);
-            this.cbo_TrangThai.Name = "cbo_TrangThai";
-            this.cbo_TrangThai.Size = new System.Drawing.Size(112, 21);
-            this.cbo_TrangThai.TabIndex = 20;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(739, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 13);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Trạng Thái: ";
             // 
             // grp_ChiTietMay
             // 
@@ -551,7 +527,7 @@
             this.dgv_DSMay.Location = new System.Drawing.Point(1, 532);
             this.dgv_DSMay.Name = "dgv_DSMay";
             this.dgv_DSMay.ReadOnly = true;
-            this.dgv_DSMay.Size = new System.Drawing.Size(957, 205);
+            this.dgv_DSMay.Size = new System.Drawing.Size(892, 205);
             this.dgv_DSMay.TabIndex = 2;
             // 
             // MaMay
@@ -662,7 +638,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 739);
+            this.ClientSize = new System.Drawing.Size(893, 739);
             this.Controls.Add(this.dgv_DSMay);
             this.Controls.Add(this.lbl_QLMay);
             this.Controls.Add(this.grp_QLMay);
@@ -712,14 +688,12 @@
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_ThemMoi;
-        private System.Windows.Forms.ComboBox cbo_TrangThai;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbo_HDH;
         private System.Windows.Forms.Label lbl_HDH;
         private System.Windows.Forms.GroupBox grp_TimKiem;
         private System.Windows.Forms.RadioButton rad_TenMay;
         private System.Windows.Forms.RadioButton rad_MaMay;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.TextBox txt_GhiChu;
         private System.Windows.Forms.Label lbl_GhiChu;
         private System.Windows.Forms.RadioButton rad_TrangThai;
@@ -739,7 +713,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HeDieuHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.ComboBox cbo_TrangThai2;
-        private System.Windows.Forms.Label lbl_TrangThai2;
+        private System.Windows.Forms.ComboBox cbo_TrangThai;
+        private System.Windows.Forms.Label lbl_TrangThai;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frmQLThanhLy : Form
+    public partial class frm_QLThanhLy : Form
     {
-        public frmQLThanhLy()
+        public frm_QLThanhLy()
         {
             InitializeComponent();
         }

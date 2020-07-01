@@ -32,7 +32,7 @@
             this.grp_QLPhongMay = new System.Windows.Forms.GroupBox();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_ThemMoi = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.txt_SoLuongMay = new System.Windows.Forms.TextBox();
             this.lbl_SoLuongMay = new System.Windows.Forms.Label();
             this.cbo_TenPhong = new System.Windows.Forms.ComboBox();
@@ -50,10 +50,10 @@
             // lbl_QLPhongMay
             // 
             this.lbl_QLPhongMay.AutoSize = true;
-            this.lbl_QLPhongMay.Font = new System.Drawing.Font("UTM Aurora", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLPhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QLPhongMay.Location = new System.Drawing.Point(12, 9);
             this.lbl_QLPhongMay.Name = "lbl_QLPhongMay";
-            this.lbl_QLPhongMay.Size = new System.Drawing.Size(391, 66);
+            this.lbl_QLPhongMay.Size = new System.Drawing.Size(504, 61);
             this.lbl_QLPhongMay.TabIndex = 0;
             this.lbl_QLPhongMay.Text = "Quản Lý Phòng Máy";
             // 
@@ -61,7 +61,7 @@
             // 
             this.grp_QLPhongMay.Controls.Add(this.btn_Sua);
             this.grp_QLPhongMay.Controls.Add(this.btn_Xoa);
-            this.grp_QLPhongMay.Controls.Add(this.btn_ThemMoi);
+            this.grp_QLPhongMay.Controls.Add(this.btn_Them);
             this.grp_QLPhongMay.Controls.Add(this.txt_SoLuongMay);
             this.grp_QLPhongMay.Controls.Add(this.lbl_SoLuongMay);
             this.grp_QLPhongMay.Controls.Add(this.cbo_TenPhong);
@@ -102,18 +102,18 @@
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
             // 
-            // btn_ThemMoi
+            // btn_Them
             // 
-            this.btn_ThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_ThemMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThemMoi.ForeColor = System.Drawing.Color.Black;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(289, 24);
-            this.btn_ThemMoi.Name = "btn_ThemMoi";
-            this.btn_ThemMoi.Size = new System.Drawing.Size(100, 38);
-            this.btn_ThemMoi.TabIndex = 6;
-            this.btn_ThemMoi.Text = "Thêm Mới";
-            this.btn_ThemMoi.UseVisualStyleBackColor = false;
+            this.btn_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them.ForeColor = System.Drawing.Color.Black;
+            this.btn_Them.Location = new System.Drawing.Point(289, 24);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(100, 38);
+            this.btn_Them.TabIndex = 6;
+            this.btn_Them.Text = "Thêm Mới";
+            this.btn_Them.UseVisualStyleBackColor = false;
             // 
             // txt_SoLuongMay
             // 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Label lbl_TenPhong;
         private System.Windows.Forms.TextBox txt_MaPhong;
         private System.Windows.Forms.Label lbl_MaPhong;
-        private System.Windows.Forms.Button btn_ThemMoi;
+        private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.DataGridView dgv_DSPhongMay;

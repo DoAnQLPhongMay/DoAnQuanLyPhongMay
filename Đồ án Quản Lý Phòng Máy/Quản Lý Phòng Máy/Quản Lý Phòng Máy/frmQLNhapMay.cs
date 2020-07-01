@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frmQLNhapMay : Form
+    public partial class frm_QLNhapMay : Form
     {
-        public frmQLNhapMay()
+        public frm_QLNhapMay()
         {
             InitializeComponent();
         }

@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmdangnhap.cs">
+    <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmdangnhap.Designer.cs">
-      <DependentUpon>frmdangnhap.cs</DependentUpon>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGVPhuTrach.cs">
+    <Compile Include="frmQLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGVPhuTrach.Designer.cs">
-      <DependentUpon>frmGVPhuTrach.cs</DependentUpon>
+    <Compile Include="frmQLTaiKhoan.Designer.cs">
+      <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLMay.cs">
       <SubType>Form</SubType>
@@ -88,11 +88,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmdangnhap.resx">
-      <DependentUpon>frmdangnhap.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGVPhuTrach.resx">
-      <DependentUpon>frmGVPhuTrach.cs</DependentUpon>
+    <EmbeddedResource Include="frmQLTaiKhoan.resx">
+      <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLMay.resx">
       <DependentUpon>frmQLMay.cs</DependentUpon>
