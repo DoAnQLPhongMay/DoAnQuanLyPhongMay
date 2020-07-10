@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Quản_Lý_Phòng_Máy.Class;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace Quản_Lý_Phòng_Máy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_QLMay());
+            Application.Run(new frmDangNhap());
         }
     }
 }

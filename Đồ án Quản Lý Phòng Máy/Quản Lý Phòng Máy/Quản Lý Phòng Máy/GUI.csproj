@@ -44,69 +44,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="Class\DBSQLServerUtils.cs" />
+    <Compile Include="Class\DBUtils.cs" />
+    <Compile Include="Form\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="Form\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLTaiKhoan.cs">
+    <Compile Include="Form\frmQLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLTaiKhoan.Designer.cs">
+    <Compile Include="Form\frmQLTaiKhoan.Designer.cs">
       <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLMay.cs">
+    <Compile Include="Form\frmQLMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLMay.Designer.cs">
+    <Compile Include="Form\frmQLMay.Designer.cs">
       <DependentUpon>frmQLMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLNhapMay.cs">
+    <Compile Include="Form\frmQLNhapMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLNhapMay.Designer.cs">
+    <Compile Include="Form\frmQLNhapMay.Designer.cs">
       <DependentUpon>frmQLNhapMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLPhongMay.cs">
+    <Compile Include="Form\frmQLPhongMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLPhongMay.Designer.cs">
+    <Compile Include="Form\frmQLPhongMay.Designer.cs">
       <DependentUpon>frmQLPhongMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLThanhLy.cs">
+    <Compile Include="Form\frmQLThanhLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLThanhLy.Designer.cs">
+    <Compile Include="Form\frmQLThanhLy.Designer.cs">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTrangChu.cs">
+    <Compile Include="Form\frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTrangChu.Designer.cs">
+    <Compile Include="Form\frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="Form\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLTaiKhoan.resx">
+    <EmbeddedResource Include="Form\frmQLTaiKhoan.resx">
       <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLMay.resx">
+    <EmbeddedResource Include="Form\frmQLMay.resx">
       <DependentUpon>frmQLMay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLNhapMay.resx">
+    <EmbeddedResource Include="Form\frmQLNhapMay.resx">
       <DependentUpon>frmQLNhapMay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLPhongMay.resx">
+    <EmbeddedResource Include="Form\frmQLPhongMay.resx">
       <DependentUpon>frmQLPhongMay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLThanhLy.resx">
+    <EmbeddedResource Include="Form\frmQLThanhLy.resx">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTrangChu.resx">
+    <EmbeddedResource Include="Form\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -144,6 +146,7 @@
   <ItemGroup>
     <None Include="Resources\open-menu.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

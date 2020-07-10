@@ -1,6 +1,6 @@
 ﻿namespace Quản_Lý_Phòng_Máy
 {
-    partial class frm_TrangChu
+    partial class frmTrangChu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TrangChu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Xanh = new System.Windows.Forms.Panel();
             this.llbl_QLUser = new System.Windows.Forms.LinkLabel();
@@ -128,11 +128,11 @@
             // lbl_PhongMay
             // 
             this.lbl_PhongMay.AutoSize = true;
-            this.lbl_PhongMay.Font = new System.Drawing.Font("UTM Loko", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PhongMay.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_PhongMay.Location = new System.Drawing.Point(98, 33);
             this.lbl_PhongMay.Name = "lbl_PhongMay";
-            this.lbl_PhongMay.Size = new System.Drawing.Size(181, 43);
+            this.lbl_PhongMay.Size = new System.Drawing.Size(159, 31);
             this.lbl_PhongMay.TabIndex = 2;
             this.lbl_PhongMay.Text = "Phòng Máy";
             // 
@@ -143,7 +143,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 
@@ -322,7 +322,7 @@
             this.dgv_ShowForm.Size = new System.Drawing.Size(592, 534);
             this.dgv_ShowForm.TabIndex = 2;
             // 
-            // frm_TrangChu
+            // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,7 +332,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "frm_TrangChu";
+            this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
             this.panel1.ResumeLayout(false);
