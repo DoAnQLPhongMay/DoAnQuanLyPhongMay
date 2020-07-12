@@ -2,23 +2,48 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quản_Lý_Phòng_Máy.Class;
 
 namespace Quản_Lý_Phòng_Máy
 {
     public partial class frmTrangChu : Form
     {
-        public frmTrangChu()
+        SqlConnection conn = DBUtils.GetDBConnection();
+        public User user;
+
+        public frmTrangChu(User user)
         {
+            this.user = new User(user);
             InitializeComponent();
         }
 
-       
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
+            //Thực hiện kết nối CSDL.
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                //Xuất hộp thoại báo lỗi kết nối tới CSDL.
+                MessageBox.Show("Error: " + ex);
+            }
 
-       
+            lblUsername.Text = user.getTenUser();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            frmDangNhap frm = new frmDangNhap();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

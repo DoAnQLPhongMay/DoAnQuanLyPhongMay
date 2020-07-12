@@ -31,9 +31,9 @@ C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản L
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frm_QLNhapMay.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frm_QLPhongMay.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frm_QLThanhLy.resources
-C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frm_TrangChu.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.Properties.Resources.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.exe
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.pdb
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frmDangNhap.resources
+C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản_Lý_Phòng_Máy.frmTrangChu.resources

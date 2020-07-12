@@ -21,5 +21,10 @@ namespace Quản_Lý_Phòng_Máy
         {
 
         }
+
+        private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

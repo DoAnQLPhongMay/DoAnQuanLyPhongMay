@@ -33,7 +33,7 @@
             this.panel_Xanh = new System.Windows.Forms.Panel();
             this.llbl_QLUser = new System.Windows.Forms.LinkLabel();
             this.lbl_NguoiDung = new System.Windows.Forms.Label();
-            this.lbl_Username = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.pic_Bachground = new System.Windows.Forms.PictureBox();
             this.lbl_PhongMay = new System.Windows.Forms.Label();
             this.lbl_QL = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.panel_Xanh.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel_Xanh.Controls.Add(this.llbl_QLUser);
             this.panel_Xanh.Controls.Add(this.lbl_NguoiDung);
-            this.panel_Xanh.Controls.Add(this.lbl_Username);
+            this.panel_Xanh.Controls.Add(this.lblUsername);
             this.panel_Xanh.Location = new System.Drawing.Point(643, 0);
             this.panel_Xanh.Name = "panel_Xanh";
             this.panel_Xanh.Size = new System.Drawing.Size(146, 82);
@@ -104,16 +104,16 @@
             this.lbl_NguoiDung.TabIndex = 3;
             this.lbl_NguoiDung.Text = "Người dùng:";
             // 
-            // lbl_Username
+            // lblUsername
             // 
-            this.lbl_Username.AutoSize = true;
-            this.lbl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Username.Location = new System.Drawing.Point(47, 31);
-            this.lbl_Username.Name = "lbl_Username";
-            this.lbl_Username.Size = new System.Drawing.Size(45, 16);
-            this.lbl_Username.TabIndex = 4;
-            this.lbl_Username.Text = "admin";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Yellow;
+            this.lblUsername.Location = new System.Drawing.Point(47, 31);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(45, 16);
+            this.lblUsername.TabIndex = 4;
+            this.lblUsername.Text = "admin";
             // 
             // pic_Bachground
             // 
@@ -190,6 +190,7 @@
             this.btn_Logout.Text = "Đăng Xuất";
             this.btn_Logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // btn_Hiden
             // 
@@ -335,6 +336,7 @@
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
+            this.Load += new System.EventHandler(this.frmTrangChu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_Xanh.ResumeLayout(false);
@@ -364,7 +366,7 @@
         private System.Windows.Forms.Button btn_QLTaiKhoan;
         private System.Windows.Forms.Button btn_TrangChu;
         private System.Windows.Forms.DataGridView dgv_ShowForm;
-        private System.Windows.Forms.Label lbl_Username;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lbl_NguoiDung;
         private System.Windows.Forms.PictureBox pic_Bachground;
         private System.Windows.Forms.Panel panel_Xanh;
