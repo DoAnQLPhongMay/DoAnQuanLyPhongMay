@@ -644,6 +644,7 @@
             this.Controls.Add(this.grp_QLMay);
             this.Name = "frm_QLMay";
             this.Text = "Quản Lý Máy";
+            this.Load += new System.EventHandler(this.frm_QLMay_Load);
             this.grp_QLMay.ResumeLayout(false);
             this.grp_QLMay.PerformLayout();
             this.grp_TimKiem.ResumeLayout(false);

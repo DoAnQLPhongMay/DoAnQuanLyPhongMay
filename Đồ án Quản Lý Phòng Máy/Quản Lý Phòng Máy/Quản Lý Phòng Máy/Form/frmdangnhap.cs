@@ -26,28 +26,25 @@ namespace Quản_Lý_Phòng_Máy
         bool login(string userName, string password)
         {
             //Lấy thông tin kết nôi sql.
-                //Câu lệnh truy vấn.
-                string query = "SELECT * FROM dtb_TaiKhoan WHERE TenDangNhap = '" + userName + "' AND MatKhau = '" + password + "'";
-                SqlCommand cmd = new SqlCommand(query, conn);
+            //Câu lệnh truy vấn.
+            string query = "SELECT * FROM dtb_TaiKhoan WHERE TenDangNhap = '" + userName + "' AND MatKhau = '" + password + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);  
 
-                //Kiểm tra data sau khi truy vẫn.
-                SqlDataReader dr = cmd.ExecuteReader();
-                
-                if(dr.Read() == true)
-                {
-                    //Hiển thị hộp thoại báo thành công và trả về true.
-                    MessageBox.Show("Đăng Nhập Thành Công.");
-                    user.DangNhap(dr[0].ToString(), dr[3].ToString(), dr[5].ToString(), dr[7].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[4]), Convert.ToBoolean(dr[8]));
-                    return true;
-                }
-                else
-                {
-                    //Hiển thị hộp thoại báo thất bại.
-                    MessageBox.Show("Đăng Nhập Thất Bại. \nSai Tên Tài Khoản Hoặc Mật Khẩu.");
-                }
-            
+            //Kiểm tra data sau khi truy vẫn.
+            SqlDataReader dr = cmd.ExecuteReader();
 
-            //Trả về false khi không thể kết nôi sql hoặc sai thông tin đăng nhập.
+            if (dr.Read() == true)
+            {
+
+                //Hiển thị hộp thoại báo thành công và trả về true.
+                MessageBox.Show("Đăng Nhập Thành Công.");
+                user.DangNhap(dr[0].ToString(), dr[3].ToString(), dr[5].ToString(), dr[7].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[4]), Convert.ToBoolean(dr[8]));
+                return true;
+            }
+
+            //Hiển thị hộp thoại báo thất bại.
+            MessageBox.Show("Đăng Nhập Thất Bại. \nSai Tên Tài Khoản Hoặc Mật Khẩu.");
+
             return false;
         }
 

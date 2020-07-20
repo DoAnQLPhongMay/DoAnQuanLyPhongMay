@@ -362,6 +362,7 @@
             this.Controls.Add(this.lbl_NhapMay);
             this.Name = "frm_QLNhapMay";
             this.Text = "Quản Lý Nhập Máy";
+            this.Load += new System.EventHandler(this.frm_QLNhapMay_Load);
             this.grp_ChiTietNhapMay.ResumeLayout(false);
             this.grp_ChiTietNhapMay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSNhap)).EndInit();

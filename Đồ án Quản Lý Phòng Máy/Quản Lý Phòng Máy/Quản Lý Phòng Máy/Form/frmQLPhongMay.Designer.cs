@@ -75,6 +75,7 @@
             this.grp_QLPhongMay.TabIndex = 1;
             this.grp_QLPhongMay.TabStop = false;
             this.grp_QLPhongMay.Text = "Quán Lý Phòng Máy";
+            this.grp_QLPhongMay.Enter += new System.EventHandler(this.grp_QLPhongMay_Enter);
             // 
             // btn_Sua
             // 
@@ -208,6 +209,7 @@
             this.Controls.Add(this.lbl_QLPhongMay);
             this.Name = "frm_QLPhongMay";
             this.Text = "Quản Lý Phòng Máy";
+            this.Load += new System.EventHandler(this.frm_QLPhongMay_Load);
             this.grp_QLPhongMay.ResumeLayout(false);
             this.grp_QLPhongMay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSPhongMay)).EndInit();

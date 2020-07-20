@@ -45,5 +45,40 @@ namespace Quản_Lý_Phòng_Máy
             this.Hide();
             frm.Show();
         }
+
+        private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
+        {
+            frm_QLTaiKhoan frm = new frm_QLTaiKhoan(user);
+            this.Hide();
+            frm.Show();
+        }
+
+        private void btn_QLThanhLy_Click(object sender, EventArgs e)
+        {
+            frm_QLThanhLy frm = new frm_QLThanhLy(user);
+            this.Hide();
+            frm.Show();
+        }
+
+        private void btn_QLNhapMay_Click(object sender, EventArgs e)
+        {
+            frm_QLNhapMay frm = new frm_QLNhapMay(user);
+            this.Hide();
+            frm.Show();
+        }
+
+        private void btn_QLMay_Click(object sender, EventArgs e)
+        {
+            frm_QLMay frm = new frm_QLMay(user);
+            //this.Hide();
+            frm.Show();
+        }
+
+        private void btn_QLPhongMay_Click(object sender, EventArgs e)
+        {
+            frm_QLPhongMay frm = new frm_QLPhongMay(user);
+            //this.Hide();
+            frm.Show();
+        }
     }
 }

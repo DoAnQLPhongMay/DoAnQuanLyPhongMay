@@ -363,6 +363,7 @@
             this.Controls.Add(this.lbl_QLThanhLy);
             this.Name = "frm_QLThanhLy";
             this.Text = "Quản Lý Thanh Lý";
+            this.Load += new System.EventHandler(this.frm_QLThanhLy_Load);
             this.grp_ChiTietThanhLy.ResumeLayout(false);
             this.grp_ChiTietThanhLy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSThanhLy)).EndInit();

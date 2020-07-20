@@ -114,6 +114,7 @@
             this.lblUsername.Size = new System.Drawing.Size(45, 16);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "admin";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pic_Bachground
             // 
@@ -234,6 +235,7 @@
             this.btn_QLThanhLy.Text = "Quản Lý Thanh Lý Máy";
             this.btn_QLThanhLy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLThanhLy.UseVisualStyleBackColor = true;
+            this.btn_QLThanhLy.Click += new System.EventHandler(this.btn_QLThanhLy_Click);
             // 
             // btn_QLNhapMay
             // 
@@ -250,6 +252,7 @@
             this.btn_QLNhapMay.Text = "Quản Lý Nhập Máy";
             this.btn_QLNhapMay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLNhapMay.UseVisualStyleBackColor = true;
+            this.btn_QLNhapMay.Click += new System.EventHandler(this.btn_QLNhapMay_Click);
             // 
             // btn_QLPhongMay
             // 
@@ -266,6 +269,7 @@
             this.btn_QLPhongMay.Text = "Quản Lý Phòng Máy";
             this.btn_QLPhongMay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLPhongMay.UseVisualStyleBackColor = true;
+            this.btn_QLPhongMay.Click += new System.EventHandler(this.btn_QLPhongMay_Click);
             // 
             // btn_QLMay
             // 
@@ -282,6 +286,7 @@
             this.btn_QLMay.Text = "Quản Lý Máy";
             this.btn_QLMay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLMay.UseVisualStyleBackColor = true;
+            this.btn_QLMay.Click += new System.EventHandler(this.btn_QLMay_Click);
             // 
             // btn_QLTaiKhoan
             // 
@@ -298,6 +303,7 @@
             this.btn_QLTaiKhoan.Text = "Quản Lý Tài Khoản";
             this.btn_QLTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLTaiKhoan.UseVisualStyleBackColor = true;
+            this.btn_QLTaiKhoan.Click += new System.EventHandler(this.btn_QLTaiKhoan_Click);
             // 
             // btn_TrangChu
             // 

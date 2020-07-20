@@ -21,6 +21,7 @@ namespace Quản_Lý_Phòng_Máy.Class
             this.gioiTinh = false;
             this.phanQuyen = false;
         }
+
         public User(User user)
         {
             this.tenTK = user.tenTK;
