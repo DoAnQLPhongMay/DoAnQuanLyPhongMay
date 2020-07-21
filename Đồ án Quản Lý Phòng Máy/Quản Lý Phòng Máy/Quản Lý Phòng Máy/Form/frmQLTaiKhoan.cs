@@ -30,21 +30,9 @@ namespace Quản_Lý_Phòng_Máy
 
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
-            //Thực hiện kết nối CSDL.
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                //Xuất hộp thoại báo lỗi kết nối tới CSDL.
-                MessageBox.Show("Error: " + ex);
-            }
+            string querry = "SELECT * FROM dtb_TaiKhoan";
+            DataSet ds = DBUtils.dsTable(querry, conn);
 
-            String querry = "SELECT * FROM dtb_TaiKhoan";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(querry, conn);
-            da.Fill(ds);
             dgv_DSTaiKhoan.DataSource = ds.Tables[0];
             dgv_DSTaiKhoan.Refresh();
         }

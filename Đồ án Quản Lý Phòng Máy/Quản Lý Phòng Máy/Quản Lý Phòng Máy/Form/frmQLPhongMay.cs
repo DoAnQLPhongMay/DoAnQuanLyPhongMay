@@ -12,12 +12,12 @@ using Quản_Lý_Phòng_Máy.Class;
 
 namespace Quản_Lý_Phòng_Máy
 {
-    public partial class frm_QLPhongMay : Form
+    public partial class frmQLPhongMay : Form
     {
         SqlConnection conn = DBUtils.GetDBConnection();
         public User user;
 
-        public frm_QLPhongMay(User user)
+        public frmQLPhongMay(User user)
         {
             this.user = new User(user);
             InitializeComponent();
@@ -30,23 +30,30 @@ namespace Quản_Lý_Phòng_Máy
 
         private void frm_QLPhongMay_Load(object sender, EventArgs e)
         {
-            //Thực hiện kết nối CSDL.
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                //Xuất hộp thoại báo lỗi kết nối tới CSDL.
-                MessageBox.Show("Error: " + ex);
-            }
+            string querry = "SELECT * FROM dtb_PhongMay";
+            DataSet ds = DBUtils.dsTable(querry,conn);
 
-            String querry = "SELECT * FROM SELECT * FROM dtb_PhongMay";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(querry, conn);
-            da.Fill(ds);
-            dgv_DSPhongMay.DataSource = ds.Tables[0];
-            dgv_DSPhongMay.Refresh();
+            dgvDSPhongMay.DataSource = ds.Tables[0];
+            dgvDSPhongMay.Refresh();
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            string maPhong = txtMaPhong.Text;
+            string tenPhong = txtTenPhong.Text;
+            int soLuong = Convert.ToInt32(txtSoLuongMay.Text);
+
+            string querry = "INSERT INTO dtb_PhongMay(MaPhongMay, TenPhongMay, SoLuongMay) VALUES('" + maPhong + "', '" + tenPhong + "', '" + soLuong + "')";
+            
+            if(DBUtils.exceData(querry,conn))
+            {
+                MessageBox.Show("Thêm mới phòng thành công!");
+                dgvDSPhongMay.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Thêm mới thất bại");
+            }
         }
     }
 }

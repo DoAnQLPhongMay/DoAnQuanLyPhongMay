@@ -76,7 +76,7 @@ namespace Quản_Lý_Phòng_Máy
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
-            frm_QLPhongMay frm = new frm_QLPhongMay(user);
+            frmQLPhongMay frm = new frmQLPhongMay(user);
             //this.Hide();
             frm.Show();
         }
