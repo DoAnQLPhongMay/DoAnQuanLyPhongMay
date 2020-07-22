@@ -1,4 +1,4 @@
-﻿using Quản_Lý_Phòng_Máy.Class;
+﻿using QuanLyPhongMay.Class;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_Lý_Phòng_Máy
+namespace QuanLyPhongMay
 {
     static class Program
     {

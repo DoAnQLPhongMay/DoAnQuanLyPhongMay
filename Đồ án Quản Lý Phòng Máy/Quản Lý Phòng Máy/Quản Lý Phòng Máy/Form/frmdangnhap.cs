@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Quản_Lý_Phòng_Máy.Class;
+using QuanLyPhongMay.Class;
 using System.Windows.Forms;
 
-namespace Quản_Lý_Phòng_Máy
+namespace QuanLyPhongMay
 {
     public partial class frmDangNhap : Form
     {

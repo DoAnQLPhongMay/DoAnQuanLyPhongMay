@@ -1,4 +1,4 @@
-﻿namespace Quản_Lý_Phòng_Máy
+﻿namespace QuanLyPhongMay
 {
     partial class frm_QLThanhLy
     {

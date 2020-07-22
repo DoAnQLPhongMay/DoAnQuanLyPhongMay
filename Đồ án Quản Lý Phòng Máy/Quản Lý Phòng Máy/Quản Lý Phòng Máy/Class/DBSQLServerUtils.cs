@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Quản_Lý_Phòng_Máy.Class
+namespace QuanLyPhongMay.Class
 {
     class DBSQLServerUtils
     {

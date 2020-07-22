@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Quản_Lý_Phòng_Máy.Class;
+using QuanLyPhongMay.Class;
 
-namespace Quản_Lý_Phòng_Máy
+namespace QuanLyPhongMay
 {
     public partial class frmTrangChu : Form
     {

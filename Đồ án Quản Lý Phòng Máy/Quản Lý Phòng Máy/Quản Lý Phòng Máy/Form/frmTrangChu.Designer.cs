@@ -1,4 +1,4 @@
-﻿namespace Quản_Lý_Phòng_Máy
+﻿namespace QuanLyPhongMay
 {
     partial class frmTrangChu
     {
@@ -150,7 +150,7 @@
             // 
             // pic_Menu
             // 
-            this.pic_Menu.Image = global::Quản_Lý_Phòng_Máy.Properties.Resources.open_menu;
+            this.pic_Menu.Image = global::QuanLyPhongMay.Properties.Resources.open_menu;
             this.pic_Menu.Location = new System.Drawing.Point(0, 3);
             this.pic_Menu.Name = "pic_Menu";
             this.pic_Menu.Size = new System.Drawing.Size(95, 76);

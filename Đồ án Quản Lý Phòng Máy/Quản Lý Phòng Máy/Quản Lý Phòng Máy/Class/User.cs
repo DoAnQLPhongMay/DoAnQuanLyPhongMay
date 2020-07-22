@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quản_Lý_Phòng_Máy.Class
+namespace QuanLyPhongMay.Class
 {
     public class User
     {

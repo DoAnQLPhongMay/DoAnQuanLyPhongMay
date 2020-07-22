@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "Quản Lý Phòng Máy\GUI.csproj", "{258A8AB9-F7A8-4D33-B418-40F70C7D3531}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLPhongMay", "Quản Lý Phòng Máy\QLPhongMay.csproj", "{258A8AB9-F7A8-4D33-B418-40F70C7D3531}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_Lý_Phòng_Máy.Class
+namespace QuanLyPhongMay.Class
 {
     class DBUtils
     {
