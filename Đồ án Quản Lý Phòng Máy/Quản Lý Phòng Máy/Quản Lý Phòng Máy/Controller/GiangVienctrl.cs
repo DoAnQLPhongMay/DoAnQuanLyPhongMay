@@ -16,8 +16,8 @@ namespace QuanLyPhongMay.Controller
         public void HienThiComboBox(ComboBox cb)
         {
             cb.DataSource = GVData.LayDSGiangVien().Tables[0];
-            cb.DisplayMember = "TenNV";
-            cb.ValueMember = "MaNV";
+            cb.DisplayMember = "TenGV";
+            cb.ValueMember = "MaGV";
         }
         public void HienThiTK(DataGridView dgv,string tukhoa, string tieuchi)
         {
@@ -27,8 +27,8 @@ namespace QuanLyPhongMay.Controller
         {
             DataSet ds = GVData.LayDLMotDong(ten);
             GiangVien gv = new GiangVien();
-            gv.MaGV = int.Parse(ds.Tables[0].Rows[0]["MaNV"].ToString());
-            gv.TenGV = ds.Tables[0].Rows[0]["TenNV"].ToString();
+            gv.MaGV = int.Parse(ds.Tables[0].Rows[0]["MaGV"].ToString());
+            gv.TenGV = ds.Tables[0].Rows[0]["TenGV"].ToString();
             gv.Ngaysinh = DateTime.Parse(ds.Tables[0].Rows[0]["NgaySinh"].ToString());
             gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["GioiTinh"];
             gv.Diachi = ds.Tables[0].Rows[0]["DiaChi"].ToString();
