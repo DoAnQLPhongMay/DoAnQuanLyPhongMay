@@ -45,11 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\GiangVien.cs" />
+    <Compile Include="BUS\May.cs" />
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Controller\GiangVienctrl.cs" />
+    <Compile Include="Controller\Mayctrl.cs" />
     <Compile Include="DataLayer\GiangVienDATA.cs" />
+    <Compile Include="DataLayer\MayDATA.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -105,6 +108,12 @@
     <Compile Include="Form\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmLichSuCapNhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmLichSuCapNhat.Designer.cs">
+      <DependentUpon>frmLichSuCapNhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\frmDangNhap.resx">
@@ -115,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmKTTaiKhoan.resx">
       <DependentUpon>frmKTTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmLichSuCapNhat.resx">
+      <DependentUpon>frmLichSuCapNhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLTaiKhoan.resx">
       <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>

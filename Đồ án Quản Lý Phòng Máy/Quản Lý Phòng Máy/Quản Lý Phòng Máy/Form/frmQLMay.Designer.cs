@@ -85,6 +85,8 @@
             this.HeDieuHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grp_QLMay.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             this.grp_ChiTietMay.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             // grp_QLMay
             // 
+            this.grp_QLMay.Controls.Add(this.textBox1);
+            this.grp_QLMay.Controls.Add(this.label1);
             this.grp_QLMay.Controls.Add(this.cbo_TrangThai);
             this.grp_QLMay.Controls.Add(this.lbl_TrangThai);
             this.grp_QLMay.Controls.Add(this.grp_TimKiem);
@@ -128,7 +132,7 @@
             this.cbo_TrangThai.Items.AddRange(new object[] {
             "Mới",
             "Cũ"});
-            this.cbo_TrangThai.Location = new System.Drawing.Point(596, 33);
+            this.cbo_TrangThai.Location = new System.Drawing.Point(752, 31);
             this.cbo_TrangThai.Name = "cbo_TrangThai";
             this.cbo_TrangThai.Size = new System.Drawing.Size(112, 21);
             this.cbo_TrangThai.TabIndex = 26;
@@ -136,7 +140,7 @@
             // lbl_TrangThai
             // 
             this.lbl_TrangThai.AutoSize = true;
-            this.lbl_TrangThai.Location = new System.Drawing.Point(502, 36);
+            this.lbl_TrangThai.Location = new System.Drawing.Point(656, 34);
             this.lbl_TrangThai.Name = "lbl_TrangThai";
             this.lbl_TrangThai.Size = new System.Drawing.Size(77, 13);
             this.lbl_TrangThai.TabIndex = 25;
@@ -466,15 +470,15 @@
             // 
             // txt_TenMay
             // 
-            this.txt_TenMay.Location = new System.Drawing.Point(328, 31);
+            this.txt_TenMay.Location = new System.Drawing.Point(307, 34);
             this.txt_TenMay.Name = "txt_TenMay";
-            this.txt_TenMay.Size = new System.Drawing.Size(143, 20);
+            this.txt_TenMay.Size = new System.Drawing.Size(105, 20);
             this.txt_TenMay.TabIndex = 3;
             // 
             // lbl_TenMay
             // 
             this.lbl_TenMay.AutoSize = true;
-            this.lbl_TenMay.Location = new System.Drawing.Point(247, 34);
+            this.lbl_TenMay.Location = new System.Drawing.Point(226, 37);
             this.lbl_TenMay.Name = "lbl_TenMay";
             this.lbl_TenMay.Size = new System.Drawing.Size(64, 13);
             this.lbl_TenMay.TabIndex = 2;
@@ -484,7 +488,7 @@
             // 
             this.txt_MaMay.Location = new System.Drawing.Point(87, 34);
             this.txt_MaMay.Name = "txt_MaMay";
-            this.txt_MaMay.Size = new System.Drawing.Size(143, 20);
+            this.txt_MaMay.Size = new System.Drawing.Size(104, 20);
             this.txt_MaMay.TabIndex = 1;
             // 
             // lbl_MaMay
@@ -634,6 +638,22 @@
             this.GhiChu.ReadOnly = true;
             this.GhiChu.Width = 70;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(525, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(103, 20);
+            this.textBox1.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Mã Phòng: ";
+            // 
             // frm_QLMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,5 +736,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.ComboBox cbo_TrangThai;
         private System.Windows.Forms.Label lbl_TrangThai;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

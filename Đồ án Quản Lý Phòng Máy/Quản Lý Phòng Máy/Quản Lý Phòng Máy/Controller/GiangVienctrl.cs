@@ -23,7 +23,7 @@ namespace QuanLyPhongMay.Controller
         {
             dgv.DataSource = GVData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
-        public GiangVien DuLieuNV(string ten)
+        public GiangVien DuLieuGV(string ten)
         {
             DataSet ds = GVData.LayDLMotDong(ten);
             GiangVien gv = new GiangVien();
@@ -37,10 +37,10 @@ namespace QuanLyPhongMay.Controller
             gv.MatKhau = ds.Tables[0].Rows[0]["MatKhau"].ToString();
             return gv;
         }
-        //public void HienThi(DataGridView dgv)
-        //{
-        //  dgv.DataSource = GVData.LayDSGiangVien.Tables[0];
-       // }
+        public void HienThi(DataGridView dgv)
+        {
+         dgv.DataSource = GVData.LayDSGiangVien().Tables[0];
+        }
         public int Them(GiangVien gv)
         {
             if (!KiemTraSDT(gv.SoDienThoai))

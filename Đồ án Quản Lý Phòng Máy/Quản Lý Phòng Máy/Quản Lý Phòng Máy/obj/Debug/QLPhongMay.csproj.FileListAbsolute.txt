@@ -14,3 +14,4 @@ C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quả
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmTrangChu.resources
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.Properties.Resources.resources
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csproj.GenerateResource.Cache
+C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmDoiMatKhau.resources

@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLyPhongMay.BUS
+{
+    class May
+    {
+
+        private int _mamay;
+
+        public int MaMay
+        {
+            get { return _mamay; }
+            set { _mamay = value; }
+        }
+        private int _maphong;
+
+        public int MaPhong
+        {
+            get { return _maphong; }
+            set { _maphong = value; }
+        }
+        private string _tenmay;
+
+        public string TenMay
+        {
+            get { return _tenmay; }
+            set { _tenmay = value; }
+        }
+        private int _trangthai;
+
+        public int TrangThai
+        {
+            get { return _trangthai; }
+            set { _trangthai = value; }
+        }
+        private string _ghichu;
+
+        public string GhiChu
+        {
+            get { return _ghichu; }
+            set { _ghichu = value; }
+        }
+
+    }
+}
