@@ -83,12 +83,6 @@ namespace QuanLyPhongMay
         //Hàm xử lý khi ấn nút quên mật khẩu.
         private void btnQuenMatKhau_Click(object sender, EventArgs e)
         {
-            /*
-            //Ẩn frmDangNhap và mở frmQuenMatKhau.
-            frmQuenMatKhau frm = new frmQuenMatKhau();
-            this.Hide();
-            frm.Show();
-            */
         }
 
         //Hàm không sử dụng.
@@ -98,6 +92,15 @@ namespace QuanLyPhongMay
         }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
+        }
+
+        private void btnQuenMatKhau_Click_1(object sender, EventArgs e)
+        {
+            //Ẩn frmDangNhap và mở frmQuenMatKhau.
+            frmQuenMatKhau frm = new frmQuenMatKhau();
+            this.Hide();
+            frm.Show();
+
         }
     }
 }

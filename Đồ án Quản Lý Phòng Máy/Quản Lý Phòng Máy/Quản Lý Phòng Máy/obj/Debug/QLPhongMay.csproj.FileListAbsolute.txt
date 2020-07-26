@@ -15,3 +15,21 @@ C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quả
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.Properties.Resources.resources
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csproj.GenerateResource.Cache
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmDoiMatKhau.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\bin\Debug\Quản Lý Phòng Máy.exe.config
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\bin\Debug\Quản Lý Phòng Máy.exe
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\bin\Debug\Quản Lý Phòng Máy.pdb
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csprojAssemblyReference.cache
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmDoiMatKhau.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmQuenMatKhau.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmDangNhap.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmLichSuCapNhat.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLTaiKhoan.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLMay.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLNhapMay.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmQLPhongMay.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLThanhLy.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmTrangChu.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.Properties.Resources.resources
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csproj.GenerateResource.cache
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.exe
+C:\Users\BV\Desktop\Demo\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.pdb

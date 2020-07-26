@@ -130,12 +130,12 @@
             // lblDangNhap
             // 
             this.lblDangNhap.AutoSize = true;
-            this.lblDangNhap.Font = new System.Drawing.Font("UTM Aurora", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangNhap.ForeColor = System.Drawing.Color.White;
             this.lblDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblDangNhap.Location = new System.Drawing.Point(131, 42);
             this.lblDangNhap.Name = "lblDangNhap";
-            this.lblDangNhap.Size = new System.Drawing.Size(125, 33);
+            this.lblDangNhap.Size = new System.Drawing.Size(160, 31);
             this.lblDangNhap.TabIndex = 0;
             this.lblDangNhap.Text = "Đăng Nhập";
             this.lblDangNhap.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -144,11 +144,11 @@
             // lblQLPhongMay
             // 
             this.lblQLPhongMay.AutoSize = true;
-            this.lblQLPhongMay.Font = new System.Drawing.Font("UTM Aurora", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLPhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQLPhongMay.ForeColor = System.Drawing.Color.White;
             this.lblQLPhongMay.Location = new System.Drawing.Point(81, 9);
             this.lblQLPhongMay.Name = "lblQLPhongMay";
-            this.lblQLPhongMay.Size = new System.Drawing.Size(217, 33);
+            this.lblQLPhongMay.Size = new System.Drawing.Size(276, 31);
             this.lblQLPhongMay.TabIndex = 1;
             this.lblQLPhongMay.Text = "Quản Lý Phòng Máy";
             // 
@@ -165,6 +165,7 @@
             this.btnQuenMatKhau.TabIndex = 9;
             this.btnQuenMatKhau.Text = "Quên Mật Khẩu";
             this.btnQuenMatKhau.UseVisualStyleBackColor = false;
+            this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click_1);
             // 
             // frmDangNhap
             // 

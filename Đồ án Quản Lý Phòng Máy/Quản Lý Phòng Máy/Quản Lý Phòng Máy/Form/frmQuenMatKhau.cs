@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace QuanLyPhongMay
 {
-    public partial class frmDoiMatKhau : Form
+    public partial class frmQuenMatKhau : Form
     {
         SqlConnection conn = DBUtils.GetDBConnection();
 
-        public frmDoiMatKhau()
+        public frmQuenMatKhau()
         {
             InitializeComponent();
         }
@@ -38,9 +38,9 @@ namespace QuanLyPhongMay
         {
         }
 
-        private void btnKhoiPhuc_Click(object sender, EventArgs e)
+        private void btnKiemTra_Click(object sender, EventArgs e)
         {
-            frmDangNhap frm = new frmDangNhap();
+            frmDoiMatKhau frm = new frmDoiMatKhau();
             this.Hide();
             frm.Show();
         }

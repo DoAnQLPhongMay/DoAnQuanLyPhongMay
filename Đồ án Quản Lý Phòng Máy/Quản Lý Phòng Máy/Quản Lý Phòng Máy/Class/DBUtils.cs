@@ -13,8 +13,8 @@ namespace QuanLyPhongMay.Class
     {
         public static SqlConnection GetDBConnection()
         {
-            string datasource = @"DESKTOP-MTBP4JI"; //Thiện
-         // string datasource = @"BV-PC"; //Khoi
+            //string datasource = @"DESKTOP-MTBP4JI"; //Thiện
+            string datasource = @"BV-PC"; //Khoi
             string database = "QLPHONGMAY";
             string username = "sa";
             string password = "123456";
