@@ -33,7 +33,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.picMatKhau2 = new System.Windows.Forms.PictureBox();
             this.txtMatKhau1 = new System.Windows.Forms.TextBox();
-            this.lblKhoiPhuc = new System.Windows.Forms.Label();
+            this.lblDoiMatKhau = new System.Windows.Forms.Label();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.picMatKhau1 = new System.Windows.Forms.PictureBox();
             this.btnKhoiPhuc = new System.Windows.Forms.Button();
@@ -99,22 +99,23 @@
             this.txtMatKhau1.Location = new System.Drawing.Point(169, 100);
             this.txtMatKhau1.MaxLength = 20;
             this.txtMatKhau1.Name = "txtMatKhau1";
+            this.txtMatKhau1.PasswordChar = '*';
             this.txtMatKhau1.Size = new System.Drawing.Size(179, 23);
             this.txtMatKhau1.TabIndex = 2;
             // 
-            // lblKhoiPhuc
+            // lblDoiMatKhau
             // 
-            this.lblKhoiPhuc.AutoSize = true;
-            this.lblKhoiPhuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKhoiPhuc.ForeColor = System.Drawing.Color.White;
-            this.lblKhoiPhuc.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblKhoiPhuc.Location = new System.Drawing.Point(47, 40);
-            this.lblKhoiPhuc.Name = "lblKhoiPhuc";
-            this.lblKhoiPhuc.Size = new System.Drawing.Size(277, 31);
-            this.lblKhoiPhuc.TabIndex = 0;
-            this.lblKhoiPhuc.Text = "Khôi Phục Mật Khẩu";
-            this.lblKhoiPhuc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblKhoiPhuc.Click += new System.EventHandler(this.lblDangNhap_Click);
+            this.lblDoiMatKhau.AutoSize = true;
+            this.lblDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoiMatKhau.ForeColor = System.Drawing.Color.White;
+            this.lblDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDoiMatKhau.Location = new System.Drawing.Point(94, 40);
+            this.lblDoiMatKhau.Name = "lblDoiMatKhau";
+            this.lblDoiMatKhau.Size = new System.Drawing.Size(189, 31);
+            this.lblDoiMatKhau.TabIndex = 0;
+            this.lblDoiMatKhau.Text = "Đổi Mật Khẩu";
+            this.lblDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDoiMatKhau.Click += new System.EventHandler(this.lblDangNhap_Click);
             // 
             // lblQLPhongMay
             // 
@@ -159,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(373, 322);
             this.Controls.Add(this.btnKhoiPhuc);
             this.Controls.Add(this.picMatKhau1);
-            this.Controls.Add(this.lblKhoiPhuc);
+            this.Controls.Add(this.lblDoiMatKhau);
             this.Controls.Add(this.lblQLPhongMay);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnThoat);
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.TextBox txtMatKhau1;
-        private System.Windows.Forms.Label lblKhoiPhuc;
+        private System.Windows.Forms.Label lblDoiMatKhau;
         private System.Windows.Forms.Label lblQLPhongMay;
         private System.Windows.Forms.PictureBox picMatKhau1;
         private System.Windows.Forms.Button btnKhoiPhuc;

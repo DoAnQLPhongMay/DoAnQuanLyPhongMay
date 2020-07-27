@@ -54,7 +54,6 @@
             this.txtEmail.Location = new System.Drawing.Point(169, 131);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '*';
             this.txtEmail.Size = new System.Drawing.Size(179, 23);
             this.txtEmail.TabIndex = 4;
             // 
@@ -163,7 +162,6 @@
             this.txtSDT.Location = new System.Drawing.Point(169, 160);
             this.txtSDT.MaxLength = 20;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.PasswordChar = '*';
             this.txtSDT.Size = new System.Drawing.Size(179, 23);
             this.txtSDT.TabIndex = 10;
             // 

@@ -95,7 +95,32 @@ namespace QuanLyPhongMay.Class
         }
 
         //Hàm chạy câu lệnh không truy vấn.
-        public static Boolean exceData(string querry, SqlConnection conn)
+        public static Boolean exeReaderData(string querry, SqlConnection conn)
+        {
+            openConnection(conn);
+
+            Boolean kiemTra = false;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(querry, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.Read())
+                {
+                    kiemTra = true;
+                }
+            }
+            catch (Exception)
+            {
+                kiemTra = false;
+            }
+
+            closeConnection(conn);
+
+            return kiemTra;
+        }
+
+        public static Boolean exeNonQueryData(string querry, SqlConnection conn)
         {
             openConnection(conn);
 

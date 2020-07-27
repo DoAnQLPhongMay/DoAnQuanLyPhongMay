@@ -45,7 +45,7 @@ namespace QuanLyPhongMay
 
             string querry = "INSERT INTO dtb_PhongMay(MaPhongMay, TenPhongMay, SoLuongMay) VALUES('" + maPhong + "', '" + tenPhong + "', '" + soLuong + "')";
             
-            if(DBUtils.exceData(querry,conn))
+            /*if(DBUtils.exeData(querry,conn))
             {
                 MessageBox.Show("Thêm mới phòng thành công!");
                 dgvDSPhongMay.Refresh();
@@ -53,7 +53,7 @@ namespace QuanLyPhongMay
             else
             {
                 MessageBox.Show("Thêm mới thất bại");
-            }
+            }*/
         }
     }
 }

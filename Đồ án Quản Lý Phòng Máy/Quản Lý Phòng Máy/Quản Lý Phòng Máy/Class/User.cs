@@ -8,7 +8,7 @@ namespace QuanLyPhongMay.Class
 {
     public class User
     {
-        private string tenTK, tenUser, sdt, diaChi, ngaySinh;
+        private string tenTK, tenUser, sdt, diaChi, ngaySinh, email;
         private bool gioiTinh, phanQuyen;
 
         public User()
@@ -18,6 +18,7 @@ namespace QuanLyPhongMay.Class
             this.sdt = "";
             this.diaChi = "";
             this.ngaySinh = "";
+            this.email = "";
             this.gioiTinh = false;
             this.phanQuyen = false;
         }
@@ -29,6 +30,7 @@ namespace QuanLyPhongMay.Class
             this.sdt = user.sdt;
             this.diaChi = user.diaChi;
             this.ngaySinh = user.ngaySinh;
+            this.email = "";
             this.gioiTinh = user.gioiTinh;
             this.phanQuyen = user.phanQuyen;
         }
@@ -40,6 +42,7 @@ namespace QuanLyPhongMay.Class
             this.sdt = sdt;
             this.diaChi = diaChi;
             this.ngaySinh = ngaySinh;
+            this.email = "";
             this.gioiTinh = gioiTinh;
             this.phanQuyen = phanQuyen;
         }
