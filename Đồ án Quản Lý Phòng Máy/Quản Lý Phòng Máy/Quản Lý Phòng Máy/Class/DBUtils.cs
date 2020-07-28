@@ -15,7 +15,7 @@ namespace QuanLyPhongMay.Class
         {
             //string datasource = @"DESKTOP-MTBP4JI"; //Thiện
             string datasource = @"BV-PC"; //Khoi
-            string database = "QLPHONGMAY";
+            string database = "QL_PHONGMAY";
             string username = "sa";
             string password = "123456";
 
