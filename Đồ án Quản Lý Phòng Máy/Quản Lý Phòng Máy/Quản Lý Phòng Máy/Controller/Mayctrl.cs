@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace QuanLyPhongMay.Controller
 {
-    class Mayctrl
+    class MayCtrl
     {
 
-        MayDATA mayData = new MayDATA();
+        MayData mayData = new MayData();
         public void HienThiComboBox(ComboBox cb)
         {
             cb.DataSource = mayData.LayDSMay().Tables[0];

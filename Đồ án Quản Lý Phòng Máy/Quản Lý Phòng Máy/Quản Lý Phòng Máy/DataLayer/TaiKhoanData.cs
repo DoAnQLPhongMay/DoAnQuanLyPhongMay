@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace QuanLyPhongMay.DataLayer
 {
-    class GiangVienDATA
+    class TaiKhoanData
     {
         DataProvider cls = new DataProvider();
         public DataSet LayDLMotDong(string ten)

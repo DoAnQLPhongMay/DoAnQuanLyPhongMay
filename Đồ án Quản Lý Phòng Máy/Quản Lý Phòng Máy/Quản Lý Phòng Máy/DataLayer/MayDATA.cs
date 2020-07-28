@@ -10,7 +10,7 @@ using QuanLyPhongMay.BUS;
 
 namespace QuanLyPhongMay.DataLayer
 {
-    class MayDATA
+    class MayData
     {
 
         DataProvider cls = new DataProvider();

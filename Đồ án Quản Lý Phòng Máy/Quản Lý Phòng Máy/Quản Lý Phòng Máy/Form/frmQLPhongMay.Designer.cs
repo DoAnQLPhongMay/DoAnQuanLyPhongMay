@@ -31,7 +31,7 @@
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.grpQLPhongMay = new System.Windows.Forms.GroupBox();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnCapNhap = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtSoLuongMay = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             // grpQLPhongMay
             // 
             this.grpQLPhongMay.Controls.Add(this.txtTenPhong);
-            this.grpQLPhongMay.Controls.Add(this.btnSua);
+            this.grpQLPhongMay.Controls.Add(this.btnCapNhap);
             this.grpQLPhongMay.Controls.Add(this.btnXoa);
             this.grpQLPhongMay.Controls.Add(this.btnThem);
             this.grpQLPhongMay.Controls.Add(this.txtSoLuongMay);
@@ -81,18 +81,18 @@
             this.txtTenPhong.Size = new System.Drawing.Size(100, 20);
             this.txtTenPhong.TabIndex = 9;
             // 
-            // btnSua
+            // btnCapNhap
             // 
-            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(289, 132);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 38);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnCapNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCapNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCapNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhap.ForeColor = System.Drawing.Color.Black;
+            this.btnCapNhap.Location = new System.Drawing.Point(289, 132);
+            this.btnCapNhap.Name = "btnCapNhap";
+            this.btnCapNhap.Size = new System.Drawing.Size(100, 38);
+            this.btnCapNhap.TabIndex = 8;
+            this.btnCapNhap.Text = "Cập Nhập";
+            this.btnCapNhap.UseVisualStyleBackColor = false;
             // 
             // btnXoa
             // 
@@ -204,7 +204,7 @@
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.Label lblMaPhong;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnCapNhap;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvDSPhongMay;
         private System.Windows.Forms.TextBox txtTenPhong;

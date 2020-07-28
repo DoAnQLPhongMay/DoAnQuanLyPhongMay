@@ -10,9 +10,9 @@ using System.Data;
 
 namespace QuanLyPhongMay.Controller
 {
-    class GiangVienctrl
+    class TaiKhoanCtrl
     {
-        GiangVienDATA GVData = new GiangVienDATA();
+        TaiKhoanData GVData = new TaiKhoanData();
         public void HienThiComboBox(ComboBox cb)
         {
             cb.DataSource = GVData.LayDSGiangVien().Tables[0];

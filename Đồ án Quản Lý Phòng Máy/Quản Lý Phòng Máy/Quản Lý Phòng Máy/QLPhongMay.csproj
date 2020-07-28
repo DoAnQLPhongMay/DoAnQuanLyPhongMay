@@ -52,10 +52,13 @@
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\User.cs" />
-    <Compile Include="Controller\GiangVienctrl.cs" />
-    <Compile Include="Controller\Mayctrl.cs" />
-    <Compile Include="DataLayer\GiangVienDATA.cs" />
-    <Compile Include="DataLayer\MayDATA.cs" />
+    <Compile Include="Controller\TaiKhoanCtrl.cs" />
+    <Compile Include="Controller\MayCtrl.cs" />
+    <Compile Include="DataLayer\LichSuNhapData.cs" />
+    <Compile Include="DataLayer\LichSuThanhLyData.cs" />
+    <Compile Include="DataLayer\PhongMayData.cs" />
+    <Compile Include="DataLayer\TaiKhoanData.cs" />
+    <Compile Include="DataLayer\MayData.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
