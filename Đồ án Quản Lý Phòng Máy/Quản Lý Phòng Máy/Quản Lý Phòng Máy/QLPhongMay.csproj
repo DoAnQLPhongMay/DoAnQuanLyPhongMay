@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\GiangVien.cs" />
+    <Compile Include="BUS\LichSuNhap.cs" />
+    <Compile Include="BUS\LichSuThanhLy.cs" />
     <Compile Include="BUS\May.cs" />
+    <Compile Include="BUS\PhongMay.cs" />
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\User.cs" />
