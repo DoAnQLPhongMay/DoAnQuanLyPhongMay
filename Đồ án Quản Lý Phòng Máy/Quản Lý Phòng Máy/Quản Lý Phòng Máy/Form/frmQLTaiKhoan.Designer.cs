@@ -142,6 +142,7 @@
             this.btn_Them.TabIndex = 19;
             this.btn_Them.Text = "Thêm Mới";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // grp_TimKiem
             // 
@@ -369,6 +370,7 @@
             this.Controls.Add(this.grp_ThongTinTaiKhoan);
             this.Controls.Add(this.lbl_QLTaiKhoan);
             this.Name = "frm_QLTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Tài Khoản";
             this.Load += new System.EventHandler(this.frm_QLTaiKhoan_Load);
             this.grp_ThongTinTaiKhoan.ResumeLayout(false);

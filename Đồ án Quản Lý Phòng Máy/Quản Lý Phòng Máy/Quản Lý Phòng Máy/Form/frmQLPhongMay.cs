@@ -23,6 +23,11 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        public frmQLPhongMay()
+        {
+            // TODO: Complete member initialization
+        }
+
         private void grp_QLPhongMay_Enter(object sender, EventArgs e)
         {
 

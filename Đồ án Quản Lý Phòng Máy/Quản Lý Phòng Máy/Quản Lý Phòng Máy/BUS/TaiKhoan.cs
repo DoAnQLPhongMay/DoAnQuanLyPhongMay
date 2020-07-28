@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhongMay.BUS
 {
-    class GiangVien
+    class TaiKhoan
     {
 
-        private int _magv;
+        private string _magv;
 
-        public int MaGV
+        public string MaGV
         {
             get { return _magv; }
             set { _magv = value; }
@@ -65,7 +65,20 @@ namespace QuanLyPhongMay.BUS
             get { return _matkhau; }
             set { _matkhau = value; }
         }
-        public GiangVien()
+        private string _email;
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        private bool _loaitaikhoan;
+        public bool LoaiTaiKhoan
+        {
+            get { return _loaitaikhoan; }
+            set { _loaitaikhoan = value; }
+        }
+        public TaiKhoan()
         {
             
         }

@@ -11,7 +11,7 @@ namespace QuanLyPhongMay
 {
     class DataProvider
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MTBP4JI\SQLEXPRESS1;Initial Catalog=QLPHONGMAY;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MTBP4JI\SQLEXPRESS1;Initial Catalog=QL_PHONGMAY;Integrated Security=True");
         public DataProvider()
         {
             KetNoi();
@@ -35,17 +35,6 @@ namespace QuanLyPhongMay
             cmd.Connection = conn;
             return cmd.ExecuteNonQuery();
         }
-        public static string MD5(string text)
-        {
-            string res = "";
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] buff = Encoding.ASCII.GetBytes(text);
-            buff = md5.ComputeHash(buff);
-            foreach (byte s in buff)
-            {
-                res += s.ToString("x2");
-            }
-            return res;
-        }
+       
     }
 }

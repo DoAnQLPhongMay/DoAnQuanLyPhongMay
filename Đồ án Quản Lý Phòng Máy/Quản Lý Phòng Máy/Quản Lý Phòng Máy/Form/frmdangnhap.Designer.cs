@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.picPassword = new System.Windows.Forms.PictureBox();
             this.picUsername = new System.Windows.Forms.PictureBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.lblDangNhap = new System.Windows.Forms.Label();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.btnQuenMatKhau = new System.Windows.Forms.Button();
@@ -43,18 +43,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtPassword
+            // txtMatKhau
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtPassword.Location = new System.Drawing.Point(169, 131);
-            this.txtPassword.MaxLength = 20;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(179, 23);
-            this.txtPassword.TabIndex = 4;
+            this.txtMatKhau.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatKhau.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtMatKhau.Location = new System.Drawing.Point(169, 131);
+            this.txtMatKhau.MaxLength = 20;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(179, 23);
+            this.txtMatKhau.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -115,17 +115,17 @@
             this.picUsername.TabIndex = 1;
             this.picUsername.TabStop = false;
             // 
-            // txtUsername
+            // txtTenDangNhap
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtUsername.Location = new System.Drawing.Point(169, 100);
-            this.txtUsername.MaxLength = 20;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(179, 23);
-            this.txtUsername.TabIndex = 2;
+            this.txtTenDangNhap.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDangNhap.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(169, 100);
+            this.txtTenDangNhap.MaxLength = 20;
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(179, 23);
+            this.txtTenDangNhap.TabIndex = 2;
             // 
             // lblDangNhap
             // 
@@ -180,9 +180,9 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.picUsername);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.picPassword);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtTenDangNhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -198,12 +198,12 @@
 
         #endregion
         private System.Windows.Forms.PictureBox picUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.PictureBox picPassword;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label lblDangNhap;
         private System.Windows.Forms.Label lblQLPhongMay;
         private System.Windows.Forms.Button btnQuenMatKhau;

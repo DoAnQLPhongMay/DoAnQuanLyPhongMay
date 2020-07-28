@@ -30,19 +30,19 @@ namespace QuanLyPhongMay.Class
             this.sdt = user.sdt;
             this.diaChi = user.diaChi;
             this.ngaySinh = user.ngaySinh;
-            this.email = "";
+            this.email = user.email;
             this.gioiTinh = user.gioiTinh;
             this.phanQuyen = user.phanQuyen;
         }
 
-        public void DangNhap(string tenTK, string tenUser, string sdt, string diaChi, string ngaySinh, bool gioiTinh, bool phanQuyen)
+        public void DangNhap(string tenTK, string tenUser,string email, string sdt, string diaChi, string ngaySinh, bool gioiTinh, bool phanQuyen)
         {
             this.tenTK = tenTK;
             this.tenUser = tenUser;
             this.sdt = sdt;
             this.diaChi = diaChi;
             this.ngaySinh = ngaySinh;
-            this.email = "";
+            this.email = email;
             this.gioiTinh = gioiTinh;
             this.phanQuyen = phanQuyen;
         }
@@ -61,7 +61,10 @@ namespace QuanLyPhongMay.Class
         {
             return sdt;
         }
-
+        public string getEmail()
+        {
+            return email;
+        }
         public string getDiaChi()
         {
             return diaChi;

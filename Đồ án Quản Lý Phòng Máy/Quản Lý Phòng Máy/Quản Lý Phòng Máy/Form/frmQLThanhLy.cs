@@ -23,6 +23,11 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        public frm_QLThanhLy()
+        {
+            // TODO: Complete member initialization
+        }
+
         private void frm_QLThanhLy_Load(object sender, EventArgs e)
         {
             //Thực hiện kết nối CSDL.

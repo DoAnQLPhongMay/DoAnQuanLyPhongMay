@@ -23,6 +23,11 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        public frm_QLTaiKhoan()
+        {
+            // TODO: Complete member initialization
+        }
+
         private void dgv_DSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -35,6 +40,13 @@ namespace QuanLyPhongMay
 
             dgv_DSTaiKhoan.DataSource = ds.Tables[0];
             dgv_DSTaiKhoan.Refresh();
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            frmThemTaiKhoan themtk = new frmThemTaiKhoan();
+            this.Hide();
+            themtk.Show();
         }
     }
 }

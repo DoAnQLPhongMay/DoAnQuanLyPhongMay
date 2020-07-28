@@ -17,31 +17,33 @@ namespace QuanLyPhongMay.Controller
         {
             cb.DataSource = GVData.LayDSGiangVien().Tables[0];
             cb.DisplayMember = "TenGV";
-            cb.ValueMember = "MaGV";
+            cb.ValueMember = "MaTaiKhoan";
         }
         public void HienThiTK(DataGridView dgv,string tukhoa, string tieuchi)
         {
             dgv.DataSource = GVData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
-        public GiangVien DuLieuGV(string ten)
+        public TaiKhoan DuLieuGV(string ten)
         {
             DataSet ds = GVData.LayDLMotDong(ten);
-            GiangVien gv = new GiangVien();
-            gv.MaGV = int.Parse(ds.Tables[0].Rows[0]["MaGV"].ToString());
-            gv.TenGV = ds.Tables[0].Rows[0]["TenGV"].ToString();
-            gv.Ngaysinh = DateTime.Parse(ds.Tables[0].Rows[0]["NgaySinh"].ToString());
-            gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["GioiTinh"];
-            gv.Diachi = ds.Tables[0].Rows[0]["DiaChi"].ToString();
-            gv.SoDienThoai = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
+            TaiKhoan gv = new TaiKhoan();
             gv.TenDangNhap = ds.Tables[0].Rows[0]["TenDangNhap"].ToString();
             gv.MatKhau = ds.Tables[0].Rows[0]["MatKhau"].ToString();
+            gv.MaGV = ds.Tables[0].Rows[0]["MaTaiKhoan"].ToString().ToString();
+            gv.TenGV = ds.Tables[0].Rows[0]["HoVaTen"].ToString();
+            gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["GioiTinh"];
+            gv.SoDienThoai = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
+            gv.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+            gv.Ngaysinh = DateTime.Parse(ds.Tables[0].Rows[0]["NgaySinh"].ToString());
+            gv.Diachi = ds.Tables[0].Rows[0]["DiaChi"].ToString();
+            gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["LoaiTaiKhoan"];
             return gv;
         }
         public void HienThi(DataGridView dgv)
         {
          dgv.DataSource = GVData.LayDSGiangVien().Tables[0];
         }
-        public int Them(GiangVien gv)
+        public int Them(TaiKhoan gv)
         {
             if (!KiemTraSDT(gv.SoDienThoai))
                 return 0;
@@ -53,26 +55,13 @@ namespace QuanLyPhongMay.Controller
         {
             return GVData.Xoa(ma);
         }
-        public int Luu(GiangVien gv)
+        public int Luu(TaiKhoan gv)
         {
             if (!KiemTraSDT(gv.SoDienThoai))
                 return 0;
             return GVData.Luu(gv);
         }
-        public int DoiThongTin(GiangVien gv,string matkhaucu,string matkhauNcu)
-        {
-            if (!KiemTraSDT(gv.SoDienThoai))
-                return 0;
-            if (!KiemTraMatKhau(matkhauNcu, matkhaucu))
-                return -1;
-            return GVData.DoiThongTin(gv);
-        }
-        private bool KiemTraMatKhau(string matkhauNcu,string matkhaucu)
-        {
-            if (DataProvider.MD5(matkhauNcu) != matkhaucu)
-                return false;
-            return true;
-        }
+        
         private bool KiemTraSDT(string sdt)
         {
             long k = 0;

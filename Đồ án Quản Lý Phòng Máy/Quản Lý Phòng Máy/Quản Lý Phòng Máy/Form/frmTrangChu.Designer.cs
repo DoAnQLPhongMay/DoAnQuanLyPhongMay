@@ -144,7 +144,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 
@@ -320,6 +320,7 @@
             this.btn_TrangChu.Text = "Trang Chủ";
             this.btn_TrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TrangChu.UseVisualStyleBackColor = true;
+            this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
             // dgv_ShowForm
             // 
@@ -339,6 +340,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IsMdiContainer = true;
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
