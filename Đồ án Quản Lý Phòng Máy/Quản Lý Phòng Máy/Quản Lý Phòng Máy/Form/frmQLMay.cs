@@ -14,23 +14,17 @@ namespace QuanLyPhongMay
 {
     public partial class frm_QLMay : Form
     {
-        SqlConnection conn = DBUtils.GetDBConnection();
-        public User user;
-
-        public frm_QLMay(User user)
-        {
-            this.user = new User(user);
-            InitializeComponent();
-        }
+        /*SqlConnection conn = DBUtils.GetDBConnection();
+        public User user;*/
 
         public frm_QLMay()
         {
-            // TODO: Complete member initialization
+            InitializeComponent();
         }
 
         private void frm_QLMay_Load(object sender, EventArgs e)
         {
-            //Thực hiện kết nối CSDL.
+            /*//Thực hiện kết nối CSDL.
             try
             {
                 conn.Open();
@@ -46,7 +40,7 @@ namespace QuanLyPhongMay
             SqlDataAdapter da = new SqlDataAdapter(querry, conn);
             da.Fill(ds);
             dgv_DSMay.DataSource = ds.Tables[0];
-            dgv_DSMay.Refresh();
+            dgv_DSMay.Refresh();*/
         }
     }
 }

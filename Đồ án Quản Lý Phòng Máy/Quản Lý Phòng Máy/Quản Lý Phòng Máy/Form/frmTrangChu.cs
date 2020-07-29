@@ -14,18 +14,16 @@ namespace QuanLyPhongMay
 {
     public partial class frmTrangChu : Form
     {
-       // SqlConnection conn = DBUtils.GetDBConnection();
-        public User user;
+        /*SqlConnection conn = DBUtils.GetDBConnection();
+        public User user;*/
 
-        public frmTrangChu(User user)
+        public frmTrangChu()
         {
             InitializeComponent();
-            this.user = user;
         }
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
-            lblUsername.Text = user.getTenUser();
         }
 
         private void btn_Logout_Click(object sender, EventArgs e)
@@ -37,35 +35,35 @@ namespace QuanLyPhongMay
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan frmtk = new frm_QLTaiKhoan(user);
+            frm_QLTaiKhoan frmtk = new frm_QLTaiKhoan();
             //frmtk.MdiParent = this;
             frmtk.Show();
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
-            frm_QLThanhLy frm = new frm_QLThanhLy(user);
+            frm_QLThanhLy frm = new frm_QLThanhLy();
             //this.Hide();
             frm.Show();
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
-            frm_QLNhapMay frm = new frm_QLNhapMay(user);
+            frm_QLNhapMay frm = new frm_QLNhapMay();
             //this.Hide();
             frm.Show();
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
-            frm_QLMay frm = new frm_QLMay(user);
+            frm_QLMay frm = new frm_QLMay();
             //this.Hide();
             frm.Show();
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
-            frmQLPhongMay frm = new frmQLPhongMay(user);
+            frmQLPhongMay frm = new frmQLPhongMay();
             //this.Hide();
             frm.Show();
         }

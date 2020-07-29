@@ -14,18 +14,12 @@ namespace QuanLyPhongMay
 {
     public partial class frmQLPhongMay : Form
     {
-        SqlConnection conn = DBUtils.GetDBConnection();
-        public User user;
-
-        public frmQLPhongMay(User user)
-        {
-            this.user = new User(user);
-            InitializeComponent();
-        }
+        /*SqlConnection conn = DBUtils.GetDBConnection();
+        public User user;*/
 
         public frmQLPhongMay()
         {
-            // TODO: Complete member initialization
+            InitializeComponent();
         }
 
         private void grp_QLPhongMay_Enter(object sender, EventArgs e)
@@ -35,22 +29,22 @@ namespace QuanLyPhongMay
 
         private void frm_QLPhongMay_Load(object sender, EventArgs e)
         {
-            string querry = "SELECT * FROM dtb_PhongMay";
+            /*string querry = "SELECT * FROM dtb_PhongMay";
             DataSet ds = DBUtils.dsTable(querry,conn);
 
             dgvDSPhongMay.DataSource = ds.Tables[0];
-            dgvDSPhongMay.Refresh();
+            dgvDSPhongMay.Refresh();*/
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            string maPhong = txtMaPhong.Text;
+            /*string maPhong = txtMaPhong.Text;
             string tenPhong = txtTenPhong.Text;
             int soLuong = Convert.ToInt32(txtSoLuongMay.Text);
 
             string querry = "INSERT INTO dtb_PhongMay(MaPhongMay, TenPhongMay, SoLuongMay) VALUES('" + maPhong + "', '" + tenPhong + "', '" + soLuong + "')";
             
-            /*if(DBUtils.exeData(querry,conn))
+            if(DBUtils.exeData(querry,conn))
             {
                 MessageBox.Show("Thêm mới phòng thành công!");
                 dgvDSPhongMay.Refresh();

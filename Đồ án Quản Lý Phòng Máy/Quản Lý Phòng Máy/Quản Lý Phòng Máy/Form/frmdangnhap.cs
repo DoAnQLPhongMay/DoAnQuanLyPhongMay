@@ -75,7 +75,7 @@ namespace QuanLyPhongMay
             else if (login())
             {
                 //Nếu đăng nhập thành công thì ẩn frmDangNhap và mở frmTrangChu.
-                frmTrangChu frm = new frmTrangChu(user);
+                frmTrangChu frm = new frmTrangChu();
                 this.Hide();
                 frm.Show();
             }
