@@ -53,6 +53,9 @@
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Controller\LichSuNhapCtrl.cs" />
+    <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
+    <Compile Include="Controller\PhongMayCtrl.cs" />
     <Compile Include="Controller\TaiKhoanCtrl.cs" />
     <Compile Include="Controller\MayCtrl.cs" />
     <Compile Include="DataLayer\LichSuNhapData.cs" />

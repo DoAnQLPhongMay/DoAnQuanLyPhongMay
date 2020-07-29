@@ -16,29 +16,12 @@ namespace QuanLyPhongMay.BUS
 
         public PhongMay()
         {
-
         }
 
-        public string TenPhong {
-            get {return _tenPhong;}
-            set { _tenPhong = value; }
-        }
-        public int SoLuongMay { 
-            get {return _soLuongMay;}
-            set { _soLuongMay = value; }
-        } 
-        public int MaPhong {
-            get { return _maPhong; }
-            set { _maPhong = value; } }
-        public string GhiChu { 
-            get { return _ghiChu; }
-            set { _ghiChu = value; }
-        }
-        public int TrangThai
-        {
-            get { return _trangThai; }
-            set { _trangThai = value; }
-        }
+        public string TenPhong { get => _tenPhong; set => _tenPhong = value; }
+        public int SoLuongMay { get => _soLuongMay; set => _soLuongMay = value; }
+        public int MaPhong { get => _maPhong; set => _maPhong = value; }
+        public string GhiChu { get => _ghiChu; set => _ghiChu = value; }
+        public int TrangThai { get => _trangThai; set => _trangThai = value; }
     }
-    
 }

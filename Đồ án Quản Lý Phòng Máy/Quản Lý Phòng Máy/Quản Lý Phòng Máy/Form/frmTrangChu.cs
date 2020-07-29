@@ -15,30 +15,17 @@ namespace QuanLyPhongMay
     public partial class frmTrangChu : Form
     {
        // SqlConnection conn = DBUtils.GetDBConnection();
-        //public User user;
+        public User user;
 
-        public frmTrangChu()
+        public frmTrangChu(User user)
         {
-            
             InitializeComponent();
+            this.user = user;
         }
-
-       
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
-            //Thực hiện kết nối CSDL.
-            /*try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                //Xuất hộp thoại báo lỗi kết nối tới CSDL.
-                MessageBox.Show("Error: " + ex);
-            }
-
-            lblUsername.Text = user.getTenUser();*/
+            lblUsername.Text = user.getTenUser();
         }
 
         private void btn_Logout_Click(object sender, EventArgs e)
@@ -50,35 +37,35 @@ namespace QuanLyPhongMay
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan frmtk = new frm_QLTaiKhoan();
-            frmtk.MdiParent = this;
+            frm_QLTaiKhoan frmtk = new frm_QLTaiKhoan(user);
+            //frmtk.MdiParent = this;
             frmtk.Show();
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
-            frm_QLThanhLy frm = new frm_QLThanhLy();
-            this.Hide();
+            frm_QLThanhLy frm = new frm_QLThanhLy(user);
+            //this.Hide();
             frm.Show();
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
-            frm_QLNhapMay frm = new frm_QLNhapMay();
-            this.Hide();
+            frm_QLNhapMay frm = new frm_QLNhapMay(user);
+            //this.Hide();
             frm.Show();
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
-            frm_QLMay frm = new frm_QLMay();
+            frm_QLMay frm = new frm_QLMay(user);
             //this.Hide();
             frm.Show();
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
-            frmQLPhongMay frm = new frmQLPhongMay();
+            frmQLPhongMay frm = new frmQLPhongMay(user);
             //this.Hide();
             frm.Show();
         }

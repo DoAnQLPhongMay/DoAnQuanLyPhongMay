@@ -24,12 +24,11 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
-        //Hàm xử lý tìm kiếm.
-        public DataSet LayDSTK(string key, string tieuChi)
+        //Hàm xử lý tìm kiếm phòng máy.
+        public DataSet LayDSTK(string key, string loaiTK)
         {
             string query = "SELECT * FROM dtb_PhongMay ";
-
-            switch (tieuChi)
+            switch (loaiTK)
             {
                 case "maPhong":
                     query += "WHERE MaPhong like \"%" + key + "%\"";
@@ -46,7 +45,7 @@ namespace QuanLyPhongMay.DataLayer
 
             return cls.LayDuLieu(cmd);
         }
-        
+
         //Hàm xử lý thêm mới phòng máy.
         public int Them(PhongMay phong)
         {
@@ -85,11 +84,10 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
 
             string update = "UPDATE dtb_PhongMay ",
-                set = "SET MaPhongMay = @maPhong, TenPhong = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
+                set = "SET TenPhong = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
                 where = "WHERE MaPhong = @maPhong";
 
             cmd.CommandText = update + set + where;
-            cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = phong.MaPhong;
             cmd.Parameters.Add("tenPhong", SqlDbType.NVarChar).Value = phong.TenPhong;
             cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.SoLuongMay;
             cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.TrangThai;
