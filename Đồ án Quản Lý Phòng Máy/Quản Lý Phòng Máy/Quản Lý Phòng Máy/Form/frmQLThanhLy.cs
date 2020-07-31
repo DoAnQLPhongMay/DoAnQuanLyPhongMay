@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyPhongMay.BUS;
 using QuanLyPhongMay.Class;
+using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
-    public partial class frm_QLThanhLy : Form
+    public partial class frmQLThanhLy : Form
     {
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
 
-        public frm_QLThanhLy()
+        LichSuThanhLyCtrl thanhLyCtrl = new LichSuThanhLyCtrl();
+        LichSuThanhLy thanhLy = new LichSuThanhLy();
+
+        public frmQLThanhLy()
         {
             InitializeComponent();
         }
@@ -41,6 +46,8 @@ namespace QuanLyPhongMay
             da.Fill(ds);
             dgv_DSThanhLy.DataSource = ds.Tables[0];
             dgv_DSThanhLy.Refresh();*/
+
+            thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
         }
     }
 }

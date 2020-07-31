@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyPhongMay.BUS;
 using QuanLyPhongMay.Class;
+using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
-    public partial class frm_QLNhapMay : Form
+    public partial class frmQLNhapMay : Form
     {
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
 
-        public frm_QLNhapMay()
+        LichSuNhapCtrl nhapCtrl = new LichSuNhapCtrl();
+        LichSuNhap nhap = new LichSuNhap();
+
+        public frmQLNhapMay()
         {
             InitializeComponent();
         }
@@ -41,6 +46,8 @@ namespace QuanLyPhongMay
             da.Fill(ds);
             dgv_DSNhap.DataSource = ds.Tables[0];
             dgv_DSNhap.Refresh();*/
+
+            nhapCtrl.HienThiDgv(dgvDSNhap);
         }
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="BUS\LichSuThanhLy.cs" />
     <Compile Include="BUS\May.cs" />
     <Compile Include="BUS\PhongMay.cs" />
+    <Compile Include="BUS\TrangThai.cs" />
     <Compile Include="CaiDat.cs" />
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
@@ -58,11 +59,13 @@
     <Compile Include="Controller\PhongMayCtrl.cs" />
     <Compile Include="Controller\TaiKhoanCtrl.cs" />
     <Compile Include="Controller\MayCtrl.cs" />
+    <Compile Include="Controller\TrangThaiCtrl.cs" />
     <Compile Include="DataLayer\LichSuNhapData.cs" />
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
     <Compile Include="DataLayer\PhongMayData.cs" />
     <Compile Include="DataLayer\TaiKhoanData.cs" />
     <Compile Include="DataLayer\MayData.cs" />
+    <Compile Include="DataLayer\TrangThaiData.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form\frmDoiMatKhau.cs">
       <SubType>Form</SubType>

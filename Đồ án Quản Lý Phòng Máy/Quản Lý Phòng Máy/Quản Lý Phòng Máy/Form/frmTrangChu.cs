@@ -17,14 +17,15 @@ namespace QuanLyPhongMay
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
 
-        public frmTrangChu()
-        {
-            InitializeComponent();
-        }
         Color clr = Color.Teal;
         Color declr = Color.FromArgb(0, 0, 64);
         Point p;
         bool flag = false;
+
+        public frmTrangChu()
+        {
+            InitializeComponent();
+        }
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
         }
@@ -45,29 +46,25 @@ namespace QuanLyPhongMay
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
-            frm_QLThanhLy frm = new frm_QLThanhLy();
-            //this.Hide();
+            frmQLThanhLy frm = new frmQLThanhLy();
             frm.Show();
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
-            frm_QLNhapMay frm = new frm_QLNhapMay();
-            //this.Hide();
+            frmQLNhapMay frm = new frmQLNhapMay();
             frm.Show();
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
             frm_QLMay frm = new frm_QLMay();
-            //this.Hide();
             frm.Show();
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
             frmQLPhongMay frm = new frmQLPhongMay();
-            //this.Hide();
             frm.Show();
         }
 
@@ -83,6 +80,7 @@ namespace QuanLyPhongMay
             (form as Form).Show();
             btn_TrangChu.BackColor = clr;
         }
+
         void LamMoiMauNen(object sender)
         {
             (sender as Button).BackColor = clr;

@@ -84,10 +84,11 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
 
             string update = "UPDATE dtb_PhongMay ",
-                set = "SET TenPhong = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
+                set = "SET MaPhong = @maPhong, TenPhong = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
                 where = "WHERE MaPhong = @maPhong";
 
             cmd.CommandText = update + set + where;
+            cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = phong.MaPhong;
             cmd.Parameters.Add("tenPhong", SqlDbType.NVarChar).Value = phong.TenPhong;
             cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.SoLuongMay;
             cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.TrangThai;

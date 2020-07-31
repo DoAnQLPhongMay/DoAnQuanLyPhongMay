@@ -13,14 +13,6 @@ namespace QuanLyPhongMay.Controller
     {
         PhongMayData phongData = new PhongMayData();
 
-        //Hàm hiển thị danh sách phòng máy vào Combobox.
-        public void HienThiComboBox(ComboBox cb)
-        {
-            cb.DataSource = phongData.LayDSPhong().Tables[0];
-            cb.DisplayMember = "TenPhong";
-            cb.ValueMember = "MaPhong";
-        }
-
         //Hàm hiển thị danh sách phòng máy lên Datagridview.
         public void HienThiDgv(DataGridView dgv)
         {

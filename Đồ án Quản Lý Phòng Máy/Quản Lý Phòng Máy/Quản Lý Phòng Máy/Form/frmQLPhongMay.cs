@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyPhongMay.Class;
+using QuanLyPhongMay.BUS;
+using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
@@ -16,6 +18,9 @@ namespace QuanLyPhongMay
     {
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
+        PhongMayCtrl phongCtrl = new PhongMayCtrl();
+        PhongMay phong = new PhongMay();
+        TrangThaiCtrl trangThaiCtrl = new TrangThaiCtrl();
 
         public frmQLPhongMay()
         {
@@ -34,6 +39,8 @@ namespace QuanLyPhongMay
 
             dgvDSPhongMay.DataSource = ds.Tables[0];
             dgvDSPhongMay.Refresh();*/
+            phongCtrl.HienThiDgv(dgvDSPhongMay);
+            trangThaiCtrl.HienThiTrangThaiCbo(cboTrangThai);
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -53,6 +60,17 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Thêm mới thất bại");
             }*/
+            if(txtMaPhong.Text == "" || txtTenPhong.Text == "" || txtSoLuongMay.Text == "" || cboTrangThai.SelectedItem == "")
+            phong.MaPhong = int.Parse(txtMaPhong.Text);
+            phong.TenPhong = txtTenPhong.Text;
+            phong.SoLuongMay = int.Parse(txtSoLuongMay.Text);
+            phong.TrangThai = int.Parse(cboTrangThai.SelectedValue.ToString());
+            phong.GhiChu = rtbGhiChu.Text;
+
+            if (phongCtrl.Them(phong) > 0)
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

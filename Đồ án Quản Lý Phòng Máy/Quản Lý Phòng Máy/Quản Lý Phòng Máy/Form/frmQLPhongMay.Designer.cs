@@ -40,6 +40,10 @@
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.lblMaPhong = new System.Windows.Forms.Label();
             this.dgvDSPhongMay = new System.Windows.Forms.DataGridView();
+            this.lblTrangThai = new System.Windows.Forms.Label();
+            this.lblGhiChu = new System.Windows.Forms.Label();
+            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.grpQLPhongMay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhongMay)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +60,10 @@
             // 
             // grpQLPhongMay
             // 
+            this.grpQLPhongMay.Controls.Add(this.rtbGhiChu);
+            this.grpQLPhongMay.Controls.Add(this.cboTrangThai);
+            this.grpQLPhongMay.Controls.Add(this.lblGhiChu);
+            this.grpQLPhongMay.Controls.Add(this.lblTrangThai);
             this.grpQLPhongMay.Controls.Add(this.txtTenPhong);
             this.grpQLPhongMay.Controls.Add(this.btnCapNhap);
             this.grpQLPhongMay.Controls.Add(this.btnXoa);
@@ -68,7 +76,7 @@
             this.grpQLPhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpQLPhongMay.Location = new System.Drawing.Point(1, 92);
             this.grpQLPhongMay.Name = "grpQLPhongMay";
-            this.grpQLPhongMay.Size = new System.Drawing.Size(502, 189);
+            this.grpQLPhongMay.Size = new System.Drawing.Size(575, 189);
             this.grpQLPhongMay.TabIndex = 1;
             this.grpQLPhongMay.TabStop = false;
             this.grpQLPhongMay.Text = "Quán Lý Phòng Máy";
@@ -76,7 +84,7 @@
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(113, 115);
+            this.txtTenPhong.Location = new System.Drawing.Point(113, 145);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(100, 20);
             this.txtTenPhong.TabIndex = 9;
@@ -87,7 +95,7 @@
             this.btnCapNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCapNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhap.ForeColor = System.Drawing.Color.Black;
-            this.btnCapNhap.Location = new System.Drawing.Point(289, 132);
+            this.btnCapNhap.Location = new System.Drawing.Point(469, 135);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(100, 38);
             this.btnCapNhap.TabIndex = 8;
@@ -100,7 +108,7 @@
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(289, 76);
+            this.btnXoa.Location = new System.Drawing.Point(469, 79);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 38);
             this.btnXoa.TabIndex = 7;
@@ -113,7 +121,7 @@
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(289, 24);
+            this.btnThem.Location = new System.Drawing.Point(469, 22);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 38);
             this.btnThem.TabIndex = 6;
@@ -123,7 +131,7 @@
             // 
             // txtSoLuongMay
             // 
-            this.txtSoLuongMay.Location = new System.Drawing.Point(113, 69);
+            this.txtSoLuongMay.Location = new System.Drawing.Point(113, 89);
             this.txtSoLuongMay.Name = "txtSoLuongMay";
             this.txtSoLuongMay.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuongMay.TabIndex = 5;
@@ -131,7 +139,7 @@
             // lblSoLuongMay
             // 
             this.lblSoLuongMay.AutoSize = true;
-            this.lblSoLuongMay.Location = new System.Drawing.Point(11, 76);
+            this.lblSoLuongMay.Location = new System.Drawing.Point(11, 92);
             this.lblSoLuongMay.Name = "lblSoLuongMay";
             this.lblSoLuongMay.Size = new System.Drawing.Size(92, 13);
             this.lblSoLuongMay.TabIndex = 4;
@@ -140,7 +148,7 @@
             // lblTenPhong
             // 
             this.lblTenPhong.AutoSize = true;
-            this.lblTenPhong.Location = new System.Drawing.Point(11, 118);
+            this.lblTenPhong.Location = new System.Drawing.Point(11, 148);
             this.lblTenPhong.Name = "lblTenPhong";
             this.lblTenPhong.Size = new System.Drawing.Size(73, 13);
             this.lblTenPhong.TabIndex = 2;
@@ -172,14 +180,48 @@
             this.dgvDSPhongMay.Location = new System.Drawing.Point(1, 287);
             this.dgvDSPhongMay.Name = "dgvDSPhongMay";
             this.dgvDSPhongMay.ReadOnly = true;
-            this.dgvDSPhongMay.Size = new System.Drawing.Size(502, 203);
+            this.dgvDSPhongMay.Size = new System.Drawing.Size(575, 203);
             this.dgvDSPhongMay.TabIndex = 2;
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Location = new System.Drawing.Point(219, 35);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(73, 13);
+            this.lblTrangThai.TabIndex = 10;
+            this.lblTrangThai.Text = "Trạng Thái:";
+            // 
+            // lblGhiChu
+            // 
+            this.lblGhiChu.AutoSize = true;
+            this.lblGhiChu.Location = new System.Drawing.Point(219, 92);
+            this.lblGhiChu.Name = "lblGhiChu";
+            this.lblGhiChu.Size = new System.Drawing.Size(56, 13);
+            this.lblGhiChu.TabIndex = 11;
+            this.lblGhiChu.Text = "Ghi Chú:";
+            // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.Location = new System.Drawing.Point(298, 32);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(121, 21);
+            this.cboTrangThai.TabIndex = 12;
+            // 
+            // rtbGhiChu
+            // 
+            this.rtbGhiChu.Location = new System.Drawing.Point(298, 89);
+            this.rtbGhiChu.Name = "rtbGhiChu";
+            this.rtbGhiChu.Size = new System.Drawing.Size(121, 76);
+            this.rtbGhiChu.TabIndex = 13;
+            this.rtbGhiChu.Text = "";
             // 
             // frmQLPhongMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 490);
+            this.ClientSize = new System.Drawing.Size(588, 490);
             this.Controls.Add(this.dgvDSPhongMay);
             this.Controls.Add(this.grpQLPhongMay);
             this.Controls.Add(this.lblQLPhongMay);
@@ -208,5 +250,9 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvDSPhongMay;
         private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.RichTextBox rtbGhiChu;
+        private System.Windows.Forms.ComboBox cboTrangThai;
+        private System.Windows.Forms.Label lblGhiChu;
+        private System.Windows.Forms.Label lblTrangThai;
     }
 }

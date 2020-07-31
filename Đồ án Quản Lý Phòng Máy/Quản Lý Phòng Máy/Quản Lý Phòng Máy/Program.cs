@@ -20,8 +20,8 @@ namespace QuanLyPhongMay
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmDangNhap());
             //Application.Run(new frmThemTaiKhoan());
-            //Application.Run(new frmTrangChu());
-            Application.Run(new frm_QLMay());
+            Application.Run(new frmTrangChu());
+            //Application.Run(new frm_QLMay());
         }
     }
 }

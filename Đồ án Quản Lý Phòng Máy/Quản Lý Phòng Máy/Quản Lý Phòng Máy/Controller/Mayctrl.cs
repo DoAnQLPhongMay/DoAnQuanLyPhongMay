@@ -13,11 +13,17 @@ namespace QuanLyPhongMay.Controller
     {
 
         MayData mayData = new MayData();
-        public void HienThiComboBox(ComboBox cb)
+        public void HienThiPhongCbo(ComboBox cb)
         {
             cb.DataSource = mayData.LayDSMay().Tables[0];
-            cb.DisplayMember = "TenSach";
-            cb.ValueMember = "MaSach";
+            cb.DisplayMember = "MaPhongMay";
+            cb.ValueMember = "TenPhongMay";
+        }
+        public void HienThiTrangThaiCbo(ComboBox cb)
+        {
+            cb.DataSource = mayData.LayDSMay().Tables[0];
+            cb.DisplayMember = "MaTrangThai";
+            cb.ValueMember = "TenTrangThai";
         }
         public void HienThi(DataGridView dgv)
         {
