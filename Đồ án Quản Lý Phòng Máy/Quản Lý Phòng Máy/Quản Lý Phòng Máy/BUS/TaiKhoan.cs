@@ -44,12 +44,12 @@ namespace QuanLyPhongMay.BUS
             get { return _diachi; }
             set { _diachi = value; }
         }
-        private string _sodienthoai;
+        private string _sdt;
 
-        public string SoDienThoai
+        public string SDT
         {
-            get { return _sodienthoai; }
-            set { _sodienthoai = value; }
+            get { return _sdt; }
+            set { _sdt = value; }
         }
         private string _tendangnhap;
 

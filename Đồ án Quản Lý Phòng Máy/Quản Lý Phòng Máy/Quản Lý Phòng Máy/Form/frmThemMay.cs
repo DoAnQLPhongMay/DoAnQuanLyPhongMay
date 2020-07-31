@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyPhongMay
 {
-    public partial class frmLichSuCapNhat : Form
+    public partial class frmThemMay : Form
     {
-        public frmLichSuCapNhat()
+        public frmThemMay()
         {
             InitializeComponent();
-        }
-
-        private void frmLichSuCapNhat_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

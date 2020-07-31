@@ -32,11 +32,11 @@ namespace QuanLyPhongMay.Controller
             gv.MaGV = ds.Tables[0].Rows[0]["MaTaiKhoan"].ToString().ToString();
             gv.TenGV = ds.Tables[0].Rows[0]["HoVaTen"].ToString();
             gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["GioiTinh"];
-            gv.SoDienThoai = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
+            gv.SDT = ds.Tables[0].Rows[0]["SDT"].ToString();
             gv.Email = ds.Tables[0].Rows[0]["Email"].ToString();
             gv.Ngaysinh = DateTime.Parse(ds.Tables[0].Rows[0]["NgaySinh"].ToString());
             gv.Diachi = ds.Tables[0].Rows[0]["DiaChi"].ToString();
-            gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["LoaiTaiKhoan"];
+           // gv.Gioitinh = (bool)ds.Tables[0].Rows[0]["LoaiTaiKhoan"];
             return gv;
         }
         public void HienThi(DataGridView dgv)
@@ -45,7 +45,7 @@ namespace QuanLyPhongMay.Controller
         }
         public int Them(TaiKhoan gv)
         {
-            if (!KiemTraSDT(gv.SoDienThoai))
+            if (!KiemTraSDT(gv.SDT))
                 return 0;
             if (KiemTraTonTai(gv.TenDangNhap))
                 return -1;
@@ -57,7 +57,7 @@ namespace QuanLyPhongMay.Controller
         }
         public int Luu(TaiKhoan gv)
         {
-            if (!KiemTraSDT(gv.SoDienThoai))
+            if (!KiemTraSDT(gv.SDT))
                 return 0;
             return GVData.Luu(gv);
         }

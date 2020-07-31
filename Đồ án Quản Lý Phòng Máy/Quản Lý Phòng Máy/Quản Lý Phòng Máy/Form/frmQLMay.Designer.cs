@@ -30,7 +30,7 @@
         {
             this.lbl_QLMay = new System.Windows.Forms.Label();
             this.grp_QLMay = new System.Windows.Forms.GroupBox();
-            this.cbo_TrangThai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbl_TrangThai = new System.Windows.Forms.Label();
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
             this.rad_TrangThai = new System.Windows.Forms.RadioButton();
@@ -85,8 +85,8 @@
             this.HeDieuHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
+            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.grp_QLMay.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             this.grp_ChiTietMay.SuspendLayout();
@@ -105,9 +105,9 @@
             // 
             // grp_QLMay
             // 
-            this.grp_QLMay.Controls.Add(this.textBox1);
+            this.grp_QLMay.Controls.Add(this.txtTrangThai);
+            this.grp_QLMay.Controls.Add(this.txtMaPhong);
             this.grp_QLMay.Controls.Add(this.label1);
-            this.grp_QLMay.Controls.Add(this.cbo_TrangThai);
             this.grp_QLMay.Controls.Add(this.lbl_TrangThai);
             this.grp_QLMay.Controls.Add(this.grp_TimKiem);
             this.grp_QLMay.Controls.Add(this.btn_Xoa);
@@ -126,16 +126,14 @@
             this.grp_QLMay.TabStop = false;
             this.grp_QLMay.Text = "Quản Lý Máy";
             // 
-            // cbo_TrangThai
+            // label1
             // 
-            this.cbo_TrangThai.FormattingEnabled = true;
-            this.cbo_TrangThai.Items.AddRange(new object[] {
-            "Mới",
-            "Cũ"});
-            this.cbo_TrangThai.Location = new System.Drawing.Point(752, 31);
-            this.cbo_TrangThai.Name = "cbo_TrangThai";
-            this.cbo_TrangThai.Size = new System.Drawing.Size(112, 21);
-            this.cbo_TrangThai.TabIndex = 26;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Mã Phòng: ";
             // 
             // lbl_TrangThai
             // 
@@ -231,6 +229,7 @@
             this.btn_ThemMoi.TabIndex = 21;
             this.btn_ThemMoi.Text = "Thêm Mới";
             this.btn_ThemMoi.UseVisualStyleBackColor = false;
+            this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
             // 
             // grp_ChiTietMay
             // 
@@ -638,21 +637,19 @@
             this.GhiChu.ReadOnly = true;
             this.GhiChu.Width = 70;
             // 
-            // textBox1
+            // txtMaPhong
             // 
-            this.textBox1.Location = new System.Drawing.Point(525, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtMaPhong.Location = new System.Drawing.Point(523, 34);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(105, 20);
+            this.txtMaPhong.TabIndex = 28;
             // 
-            // label1
+            // txtTrangThai
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(445, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Mã Phòng: ";
+            this.txtTrangThai.Location = new System.Drawing.Point(749, 34);
+            this.txtTrangThai.Name = "txtTrangThai";
+            this.txtTrangThai.Size = new System.Drawing.Size(105, 20);
+            this.txtTrangThai.TabIndex = 29;
             // 
             // frm_QLMay
             // 
@@ -734,9 +731,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HeDieuHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.ComboBox cbo_TrangThai;
         private System.Windows.Forms.Label lbl_TrangThai;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMaPhong;
+        private System.Windows.Forms.TextBox txtTrangThai;
     }
 }

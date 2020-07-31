@@ -21,7 +21,10 @@ namespace QuanLyPhongMay
         {
             InitializeComponent();
         }
-
+        Color clr = Color.Teal;
+        Color declr = Color.FromArgb(0, 0, 64);
+        Point p;
+        bool flag = false;
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
         }
@@ -35,9 +38,9 @@ namespace QuanLyPhongMay
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan frmtk = new frm_QLTaiKhoan();
-            //frmtk.MdiParent = this;
-            frmtk.Show();
+            frm_QLTaiKhoan f = new frm_QLTaiKhoan();
+            HienThiForm(f);
+            LamMoiMauNen(sender); ;
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
@@ -71,6 +74,26 @@ namespace QuanLyPhongMay
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
 
+        }
+        void HienThiForm(object form)
+        {
+            this.pnShowForm.Controls.Clear();
+            (form as Form).TopLevel = false;
+            this.pnShowForm.Controls.Add((form as Form));
+            (form as Form).Show();
+            btn_TrangChu.BackColor = clr;
+        }
+        void LamMoiMauNen(object sender)
+        {
+            (sender as Button).BackColor = clr;
+            Control.ControlCollection ctrls = pnMenu.Controls;
+            foreach (Control c in ctrls)
+            {
+                if (c != sender)
+                    (c as Button).BackColor = declr;
+                else
+                    (c as Button).BackColor = clr;
+            }
         }
     }
 }

@@ -9,38 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyPhongMay.Class;
+using QuanLyPhongMay.BUS;
+using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
     public partial class frm_QLMay : Form
     {
-        /*SqlConnection conn = DBUtils.GetDBConnection();
-        public User user;*/
+        
 
         public frm_QLMay()
         {
             InitializeComponent();
         }
-
+        MayCtrl mctrl = new MayCtrl();
         private void frm_QLMay_Load(object sender, EventArgs e)
         {
-            /*//Thực hiện kết nối CSDL.
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                //Xuất hộp thoại báo lỗi kết nối tới CSDL.
-                MessageBox.Show("Error: " + ex);
-            }
+            
+        }
 
-            String querry = "SELECT * FROM SELECT * FROM dtb_May";
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(querry, conn);
-            da.Fill(ds);
-            dgv_DSMay.DataSource = ds.Tables[0];
-            dgv_DSMay.Refresh();*/
+        private void btn_ThemMoi_Click(object sender, EventArgs e)
+        {
+
+            May may = new May();
+            may.MaMay = int.Parse(txt_MaMay.Text);
+            may.MaPhong = int.Parse(txtMaPhong.Text);
+            may.TenMay = txt_TenMay.Text;
+            may.GhiChu = txt_GhiChu.Text;
+            may.TrangThai = int.Parse(txtTrangThai.Text);
+            if (mctrl.Them(may) > 0) 
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

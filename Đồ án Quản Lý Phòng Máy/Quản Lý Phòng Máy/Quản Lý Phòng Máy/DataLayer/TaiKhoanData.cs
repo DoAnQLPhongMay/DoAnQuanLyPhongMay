@@ -48,16 +48,16 @@ namespace QuanLyPhongMay.DataLayer
         public int Them(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into dtb_TaiKhoan(TenDangNhap,MatKhau,MaTaiKhoan,HoVaTen,GioiTinh,SDT,Email,NgaySinh,DiaChi,LoaiTaiKhoan) values(@tendangnhap,@matkhau,@ten,@gioitinh,sdt,email,@ngsinh,@diachi,@loaitk)";
+            cmd.CommandText = "insert into dtb_TaiKhoan(TenDangNhap,MatKhau,MaTaiKhoan,HoVaTen,GioiTinh,SDT,Email,NgaySinh,DiaChi) values(@tendangnhap,@matkhau,@ten,@gioitinh,sdt,email,@ngsinh,@diachi)";
             cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = gv.TenDangNhap;
             cmd.Parameters.Add("matkhau", SqlDbType.VarChar).Value = gv.MatKhau;
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
-            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SoDienThoai;
+            cmd.Parameters.Add("sdt", SqlDbType.VarChar).Value = gv.SDT;
             cmd.Parameters.Add("email", SqlDbType.VarChar).Value = gv.Email;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
-            cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
+           // cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
             return cls.CapNhatDL(cmd);
         }
         public int Luu(TaiKhoan gv)
@@ -66,11 +66,11 @@ namespace QuanLyPhongMay.DataLayer
             cmd.CommandText = "update dtb_TaiKhoan set TenDangNhap=@ten,GioiTinh=@gt,SoDienThoai=@sdt,Email=@email,NgaySinh=@ngsinh,DiaChi=@diachi,LoaiTaiKhoan=@loaitk where MaGiangVien=@magv";
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
-            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SoDienThoai;
+            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
             cmd.Parameters.Add("email", SqlDbType.NChar).Value = gv.Email;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
-            cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
+          //  cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
             cmd.Parameters.Add("ma", SqlDbType.VarChar).Value = gv.MaGV;
             return cls.CapNhatDL(cmd);
         }
@@ -90,7 +90,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
-            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SoDienThoai;
+            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
             cmd.Parameters.Add("matkhau", SqlDbType.VarChar).Value = gv.MatKhau;
             cmd.Parameters.Add("magv", SqlDbType.VarChar).Value = gv.MaGV;
             return cls.CapNhatDL(cmd);

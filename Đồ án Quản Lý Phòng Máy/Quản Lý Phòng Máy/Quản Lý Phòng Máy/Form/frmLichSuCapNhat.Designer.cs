@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.radMaMay = new System.Windows.Forms.RadioButton();
-            this.radNgayCapNhat = new System.Windows.Forms.RadioButton();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.radNgayCapNhat = new System.Windows.Forms.RadioButton();
+            this.radMaMay = new System.Windows.Forms.RadioButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dtgLichSuCapNhat = new System.Windows.Forms.DataGridView();
             this.MaMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,23 +69,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
             // 
-            // txtTimKiem
+            // btnTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(7, 38);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(195, 20);
-            this.txtTimKiem.TabIndex = 0;
-            // 
-            // radMaMay
-            // 
-            this.radMaMay.AutoSize = true;
-            this.radMaMay.Location = new System.Drawing.Point(251, 39);
-            this.radMaMay.Name = "radMaMay";
-            this.radMaMay.Size = new System.Drawing.Size(69, 17);
-            this.radMaMay.TabIndex = 1;
-            this.radMaMay.TabStop = true;
-            this.radMaMay.Text = "Mã Máy";
-            this.radMaMay.UseVisualStyleBackColor = true;
+            this.btnTimKiem.BackColor = System.Drawing.Color.Lime;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Location = new System.Drawing.Point(523, 36);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 3;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
             // radNgayCapNhat
             // 
@@ -98,16 +91,23 @@
             this.radNgayCapNhat.Text = "Ngày Cập Nhật";
             this.radNgayCapNhat.UseVisualStyleBackColor = true;
             // 
-            // btnTimKiem
+            // radMaMay
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Lime;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Location = new System.Drawing.Point(523, 36);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 3;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.radMaMay.AutoSize = true;
+            this.radMaMay.Location = new System.Drawing.Point(251, 39);
+            this.radMaMay.Name = "radMaMay";
+            this.radMaMay.Size = new System.Drawing.Size(69, 17);
+            this.radMaMay.TabIndex = 1;
+            this.radMaMay.TabStop = true;
+            this.radMaMay.Text = "Mã Máy";
+            this.radMaMay.UseVisualStyleBackColor = true;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(7, 38);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(195, 20);
+            this.txtTimKiem.TabIndex = 0;
             // 
             // dtgLichSuCapNhat
             // 
@@ -164,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmLichSuCapNhat";
             this.Text = "frmLichSuCapNhat";
+            this.Load += new System.EventHandler(this.frmLichSuCapNhat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLichSuCapNhat)).EndInit();

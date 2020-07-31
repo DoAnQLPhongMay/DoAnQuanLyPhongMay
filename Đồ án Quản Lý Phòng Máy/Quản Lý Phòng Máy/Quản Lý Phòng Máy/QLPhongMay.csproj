@@ -130,6 +130,12 @@
     <Compile Include="Form\frmThemTaiKhoan.Designer.cs">
       <DependentUpon>frmThemTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmThemMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmThemMay.Designer.cs">
+      <DependentUpon>frmThemMay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLThanhLy.resx">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmThemMay.resx">
+      <DependentUpon>frmThemMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>

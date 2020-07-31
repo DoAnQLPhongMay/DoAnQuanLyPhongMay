@@ -38,7 +38,7 @@
             this.lbl_PhongMay = new System.Windows.Forms.Label();
             this.lbl_QL = new System.Windows.Forms.Label();
             this.pic_Menu = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Hiden = new System.Windows.Forms.Button();
             this.btn_LichSu = new System.Windows.Forms.Button();
@@ -48,18 +48,18 @@
             this.btn_QLMay = new System.Windows.Forms.Button();
             this.btn_QLTaiKhoan = new System.Windows.Forms.Button();
             this.btn_TrangChu = new System.Windows.Forms.Button();
-            this.dgv_ShowForm = new System.Windows.Forms.DataGridView();
+            this.pnShowForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel_Xanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Bachground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Menu)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ShowForm)).BeginInit();
+            this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.pnShowForm);
             this.panel1.Controls.Add(this.panel_Xanh);
             this.panel1.Controls.Add(this.pic_Bachground);
             this.panel1.Controls.Add(this.lbl_PhongMay);
@@ -158,23 +158,23 @@
             this.pic_Menu.TabIndex = 0;
             this.pic_Menu.TabStop = false;
             // 
-            // panel2
+            // pnMenu
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btn_Logout);
-            this.panel2.Controls.Add(this.btn_Hiden);
-            this.panel2.Controls.Add(this.btn_LichSu);
-            this.panel2.Controls.Add(this.btn_QLThanhLy);
-            this.panel2.Controls.Add(this.btn_QLNhapMay);
-            this.panel2.Controls.Add(this.btn_QLPhongMay);
-            this.panel2.Controls.Add(this.btn_QLMay);
-            this.panel2.Controls.Add(this.btn_QLTaiKhoan);
-            this.panel2.Controls.Add(this.btn_TrangChu);
-            this.panel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(1, 83);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(243, 534);
-            this.panel2.TabIndex = 1;
+            this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnMenu.Controls.Add(this.btn_Logout);
+            this.pnMenu.Controls.Add(this.btn_Hiden);
+            this.pnMenu.Controls.Add(this.btn_LichSu);
+            this.pnMenu.Controls.Add(this.btn_QLThanhLy);
+            this.pnMenu.Controls.Add(this.btn_QLNhapMay);
+            this.pnMenu.Controls.Add(this.btn_QLPhongMay);
+            this.pnMenu.Controls.Add(this.btn_QLMay);
+            this.pnMenu.Controls.Add(this.btn_QLTaiKhoan);
+            this.pnMenu.Controls.Add(this.btn_TrangChu);
+            this.pnMenu.ForeColor = System.Drawing.SystemColors.Control;
+            this.pnMenu.Location = new System.Drawing.Point(1, 83);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(243, 534);
+            this.pnMenu.TabIndex = 1;
             // 
             // btn_Logout
             // 
@@ -322,13 +322,12 @@
             this.btn_TrangChu.UseVisualStyleBackColor = true;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
-            // dgv_ShowForm
+            // pnShowForm
             // 
-            this.dgv_ShowForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ShowForm.Location = new System.Drawing.Point(241, 83);
-            this.dgv_ShowForm.Name = "dgv_ShowForm";
-            this.dgv_ShowForm.Size = new System.Drawing.Size(592, 534);
-            this.dgv_ShowForm.TabIndex = 2;
+            this.pnShowForm.Location = new System.Drawing.Point(240, 82);
+            this.pnShowForm.Name = "pnShowForm";
+            this.pnShowForm.Size = new System.Drawing.Size(592, 531);
+            this.pnShowForm.TabIndex = 4;
             // 
             // frmTrangChu
             // 
@@ -336,11 +335,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 617);
-            this.Controls.Add(this.dgv_ShowForm);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IsMdiContainer = true;
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
@@ -351,8 +348,7 @@
             this.panel_Xanh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Bachground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Menu)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ShowForm)).EndInit();
+            this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -363,7 +359,7 @@
         private System.Windows.Forms.PictureBox pic_Menu;
         private System.Windows.Forms.Label lbl_PhongMay;
         private System.Windows.Forms.Label lbl_QL;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Button btn_Hiden;
         private System.Windows.Forms.Button btn_LichSu;
@@ -373,11 +369,11 @@
         private System.Windows.Forms.Button btn_QLMay;
         private System.Windows.Forms.Button btn_QLTaiKhoan;
         private System.Windows.Forms.Button btn_TrangChu;
-        private System.Windows.Forms.DataGridView dgv_ShowForm;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lbl_NguoiDung;
         private System.Windows.Forms.PictureBox pic_Bachground;
         private System.Windows.Forms.Panel panel_Xanh;
         private System.Windows.Forms.LinkLabel llbl_QLUser;
+        private System.Windows.Forms.Panel pnShowForm;
     }
 }

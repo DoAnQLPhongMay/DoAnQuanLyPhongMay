@@ -25,7 +25,7 @@ namespace QuanLyPhongMay
             tk.TenGV = txtTenTaiKhoan.Text;
             tk.MaGV = txtMaTaiKhoan.Text;
             tk.Gioitinh = (rdNam.Checked) ? true : false;
-            tk.SoDienThoai = txtSDT.Text;
+            tk.SDT = txtSDT.Text;
             tk.Email = txtEmail.Text;
             tk.Ngaysinh = dtNgaySinh.Value;
             tk.Diachi = txtDiaChi.Text;
