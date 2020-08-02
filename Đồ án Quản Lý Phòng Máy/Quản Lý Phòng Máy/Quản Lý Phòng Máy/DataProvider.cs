@@ -12,8 +12,8 @@ namespace QuanLyPhongMay
 {
     class DataProvider
     {
-        SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MTBP4JI\SQLEXPRESS1;Initial Catalog=QL_PHONGMAY;Integrated Security=True");
+        //SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MTBP4JI\SQLEXPRESS1;Initial Catalog=QL_PHONGMAY;Integrated Security=True");
         
         public DataProvider()
         {

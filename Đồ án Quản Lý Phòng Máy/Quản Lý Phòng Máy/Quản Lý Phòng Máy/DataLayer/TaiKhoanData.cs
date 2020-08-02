@@ -28,7 +28,7 @@ namespace QuanLyPhongMay.DataLayer
 
             switch (tieuchi)
             {
-                case "tennv":
+                case "tentaikhoan":
                     sql += " where HoVaTen like \"%" + tukhoa + "%\"";
                     break;
                 case "sodienthoai":
@@ -41,8 +41,8 @@ namespace QuanLyPhongMay.DataLayer
         public int Xoa(int ma)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "delete from dtb_TaiKhoan where MaGiangVien=@magv";
-            cmd.Parameters.Add("magv", SqlDbType.SmallInt).Value = ma;
+            cmd.CommandText = "delete from dtb_TaiKhoan where TenDangNhap=@tendangnhap";
+            cmd.Parameters.Add("tendangnhap", SqlDbType.SmallInt).Value = ma;
             return cls.CapNhatDL(cmd);
         }
         public int Them(TaiKhoan gv)
@@ -63,15 +63,14 @@ namespace QuanLyPhongMay.DataLayer
         public int Luu(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set TenDangNhap=@ten,GioiTinh=@gt,SoDienThoai=@sdt,Email=@email,NgaySinh=@ngsinh,DiaChi=@diachi,LoaiTaiKhoan=@loaitk where MaGiangVien=@magv";
+            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gt,SoDienThoai=@sdt,Email=@email,NgaySinh=@ngsinh,DiaChi=@diachi where TenDangNhap=@tendangnhap";
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
             cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
             cmd.Parameters.Add("email", SqlDbType.NChar).Value = gv.Email;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
-          //  cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
-            cmd.Parameters.Add("ma", SqlDbType.VarChar).Value = gv.MaGV;
+         
             return cls.CapNhatDL(cmd);
         }
         public bool KiemTra(string tk)
@@ -85,14 +84,14 @@ namespace QuanLyPhongMay.DataLayer
         public int DoiThongTin(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set TenGV=@ten,GioiTinh=@gt,NgaySinh=@ngsinh,DiaChi=@diachi,SoDienThoai=@sdt,MatKhau=@matkhau where MaGiangVien=@magv";
+            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gt,NgaySinh=@ngsinh,DiaChi=@diachi,SoDienThoai=@sdt,MatKhau=@matkhau where TenDangNhap=@tendangnhap";
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
             cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
             cmd.Parameters.Add("matkhau", SqlDbType.VarChar).Value = gv.MatKhau;
-            cmd.Parameters.Add("magv", SqlDbType.VarChar).Value = gv.MaGV;
+           
             return cls.CapNhatDL(cmd);
         }
     }

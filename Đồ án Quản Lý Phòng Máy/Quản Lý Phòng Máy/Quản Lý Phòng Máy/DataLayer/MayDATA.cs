@@ -16,13 +16,13 @@ namespace QuanLyPhongMay.DataLayer
         DataProvider cls = new DataProvider();
         public DataSet LayDSMay()
         {
-            string sql = "select * from May";
+            string sql = "select * from dtb_May";
             SqlCommand sqlcmd = new SqlCommand(sql);
             return cls.LayDuLieu(sqlcmd);
         }
         public DataSet LayDSTK(string tukhoa, string tieuchi)
         {
-            string sql = "select * from May";
+            string sql = "select * from dtb_May";
             switch (tieuchi)
             {
                 case "mamay":
@@ -41,7 +41,7 @@ namespace QuanLyPhongMay.DataLayer
         public int Them(May m)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into May(MaMay,MaPhong,TenMay,TrangThai,GhiChu) values(@mamay,@maphong,@tenmay,@trangthai,@ghichu)";
+            cmd.CommandText = "insert into dtb_May(MaMay,MaPhong,TenMay,TrangThai,GhiChu) values(@mamay,@maphong,@tenmay,@trangthai,@ghichu)";
             cmd.Parameters.Add("mamay", SqlDbType.Int).Value = m.MaMay;
             cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
             cmd.Parameters.Add("soluong", SqlDbType.NVarChar).Value = m.TenMay;
@@ -53,14 +53,14 @@ namespace QuanLyPhongMay.DataLayer
         public int Xoa(int ma)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "delete from Sach where MaMay=@mamay";
-            cmd.Parameters.Add("masach", SqlDbType.SmallInt).Value = ma;
+            cmd.CommandText = "delete from dtb_May where MaMay=@mamay";
+            cmd.Parameters.Add("mamay", SqlDbType.SmallInt).Value = ma;
             return cls.CapNhatDL(cmd);
         }
         public int Luu(May m)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update Sach set MaMay=@mamay,MaPhong=@maphong,TenMay=@tenmay,TrangThai=@trangthai,GhiChu=@ghichu where MaMay=@mamay";
+            cmd.CommandText = "update dtb_May set MaMay=@mamay,MaPhong=@maphong,TenMay=@tenmay,TrangThai=@trangthai,GhiChu=@ghichu where MaMay=@mamay";
             cmd.Parameters.Add("mamay", SqlDbType.Int).Value = m.MaMay;
             cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
             cmd.Parameters.Add("soluong", SqlDbType.NVarChar).Value = m.TenMay;

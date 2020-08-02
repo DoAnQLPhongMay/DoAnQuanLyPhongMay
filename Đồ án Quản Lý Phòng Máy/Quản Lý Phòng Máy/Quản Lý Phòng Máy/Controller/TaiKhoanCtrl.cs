@@ -16,7 +16,7 @@ namespace QuanLyPhongMay.Controller
         public void HienThiComboBox(ComboBox cb)
         {
             cb.DataSource = GVData.LayDSGiangVien().Tables[0];
-            cb.DisplayMember = "TenGV";
+            cb.DisplayMember = "tentaikhoan";
             cb.ValueMember = "MaTaiKhoan";
         }
         public void HienThiTK(DataGridView dgv,string tukhoa, string tieuchi)

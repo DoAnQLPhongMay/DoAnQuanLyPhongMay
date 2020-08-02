@@ -19,8 +19,7 @@ namespace QuanLyPhongMay
 
         Color clr = Color.Teal;
         Color declr = Color.FromArgb(0, 0, 64);
-        Point p;
-        bool flag = false;
+      
 
         public frmTrangChu()
         {
@@ -39,32 +38,36 @@ namespace QuanLyPhongMay
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan f = new frm_QLTaiKhoan();
-            HienThiForm(f);
-            LamMoiMauNen(sender); ;
+            frm_QLTaiKhoan frm = new frm_QLTaiKhoan();
+            this.Hide();
+            frm.Show();
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
             frmQLThanhLy frm = new frmQLThanhLy();
+            this.Hide();
             frm.Show();
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
             frmQLNhapMay frm = new frmQLNhapMay();
+            this.Hide();
             frm.Show();
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
             frm_QLMay frm = new frm_QLMay();
+            this.Hide();
             frm.Show();
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
             frmQLPhongMay frm = new frmQLPhongMay();
+            this.Hide();
             frm.Show();
         }
 

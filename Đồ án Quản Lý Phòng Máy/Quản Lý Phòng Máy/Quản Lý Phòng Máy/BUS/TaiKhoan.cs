@@ -83,6 +83,9 @@ namespace QuanLyPhongMay.BUS
             
         }
 
-
+        public static implicit operator TaiKhoan(May v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

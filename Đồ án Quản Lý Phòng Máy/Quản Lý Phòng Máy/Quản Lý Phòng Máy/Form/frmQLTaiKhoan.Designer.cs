@@ -56,6 +56,13 @@
             this.lbl_TenTaiKhoan = new System.Windows.Forms.Label();
             this.lblQuyenHan = new System.Windows.Forms.Label();
             this.dgv_DSTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.TenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_ThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
@@ -120,6 +127,7 @@
             this.btn_Xoa.TabIndex = 21;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_CapNhat
             // 
@@ -131,6 +139,7 @@
             this.btn_CapNhat.TabIndex = 20;
             this.btn_CapNhat.Text = "Cập Nhật";
             this.btn_CapNhat.UseVisualStyleBackColor = false;
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // btn_Them
             // 
@@ -168,6 +177,7 @@
             this.btn_TimKiem.TabIndex = 3;
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = false;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // rad_SDT
             // 
@@ -354,12 +364,61 @@
             this.dgv_DSTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DSTaiKhoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv_DSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenTaiKhoan,
+            this.GioiTinh,
+            this.SoDienThoai,
+            this.NgaySinh,
+            this.DiaChi,
+            this.TenDangNhap,
+            this.MatKhau});
             this.dgv_DSTaiKhoan.Location = new System.Drawing.Point(3, 380);
             this.dgv_DSTaiKhoan.Name = "dgv_DSTaiKhoan";
             this.dgv_DSTaiKhoan.ReadOnly = true;
             this.dgv_DSTaiKhoan.Size = new System.Drawing.Size(729, 262);
             this.dgv_DSTaiKhoan.TabIndex = 2;
-            this.dgv_DSTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSTaiKhoan_CellContentClick);
+            // 
+            // TenTaiKhoan
+            // 
+            this.TenTaiKhoan.HeaderText = "Tên Tài Khoản";
+            this.TenTaiKhoan.Name = "TenTaiKhoan";
+            this.TenTaiKhoan.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.HeaderText = "Số Điện Thoại";
+            this.SoDienThoai.Name = "SoDienThoai";
+            this.SoDienThoai.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.HeaderText = "Tên Đăng Nhập";
+            this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.ReadOnly = true;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.HeaderText = "Mật Khẩu";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
             // 
             // frm_QLTaiKhoan
             // 
@@ -413,5 +472,12 @@
         private System.Windows.Forms.DataGridView dgv_DSTaiKhoan;
         private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.ComboBox cboQuyenHan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
     }
 }

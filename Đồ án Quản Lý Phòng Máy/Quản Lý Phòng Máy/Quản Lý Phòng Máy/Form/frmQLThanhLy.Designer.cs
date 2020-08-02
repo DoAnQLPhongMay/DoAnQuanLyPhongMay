@@ -30,6 +30,7 @@
         {
             this.lblQLThanhLy = new System.Windows.Forms.Label();
             this.grpChiTietThanhLy = new System.Windows.Forms.GroupBox();
+            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.grpChiTietThanhLy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThanhLy)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +101,14 @@
             this.grpChiTietThanhLy.TabStop = false;
             this.grpChiTietThanhLy.Text = "Chi tiết Thanh Lý Máy";
             // 
+            // rtbGhiChu
+            // 
+            this.rtbGhiChu.Location = new System.Drawing.Point(549, 98);
+            this.rtbGhiChu.Name = "rtbGhiChu";
+            this.rtbGhiChu.Size = new System.Drawing.Size(98, 73);
+            this.rtbGhiChu.TabIndex = 42;
+            this.rtbGhiChu.Text = "";
+            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -111,6 +119,7 @@
             this.btnXoa.TabIndex = 41;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -324,14 +333,6 @@
             this.GhiChu.HeaderText = "Ghi Chú";
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.ReadOnly = true;
-            // 
-            // rtbGhiChu
-            // 
-            this.rtbGhiChu.Location = new System.Drawing.Point(549, 98);
-            this.rtbGhiChu.Name = "rtbGhiChu";
-            this.rtbGhiChu.Size = new System.Drawing.Size(98, 73);
-            this.rtbGhiChu.TabIndex = 42;
-            this.rtbGhiChu.Text = "";
             // 
             // frmQLThanhLy
             // 

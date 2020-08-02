@@ -72,5 +72,10 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,5 +49,10 @@ namespace QuanLyPhongMay
 
             thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

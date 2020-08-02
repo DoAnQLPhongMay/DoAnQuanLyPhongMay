@@ -19,12 +19,12 @@ namespace QuanLyPhongMay.Controller
             cb.DisplayMember = "MaPhongMay";
             cb.ValueMember = "TenPhongMay";
         }
-        public void HienThiTrangThaiCbo(ComboBox cb)
+       /* public void HienThiTrangThaiCbo(ComboBox cb)
         {
             cb.DataSource = mayData.LayDSMay().Tables[0];
             cb.DisplayMember = "MaTrangThai";
             cb.ValueMember = "TenTrangThai";
-        }
+        }*/
         public void HienThi(DataGridView dgv)
         {
             dgv.DataSource = mayData.LayDSMay().Tables[0];

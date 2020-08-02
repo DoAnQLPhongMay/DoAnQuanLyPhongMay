@@ -30,6 +30,10 @@
         {
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.grpQLPhongMay = new System.Windows.Forms.GroupBox();
+            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
+            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.lblGhiChu = new System.Windows.Forms.Label();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.btnCapNhap = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -40,10 +44,6 @@
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.lblMaPhong = new System.Windows.Forms.Label();
             this.dgvDSPhongMay = new System.Windows.Forms.DataGridView();
-            this.lblTrangThai = new System.Windows.Forms.Label();
-            this.lblGhiChu = new System.Windows.Forms.Label();
-            this.cboTrangThai = new System.Windows.Forms.ComboBox();
-            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.grpQLPhongMay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhongMay)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,40 @@
             this.grpQLPhongMay.Text = "Quán Lý Phòng Máy";
             this.grpQLPhongMay.Enter += new System.EventHandler(this.grp_QLPhongMay_Enter);
             // 
+            // rtbGhiChu
+            // 
+            this.rtbGhiChu.Location = new System.Drawing.Point(298, 89);
+            this.rtbGhiChu.Name = "rtbGhiChu";
+            this.rtbGhiChu.Size = new System.Drawing.Size(121, 76);
+            this.rtbGhiChu.TabIndex = 13;
+            this.rtbGhiChu.Text = "";
+            // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.Location = new System.Drawing.Point(298, 32);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(121, 21);
+            this.cboTrangThai.TabIndex = 12;
+            // 
+            // lblGhiChu
+            // 
+            this.lblGhiChu.AutoSize = true;
+            this.lblGhiChu.Location = new System.Drawing.Point(219, 92);
+            this.lblGhiChu.Name = "lblGhiChu";
+            this.lblGhiChu.Size = new System.Drawing.Size(56, 13);
+            this.lblGhiChu.TabIndex = 11;
+            this.lblGhiChu.Text = "Ghi Chú:";
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Location = new System.Drawing.Point(219, 35);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(73, 13);
+            this.lblTrangThai.TabIndex = 10;
+            this.lblTrangThai.Text = "Trạng Thái:";
+            // 
             // txtTenPhong
             // 
             this.txtTenPhong.Location = new System.Drawing.Point(113, 145);
@@ -114,6 +148,7 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -182,40 +217,6 @@
             this.dgvDSPhongMay.ReadOnly = true;
             this.dgvDSPhongMay.Size = new System.Drawing.Size(575, 203);
             this.dgvDSPhongMay.TabIndex = 2;
-            // 
-            // lblTrangThai
-            // 
-            this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(219, 35);
-            this.lblTrangThai.Name = "lblTrangThai";
-            this.lblTrangThai.Size = new System.Drawing.Size(73, 13);
-            this.lblTrangThai.TabIndex = 10;
-            this.lblTrangThai.Text = "Trạng Thái:";
-            // 
-            // lblGhiChu
-            // 
-            this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Location = new System.Drawing.Point(219, 92);
-            this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(56, 13);
-            this.lblGhiChu.TabIndex = 11;
-            this.lblGhiChu.Text = "Ghi Chú:";
-            // 
-            // cboTrangThai
-            // 
-            this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(298, 32);
-            this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(121, 21);
-            this.cboTrangThai.TabIndex = 12;
-            // 
-            // rtbGhiChu
-            // 
-            this.rtbGhiChu.Location = new System.Drawing.Point(298, 89);
-            this.rtbGhiChu.Name = "rtbGhiChu";
-            this.rtbGhiChu.Size = new System.Drawing.Size(121, 76);
-            this.rtbGhiChu.TabIndex = 13;
-            this.rtbGhiChu.Text = "";
             // 
             // frmQLPhongMay
             // 
