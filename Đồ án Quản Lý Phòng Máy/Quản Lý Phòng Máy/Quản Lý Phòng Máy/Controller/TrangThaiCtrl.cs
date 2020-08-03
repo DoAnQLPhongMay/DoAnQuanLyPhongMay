@@ -12,7 +12,7 @@ namespace QuanLyPhongMay.Controller
     {
         TrangThaiData trangThaiData = new TrangThaiData();
 
-        public void HienThiTrangThaiCbo(ComboBox cb)
+        public void HienThiCbo(ComboBox cb)
         {
             cb.DataSource = trangThaiData.LayDSTrangThai().Tables[0];
             cb.DisplayMember = "TenTrangThai";

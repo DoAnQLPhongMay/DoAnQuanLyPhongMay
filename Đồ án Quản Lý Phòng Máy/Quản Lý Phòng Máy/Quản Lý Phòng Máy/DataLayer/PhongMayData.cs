@@ -31,13 +31,13 @@ namespace QuanLyPhongMay.DataLayer
             switch (loaiTK)
             {
                 case "maPhong":
-                    query += "WHERE MaPhong like \"%" + key + "%\"";
+                    query += "WHERE MaPhongMay = " + key + "";
                     break;
                 case "tenPhong":
-                    query += " WHERE TenPhong like \"%" + key + "%\"";
+                    query += " WHERE TenPhongMay = " + key + "";
                     break;
                 default:
-                    query += " WHERE TrangThai like \"%" + key + "%\"";
+                    query += " WHERE TrangThai = " + key + "";
                     break;
             }
 
@@ -70,10 +70,10 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
 
             string delete = "DELETE FROM dtb_PhongMay ",
-                where = "WHERE MaPhong = @maPhong";
+                where = "WHERE MaPhongMay = @maPhong";
 
             cmd.CommandText = delete + where;
-            cmd.Parameters.Add("maPhong", SqlDbType.SmallInt).Value = maPhong;
+            cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = maPhong;
 
             return cls.CapNhatDL(cmd);
         }
@@ -84,14 +84,14 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
 
             string update = "UPDATE dtb_PhongMay ",
-                set = "SET MaPhong = @maPhong, TenPhong = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
-                where = "WHERE MaPhong = @maPhong";
+                set = "SET TenPhongMay = @tenPhong, SoLuongMay = @soLuongMay, TrangThai = @trangThai, GhiChu = @ghiChu ",
+                where = "WHERE MaPhongMay = @maPhong";
 
             cmd.CommandText = update + set + where;
             cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = phong.MaPhong;
             cmd.Parameters.Add("tenPhong", SqlDbType.NVarChar).Value = phong.TenPhong;
             cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.SoLuongMay;
-            cmd.Parameters.Add("soLuongMay", SqlDbType.Int).Value = phong.TrangThai;
+            cmd.Parameters.Add("trangThai", SqlDbType.Int).Value = phong.TrangThai;
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = phong.GhiChu;
 
             return cls.CapNhatDL(cmd);

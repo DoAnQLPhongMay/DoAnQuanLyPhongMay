@@ -41,7 +41,6 @@ C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản L
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmDangNhap.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmLichSuCapNhat.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLTaiKhoan.resources
-C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frm_QLMay.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmQLPhongMay.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmTrangChu.resources
 C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmThemTaiKhoan.resources
@@ -77,3 +76,5 @@ C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quả
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csprojAssemblyReference.cache
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csproj.CoreCompileInputs.cache
 C:\Users\tranq\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmChiTietMay.resources
+C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmChiTietThietBi.resources
+C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.frmQLMay.resources

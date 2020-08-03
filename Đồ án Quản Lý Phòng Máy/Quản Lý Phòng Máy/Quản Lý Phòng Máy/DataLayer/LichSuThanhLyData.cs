@@ -24,34 +24,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
-        //Hàm xử lý tìm kiếm lịch sử thanh lý.
-        public DataSet LayDSTK(string key, string loaiTK)
-        {
-            string query = "SELECT * FROM dtb_LichSuThanhLy ";
-            switch (loaiTK)
-            {
-                case "maThanhLy":
-                    query += "WHERE MaThanhLy like \"%" + key + "%\"";
-                    break;
-                case "ngayThanhLy":
-                    query += " WHERE NgayThanhLy like \"%" + key + "%\"";
-                    break;
-                case "nhaSanXuat":
-                    query += " WHERE NhaSanXuat like \"%" + key + "%\"";
-                    break;
-                case "maThietBi":
-                    query += " WHERE MaThietBi like \"%" + key + "%\"";
-                    break;
-                default:
-                    query += " WHERE NguoiPhuTrach like \"%" + key + "%\"";
-                    break;
-            }
-
-            SqlCommand cmd = new SqlCommand(query);
-
-            return cls.LayDuLieu(cmd);
-        }
-
         //Hàm xử lý thêm mới lịch sử thanh lý.
         public int Them(LichSuThanhLy lsThanhLy)
         {
@@ -72,6 +44,34 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = lsThanhLy.GhiChu;
 
             return cls.CapNhatDL(cmd);
+        }
+
+
+        public DataSet LayDSTK(string key, string loaiTK)
+        {
+            string query = "SELECT * FROM dtb_LichSuThanhLy ";
+            switch (loaiTK)
+            {
+                case "maThanhLy":
+                    query += "WHERE MaThanhLy = " + key + "";
+                    break;
+                case "ngayThanhLy":
+                    query += "WHERE NgayThanhLy like \"%" + key + "%\"";
+                    break;
+                case "nhaSanXuat":
+                    query += "WHERE NhaSanXuat = '" + key + "'";
+                    break;
+                case "maThietBi":
+                    query += "WHERE MaThietBi = " + key + "";
+                    break;
+                default:
+                    query += "WHERE NguoiPhuTrach = '" + key + "'";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(query);
+
+            return cls.LayDuLieu(cmd);
         }
     }
 }

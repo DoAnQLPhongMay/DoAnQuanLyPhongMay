@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnShowForm = new System.Windows.Forms.Panel();
             this.panel_Xanh = new System.Windows.Forms.Panel();
             this.llbl_QLUser = new System.Windows.Forms.LinkLabel();
             this.lbl_NguoiDung = new System.Windows.Forms.Label();
@@ -47,8 +48,7 @@
             this.btn_QLPhongMay = new System.Windows.Forms.Button();
             this.btn_QLMay = new System.Windows.Forms.Button();
             this.btn_QLTaiKhoan = new System.Windows.Forms.Button();
-            this.btn_TrangChu = new System.Windows.Forms.Button();
-            this.pnShowForm = new System.Windows.Forms.Panel();
+            this.btnQLThietBi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel_Xanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Bachground)).BeginInit();
@@ -69,6 +69,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 82);
             this.panel1.TabIndex = 0;
+            // 
+            // pnShowForm
+            // 
+            this.pnShowForm.Location = new System.Drawing.Point(240, 82);
+            this.pnShowForm.Name = "pnShowForm";
+            this.pnShowForm.Size = new System.Drawing.Size(592, 531);
+            this.pnShowForm.TabIndex = 4;
             // 
             // panel_Xanh
             // 
@@ -144,7 +151,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 
@@ -169,7 +176,7 @@
             this.pnMenu.Controls.Add(this.btn_QLPhongMay);
             this.pnMenu.Controls.Add(this.btn_QLMay);
             this.pnMenu.Controls.Add(this.btn_QLTaiKhoan);
-            this.pnMenu.Controls.Add(this.btn_TrangChu);
+            this.pnMenu.Controls.Add(this.btnQLThietBi);
             this.pnMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.pnMenu.Location = new System.Drawing.Point(1, 83);
             this.pnMenu.Name = "pnMenu";
@@ -305,29 +312,22 @@
             this.btn_QLTaiKhoan.UseVisualStyleBackColor = true;
             this.btn_QLTaiKhoan.Click += new System.EventHandler(this.btn_QLTaiKhoan_Click);
             // 
-            // btn_TrangChu
+            // btnQLThietBi
             // 
-            this.btn_TrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_TrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TrangChu.ForeColor = System.Drawing.Color.White;
-            this.btn_TrangChu.Image = ((System.Drawing.Image)(resources.GetObject("btn_TrangChu.Image")));
-            this.btn_TrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TrangChu.Location = new System.Drawing.Point(3, 3);
-            this.btn_TrangChu.Name = "btn_TrangChu";
-            this.btn_TrangChu.Size = new System.Drawing.Size(231, 47);
-            this.btn_TrangChu.TabIndex = 0;
-            this.btn_TrangChu.Text = "Trang Chủ";
-            this.btn_TrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_TrangChu.UseVisualStyleBackColor = true;
-            this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click);
-            // 
-            // pnShowForm
-            // 
-            this.pnShowForm.Location = new System.Drawing.Point(240, 82);
-            this.pnShowForm.Name = "pnShowForm";
-            this.pnShowForm.Size = new System.Drawing.Size(592, 531);
-            this.pnShowForm.TabIndex = 4;
+            this.btnQLThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQLThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLThietBi.ForeColor = System.Drawing.Color.White;
+            this.btnQLThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnQLThietBi.Image")));
+            this.btnQLThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLThietBi.Location = new System.Drawing.Point(3, 3);
+            this.btnQLThietBi.Name = "btnQLThietBi";
+            this.btnQLThietBi.Size = new System.Drawing.Size(231, 47);
+            this.btnQLThietBi.TabIndex = 0;
+            this.btnQLThietBi.Text = "Quản Lý Thiết Bị";
+            this.btnQLThietBi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLThietBi.UseVisualStyleBackColor = true;
+            this.btnQLThietBi.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
             // frmTrangChu
             // 
@@ -368,7 +368,7 @@
         private System.Windows.Forms.Button btn_QLPhongMay;
         private System.Windows.Forms.Button btn_QLMay;
         private System.Windows.Forms.Button btn_QLTaiKhoan;
-        private System.Windows.Forms.Button btn_TrangChu;
+        private System.Windows.Forms.Button btnQLThietBi;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lbl_NguoiDung;
         private System.Windows.Forms.PictureBox pic_Bachground;

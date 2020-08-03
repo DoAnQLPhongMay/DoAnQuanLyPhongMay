@@ -14,15 +14,16 @@ using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
-    public partial class frm_QLMay : Form
+    public partial class frmQLMay : Form
     {
         MayCtrl mctrl = new MayCtrl();
 
-        public frm_QLMay()
+        public frmQLMay()
         {
             InitializeComponent();
         }
-        private void frm_QLMay_Load(object sender, EventArgs e)
+
+        private void lbl_QLMay_Click(object sender, EventArgs e)
         {
             mctrl.HienThi(dgv_DSMay);
             HienThiThongTin();
@@ -36,7 +37,7 @@ namespace QuanLyPhongMay
                 txt_TenMay.Text = dgv_DSMay.CurrentRow.Cells[1].Value.ToString();
                 txtTrangThai.Text = dgv_DSMay.CurrentRow.Cells[13].Value.ToString();
                 txt_GhiChu.Text = dgv_DSMay.CurrentRow.Cells[14].Value.ToString();
-               
+
             }
         }
 
@@ -50,7 +51,7 @@ namespace QuanLyPhongMay
             may.GhiChu = txt_GhiChu.Text;
             may.TrangThai = int.Parse(txtTrangThai.Text);
 
-            if (mctrl.Them(may) > 0) 
+            if (mctrl.Them(may) > 0)
             {
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -59,6 +60,7 @@ namespace QuanLyPhongMay
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
                 if (mctrl.Xoa(int.Parse(txt_MaMay.Text)) > 0)
@@ -73,10 +75,12 @@ namespace QuanLyPhongMay
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             May may = new May();
+
             may.MaMay = int.Parse(txt_MaMay.Text);
             may.TenMay = txt_TenMay.Text;
             may.TrangThai = int.Parse(txtTrangThai.Text);
             may.GhiChu = txt_GhiChu.Text;
+
             if (mctrl.Luu(may) > 0)
             {
                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -99,6 +103,11 @@ namespace QuanLyPhongMay
                 mctrl.HienThi(dgv_DSMay);
             else
                 mctrl.TimKiem(dgv_DSMay, txt_TimKiem.Text, tieuchi);
+        }
+
+        private void frmQLMay_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

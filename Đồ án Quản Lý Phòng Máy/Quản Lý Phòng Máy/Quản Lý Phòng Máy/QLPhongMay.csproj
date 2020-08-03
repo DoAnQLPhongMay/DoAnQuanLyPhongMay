@@ -44,11 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\LoaiThietBi.cs" />
     <Compile Include="BUS\TaiKhoan.cs" />
     <Compile Include="BUS\LichSuNhap.cs" />
     <Compile Include="BUS\LichSuThanhLy.cs" />
     <Compile Include="BUS\May.cs" />
     <Compile Include="BUS\PhongMay.cs" />
+    <Compile Include="BUS\ThietBi.cs" />
     <Compile Include="BUS\TrangThai.cs" />
     <Compile Include="CaiDat.cs" />
     <Compile Include="Class\DBSQLServerUtils.cs" />
@@ -56,15 +58,19 @@
     <Compile Include="Class\User.cs" />
     <Compile Include="Controller\LichSuNhapCtrl.cs" />
     <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
+    <Compile Include="Controller\LoaiThietBiCtrl.cs" />
     <Compile Include="Controller\PhongMayCtrl.cs" />
     <Compile Include="Controller\TaiKhoanCtrl.cs" />
     <Compile Include="Controller\MayCtrl.cs" />
+    <Compile Include="Controller\ThietBiCtrl.cs" />
     <Compile Include="Controller\TrangThaiCtrl.cs" />
     <Compile Include="DataLayer\LichSuNhapData.cs" />
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
+    <Compile Include="DataLayer\LoaiThietBiData.cs" />
     <Compile Include="DataLayer\PhongMayData.cs" />
     <Compile Include="DataLayer\TaiKhoanData.cs" />
     <Compile Include="DataLayer\MayData.cs" />
+    <Compile Include="DataLayer\ThietBiData.cs" />
     <Compile Include="DataLayer\TrangThaiData.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form\frmDoiMatKhau.cs">
@@ -91,11 +97,11 @@
     <Compile Include="Form\frmQLTaiKhoan.Designer.cs">
       <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmQLMay.cs">
+    <Compile Include="Form\frmQLThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmQLMay.Designer.cs">
-      <DependentUpon>frmQLMay.cs</DependentUpon>
+    <Compile Include="Form\frmQLThietBi.Designer.cs">
+      <DependentUpon>frmQLThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmQLNhapMay.cs">
       <SubType>Form</SubType>
@@ -139,17 +145,17 @@
     <Compile Include="Form\frmThemMay.Designer.cs">
       <DependentUpon>frmThemMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmChiTietMay.cs">
+    <Compile Include="Form\frmQLMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmChiTietMay.Designer.cs">
-      <DependentUpon>frmChiTietMay.cs</DependentUpon>
+    <Compile Include="Form\frmQLMay.Designer.cs">
+      <DependentUpon>frmQLMay.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\frmChiTietMay.resx">
-      <DependentUpon>frmChiTietMay.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmQLMay.resx">
+      <DependentUpon>frmQLMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -166,8 +172,8 @@
     <EmbeddedResource Include="Form\frmQLTaiKhoan.resx">
       <DependentUpon>frmQLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmQLMay.resx">
-      <DependentUpon>frmQLMay.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmQLThietBi.resx">
+      <DependentUpon>frmQLThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLNhapMay.resx">
       <DependentUpon>frmQLNhapMay.cs</DependentUpon>

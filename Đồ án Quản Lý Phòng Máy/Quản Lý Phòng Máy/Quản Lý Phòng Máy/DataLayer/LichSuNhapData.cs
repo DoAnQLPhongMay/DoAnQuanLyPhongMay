@@ -24,37 +24,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
-        //Hàm xử lý tìm kiếm lịch sử nhập.
-        public DataSet LayDSTK(string key, string loaiTK)
-        {
-            string query = "SELECT * FROM dtb_LichSuNhap ";
-            switch (loaiTK)
-            {
-                case "maNhap":
-                    query += "WHERE MaNhap like \"%" + key + "%\"";
-                    break;
-                case "ngayNhap":
-                    query += " WHERE NgayNhap like \"%" + key + "%\"";
-                    break;
-                case "nhaSanXuat":
-                    query += " WHERE NhaSanXuat like \"%" + key + "%\"";
-                    break;
-                case "nhaCungCap":
-                    query += " WHERE NhaCungCap like \"%" + key + "%\"";
-                    break;
-                case "maThietBi":
-                    query += " WHERE MaThietBi like \"%" + key + "%\"";
-                    break;
-                default:
-                    query += " WHERE NguoiPhuTrach like \"%" + key + "%\"";
-                    break;
-            }
-
-            SqlCommand cmd = new SqlCommand(query);
-
-            return cls.LayDuLieu(cmd);
-        }
-
         //Hàm xử lý thêm mới lịch sử nhập.
         public int Them(LichSuNhap lsNhap)
         {
@@ -76,6 +45,37 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = lsNhap.GhiChu;
 
             return cls.CapNhatDL(cmd);
+        }
+
+        //Hàm xử lý tìm kiếm lịch sử nhập.
+        public DataSet LayDSTK(string key, string loaiTK)
+        {
+            string query = "SELECT * FROM dtb_LichSuNhap ";
+            switch (loaiTK)
+            {
+                case "maNhap":
+                    query += "WHERE MaNhap = " + key + "";
+                    break;
+                case "ngayNhap":
+                    query += "WHERE NgayNhap like \"%" + key + "%\"";
+                    break;
+                case "nhaSanXuat":
+                    query += "WHERE NhaSanXuat = '" + key + "'";
+                    break;
+                case "nhaCungCap":
+                    query += "WHERE NhaCungCap = '" + key + "'";
+                    break;
+                case "maThietBi":
+                    query += "WHERE MaThietBi = " + key + "";
+                    break;
+                default:
+                    query += "WHERE NguoiPhuTrach = '" + key + "'";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(query);
+
+            return cls.LayDuLieu(cmd);
         }
     }
 }
