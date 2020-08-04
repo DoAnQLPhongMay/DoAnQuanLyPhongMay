@@ -134,9 +134,7 @@ namespace QuanLyPhongMay
 
                 thietBiCtrl.Them(thietBi);
                 MessageBox.Show("Thêm thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                thietBiCtrl.HienThiDgv(dgvDSThietBi);
                 lamMoi();
-
             }
         }
 
@@ -172,7 +170,6 @@ namespace QuanLyPhongMay
 
                 MessageBox.Show("Thêm thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 thietBiCtrl.CapNhat(thietBi);
-                thietBiCtrl.HienThiDgv(dgvDSThietBi);
                 lamMoi();
             }
         }

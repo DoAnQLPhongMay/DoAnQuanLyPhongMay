@@ -70,6 +70,7 @@
             this.HanThanhLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoai1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpThongTinThietBi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThietBi)).BeginInit();
             this.grpTimKiem.SuspendLayout();
@@ -144,7 +145,8 @@
             this.NhaSanXuat,
             this.HanThanhLy,
             this.GhiChu,
-            this.MaLoai});
+            this.MaLoai,
+            this.MaLoai1});
             this.dgvDSThietBi.Location = new System.Drawing.Point(0, 354);
             this.dgvDSThietBi.Name = "dgvDSThietBi";
             this.dgvDSThietBi.Size = new System.Drawing.Size(546, 150);
@@ -420,7 +422,7 @@
             // MaThietBi
             // 
             this.MaThietBi.DataPropertyName = "MaThietBi";
-            this.MaThietBi.HeaderText = "Mã Thiết Bị";
+            this.MaThietBi.HeaderText = "ID";
             this.MaThietBi.Name = "MaThietBi";
             this.MaThietBi.ReadOnly = true;
             // 
@@ -482,20 +484,28 @@
             // 
             // MaLoai
             // 
-            this.MaLoai.DataPropertyName = "MaLoai1";
+            this.MaLoai.DataPropertyName = "MaLoai";
             this.MaLoai.HeaderText = "Mã Loại";
             this.MaLoai.Name = "MaLoai";
             this.MaLoai.ReadOnly = true;
             this.MaLoai.Visible = false;
             // 
-            // frmChiTietThietBi
+            // MaLoai1
+            // 
+            this.MaLoai1.DataPropertyName = "MaLoai1";
+            this.MaLoai1.HeaderText = "Mã Loại 1";
+            this.MaLoai1.Name = "MaLoai1";
+            this.MaLoai1.ReadOnly = true;
+            this.MaLoai1.Visible = false;
+            // 
+            // frmQLThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 591);
             this.Controls.Add(this.lblQLThietBi);
             this.Controls.Add(this.grpThongTinThietBi);
-            this.Name = "frmChiTietThietBi";
+            this.Name = "frmQLThietBi";
             this.Text = "Quản Lý Thiết Bị";
             this.Load += new System.EventHandler(this.frm_QLMay_Load);
             this.grpThongTinThietBi.ResumeLayout(false);
@@ -552,5 +562,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HanThanhLy;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai1;
     }
 }

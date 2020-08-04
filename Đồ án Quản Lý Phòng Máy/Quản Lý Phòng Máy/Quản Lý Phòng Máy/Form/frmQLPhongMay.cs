@@ -42,8 +42,8 @@ namespace QuanLyPhongMay
             rtbGhiChu.Text = dgvDSPhong.CurrentRow.Cells[4].Value.ToString();
 
             btnThemMoi.Hide();
+            btnXoa.Hide();
             doubleClick = true;
-            txtMaPhong.ReadOnly = true;
         }
 
         private void lamMoi()
@@ -55,23 +55,63 @@ namespace QuanLyPhongMay
             cboTrangThai.Text = "";
 
             btnThemMoi.Show();
-            txtMaPhong.ReadOnly = false;
             doubleClick = false;
             phongCtrl.HienThiDgv(dgvDSPhong);
         }
 
+        public int autoID()
+        {
+            int id = 1, row;
+
+            row = dgvDSPhong.Rows.Count;
+
+            if (row != 0)
+            {
+                id = row;
+            }
+
+            return id;
+        }
+
+        public bool kiemTra()
+        {
+            bool kTra = true;
+
+            if (txtTenPhong.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên phòng.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else if (cboTrangThai.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái phòng.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else
+            {
+                if (txtSoLuongMay.Text == "")
+                {
+                    txtSoLuongMay.Text = "0";
+                }
+            }
+
+            return kTra;
+        }
+
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            phong.MaPhong = Convert.ToInt32(txtMaPhong.Text);
-            phong.TenPhong = txtTenPhong.Text;
-            phong.SoLuongMay = Convert.ToInt32(txtSoLuongMay.Text);
-            phong.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue.ToString());
-            phong.GhiChu = rtbGhiChu.Text;
-
-            if (phongCtrl.Them(phong) > 0)
+            if (kiemTra())
             {
+                phong.MaPhong = autoID();
+                phong.TenPhong = txtTenPhong.Text;
+                phong.SoLuongMay = Convert.ToInt32(txtSoLuongMay.Text);
+                phong.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue.ToString());
+                phong.GhiChu = rtbGhiChu.Text;
+
+                phongCtrl.Them(phong);
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
+
             }
         }
 
@@ -93,7 +133,7 @@ namespace QuanLyPhongMay
         
         private void btnCapNhap_Click(object sender, EventArgs e)
         {
-            if (doubleClick)
+            if (doubleClick && kiemTra())
             {
                 phong.MaPhong = Convert.ToInt32(txtMaPhong.Text);
                 phong.TenPhong = txtTenPhong.Text;
@@ -102,12 +142,8 @@ namespace QuanLyPhongMay
                 phong.GhiChu = rtbGhiChu.Text;
 
                 phongCtrl.CapNhat(phong);
-                phongCtrl.HienThiDgv(dgvDSPhong);
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
-            }
-            else
-            {
-                MessageBox.Show("Vùi lòng chọn thiết bị muốn cập nhật ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK);
             }
         }
 

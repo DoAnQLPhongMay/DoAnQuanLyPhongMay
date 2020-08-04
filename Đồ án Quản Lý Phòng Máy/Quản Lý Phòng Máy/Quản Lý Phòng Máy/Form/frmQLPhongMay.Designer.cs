@@ -290,6 +290,7 @@
             // 
             this.txtMaPhong.Location = new System.Drawing.Point(113, 32);
             this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.ReadOnly = true;
             this.txtMaPhong.Size = new System.Drawing.Size(100, 20);
             this.txtMaPhong.TabIndex = 1;
             // 
