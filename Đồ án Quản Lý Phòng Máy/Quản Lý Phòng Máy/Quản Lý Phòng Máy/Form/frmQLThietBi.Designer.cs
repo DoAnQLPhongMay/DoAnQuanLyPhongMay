@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhongMay
 {
-    partial class frmChiTietThietBi
+    partial class frmQLThietBi
     {
         /// <summary>
         /// Required designer variable.
@@ -60,6 +60,16 @@
             this.lblTenThietBi = new System.Windows.Forms.Label();
             this.txtMaThietBi = new System.Windows.Forms.TextBox();
             this.lblMaThietBi = new System.Windows.Forms.Label();
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhaSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HanThanhLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpThongTinThietBi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThietBi)).BeginInit();
             this.grpTimKiem.SuspendLayout();
@@ -124,6 +134,17 @@
             // dgvDSThietBi
             // 
             this.dgvDSThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThietBi,
+            this.TenThietBi,
+            this.TSThietBi,
+            this.SoLuong,
+            this.TenLoaiThietBi,
+            this.NamSanXuat,
+            this.NhaSanXuat,
+            this.HanThanhLy,
+            this.GhiChu,
+            this.MaLoai});
             this.dgvDSThietBi.Location = new System.Drawing.Point(0, 354);
             this.dgvDSThietBi.Name = "dgvDSThietBi";
             this.dgvDSThietBi.Size = new System.Drawing.Size(546, 150);
@@ -224,6 +245,7 @@
             // 
             // txtSoLuong
             // 
+            this.txtSoLuong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSoLuong.Location = new System.Drawing.Point(103, 114);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(105, 20);
@@ -382,6 +404,7 @@
             // 
             this.txtMaThietBi.Location = new System.Drawing.Point(104, 34);
             this.txtMaThietBi.Name = "txtMaThietBi";
+            this.txtMaThietBi.ReadOnly = true;
             this.txtMaThietBi.Size = new System.Drawing.Size(104, 20);
             this.txtMaThietBi.TabIndex = 1;
             // 
@@ -393,6 +416,77 @@
             this.lblMaThietBi.Size = new System.Drawing.Size(76, 13);
             this.lblMaThietBi.TabIndex = 0;
             this.lblMaThietBi.Text = "Mã Thiết Bị:";
+            // 
+            // MaThietBi
+            // 
+            this.MaThietBi.DataPropertyName = "MaThietBi";
+            this.MaThietBi.HeaderText = "Mã Thiết Bị";
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.DataPropertyName = "TenThietBi";
+            this.TenThietBi.HeaderText = "Tên Thiết Bị";
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // TSThietBi
+            // 
+            this.TSThietBi.DataPropertyName = "TSThietBi";
+            this.TSThietBi.HeaderText = "Thông Số";
+            this.TSThietBi.Name = "TSThietBi";
+            this.TSThietBi.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // TenLoaiThietBi
+            // 
+            this.TenLoaiThietBi.DataPropertyName = "TenLoaiThietBi";
+            this.TenLoaiThietBi.HeaderText = "Loại Thiết Bị";
+            this.TenLoaiThietBi.Name = "TenLoaiThietBi";
+            this.TenLoaiThietBi.ReadOnly = true;
+            // 
+            // NamSanXuat
+            // 
+            this.NamSanXuat.DataPropertyName = "NamSanXuat";
+            this.NamSanXuat.HeaderText = "Năm Sản Xuất";
+            this.NamSanXuat.Name = "NamSanXuat";
+            this.NamSanXuat.ReadOnly = true;
+            // 
+            // NhaSanXuat
+            // 
+            this.NhaSanXuat.DataPropertyName = "NhaSanXuat";
+            this.NhaSanXuat.HeaderText = "Nhà Sản Xuất";
+            this.NhaSanXuat.Name = "NhaSanXuat";
+            this.NhaSanXuat.ReadOnly = true;
+            // 
+            // HanThanhLy
+            // 
+            this.HanThanhLy.DataPropertyName = "HanThanhLy";
+            this.HanThanhLy.HeaderText = "Hạn Thanh Lý";
+            this.HanThanhLy.Name = "HanThanhLy";
+            this.HanThanhLy.ReadOnly = true;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            // 
+            // MaLoai
+            // 
+            this.MaLoai.DataPropertyName = "MaLoai1";
+            this.MaLoai.HeaderText = "Mã Loại";
+            this.MaLoai.Name = "MaLoai";
+            this.MaLoai.ReadOnly = true;
+            this.MaLoai.Visible = false;
             // 
             // frmChiTietThietBi
             // 
@@ -431,7 +525,6 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label lblThongSo;
         private System.Windows.Forms.Label lblSoLuong;
-        private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.RichTextBox rtbThongSo;
         private System.Windows.Forms.Label lblLoaiThietBi;
@@ -448,5 +541,16 @@
         private System.Windows.Forms.RadioButton radNhaSanXuat;
         private System.Windows.Forms.DataGridView dgvDSThietBi;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhaSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HanThanhLy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai;
     }
 }

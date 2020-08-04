@@ -13,17 +13,22 @@ namespace QuanLyPhongMay.DataLayer
 {
     class ThietBiData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm xử lý lấy danh sách thiết bị.
         public DataSet LayDSThietBi()
         {
-            string query = "SELECT * FROM dtb_ChiTietThietBi";
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ", 
+                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
 
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(cmd);
         }
 
+        //Hàm xử lý thêm mới thiết bị.
         public int Them(ThietBi thietBi)
         {
             SqlCommand cmd = new SqlCommand();
@@ -44,6 +49,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý xóa thiết bị.
         public int Xoa(int maThietBi)
         {
             SqlCommand cmd = new SqlCommand();
@@ -56,6 +62,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý cập nhật thiết bị.
         public int CapNhat(ThietBi thietBi)
         {
             SqlCommand cmd = new SqlCommand();
@@ -77,6 +84,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý tìm kiếm thiết bị.
         public DataSet LayDSTK(string key, string loaiTK)
         {
             string query = "SELECT * FROM dtb_ChiTietThietBi ";

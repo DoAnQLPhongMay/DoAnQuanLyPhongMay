@@ -56,7 +56,7 @@ namespace QuanLyPhongMay
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
-            frmChiTietThietBi frm = new frmChiTietThietBi();
+            frmQLMay frm = new frmQLMay();
             frm.Show();
         }
 
@@ -68,7 +68,7 @@ namespace QuanLyPhongMay
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
-            frmChiTietThietBi frm = new frmChiTietThietBi();
+            frmQLThietBi frm = new frmQLThietBi();
             frm.Show();
         }
         void HienThiForm(object form)

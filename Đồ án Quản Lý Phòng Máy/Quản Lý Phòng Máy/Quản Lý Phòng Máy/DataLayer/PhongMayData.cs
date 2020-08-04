@@ -12,36 +12,17 @@ namespace QuanLyPhongMay.DataLayer
 {
     class PhongMayData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
         //Hàm xử lý lấy danh sách phòng máy.
         public DataSet LayDSPhong()
         {
-            string query = "SELECT * FROM dtb_PhongMay";
+            string select = "SELECT dtb_PhongMay.*, dtb_TrangThai.TenTrangThai ",
+                from = "FROM dtb_PhongMay, dtb_TrangThai ",
+                where = "WHERE dtb_PhongMay.TrangThai = dtb_TrangThai.MaTrangThai ";
 
-            SqlCommand cmd = new SqlCommand(query);
-
-            return cls.LayDuLieu(cmd);
-        }
-
-        //Hàm xử lý tìm kiếm phòng máy.
-        public DataSet LayDSTK(string key, string loaiTK)
-        {
-            string query = "SELECT * FROM dtb_PhongMay ";
-            switch (loaiTK)
-            {
-                case "maPhong":
-                    query += "WHERE MaPhongMay = " + key + "";
-                    break;
-                case "tenPhong":
-                    query += " WHERE TenPhongMay = " + key + "";
-                    break;
-                default:
-                    query += " WHERE TrangThai = " + key + "";
-                    break;
-            }
-
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(cmd);
         }
@@ -78,7 +59,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
-        //Hàm xử lý cập nhật phòng máy
+        //Hàm xử lý cập nhật phòng máy.
         public int CapNhat(PhongMay phong)
         {
             SqlCommand cmd = new SqlCommand();
@@ -95,6 +76,31 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = phong.GhiChu;
 
             return cls.CapNhatDL(cmd);
+        }
+
+        //Hàm xử lý tìm kiếm phòng máy.
+        public DataSet LayDSTK(string key, string loaiTK)
+        {
+            string select = "SELECT dtb_PhongMay.*, dtb_TrangThai.TenTrangThai ",
+                from = "FROM dtb_PhongMay, dtb_TrangThai ",
+                where = "WHERE dtb_PhongMay.TrangThai = dtb_TrangThai.MaTrangThai ";
+
+            switch (loaiTK)
+            {
+                case "maPhong":
+                    where += "AND dtb_PhongMay.MaPhongMay = " + key + "";
+                    break;
+                case "tenPhong":
+                    where += "AND dtb_PhongMay.TenPhongMay = " + key + "";
+                    break;
+                default:
+                    where += "AND dtb_PhongMay.TrangThai = " + key + "";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
         }
     }
 }

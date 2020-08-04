@@ -62,6 +62,18 @@
             this.txtMaNhap = new System.Windows.Forms.TextBox();
             this.lblMaNhap = new System.Windows.Forms.Label();
             this.dgvDSNhap = new System.Windows.Forms.DataGridView();
+            this.MaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhaSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamSanXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NguoiPhuTrach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpChiTietNhapMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhap)).BeginInit();
@@ -403,11 +415,110 @@
             // dgvDSNhap
             // 
             this.dgvDSNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNhap,
+            this.NgayNhap,
+            this.TenThietBi,
+            this.NhaCungCap,
+            this.NhaSanXuat,
+            this.NamSanXuat,
+            this.SoLuong,
+            this.DonGia,
+            this.HoVaTen,
+            this.GhiChu,
+            this.NguoiPhuTrach,
+            this.MaThietBi});
             this.dgvDSNhap.Location = new System.Drawing.Point(12, 366);
             this.dgvDSNhap.Name = "dgvDSNhap";
             this.dgvDSNhap.Size = new System.Drawing.Size(756, 150);
             this.dgvDSNhap.TabIndex = 2;
             this.dgvDSNhap.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
+            // 
+            // MaNhap
+            // 
+            this.MaNhap.DataPropertyName = "MaNhap";
+            this.MaNhap.HeaderText = "ID";
+            this.MaNhap.Name = "MaNhap";
+            this.MaNhap.ReadOnly = true;
+            // 
+            // NgayNhap
+            // 
+            this.NgayNhap.DataPropertyName = "NgayNhap";
+            this.NgayNhap.HeaderText = "Ngày";
+            this.NgayNhap.Name = "NgayNhap";
+            this.NgayNhap.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.DataPropertyName = "TenThietBi";
+            this.TenThietBi.HeaderText = "TenThietBi";
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // NhaCungCap
+            // 
+            this.NhaCungCap.DataPropertyName = "NhaCungCap";
+            this.NhaCungCap.HeaderText = "Nhà Cung Cấp";
+            this.NhaCungCap.Name = "NhaCungCap";
+            this.NhaCungCap.ReadOnly = true;
+            // 
+            // NhaSanXuat
+            // 
+            this.NhaSanXuat.DataPropertyName = "NhaSanXuat";
+            this.NhaSanXuat.HeaderText = "Nhà Sản Xuất";
+            this.NhaSanXuat.Name = "NhaSanXuat";
+            this.NhaSanXuat.ReadOnly = true;
+            // 
+            // NamSanXuat
+            // 
+            this.NamSanXuat.DataPropertyName = "NamSanXuat";
+            this.NamSanXuat.HeaderText = "Năm Sản Xuất";
+            this.NamSanXuat.Name = "NamSanXuat";
+            this.NamSanXuat.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
+            // HoVaTen
+            // 
+            this.HoVaTen.DataPropertyName = "HoVaTen";
+            this.HoVaTen.HeaderText = "Người Phụ Trách";
+            this.HoVaTen.Name = "HoVaTen";
+            this.HoVaTen.ReadOnly = true;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            // 
+            // NguoiPhuTrach
+            // 
+            this.NguoiPhuTrach.DataPropertyName = "NguoiPhuTrach";
+            this.NguoiPhuTrach.HeaderText = "Mã NPT";
+            this.NguoiPhuTrach.Name = "NguoiPhuTrach";
+            this.NguoiPhuTrach.ReadOnly = true;
+            this.NguoiPhuTrach.Visible = false;
+            // 
+            // MaThietBi
+            // 
+            this.MaThietBi.DataPropertyName = "MaThietBi";
+            this.MaThietBi.HeaderText = "Mã TB";
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.ReadOnly = true;
+            this.MaThietBi.Visible = false;
             // 
             // frmQLNhapMay
             // 
@@ -466,5 +577,17 @@
         private System.Windows.Forms.TextBox txtNhaCungCap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radNhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhaSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NguoiPhuTrach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
     }
 }

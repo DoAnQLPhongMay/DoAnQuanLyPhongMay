@@ -17,9 +17,11 @@ namespace QuanLyPhongMay.DataLayer
         //Hàm xử lý lấy danh sách lịch sử thanh lý.
         public DataSet LayDSLichSuThanhLy()
         {
-            string query = "SELECT * FROM dtb_LichSuThanhLy";
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ChiTietThietBi.TenThietBi ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ChiTietThietBi ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ChiTietThietBi.MaThietBi";
 
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(cmd);
         }
@@ -46,30 +48,32 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
-
         public DataSet LayDSTK(string key, string loaiTK)
         {
-            string query = "SELECT * FROM dtb_LichSuThanhLy ";
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ChiTietThietBi.TenThietBi ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ChiTietThietBi ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ChiTietThietBi.MaThietBi ";
+
             switch (loaiTK)
             {
                 case "maThanhLy":
-                    query += "WHERE MaThanhLy = " + key + "";
+                    where += "AND dtb_LichSuThanhLy.MaThanhLy = " + key + "";
                     break;
                 case "ngayThanhLy":
-                    query += "WHERE NgayThanhLy like \"%" + key + "%\"";
+                    where += "AND dtb_LichSuThanhLy.NgayThanhLy like \"%" + key + "%\"";
                     break;
                 case "nhaSanXuat":
-                    query += "WHERE NhaSanXuat = '" + key + "'";
+                    where += "AND dtb_LichSuThanhLy.NhaSanXuat = '" + key + "'";
                     break;
                 case "maThietBi":
-                    query += "WHERE MaThietBi = " + key + "";
+                    where += "AND dtb_LichSuThanhLy.MaThietBi = " + key + "";
                     break;
                 default:
-                    query += "WHERE NguoiPhuTrach = '" + key + "'";
+                    where += "AND (dtb_LichSuThanhLy.NguoiPhuTrach = '" + key + "' OR dtb_TaiKhoan.HoVaTen = '" + key + "')";
                     break;
             }
 
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(cmd);
         }

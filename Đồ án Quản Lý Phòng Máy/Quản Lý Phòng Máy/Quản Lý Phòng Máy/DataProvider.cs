@@ -45,6 +45,5 @@ namespace QuanLyPhongMay
 
             return cmd.ExecuteNonQuery();
         }
-       
     }
 }

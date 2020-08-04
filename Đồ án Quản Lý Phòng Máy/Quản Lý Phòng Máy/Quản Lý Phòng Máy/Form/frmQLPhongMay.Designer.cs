@@ -51,6 +51,12 @@
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.lblMaPhong = new System.Windows.Forms.Label();
             this.dgvDSPhong = new System.Windows.Forms.DataGridView();
+            this.MaPhongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpQLPhongMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhong)).BeginInit();
@@ -299,11 +305,61 @@
             // dgvDSPhong
             // 
             this.dgvDSPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPhongMay,
+            this.TenPhongMay,
+            this.SoLuongMay,
+            this.TenTrangThai,
+            this.GhiChu,
+            this.TrangThai});
             this.dgvDSPhong.Location = new System.Drawing.Point(13, 366);
             this.dgvDSPhong.Name = "dgvDSPhong";
             this.dgvDSPhong.Size = new System.Drawing.Size(574, 170);
             this.dgvDSPhong.TabIndex = 2;
             this.dgvDSPhong.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
+            // 
+            // MaPhongMay
+            // 
+            this.MaPhongMay.DataPropertyName = "MaPhongMay";
+            this.MaPhongMay.HeaderText = "ID";
+            this.MaPhongMay.Name = "MaPhongMay";
+            this.MaPhongMay.ReadOnly = true;
+            // 
+            // TenPhongMay
+            // 
+            this.TenPhongMay.DataPropertyName = "TenPhongMay";
+            this.TenPhongMay.HeaderText = "Tên Phòng";
+            this.TenPhongMay.Name = "TenPhongMay";
+            this.TenPhongMay.ReadOnly = true;
+            // 
+            // SoLuongMay
+            // 
+            this.SoLuongMay.DataPropertyName = "SoLuongMay";
+            this.SoLuongMay.HeaderText = "Số Máy";
+            this.SoLuongMay.Name = "SoLuongMay";
+            this.SoLuongMay.ReadOnly = true;
+            // 
+            // TenTrangThai
+            // 
+            this.TenTrangThai.DataPropertyName = "TenTrangThai";
+            this.TenTrangThai.HeaderText = "Trạng Thái";
+            this.TenTrangThai.Name = "TenTrangThai";
+            this.TenTrangThai.ReadOnly = true;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "MaTT";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // frmQLPhongMay
             // 
@@ -351,5 +407,11 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvDSPhong;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhongMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

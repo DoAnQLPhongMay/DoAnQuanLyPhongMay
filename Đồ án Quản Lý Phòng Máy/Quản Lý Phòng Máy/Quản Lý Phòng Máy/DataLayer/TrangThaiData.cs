@@ -14,9 +14,10 @@ namespace QuanLyPhongMay.DataLayer
 
         public DataSet LayDSTrangThai()
         {
-            string query = "SELECT * FROM dtb_TrangThai";
+            string select = "SELECT * ",
+                from = "FROM dtb_TrangThai";
 
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from);
 
             return cls.LayDuLieu(cmd);
         }
