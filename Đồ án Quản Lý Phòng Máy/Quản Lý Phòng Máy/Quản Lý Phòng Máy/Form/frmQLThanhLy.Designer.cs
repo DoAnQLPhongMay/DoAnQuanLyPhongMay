@@ -367,6 +367,7 @@
             // 
             this.txtMaThanhLy.Location = new System.Drawing.Point(106, 48);
             this.txtMaThanhLy.Name = "txtMaThanhLy";
+            this.txtMaThanhLy.ReadOnly = true;
             this.txtMaThanhLy.Size = new System.Drawing.Size(100, 20);
             this.txtMaThanhLy.TabIndex = 22;
             // 

@@ -91,7 +91,7 @@ namespace QuanLyPhongMay.DataLayer
                     where += "AND dtb_PhongMay.MaPhongMay = " + key + "";
                     break;
                 case "tenPhong":
-                    where += "AND dtb_PhongMay.TenPhongMay = " + key + "";
+                    where += "AND dtb_PhongMay.TenPhongMay = '" + key + "'";
                     break;
                 default:
                     where += "AND dtb_PhongMay.TrangThai = " + key + "";

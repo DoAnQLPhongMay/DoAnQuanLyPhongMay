@@ -10,8 +10,10 @@ namespace QuanLyPhongMay.DataLayer
 {
     class TrangThaiData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm xử lý lấy danh sách trạng thái phòng và máy.
         public DataSet LayDSTrangThai()
         {
             string select = "SELECT * ",

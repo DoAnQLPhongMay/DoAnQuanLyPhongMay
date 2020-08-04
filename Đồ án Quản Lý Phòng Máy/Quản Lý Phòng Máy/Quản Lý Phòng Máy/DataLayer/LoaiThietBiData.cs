@@ -12,8 +12,10 @@ namespace QuanLyPhongMay.DataLayer
 {
     class LoaiThietBiData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm xử lý lấy danh sách mã loại thiết bị.
         public DataSet LayDSMaLoai()
         {
             string query = "SELECT * FROM dtb_LoaiThietBi";

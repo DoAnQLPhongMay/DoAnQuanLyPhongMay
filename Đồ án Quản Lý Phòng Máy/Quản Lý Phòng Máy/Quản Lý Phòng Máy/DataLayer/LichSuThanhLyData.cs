@@ -12,6 +12,7 @@ namespace QuanLyPhongMay.DataLayer
 {
     class LichSuThanhLyData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
         //Hàm xử lý lấy danh sách lịch sử thanh lý.
@@ -48,6 +49,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý tìm kiếm lịch sử thanh lý.
         public DataSet LayDSTK(string key, string loaiTK)
         {
             string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ChiTietThietBi.TenThietBi ",

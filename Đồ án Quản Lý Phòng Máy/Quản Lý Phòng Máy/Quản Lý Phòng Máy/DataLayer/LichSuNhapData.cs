@@ -12,6 +12,7 @@ namespace QuanLyPhongMay.DataLayer
 {
     class LichSuNhapData
     {
+        //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
         //Hàm xử lý lấy danh sách lịch sử nhập.

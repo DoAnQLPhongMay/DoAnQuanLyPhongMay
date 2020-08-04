@@ -400,6 +400,7 @@
             // 
             this.txtMaNhap.Location = new System.Drawing.Point(96, 31);
             this.txtMaNhap.Name = "txtMaNhap";
+            this.txtMaNhap.ReadOnly = true;
             this.txtMaNhap.Size = new System.Drawing.Size(100, 20);
             this.txtMaNhap.TabIndex = 1;
             // 
