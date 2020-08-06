@@ -40,36 +40,42 @@ namespace QuanLyPhongMay
         {
             frm_QLTaiKhoan frm = new frm_QLTaiKhoan();
             frm.Show();
+            
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
             frmQLThanhLy frm = new frmQLThanhLy();
             frm.Show();
+            
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
             frmQLNhapMay frm = new frmQLNhapMay();
             frm.Show();
+            
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
             frmQLMay frm = new frmQLMay();
             frm.Show();
+           
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
             frmQLPhongMay frm = new frmQLPhongMay();
             frm.Show();
+            
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
             frmQLThietBi frm = new frmQLThietBi();
             frm.Show();
+           
         }
         void HienThiForm(object form)
         {
@@ -91,6 +97,12 @@ namespace QuanLyPhongMay
                 else
                     (c as Button).BackColor = clr;
             }
+        }
+
+        private void btnQLThietBi_Click(object sender, EventArgs e)
+        {
+            frmQLThietBi frm = new frmQLThietBi();
+            frm.Show();
         }
     }
 }

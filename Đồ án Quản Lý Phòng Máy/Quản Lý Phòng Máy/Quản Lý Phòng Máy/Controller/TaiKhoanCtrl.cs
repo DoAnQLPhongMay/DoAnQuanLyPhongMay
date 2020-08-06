@@ -49,11 +49,13 @@ namespace QuanLyPhongMay.Controller
                 return 0;
             if (KiemTraTonTai(gv.TenDangNhap))
                 return -1;
+            if (KiemTraMatk(gv.MaGV))
+                return 2;
             return GVData.Them(gv);
         }
-        public int Xoa(int ma)
+        public int Xoa(string tendn)
         {
-            return GVData.Xoa(ma);
+            return GVData.Xoa(tendn);
         }
         public int Luu(TaiKhoan gv)
         {
@@ -74,6 +76,10 @@ namespace QuanLyPhongMay.Controller
         public bool KiemTraTonTai(string taikhoan)
         {
             return GVData.KiemTra(taikhoan);
+        }
+        public bool KiemTraMatk(string matk)
+        {
+            return GVData.KiemTraMaTaiKhoan(matk);
         }
     }
 }

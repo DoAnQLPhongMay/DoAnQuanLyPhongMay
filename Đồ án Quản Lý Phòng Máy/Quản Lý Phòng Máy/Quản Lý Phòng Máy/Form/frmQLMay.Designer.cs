@@ -29,21 +29,6 @@
         private void InitializeComponent()
         {
             this.dgv_DSMay = new System.Windows.Forms.DataGridView();
-            this.MaMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ManHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Chuot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BanPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Case = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MainBoard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OCung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VGA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeDieuHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_QLMay = new System.Windows.Forms.Label();
             this.grp_QLMay = new System.Windows.Forms.GroupBox();
             this.txtTrangThai = new System.Windows.Forms.TextBox();
@@ -105,132 +90,12 @@
             this.dgv_DSMay.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv_DSMay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_DSMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSMay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaMay,
-            this.TenMay,
-            this.ManHinh,
-            this.Chuot,
-            this.BanPhim,
-            this.Case,
-            this.CPU,
-            this.MainBoard,
-            this.RAM,
-            this.OCung,
-            this.VGA,
-            this.SPU,
-            this.HeDieuHanh,
-            this.TrangThai,
-            this.GhiChu});
             this.dgv_DSMay.Enabled = false;
             this.dgv_DSMay.Location = new System.Drawing.Point(12, 513);
             this.dgv_DSMay.Name = "dgv_DSMay";
             this.dgv_DSMay.ReadOnly = true;
             this.dgv_DSMay.Size = new System.Drawing.Size(919, 205);
             this.dgv_DSMay.TabIndex = 5;
-            // 
-            // MaMay
-            // 
-            this.MaMay.HeaderText = "Mã Máy";
-            this.MaMay.Name = "MaMay";
-            this.MaMay.ReadOnly = true;
-            this.MaMay.Width = 70;
-            // 
-            // TenMay
-            // 
-            this.TenMay.HeaderText = "Tên Máy";
-            this.TenMay.Name = "TenMay";
-            this.TenMay.ReadOnly = true;
-            this.TenMay.Width = 74;
-            // 
-            // ManHinh
-            // 
-            this.ManHinh.HeaderText = "Màn Hình";
-            this.ManHinh.Name = "ManHinh";
-            this.ManHinh.ReadOnly = true;
-            this.ManHinh.Width = 78;
-            // 
-            // Chuot
-            // 
-            this.Chuot.HeaderText = "Chuột";
-            this.Chuot.Name = "Chuot";
-            this.Chuot.ReadOnly = true;
-            this.Chuot.Width = 60;
-            // 
-            // BanPhim
-            // 
-            this.BanPhim.HeaderText = "Bàn Phím";
-            this.BanPhim.Name = "BanPhim";
-            this.BanPhim.ReadOnly = true;
-            this.BanPhim.Width = 79;
-            // 
-            // Case
-            // 
-            this.Case.HeaderText = "Case";
-            this.Case.Name = "Case";
-            this.Case.ReadOnly = true;
-            this.Case.Width = 56;
-            // 
-            // CPU
-            // 
-            this.CPU.HeaderText = "CPU";
-            this.CPU.Name = "CPU";
-            this.CPU.ReadOnly = true;
-            this.CPU.Width = 54;
-            // 
-            // MainBoard
-            // 
-            this.MainBoard.HeaderText = "MainBoard";
-            this.MainBoard.Name = "MainBoard";
-            this.MainBoard.ReadOnly = true;
-            this.MainBoard.Width = 83;
-            // 
-            // RAM
-            // 
-            this.RAM.HeaderText = "RAM";
-            this.RAM.Name = "RAM";
-            this.RAM.ReadOnly = true;
-            this.RAM.Width = 56;
-            // 
-            // OCung
-            // 
-            this.OCung.HeaderText = "Ổ Cứng";
-            this.OCung.Name = "OCung";
-            this.OCung.ReadOnly = true;
-            this.OCung.Width = 68;
-            // 
-            // VGA
-            // 
-            this.VGA.HeaderText = "VGA";
-            this.VGA.Name = "VGA";
-            this.VGA.ReadOnly = true;
-            this.VGA.Width = 54;
-            // 
-            // SPU
-            // 
-            this.SPU.HeaderText = "SPU";
-            this.SPU.Name = "SPU";
-            this.SPU.ReadOnly = true;
-            this.SPU.Width = 54;
-            // 
-            // HeDieuHanh
-            // 
-            this.HeDieuHanh.HeaderText = "Hệ Điều Hành";
-            this.HeDieuHanh.Name = "HeDieuHanh";
-            this.HeDieuHanh.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 84;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi Chú";
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.ReadOnly = true;
-            this.GhiChu.Width = 70;
             // 
             // lbl_QLMay
             // 
@@ -241,7 +106,7 @@
             this.lbl_QLMay.Size = new System.Drawing.Size(339, 61);
             this.lbl_QLMay.TabIndex = 3;
             this.lbl_QLMay.Text = "Quản Lý Máy";
-            this.lbl_QLMay.Click += new System.EventHandler(this.lbl_QLMay_Click);
+            
             // 
             // grp_QLMay
             // 
@@ -694,21 +559,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_DSMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ManHinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Chuot;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BanPhim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Case;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MainBoard;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RAM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OCung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VGA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SPU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeDieuHanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.Label lbl_QLMay;
         private System.Windows.Forms.GroupBox grp_QLMay;
         private System.Windows.Forms.TextBox txtTrangThai;

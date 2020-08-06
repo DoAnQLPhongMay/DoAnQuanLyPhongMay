@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
@@ -47,12 +53,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnThemTaiKhoan = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,58 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
+            // 
+            // cbLoaiTaiKhoan
+            // 
+            this.cbLoaiTaiKhoan.FormattingEnabled = true;
+            this.cbLoaiTaiKhoan.Items.AddRange(new object[] {
+            "Admin",
+            "Thường"});
+            this.cbLoaiTaiKhoan.Location = new System.Drawing.Point(409, 194);
+            this.cbLoaiTaiKhoan.Name = "cbLoaiTaiKhoan";
+            this.cbLoaiTaiKhoan.Size = new System.Drawing.Size(178, 22);
+            this.cbLoaiTaiKhoan.TabIndex = 28;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(409, 41);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(182, 21);
+            this.txtEmail.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(317, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Email:";
+            // 
+            // txtMaTaiKhoan
+            // 
+            this.txtMaTaiKhoan.Location = new System.Drawing.Point(110, 41);
+            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
+            this.txtMaTaiKhoan.Size = new System.Drawing.Size(182, 21);
+            this.txtMaTaiKhoan.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Mã Tài Khoản:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(310, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 15);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Loại Tài Khoản:";
             // 
             // dtNgaySinh
             // 
@@ -262,55 +314,6 @@
             this.btnThemTaiKhoan.Text = "Thêm Tài Khoản";
             this.btnThemTaiKhoan.UseVisualStyleBackColor = false;
             this.btnThemTaiKhoan.Click += new System.EventHandler(this.btnThemTaiKhoan_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(310, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 15);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Loại Tài Khoản:";
-            // 
-            // txtMaTaiKhoan
-            // 
-            this.txtMaTaiKhoan.Location = new System.Drawing.Point(110, 41);
-            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.Size = new System.Drawing.Size(182, 21);
-            this.txtMaTaiKhoan.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 15);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Mã Tài Khoản:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(409, 41);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 21);
-            this.txtEmail.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(317, 44);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Email:";
-            // 
-            // cbLoaiTaiKhoan
-            // 
-            this.cbLoaiTaiKhoan.FormattingEnabled = true;
-            this.cbLoaiTaiKhoan.Location = new System.Drawing.Point(409, 194);
-            this.cbLoaiTaiKhoan.Name = "cbLoaiTaiKhoan";
-            this.cbLoaiTaiKhoan.Size = new System.Drawing.Size(178, 22);
-            this.cbLoaiTaiKhoan.TabIndex = 28;
             // 
             // frmThemTaiKhoan
             // 

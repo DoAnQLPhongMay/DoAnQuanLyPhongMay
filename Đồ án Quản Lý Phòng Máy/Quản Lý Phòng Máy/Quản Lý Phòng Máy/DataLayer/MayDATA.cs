@@ -16,7 +16,7 @@ namespace QuanLyPhongMay.DataLayer
         DataProvider cls = new DataProvider();
         public DataSet LayDSMay()
         {
-            string sql = "select * from dtb_May";
+            string sql = "select dtb_May.MaMay, TenMay,TenPhongMay, TenThietBi,TSThietBi, dtb_May.TrangThai, dtb_May.GhiChu from dtb_ChiTietMay, dtb_May, dtb_ChiTietThietBi, dtb_PhongMaywhere dtb_May.MaMay = dtb_ChiTietMay.MaMay and dtb_ChiTietMay.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay";
             SqlCommand sqlcmd = new SqlCommand(sql);
             return cls.LayDuLieu(sqlcmd);
         }

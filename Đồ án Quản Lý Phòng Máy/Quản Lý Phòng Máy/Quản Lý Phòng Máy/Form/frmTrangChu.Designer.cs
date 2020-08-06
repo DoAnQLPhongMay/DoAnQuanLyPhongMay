@@ -40,6 +40,7 @@
             this.lbl_QL = new System.Windows.Forms.Label();
             this.pic_Menu = new System.Windows.Forms.PictureBox();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnQLThietBi = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Hiden = new System.Windows.Forms.Button();
             this.btn_LichSu = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.btn_QLPhongMay = new System.Windows.Forms.Button();
             this.btn_QLMay = new System.Windows.Forms.Button();
             this.btn_QLTaiKhoan = new System.Windows.Forms.Button();
-            this.btnQLThietBi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel_Xanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Bachground)).BeginInit();
@@ -58,6 +58,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.pnShowForm);
             this.panel1.Controls.Add(this.panel_Xanh);
@@ -79,6 +81,7 @@
             // 
             // panel_Xanh
             // 
+            this.panel_Xanh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Xanh.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel_Xanh.Controls.Add(this.llbl_QLUser);
             this.panel_Xanh.Controls.Add(this.lbl_NguoiDung);
@@ -125,6 +128,8 @@
             // 
             // pic_Bachground
             // 
+            this.pic_Bachground.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Bachground.Image = ((System.Drawing.Image)(resources.GetObject("pic_Bachground.Image")));
             this.pic_Bachground.Location = new System.Drawing.Point(302, 0);
             this.pic_Bachground.Name = "pic_Bachground";
@@ -151,7 +156,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 
@@ -167,7 +172,10 @@
             // 
             // pnMenu
             // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnMenu.Controls.Add(this.btnQLThietBi);
             this.pnMenu.Controls.Add(this.btn_Logout);
             this.pnMenu.Controls.Add(this.btn_Hiden);
             this.pnMenu.Controls.Add(this.btn_LichSu);
@@ -176,15 +184,33 @@
             this.pnMenu.Controls.Add(this.btn_QLPhongMay);
             this.pnMenu.Controls.Add(this.btn_QLMay);
             this.pnMenu.Controls.Add(this.btn_QLTaiKhoan);
-            this.pnMenu.Controls.Add(this.btnQLThietBi);
             this.pnMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.pnMenu.Location = new System.Drawing.Point(1, 83);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(243, 534);
             this.pnMenu.TabIndex = 1;
             // 
+            // btnQLThietBi
+            // 
+            this.btnQLThietBi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnQLThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQLThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLThietBi.ForeColor = System.Drawing.Color.White;
+            this.btnQLThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnQLThietBi.Image")));
+            this.btnQLThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLThietBi.Location = new System.Drawing.Point(3, 3);
+            this.btnQLThietBi.Name = "btnQLThietBi";
+            this.btnQLThietBi.Size = new System.Drawing.Size(231, 47);
+            this.btnQLThietBi.TabIndex = 9;
+            this.btnQLThietBi.Text = "Quản Lý Thiết Bị";
+            this.btnQLThietBi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLThietBi.UseVisualStyleBackColor = true;
+            this.btnQLThietBi.Click += new System.EventHandler(this.btnQLThietBi_Click);
+            // 
             // btn_Logout
             // 
+            this.btn_Logout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +228,7 @@
             // 
             // btn_Hiden
             // 
+            this.btn_Hiden.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_Hiden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Hiden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_Hiden.Image = ((System.Drawing.Image)(resources.GetObject("btn_Hiden.Image")));
@@ -213,6 +240,7 @@
             // 
             // btn_LichSu
             // 
+            this.btn_LichSu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_LichSu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_LichSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,6 +257,7 @@
             // 
             // btn_QLThanhLy
             // 
+            this.btn_QLThanhLy.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_QLThanhLy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_QLThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QLThanhLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,6 +275,7 @@
             // 
             // btn_QLNhapMay
             // 
+            this.btn_QLNhapMay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_QLNhapMay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_QLNhapMay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QLNhapMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,6 +293,7 @@
             // 
             // btn_QLPhongMay
             // 
+            this.btn_QLPhongMay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_QLPhongMay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_QLPhongMay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QLPhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,6 +311,7 @@
             // 
             // btn_QLMay
             // 
+            this.btn_QLMay.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_QLMay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_QLMay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QLMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,6 +329,7 @@
             // 
             // btn_QLTaiKhoan
             // 
+            this.btn_QLTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_QLTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_QLTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,23 +344,6 @@
             this.btn_QLTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_QLTaiKhoan.UseVisualStyleBackColor = true;
             this.btn_QLTaiKhoan.Click += new System.EventHandler(this.btn_QLTaiKhoan_Click);
-            // 
-            // btnQLThietBi
-            // 
-            this.btnQLThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLThietBi.ForeColor = System.Drawing.Color.White;
-            this.btnQLThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnQLThietBi.Image")));
-            this.btnQLThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLThietBi.Location = new System.Drawing.Point(3, 3);
-            this.btnQLThietBi.Name = "btnQLThietBi";
-            this.btnQLThietBi.Size = new System.Drawing.Size(231, 47);
-            this.btnQLThietBi.TabIndex = 0;
-            this.btnQLThietBi.Text = "Quản Lý Thiết Bị";
-            this.btnQLThietBi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLThietBi.UseVisualStyleBackColor = true;
-            this.btnQLThietBi.Click += new System.EventHandler(this.btn_TrangChu_Click);
             // 
             // frmTrangChu
             // 
@@ -368,12 +384,12 @@
         private System.Windows.Forms.Button btn_QLPhongMay;
         private System.Windows.Forms.Button btn_QLMay;
         private System.Windows.Forms.Button btn_QLTaiKhoan;
-        private System.Windows.Forms.Button btnQLThietBi;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lbl_NguoiDung;
         private System.Windows.Forms.PictureBox pic_Bachground;
         private System.Windows.Forms.Panel panel_Xanh;
         private System.Windows.Forms.LinkLabel llbl_QLUser;
         private System.Windows.Forms.Panel pnShowForm;
+        private System.Windows.Forms.Button btnQLThietBi;
     }
 }

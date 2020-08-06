@@ -23,11 +23,7 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
-        private void lbl_QLMay_Click(object sender, EventArgs e)
-        {
-            mctrl.HienThi(dgv_DSMay);
-            HienThiThongTin();
-        }
+        
 
         void HienThiThongTin()
         {
@@ -51,7 +47,23 @@ namespace QuanLyPhongMay
             may.GhiChu = txt_GhiChu.Text;
             may.TrangThai = int.Parse(txtTrangThai.Text);
 
-            if (mctrl.Them(may) > 0)
+            if (txt_MaMay.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtMaPhong.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txt_TenMay.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtTrangThai.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập trạng thái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (mctrl.Them(may) > 0)
             {
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -107,7 +119,7 @@ namespace QuanLyPhongMay
 
         private void frmQLMay_Load(object sender, EventArgs e)
         {
-
+            mctrl.HienThi(dgv_DSMay);
         }
     }
 }
