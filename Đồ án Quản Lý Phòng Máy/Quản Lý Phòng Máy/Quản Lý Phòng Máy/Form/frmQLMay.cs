@@ -39,34 +39,9 @@ namespace QuanLyPhongMay
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            May may = new May();
-
-            may.MaMay = int.Parse(txt_MaMay.Text);
-            may.MaPhong = int.Parse(txtMaPhong.Text);
-            may.TenMay = txt_TenMay.Text;
-            may.GhiChu = txt_GhiChu.Text;
-            may.TrangThai = int.Parse(txtTrangThai.Text);
-
-            if (txt_MaMay.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mã máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtMaPhong.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mã phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txt_TenMay.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtTrangThai.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập trạng thái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (mctrl.Them(may) > 0)
-            {
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            frmThemMay frm = new frmThemMay();
+            frm.Show();
+            this.Hide();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
@@ -88,7 +63,7 @@ namespace QuanLyPhongMay
         {
             May may = new May();
 
-            may.MaMay = int.Parse(txt_MaMay.Text);
+            may.MaMay = txt_MaMay.Text;
             may.TenMay = txt_TenMay.Text;
             may.TrangThai = int.Parse(txtTrangThai.Text);
             may.GhiChu = txt_GhiChu.Text;

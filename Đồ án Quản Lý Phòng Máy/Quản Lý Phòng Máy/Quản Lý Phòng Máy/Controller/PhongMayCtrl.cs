@@ -42,5 +42,12 @@ namespace QuanLyPhongMay.Controller
         {
             return phongData.CapNhat(phong);
         }
+
+        public void HienThiCbo(ComboBox cb)
+        {
+            cb.DataSource = phongData.LayDSPhong().Tables[0];
+            cb.DisplayMember = "TenPhongMay";
+            cb.ValueMember = "MaPhongMay";
+        }
     }
 }

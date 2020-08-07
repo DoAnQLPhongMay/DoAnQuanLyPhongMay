@@ -9,9 +9,9 @@ namespace QuanLyPhongMay.BUS
     class May
     {
 
-        private int _mamay;
+        private string _mamay;
 
-        public int MaMay
+        public string MaMay
         {
             get { return _mamay; }
             set { _mamay = value; }
@@ -45,5 +45,8 @@ namespace QuanLyPhongMay.BUS
             set { _ghichu = value; }
         }
 
+        public int Mathietbi { get => _mathietbi; set => _mathietbi = value; }
+
+        private int _mathietbi;
     }
 }

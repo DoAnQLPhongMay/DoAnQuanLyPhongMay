@@ -37,6 +37,10 @@ namespace QuanLyPhongMay.Controller
         }
         public int Them(May m)
         {
+            if (!KiemTraMaMay(m.MaMay))
+                return 0;
+            if (KiemTraTenMay(m.TenMay))
+                return -1;
             return mayData.Them(m);
         }
         public int Xoa(int ma)
@@ -46,6 +50,14 @@ namespace QuanLyPhongMay.Controller
         public int Luu(May m)
         {
             return mayData.Luu(m);
+        }
+        public bool KiemTraMaMay(string mamay)
+        {
+            return mayData.KiemTraMaMay(mamay);
+        }
+        public bool KiemTraTenMay(string tenmay)
+        {
+            return mayData.KiemTraTenMay(tenmay);
         }
 
     }
