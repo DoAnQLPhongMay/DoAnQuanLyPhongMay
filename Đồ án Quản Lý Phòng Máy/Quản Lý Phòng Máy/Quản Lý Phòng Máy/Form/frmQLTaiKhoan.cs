@@ -47,7 +47,7 @@ namespace QuanLyPhongMay
                 txt_SDT.Text = dgv_DSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
                 dtm_NgaySinh.Value = DateTime.Parse(dgv_DSTaiKhoan.CurrentRow.Cells[7].Value.ToString());
                 txt_DiaChi.Text = dgv_DSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
-
+                txtMaQuyen.Text = dgv_DSTaiKhoan.CurrentRow.Cells[9].Value.ToString();
             }
         }
         void checkRadio()
@@ -83,13 +83,24 @@ namespace QuanLyPhongMay
 
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
-            TaiKhoan taikhoan = new TaiKhoan();
-            if (tkctrl.Luu(taikhoan) > 0)
+            TaiKhoan tk = new TaiKhoan();
+
+            tk.TenGV = txt_TenTaiKhoan.Text;
+            /*tk.Gioitinh = (rad_Nam.Checked) ? true : false;*/
+            tk.SDT = txt_SDT.Text;
+            tk.Ngaysinh = Convert.ToDateTime(dtm_NgaySinh.Value);
+            tk.Diachi = txt_DiaChi.Text;
+            
+            if (tkctrl.Luu(tk) > 0)
             {
                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tkctrl.HienThi(dgv_DSTaiKhoan);
                 HienThiThongTin();
             }
+            else
+            {
+                MessageBox.Show("Lưu thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)

@@ -60,6 +60,7 @@
     <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
     <Compile Include="Controller\LoaiThietBiCtrl.cs" />
     <Compile Include="Controller\PhongMayCtrl.cs" />
+    <Compile Include="Controller\Quyenctrl.cs" />
     <Compile Include="Controller\TaiKhoanCtrl.cs" />
     <Compile Include="Controller\MayCtrl.cs" />
     <Compile Include="Controller\ThietBiCtrl.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
     <Compile Include="DataLayer\LoaiThietBiData.cs" />
     <Compile Include="DataLayer\PhongMayData.cs" />
+    <Compile Include="DataLayer\QuyenData.cs" />
     <Compile Include="DataLayer\TaiKhoanData.cs" />
     <Compile Include="DataLayer\MayData.cs" />
     <Compile Include="DataLayer\ThietBiData.cs" />

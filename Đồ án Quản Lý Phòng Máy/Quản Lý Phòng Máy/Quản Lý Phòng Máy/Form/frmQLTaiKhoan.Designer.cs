@@ -30,7 +30,6 @@
         {
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.grp_ThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
-            this.cboQuyenHan = new System.Windows.Forms.ComboBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_CapNhat = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.lbl_TenTaiKhoan = new System.Windows.Forms.Label();
             this.lblQuyenHan = new System.Windows.Forms.Label();
             this.dgv_DSTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.txtMaQuyen = new System.Windows.Forms.TextBox();
             this.grp_ThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             // grp_ThongTinTaiKhoan
             // 
-            this.grp_ThongTinTaiKhoan.Controls.Add(this.cboQuyenHan);
+            this.grp_ThongTinTaiKhoan.Controls.Add(this.txtMaQuyen);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_Xoa);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_CapNhat);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_Them);
@@ -101,14 +101,6 @@
             this.grp_ThongTinTaiKhoan.TabIndex = 1;
             this.grp_ThongTinTaiKhoan.TabStop = false;
             this.grp_ThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
-            // 
-            // cboQuyenHan
-            // 
-            this.cboQuyenHan.FormattingEnabled = true;
-            this.cboQuyenHan.Location = new System.Drawing.Point(122, 31);
-            this.cboQuyenHan.Name = "cboQuyenHan";
-            this.cboQuyenHan.Size = new System.Drawing.Size(136, 23);
-            this.cboQuyenHan.TabIndex = 22;
             // 
             // btn_Xoa
             // 
@@ -205,6 +197,7 @@
             // 
             // txt_Password
             // 
+            this.txt_Password.Enabled = false;
             this.txt_Password.Location = new System.Drawing.Point(407, 156);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(136, 21);
@@ -222,6 +215,7 @@
             // 
             // txt_Username
             // 
+            this.txt_Username.Enabled = false;
             this.txt_Username.Location = new System.Drawing.Point(407, 113);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(136, 21);
@@ -365,6 +359,13 @@
             this.dgv_DSTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSTaiKhoan_CellContentClick);
             this.dgv_DSTaiKhoan.Click += new System.EventHandler(this.dgv_DSTaiKhoan_Click);
             // 
+            // txtMaQuyen
+            // 
+            this.txtMaQuyen.Location = new System.Drawing.Point(122, 33);
+            this.txtMaQuyen.Name = "txtMaQuyen";
+            this.txtMaQuyen.Size = new System.Drawing.Size(136, 21);
+            this.txtMaQuyen.TabIndex = 22;
+            // 
             // frm_QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +417,6 @@
         private System.Windows.Forms.Label lbl_SDT;
         private System.Windows.Forms.DataGridView dgv_DSTaiKhoan;
         private System.Windows.Forms.Button btn_TimKiem;
-        private System.Windows.Forms.ComboBox cboQuyenHan;
+        private System.Windows.Forms.TextBox txtMaQuyen;
     }
 }

@@ -77,5 +77,12 @@ namespace QuanLyPhongMay
             phongctrl.HienThiCbo(cbMaPhong);
 
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            frmQLMay frm = new frmQLMay();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

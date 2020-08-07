@@ -19,6 +19,7 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
+        Quyenctrl quyenctrl = new Quyenctrl();
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             TaiKhoan tk = new TaiKhoan();
@@ -31,7 +32,7 @@ namespace QuanLyPhongMay
             tk.Diachi = txtDiaChi.Text;
             tk.TenDangNhap = txtTenDangNhap.Text;
             tk.MatKhau = txtMatKhau.Text;
-            //tk.LoaiTaiKhoan = (cbLoaiTaiKhoan.Click) ? true : false ;
+            tk.LoaiTaiKhoan = int.Parse(cbLoaiTaiKhoan.SelectedValue.ToString());
             if (txtTenTaiKhoan.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -107,5 +108,10 @@ namespace QuanLyPhongMay
         }
 
         public bool txtLoaiTaiKhoan { get; set; }
+
+        private void frmThemTaiKhoan_Load(object sender, EventArgs e)
+        {
+            quyenctrl.HienThiCbo(cbLoaiTaiKhoan);
+        }
     }
 }
