@@ -40,6 +40,9 @@
             this.rad_TenMay = new System.Windows.Forms.RadioButton();
             this.rad_MaMay = new System.Windows.Forms.RadioButton();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_ThemMoi = new System.Windows.Forms.Button();
             this.grp_ChiTietMay = new System.Windows.Forms.GroupBox();
             this.txt_GhiChu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,9 +58,6 @@
             this.lbl_TenMay = new System.Windows.Forms.Label();
             this.txt_MaMay = new System.Windows.Forms.TextBox();
             this.lbl_MaMay = new System.Windows.Forms.Label();
-            this.btn_ThemMoi = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSMay)).BeginInit();
             this.grp_QLMay.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
@@ -74,12 +74,15 @@
             this.dgv_DSMay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_DSMay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgv_DSMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSMay.Enabled = false;
+            this.dgv_DSMay.EnableHeadersVisualStyles = false;
             this.dgv_DSMay.Location = new System.Drawing.Point(0, 481);
             this.dgv_DSMay.Name = "dgv_DSMay";
             this.dgv_DSMay.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgv_DSMay.Size = new System.Drawing.Size(625, 251);
             this.dgv_DSMay.TabIndex = 5;
+            this.dgv_DSMay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSMay_CellClick);
+            this.dgv_DSMay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSMay_CellContentClick);
+            this.dgv_DSMay.Click += new System.EventHandler(this.dgv_DSMay_Click);
             // 
             // lbl_QLMay
             // 
@@ -201,6 +204,42 @@
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.Size = new System.Drawing.Size(159, 20);
             this.txt_TimKiem.TabIndex = 0;
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Xoa.Location = new System.Drawing.Point(476, 262);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(97, 34);
+            this.btn_Xoa.TabIndex = 23;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sua.Location = new System.Drawing.Point(476, 184);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(97, 34);
+            this.btn_Sua.TabIndex = 22;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_ThemMoi
+            // 
+            this.btn_ThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_ThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThemMoi.Location = new System.Drawing.Point(476, 103);
+            this.btn_ThemMoi.Name = "btn_ThemMoi";
+            this.btn_ThemMoi.Size = new System.Drawing.Size(97, 34);
+            this.btn_ThemMoi.TabIndex = 21;
+            this.btn_ThemMoi.Text = "Thêm Mới";
+            this.btn_ThemMoi.UseVisualStyleBackColor = false;
+            this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
             // 
             // grp_ChiTietMay
             // 
@@ -339,42 +378,6 @@
             this.lbl_MaMay.Size = new System.Drawing.Size(59, 13);
             this.lbl_MaMay.TabIndex = 0;
             this.lbl_MaMay.Text = "Mã Máy: ";
-            // 
-            // btn_ThemMoi
-            // 
-            this.btn_ThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_ThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(476, 103);
-            this.btn_ThemMoi.Name = "btn_ThemMoi";
-            this.btn_ThemMoi.Size = new System.Drawing.Size(97, 34);
-            this.btn_ThemMoi.TabIndex = 21;
-            this.btn_ThemMoi.Text = "Thêm Mới";
-            this.btn_ThemMoi.UseVisualStyleBackColor = false;
-            this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sua.Location = new System.Drawing.Point(476, 184);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(97, 34);
-            this.btn_Sua.TabIndex = 22;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Xoa.Location = new System.Drawing.Point(476, 262);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(97, 34);
-            this.btn_Xoa.TabIndex = 23;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // frmQLMay
             // 

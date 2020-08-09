@@ -9,9 +9,9 @@ namespace QuanLyPhongMay.BUS
     class May
     {
 
-        private string _mamay;
+        private int _mamay;
 
-        public string MaMay
+        public int MaMay
         {
             get { return _mamay; }
             set { _mamay = value; }

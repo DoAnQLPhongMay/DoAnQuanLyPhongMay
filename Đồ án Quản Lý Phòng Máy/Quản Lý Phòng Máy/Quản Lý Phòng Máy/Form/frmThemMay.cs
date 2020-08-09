@@ -25,7 +25,7 @@ namespace QuanLyPhongMay
         private void btnThemMay_Click(object sender, EventArgs e)
         {
             May m = new May();
-            m.MaMay = txtMaMay.Text;
+            m.MaMay = int.Parse(txtMaMay.Text);
             m.TenMay = txtTenMay.Text;
             m.MaPhong = int.Parse(cbMaPhong.SelectedValue.ToString());
             m.TrangThai = int.Parse(cbMaPhong.SelectedValue.ToString());

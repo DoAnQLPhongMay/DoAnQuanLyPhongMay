@@ -23,17 +23,15 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
-        
-
         void HienThiThongTin()
         {
             if (dgv_DSMay.CurrentRow != null)
             {
                 txt_MaMay.Text = dgv_DSMay.CurrentRow.Cells[0].Value.ToString();
                 txt_TenMay.Text = dgv_DSMay.CurrentRow.Cells[1].Value.ToString();
-                txtTrangThai.Text = dgv_DSMay.CurrentRow.Cells[13].Value.ToString();
-                txt_GhiChu.Text = dgv_DSMay.CurrentRow.Cells[14].Value.ToString();
-
+                txtMaPhong.Text = dgv_DSMay.CurrentRow.Cells[2].Value.ToString();
+                txtTrangThai.Text = dgv_DSMay.CurrentRow.Cells[5].Value.ToString();
+                txt_GhiChu.Text = dgv_DSMay.CurrentRow.Cells[6].Value.ToString();
             }
         }
 
@@ -47,7 +45,7 @@ namespace QuanLyPhongMay
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
                 if (mctrl.Xoa(int.Parse(txt_MaMay.Text)) > 0)
@@ -63,9 +61,8 @@ namespace QuanLyPhongMay
         {
             May may = new May();
 
-            may.MaMay = txt_MaMay.Text;
+            may.MaMay = int.Parse(txt_MaMay.Text);
             may.TenMay = txt_TenMay.Text;
-            may.TrangThai = int.Parse(txtTrangThai.Text);
             may.GhiChu = txt_GhiChu.Text;
 
             if (mctrl.Luu(may) > 0)
@@ -73,6 +70,10 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mctrl.HienThi(dgv_DSMay);
                 HienThiThongTin();
+            }
+            else
+            {
+                MessageBox.Show("Lưu không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -95,6 +96,21 @@ namespace QuanLyPhongMay
         private void frmQLMay_Load(object sender, EventArgs e)
         {
             mctrl.HienThi(dgv_DSMay);
+            HienThiThongTin();
+        }
+        private void dgv_DSMay_Click(object sender, EventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void dgv_DSMay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void dgv_DSMay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HienThiThongTin();
         }
     }
 }
