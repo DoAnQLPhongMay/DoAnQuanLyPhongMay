@@ -30,6 +30,7 @@
         {
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.grp_ThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.txtMaQuyen = new System.Windows.Forms.TextBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_CapNhat = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.lbl_TenTaiKhoan = new System.Windows.Forms.Label();
             this.lblQuyenHan = new System.Windows.Forms.Label();
             this.dgv_DSTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.txtMaQuyen = new System.Windows.Forms.TextBox();
             this.grp_ThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
@@ -73,6 +73,9 @@
             // 
             // grp_ThongTinTaiKhoan
             // 
+            this.grp_ThongTinTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grp_ThongTinTaiKhoan.Controls.Add(this.txtMaQuyen);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_Xoa);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.btn_CapNhat);
@@ -101,6 +104,13 @@
             this.grp_ThongTinTaiKhoan.TabIndex = 1;
             this.grp_ThongTinTaiKhoan.TabStop = false;
             this.grp_ThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
+            // 
+            // txtMaQuyen
+            // 
+            this.txtMaQuyen.Location = new System.Drawing.Point(122, 33);
+            this.txtMaQuyen.Name = "txtMaQuyen";
+            this.txtMaQuyen.Size = new System.Drawing.Size(136, 21);
+            this.txtMaQuyen.TabIndex = 22;
             // 
             // btn_Xoa
             // 
@@ -348,6 +358,9 @@
             // 
             this.dgv_DSTaiKhoan.AllowUserToAddRows = false;
             this.dgv_DSTaiKhoan.AllowUserToDeleteRows = false;
+            this.dgv_DSTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_DSTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DSTaiKhoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv_DSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -358,13 +371,6 @@
             this.dgv_DSTaiKhoan.TabIndex = 2;
             this.dgv_DSTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSTaiKhoan_CellContentClick);
             this.dgv_DSTaiKhoan.Click += new System.EventHandler(this.dgv_DSTaiKhoan_Click);
-            // 
-            // txtMaQuyen
-            // 
-            this.txtMaQuyen.Location = new System.Drawing.Point(122, 33);
-            this.txtMaQuyen.Name = "txtMaQuyen";
-            this.txtMaQuyen.Size = new System.Drawing.Size(136, 21);
-            this.txtMaQuyen.TabIndex = 22;
             // 
             // frm_QLTaiKhoan
             // 
