@@ -12,14 +12,15 @@ namespace QuanLyPhongMay.DataLayer
 {
     class MayData
     {
-
         DataProvider cls = new DataProvider();
+
         public DataSet LayDSMay()
         {
             string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu from dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
             SqlCommand sqlcmd = new SqlCommand(sql);
             return cls.LayDuLieu(sqlcmd);
         }
+
         public DataSet LayDSTK(string tukhoa, string tieuchi)
         {
             string sql = "select * from dtb_May";
@@ -38,6 +39,17 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand sqlcmd = new SqlCommand(sql);
             return cls.LayDuLieu(sqlcmd);
         }
+
+        public bool KTThietBi(int maThietBi)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietMay ",
+                where = "WHERE MaThietBi = '" + maThietBi + "'";
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.KiemTra(cmd);
+        }
+
         public int Them(May m)
         {
             SqlCommand cmd = new SqlCommand();
@@ -58,6 +70,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("mamay", SqlDbType.SmallInt).Value = ma;
             return cls.CapNhatDL(cmd);
         }
+
         public int Luu(May m)
         {
             SqlCommand cmd = new SqlCommand();
@@ -69,6 +82,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("ghichu", SqlDbType.SmallInt).Value = m.GhiChu;
             return cls.CapNhatDL(cmd);
         }
+
         public bool KiemTraMaMay(int mamay)
         {
             SqlCommand cmd = new SqlCommand();
@@ -79,6 +93,7 @@ namespace QuanLyPhongMay.DataLayer
 
 
         }
+
         public bool KiemTraTenMay(string tenmay)
         {
             SqlCommand cmd = new SqlCommand();
@@ -89,6 +104,5 @@ namespace QuanLyPhongMay.DataLayer
 
 
         }
-
     }
 }

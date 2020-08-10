@@ -493,7 +493,7 @@
             // MaLoai1
             // 
             this.MaLoai1.DataPropertyName = "MaLoai1";
-            this.MaLoai1.HeaderText = "Mã Loại 1";
+            this.MaLoai1.HeaderText = "Mã Loại";
             this.MaLoai1.Name = "MaLoai1";
             this.MaLoai1.ReadOnly = true;
             this.MaLoai1.Visible = false;

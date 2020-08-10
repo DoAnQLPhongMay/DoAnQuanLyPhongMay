@@ -18,8 +18,8 @@ namespace QuanLyPhongMay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
-            //Application.Run(new frmQLThietBi());
+            //Application.Run(new frmDangNhap());
+            Application.Run(new frmQLThietBi());
             //Application.Run(new frmTrangChu());
             //Application.Run(new frm_QLTaiKhoan());
             //Application.Run(new frmThemMay());

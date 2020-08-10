@@ -12,10 +12,16 @@ namespace QuanLyPhongMay.Controller
     class ThietBiCtrl
     {
         ThietBiData thietBiData = new ThietBiData();
+        MayData mayData = new MayData();
         
-        public int getID()
+        public int GetID()
         {
-            return thietBiData.getID();
+            return thietBiData.GetID();
+        }
+
+        public bool KTThietBi(int maThietBi)
+        {
+            return mayData.KTThietBi(maThietBi);
         }
 
         public void HienThiDgv(DataGridView dgv)

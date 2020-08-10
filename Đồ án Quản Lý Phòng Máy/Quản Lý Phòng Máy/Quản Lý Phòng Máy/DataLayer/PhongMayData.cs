@@ -23,7 +23,7 @@ namespace QuanLyPhongMay.DataLayer
 
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
 
-            return cls.getID(cmd);
+            return cls.GetID(cmd);
         }
 
         //Hàm xử lý lấy danh sách phòng máy.

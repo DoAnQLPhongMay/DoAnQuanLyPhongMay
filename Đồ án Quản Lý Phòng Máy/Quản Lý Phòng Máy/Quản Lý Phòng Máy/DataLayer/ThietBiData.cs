@@ -16,7 +16,7 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
-        public int getID()
+        public int GetID()
         {
             string select = "SELECT MaThietBi ",
                 from = "FROM dtb_ChiTietThietBi ",
@@ -24,7 +24,7 @@ namespace QuanLyPhongMay.DataLayer
 
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
 
-            return cls.getID(cmd);
+            return cls.GetID(cmd);
         }
 
         //Hàm xử lý lấy danh sách thiết bị.
@@ -98,25 +98,27 @@ namespace QuanLyPhongMay.DataLayer
         //Hàm xử lý tìm kiếm thiết bị.
         public DataSet LayDSTK(string key, string loaiTK)
         {
-            string query = "SELECT * FROM dtb_ChiTietThietBi ";
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND ";
 
             switch (loaiTK)
             {
                 case "maThietBi":
-                    query += "WHERE MaThietBi = " + key + "";
+                    where += "dtb_ChiTietThietBi.MaThietBi = " + key + "";
                     break;
                 case "tenThietBi":
-                    query += "WHERE TenThietBi = " + key + "";
+                    where += "dtb_ChiTietThietBi.TenThietBi = N'" + key + "'";
                     break;
                 case "nhaSanXuat":
-                    query += "WHERE NhaSanXuat = " + key + "";
+                    where += "dtb_ChiTietThietBi.NhaSanXuat = N'" + key + "'";
                     break;
                 default:
-                    query += "WHERE MaLoai = " + key + "";
+                    where += "dtb_ChiTietThietBi.MaLoai = " + key + "";
                     break;
             }
 
-            SqlCommand cmd = new SqlCommand(query);
+            SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(cmd);
         }

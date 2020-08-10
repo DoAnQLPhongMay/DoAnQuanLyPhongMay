@@ -54,13 +54,11 @@ namespace QuanLyPhongMay
             return cmd.ExecuteNonQuery();
         }
 
-        public int getID(SqlCommand sqlcmd)
+        public int GetID(SqlCommand sqlcmd)
         {
             int id = 1;
             SqlCommand cmd = sqlcmd;
-
             cmd.Connection = conn;
-
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
@@ -71,6 +69,22 @@ namespace QuanLyPhongMay
             dr.Close();
 
             return id;
+        }
+
+        public bool KiemTra(SqlCommand sqlcmd)
+        {
+            bool kTra = false;
+            SqlCommand cmd = sqlcmd;
+            cmd.Connection = conn;
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                kTra = true;
+            }
+            dr.Close();
+
+            return kTra;
         }
     }
 }

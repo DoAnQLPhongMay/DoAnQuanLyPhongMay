@@ -22,6 +22,7 @@ namespace QuanLyPhongMay
         ThietBi thietBi = new ThietBi();
         LoaiThietBiCtrl loaiThietBiCtrl = new LoaiThietBiCtrl();
         bool doubleClick = false;
+        string loaiThietBi = "";
 
         public frmQLThietBi()
         {
@@ -41,14 +42,15 @@ namespace QuanLyPhongMay
             txtTenThietBi.Text = dgvDSThietBi.CurrentRow.Cells[1].Value.ToString();
             rtbThongSo.Text = dgvDSThietBi.CurrentRow.Cells[2].Value.ToString();
             txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells[3].Value.ToString();
-            cboLoaiThietBi.SelectedItem = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[4].Value.ToString());
+            cboLoaiThietBi.SelectedValue = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
             txtNhaSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[6].Value.ToString();
             txtNamSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[5].Value.ToString();
             txtHanThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[7].Value.ToString();
             rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells[8].Value.ToString();
 
-            btnThemMoi.Hide();
-            btnXoa.Hide();
+            loaiThietBi = cboLoaiThietBi.Text;
+            btnThemMoi.Enabled = false;
+            btnXoa.Enabled = false;
             doubleClick = true;
         }
 
@@ -84,6 +86,11 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng chọn loại thiết bị.", "Thông báo!", MessageBoxButtons.OK);
                 kTra = false;
             }
+            else if (thietBiCtrl.KTThietBi(Convert.ToInt32(txtMaThietBi.Text)) && loaiThietBi != cboLoaiThietBi.Text)
+            {
+                MessageBox.Show("Thiết bị đang được sử dụng không thể thay loại thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                kTra = false;
+            }
             else
             {
                 if (txtSoLuong.Text == "")
@@ -107,7 +114,7 @@ namespace QuanLyPhongMay
         {
             if (kiemTra())
             {
-                thietBi.MaThietBi = thietBiCtrl.getID() + 1;
+                thietBi.MaThietBi = thietBiCtrl.GetID() + 1;
                 thietBi.TenThietBi = txtTenThietBi.Text;
                 thietBi.ThongSoThietBi = rtbThongSo.Text;
                 thietBi.SoLuong = Convert.ToInt32(txtSoLuong.Text);
@@ -118,7 +125,7 @@ namespace QuanLyPhongMay
                 thietBi.GhiChu = rtbGhiChu.Text;
 
                 thietBiCtrl.Them(thietBi);
-                MessageBox.Show("Thêm thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thiết bị thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
             }
         }
@@ -129,7 +136,7 @@ namespace QuanLyPhongMay
             {
                 int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
                 thietBiCtrl.Xoa(maThietBi);
-                MessageBox.Show("Xóa thành công!", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK);
                 thietBiCtrl.HienThiDgv(dgvDSThietBi);
                 lamMoi();
             }
@@ -153,7 +160,7 @@ namespace QuanLyPhongMay
                 thietBi.HanThanhLy = Convert.ToInt32(txtHanThanhLy.Text);
                 thietBi.GhiChu = rtbGhiChu.Text;
 
-                MessageBox.Show("Thêm thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhập thiết bị thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 thietBiCtrl.CapNhat(thietBi);
                 lamMoi();
             }
