@@ -125,6 +125,7 @@
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "admin";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // pic_Bachground
             // 
@@ -156,7 +157,7 @@
             this.lbl_QL.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_QL.Location = new System.Drawing.Point(96, 4);
             this.lbl_QL.Name = "lbl_QL";
-            this.lbl_QL.Size = new System.Drawing.Size(88, 28);
+            this.lbl_QL.Size = new System.Drawing.Size(89, 28);
             this.lbl_QL.TabIndex = 1;
             this.lbl_QL.Text = "Quản Lý";
             // 

@@ -122,7 +122,7 @@ namespace QuanLyPhongMay
         {
             if (kiemTra())
             {
-                thietBi.MaThietBi = autoID();
+                thietBi.MaThietBi = thietBiCtrl.getID() + 1;
                 thietBi.TenThietBi = txtTenThietBi.Text;
                 thietBi.ThongSoThietBi = rtbThongSo.Text;
                 thietBi.SoLuong = Convert.ToInt32(txtSoLuong.Text);

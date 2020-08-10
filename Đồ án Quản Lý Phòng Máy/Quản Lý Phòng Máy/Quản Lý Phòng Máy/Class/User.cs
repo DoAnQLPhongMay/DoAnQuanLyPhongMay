@@ -11,40 +11,29 @@ namespace QuanLyPhongMay.Class
         private string tenTK, tenUser;
         private bool phanQuyen;
 
+        public string TenTK { get => tenTK; set => tenTK = value; }
+        public string TenUser { get => tenUser; set => tenUser = value; }
+        public bool PhanQuyen { get => phanQuyen; set => phanQuyen = value; }
+
         public User()
         {
-            this.tenTK = "";
-            this.tenUser = "";
-            this.phanQuyen = false;
+            this.TenTK = "";
+            this.TenUser = "";
+            this.PhanQuyen = false;
         }
 
         public User(User user)
         {
-            this.tenTK = user.tenTK;
-            this.tenUser = user.tenUser;
-            this.phanQuyen = user.phanQuyen;
+            this.TenTK = user.TenTK;
+            this.TenUser = user.TenUser;
+            this.PhanQuyen = user.PhanQuyen;
         }
 
-        public void DangNhap(string tenTK, string tenUser, bool phanQuyen)
+        public void dangXuat()
         {
-            this.tenTK = tenTK;
-            this.tenUser = tenUser;
-            this.phanQuyen = phanQuyen;
-        }
-
-        public string getTenTK()
-        {
-            return tenTK;
-        }
-
-        public string getTenUser()
-        {
-            return tenUser;
-        }
-
-        public bool getPhanQuyen()
-        {
-            return phanQuyen;
+            this.TenTK = "";
+            this.TenUser = "";
+            this.PhanQuyen = false;
         }
     }
 }

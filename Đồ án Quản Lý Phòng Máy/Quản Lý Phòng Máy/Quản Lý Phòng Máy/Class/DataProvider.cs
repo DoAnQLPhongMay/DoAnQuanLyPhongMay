@@ -8,12 +8,14 @@ using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyPhongMay.Class;
+using System;
+
 namespace QuanLyPhongMay
 {
     class DataProvider
     {
-        //SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
-          SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KUOPHKV\SQLEXPRESS;Initial Catalog=QL_PHONGMAY;Integrated Security=True");
+        SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KUOPHKV\SQLEXPRESS;Initial Catalog=QL_PHONGMAY;Integrated Security=True");
 
         public DataProvider()
         {
@@ -24,6 +26,12 @@ namespace QuanLyPhongMay
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
+        }
+        
+        void DongKetNoi()
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
         }
        
         public DataSet LayDuLieu(SqlCommand sqlcmd)
@@ -44,6 +52,25 @@ namespace QuanLyPhongMay
             cmd.Connection = conn;
 
             return cmd.ExecuteNonQuery();
+        }
+
+        public int getID(SqlCommand sqlcmd)
+        {
+            int id = 1;
+            SqlCommand cmd = sqlcmd;
+
+            cmd.Connection = conn;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                MessageBox.Show(dr[0].ToString());
+                id = Convert.ToInt32(dr[0].ToString());
+            }
+            dr.Close();
+
+            return id;
         }
     }
 }

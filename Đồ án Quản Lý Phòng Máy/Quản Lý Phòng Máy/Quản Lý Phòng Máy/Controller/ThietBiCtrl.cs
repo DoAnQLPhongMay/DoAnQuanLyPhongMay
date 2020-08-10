@@ -12,6 +12,11 @@ namespace QuanLyPhongMay.Controller
     class ThietBiCtrl
     {
         ThietBiData thietBiData = new ThietBiData();
+        
+        public int getID()
+        {
+            return thietBiData.getID();
+        }
 
         public void HienThiDgv(DataGridView dgv)
         {

@@ -52,7 +52,7 @@
     <Compile Include="BUS\PhongMay.cs" />
     <Compile Include="BUS\ThietBi.cs" />
     <Compile Include="BUS\TrangThai.cs" />
-    <Compile Include="CaiDat.cs" />
+    <Compile Include="Class\CaiDat.cs" />
     <Compile Include="Class\DBSQLServerUtils.cs" />
     <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\User.cs" />
@@ -74,7 +74,7 @@
     <Compile Include="DataLayer\MayData.cs" />
     <Compile Include="DataLayer\ThietBiData.cs" />
     <Compile Include="DataLayer\TrangThaiData.cs" />
-    <Compile Include="DataProvider.cs" />
+    <Compile Include="Class\DataProvider.cs" />
     <Compile Include="Form\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,7 +159,7 @@
     <Compile Include="Form\frmQLMay.Designer.cs">
       <DependentUpon>frmQLMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
+    <Compile Include="Class\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\frmQLMay.resx">

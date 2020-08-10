@@ -19,18 +19,31 @@ namespace QuanLyPhongMay
 
         Color clr = Color.Teal;
         Color declr = Color.FromArgb(0, 0, 64);
-      
+        User user = new User();
+
+
+        public frmTrangChu(User user)
+        {
+            InitializeComponent();
+            this.user = user;
+        }
 
         public frmTrangChu()
         {
             InitializeComponent();
         }
+
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
+            if(user.TenUser != "")
+            {
+                lblUsername.Text = user.TenUser;
+            }
         }
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
+            user.dangXuat();
             frmDangNhap frm = new frmDangNhap();
             this.Hide();
             frm.Show();
@@ -103,6 +116,11 @@ namespace QuanLyPhongMay
         {
             frmQLThietBi frm = new frmQLThietBi();
             frm.Show();
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
