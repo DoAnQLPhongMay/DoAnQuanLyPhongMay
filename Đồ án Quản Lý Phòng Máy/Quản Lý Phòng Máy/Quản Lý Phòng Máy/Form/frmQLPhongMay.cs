@@ -59,20 +59,6 @@ namespace QuanLyPhongMay
             phongCtrl.HienThiDgv(dgvDSPhong);
         }
 
-        public int autoID()
-        {
-            int id = 1, row;
-
-            row = dgvDSPhong.Rows.Count;
-
-            if (row != 0)
-            {
-                id = row;
-            }
-
-            return id;
-        }
-
         public bool kiemTra()
         {
             bool kTra = true;
@@ -102,7 +88,7 @@ namespace QuanLyPhongMay
         {
             if (kiemTra())
             {
-                phong.MaPhong = autoID();
+                phong.MaPhong = phongCtrl.getID() + 1;
                 phong.TenPhong = txtTenPhong.Text;
                 phong.SoLuongMay = Convert.ToInt32(txtSoLuongMay.Text);
                 phong.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue.ToString());

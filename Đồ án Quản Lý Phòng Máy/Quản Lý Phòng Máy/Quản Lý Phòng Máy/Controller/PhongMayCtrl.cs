@@ -13,6 +13,11 @@ namespace QuanLyPhongMay.Controller
     {
         PhongMayData phongData = new PhongMayData();
 
+        public int getID()
+        {
+            return phongData.getID();
+        }
+
         //Hàm hiển thị danh sách phòng máy lên Datagridview.
         public void HienThiDgv(DataGridView dgv)
         {

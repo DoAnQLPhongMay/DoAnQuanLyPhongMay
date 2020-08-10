@@ -25,7 +25,6 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
 
             return cls.getID(cmd);
-
         }
 
         //Hàm xử lý lấy danh sách thiết bị.

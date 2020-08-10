@@ -70,21 +70,6 @@ namespace QuanLyPhongMay
             thietBiCtrl.HienThiDgv(dgvDSThietBi);
         }
 
-        public int autoID()
-        {
-            int id = 1, row;
-
-            row = dgvDSThietBi.Rows.Count;
-            
-            if (row != 0)
-            {
-                //id = Convert.ToInt32(dgv.Rows[row-1].Cells[0].Value.ToString());
-                id = row;
-            }
-
-            return id;
-        }
-
         public bool kiemTra()
         {
             bool kTra = true;

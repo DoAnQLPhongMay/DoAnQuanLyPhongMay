@@ -15,6 +15,17 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        public int getID()
+        {
+            string select = "SELECT MaPhongMay ",
+                from = "FROM dtb_PhongMay ",
+                orderBy = "ORDER BY MaPhongMay DESC";
+
+            SqlCommand cmd = new SqlCommand(select + from + orderBy);
+
+            return cls.getID(cmd);
+        }
+
         //Hàm xử lý lấy danh sách phòng máy.
         public DataSet LayDSPhong()
         {
