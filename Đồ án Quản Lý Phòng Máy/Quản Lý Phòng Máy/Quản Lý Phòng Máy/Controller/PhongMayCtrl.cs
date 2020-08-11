@@ -13,9 +13,14 @@ namespace QuanLyPhongMay.Controller
     {
         PhongMayData phongData = new PhongMayData();
 
-        public int getID()
+        public int GetID()
         {
-            return phongData.getID();
+            return phongData.GetID();
+        }
+
+        public bool KTTenPhong(string tenPhong)
+        {
+            return phongData.KTTenPhong(tenPhong);
         }
 
         //Hàm hiển thị danh sách phòng máy lên Datagridview.

@@ -57,6 +57,7 @@
             this.TenTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnChiTiet = new System.Windows.Forms.Button();
             this.grpQLPhongMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPhong)).BeginInit();
@@ -74,6 +75,7 @@
             // 
             // grpQLPhongMay
             // 
+            this.grpQLPhongMay.Controls.Add(this.btnChiTiet);
             this.grpQLPhongMay.Controls.Add(this.btnLamMoi);
             this.grpQLPhongMay.Controls.Add(this.grpTimKiem);
             this.grpQLPhongMay.Controls.Add(this.rtbGhiChu);
@@ -92,7 +94,7 @@
             this.grpQLPhongMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpQLPhongMay.Location = new System.Drawing.Point(12, 73);
             this.grpQLPhongMay.Name = "grpQLPhongMay";
-            this.grpQLPhongMay.Size = new System.Drawing.Size(575, 287);
+            this.grpQLPhongMay.Size = new System.Drawing.Size(575, 331);
             this.grpQLPhongMay.TabIndex = 1;
             this.grpQLPhongMay.TabStop = false;
             this.grpQLPhongMay.Text = "Quán Lý Phòng Máy";
@@ -104,7 +106,7 @@
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.ForeColor = System.Drawing.Color.Black;
-            this.btnLamMoi.Location = new System.Drawing.Point(463, 164);
+            this.btnLamMoi.Location = new System.Drawing.Point(463, 208);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(100, 38);
             this.btnLamMoi.TabIndex = 26;
@@ -119,7 +121,7 @@
             this.grpTimKiem.Controls.Add(this.radTenPhong);
             this.grpTimKiem.Controls.Add(this.btnTimKiem);
             this.grpTimKiem.Controls.Add(this.txtTimKiem);
-            this.grpTimKiem.Location = new System.Drawing.Point(6, 208);
+            this.grpTimKiem.Location = new System.Drawing.Point(6, 255);
             this.grpTimKiem.Name = "grpTimKiem";
             this.grpTimKiem.Size = new System.Drawing.Size(563, 70);
             this.grpTimKiem.TabIndex = 25;
@@ -313,7 +315,7 @@
             this.TenTrangThai,
             this.GhiChu,
             this.TrangThai});
-            this.dgvDSPhong.Location = new System.Drawing.Point(13, 366);
+            this.dgvDSPhong.Location = new System.Drawing.Point(13, 410);
             this.dgvDSPhong.Name = "dgvDSPhong";
             this.dgvDSPhong.Size = new System.Drawing.Size(574, 170);
             this.dgvDSPhong.TabIndex = 2;
@@ -362,11 +364,25 @@
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
             // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnChiTiet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiTiet.ForeColor = System.Drawing.Color.Black;
+            this.btnChiTiet.Location = new System.Drawing.Point(463, 164);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(100, 38);
+            this.btnChiTiet.TabIndex = 27;
+            this.btnChiTiet.Text = "Chi Tiết Phòng";
+            this.btnChiTiet.UseVisualStyleBackColor = false;
+            this.btnChiTiet.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmQLPhongMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 545);
+            this.ClientSize = new System.Drawing.Size(601, 592);
             this.Controls.Add(this.dgvDSPhong);
             this.Controls.Add(this.grpQLPhongMay);
             this.Controls.Add(this.lblQLPhongMay);
@@ -414,5 +430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.Button btnChiTiet;
     }
 }

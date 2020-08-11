@@ -23,10 +23,17 @@ namespace QuanLyPhongMay
         ThietBi thietBi = new ThietBi();
         LoaiThietBiCtrl loaiThietBiCtrl = new LoaiThietBiCtrl();
         string loaiThietBi = "";
+        User user = new User();
 
         //Hàm xử lý khởi tạo mặc định của form.
         public frmQLThietBi()
         {
+            InitializeComponent();
+        }
+
+        public frmQLThietBi(User user)
+        {
+            this.user = user;
             InitializeComponent();
         }
 

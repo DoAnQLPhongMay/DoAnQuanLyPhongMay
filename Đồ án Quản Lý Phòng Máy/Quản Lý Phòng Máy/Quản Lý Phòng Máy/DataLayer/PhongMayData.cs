@@ -15,7 +15,7 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
-        public int getID()
+        public int GetID()
         {
             string select = "SELECT MaPhongMay ",
                 from = "FROM dtb_PhongMay ",
@@ -24,6 +24,16 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
 
             return cls.GetID(cmd);
+        }
+
+        public bool KTTenPhong(string tenPhong)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_PhongMay ",
+                where = "WHERE TenPhongMay = N'" + tenPhong + "'";
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.KiemTra(cmd);
         }
 
         //Hàm xử lý lấy danh sách phòng máy.

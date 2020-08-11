@@ -16,9 +16,15 @@ namespace QuanLyPhongMay
 {
     public partial class frmChiTietPhongMay : Form
     {
-
+        int maPhong = 0;
         public frmChiTietPhongMay()
         {
+            InitializeComponent();
+        }
+
+        public frmChiTietPhongMay(int maPhong)
+        {
+            this.maPhong = maPhong;
             InitializeComponent();
         }
 
