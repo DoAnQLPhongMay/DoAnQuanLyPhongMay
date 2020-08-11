@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuanLyPhongMay.DataLayer;
 using QuanLyPhongMay.BUS;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QuanLyPhongMay.Controller
 {

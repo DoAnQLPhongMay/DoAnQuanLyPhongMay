@@ -51,6 +51,16 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayThongTin()
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietThietBi ";
+
+            SqlCommand cmd = new SqlCommand(select + from);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm xử lý thêm mới thiết bị.
         public int Them(ThietBi thietBi)
         {

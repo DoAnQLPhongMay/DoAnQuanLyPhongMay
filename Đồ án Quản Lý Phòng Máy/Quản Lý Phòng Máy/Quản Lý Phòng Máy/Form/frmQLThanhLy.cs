@@ -19,9 +19,17 @@ namespace QuanLyPhongMay
         LichSuThanhLyCtrl thanhLyCtrl = new LichSuThanhLyCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
         LichSuThanhLy thanhLy = new LichSuThanhLy();
+        User user = new User();
+        TTThietBi thongTin = new TTThietBi();
 
         public frmQLThanhLy()
         {
+            InitializeComponent();
+        }
+
+        public frmQLThanhLy(User user)
+        {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -47,6 +55,8 @@ namespace QuanLyPhongMay
 
             btnThemMoi.Hide();
         }
+
+
 
         private void lamMoi()
         {
@@ -152,10 +162,42 @@ namespace QuanLyPhongMay
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             lamMoi();
+            if (cboTenThietBi.SelectedValue != null)
+            {
+                //int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+                thongTin = thietBiCtrl.LayThongTin(6);
+                MessageBox.Show(thongTin.NhaSanXuat);
+                txtNSX.Text = thongTin.NhaSanXuat;
+                txtNamSX.Text = thongTin.NamSanXuat.ToString();
+            }
         }
 
         //Hàm không xử dụng -------------------------------------------------------------------------------------//
         private void dtmNgayThanhLy_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void CboSelected(object sender, EventArgs e)
+        {
+
+        }
+        private void cbo_Selected(object sender, EventArgs e)
+        {
+            if (cboTenThietBi.SelectedValue != null)
+            {
+                int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+                thongTin = thietBiCtrl.LayThongTin(maThietBi);
+                MessageBox.Show(thongTin.NhaSanXuat);
+                txtNSX.Text = thongTin.NhaSanXuat;
+                txtNamSX.Text = thongTin.NamSanXuat.ToString();
+            }
+        }
+        private void cbo_Selected(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void cbo_Selected(object sender, UICuesEventArgs e)
         {
 
         }

@@ -140,6 +140,7 @@
             this.cboTenThietBi.Name = "cboTenThietBi";
             this.cboTenThietBi.Size = new System.Drawing.Size(100, 21);
             this.cboTenThietBi.TabIndex = 45;
+            this.cboTenThietBi.SelectionChangeCommitted += new System.EventHandler(this.cbo_Selected);
             // 
             // btnLamMoi
             // 
