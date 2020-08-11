@@ -12,7 +12,7 @@ namespace QuanLyPhongMay.DataLayer
 {
     class LoaiThietBiData
     {
-        //Khởi tạo biến DataProvider.
+        //Khởi tạo biến kết nối DataProvider.
         DataProvider cls = new DataProvider();
 
         //Hàm xử lý lấy danh sách mã loại thiết bị.

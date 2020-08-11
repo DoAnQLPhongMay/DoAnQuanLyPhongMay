@@ -11,8 +11,10 @@ namespace QuanLyPhongMay.Controller
 {
     class LoaiThietBiCtrl
     {
+        //Khởi tạo biến giá trị.
         LoaiThietBiData loaiThietBiData = new LoaiThietBiData();
 
+        //Hàm xử lý hiển thị loại thiết bị lên combox.
         public void HienThiCbo(ComboBox cb)
         {
             cb.DataSource = loaiThietBiData.LayDSMaLoai().Tables[0];

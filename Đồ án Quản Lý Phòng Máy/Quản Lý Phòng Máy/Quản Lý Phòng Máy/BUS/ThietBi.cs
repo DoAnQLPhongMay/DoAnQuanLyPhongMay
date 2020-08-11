@@ -8,7 +8,7 @@ namespace QuanLyPhongMay.BUS
 {
     class ThietBi
     {
-        //Khởi tạo getter setter cho phòng máy.
+        //Khởi tạo các biến giá trị.
         private int _maThietBi;
         private string _tenThietBi;
         private string _thongSoThietBi;
@@ -19,6 +19,13 @@ namespace QuanLyPhongMay.BUS
         private int _hanThanhLy;
         private string _ghiChu;
 
+        //Hàm khỏi tạo mặc định.
+        public ThietBi()
+        {
+
+        }
+
+        //Hàm getter, setter.
         public int MaThietBi 
         { get => _maThietBi; set => _maThietBi = value; }
         public string TenThietBi 
@@ -38,9 +45,5 @@ namespace QuanLyPhongMay.BUS
         public string GhiChu 
         { get => _ghiChu; set => _ghiChu = value; }
 
-        public ThietBi()
-        {
-
-        }
     }
 }

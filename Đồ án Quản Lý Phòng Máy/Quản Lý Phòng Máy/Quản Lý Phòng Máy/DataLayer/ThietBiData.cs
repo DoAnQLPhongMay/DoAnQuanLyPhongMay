@@ -13,9 +13,10 @@ namespace QuanLyPhongMay.DataLayer
 {
     class ThietBiData
     {
-        //Khởi tạo biến DataProvider.
+        //Khởi tạo biến kết nối DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm lấy ra ID có giá trị cao nhất.
         public int GetID()
         {
             string select = "SELECT MaThietBi ",
@@ -25,6 +26,17 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
 
             return cls.GetID(cmd);
+        }
+
+        //Hàm kiểm tra thiết bị có đang sử dụng không.
+        public bool KTThietBi(int maThietBi)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietMay ",
+                where = "WHERE MaThietBi = '" + maThietBi + "'";
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.KiemTra(cmd);
         }
 
         //Hàm xử lý lấy danh sách thiết bị.

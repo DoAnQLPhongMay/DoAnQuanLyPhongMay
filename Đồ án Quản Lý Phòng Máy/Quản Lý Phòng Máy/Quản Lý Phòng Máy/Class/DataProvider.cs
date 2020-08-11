@@ -63,7 +63,6 @@ namespace QuanLyPhongMay
 
             if (dr.Read())
             {
-                MessageBox.Show(dr[0].ToString());
                 id = Convert.ToInt32(dr[0].ToString());
             }
             dr.Close();

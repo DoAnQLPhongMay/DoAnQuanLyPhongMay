@@ -40,15 +40,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(sqlcmd);
         }
 
-        public bool KTThietBi(int maThietBi)
-        {
-            string select = "SELECT * ",
-                from = "FROM dtb_ChiTietMay ",
-                where = "WHERE MaThietBi = '" + maThietBi + "'";
-            SqlCommand cmd = new SqlCommand(select + from + where);
-
-            return cls.KiemTra(cmd);
-        }
 
         public int Them(May m)
         {
