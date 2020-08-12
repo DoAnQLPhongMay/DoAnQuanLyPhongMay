@@ -63,6 +63,18 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("mathietbi", SqlDbType.Int).Value = m.Mathietbi;
             return cls.CapNhatDL(cmd);
         }
+        public int LuuLichSuCapNhat(May m)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "insert into dtb_LichSuCapNhat(MaCapNhat, MaPhong, MaMay,NgayCapNhat, GhiChu) values (@macapnhat,@maphong,@mamay,@ngcapnhat,@ghichu)";
+            cmd.Parameters.Add("macapnhat", SqlDbType.Int).Value = m.MaCapNhat;
+            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
+            cmd.Parameters.Add("MaMay", SqlDbType.NVarChar).Value = m.MaMay;
+            cmd.Parameters.Add("ngaycapnhat", SqlDbType.Date).Value = m.NgayCapNhat;
+            cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
+            
+            return cls.CapNhatDL(cmd);
+        }
 
         public int Xoa(int ma)
         {
@@ -75,8 +87,10 @@ namespace QuanLyPhongMay.DataLayer
         public int Luu(May m)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_May set TenMay=@tenmay, GhiChu=@ghichu where MaMay=@mamay";
+            cmd.CommandText = "update dtb_May set TenMay=@tenmay,MaPhong=@maphong, MaTrangThai=@matrangthai, GhiChu=@ghichu where MaMay=@mamay";
             cmd.Parameters.Add("mamay", SqlDbType.Int).Value = m.MaMay;
+            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
+            cmd.Parameters.Add("matrangthai", SqlDbType.Int).Value = m.TrangThai;
             cmd.Parameters.Add("tenmay", SqlDbType.NVarChar).Value = m.TenMay;
             cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
             return cls.CapNhatDL(cmd);

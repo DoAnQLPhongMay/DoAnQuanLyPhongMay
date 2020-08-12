@@ -28,7 +28,7 @@ namespace QuanLyPhongMay
             m.MaMay = mctrl.GetID() + 1;
             m.TenMay = txtTenMay.Text;
             m.MaPhong = int.Parse(cbMaPhong.SelectedValue.ToString());
-            m.TrangThai = int.Parse(cbMaPhong.SelectedValue.ToString());
+            m.TrangThai = int.Parse(cbTrangThai.SelectedValue.ToString());
             m.Mathietbi = int.Parse(cbMaThietBi.SelectedValue.ToString());
             m.GhiChu = txtGhiChu.Text;
              if (txtTenMay.Text == "")
@@ -43,9 +43,6 @@ namespace QuanLyPhongMay
             else
                 switch (mctrl.Them(m))
                 {
-                  /*  case -1:
-                        MessageBox.Show("Mã Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;*/
                     case 0:
                         MessageBox.Show("Tên Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;

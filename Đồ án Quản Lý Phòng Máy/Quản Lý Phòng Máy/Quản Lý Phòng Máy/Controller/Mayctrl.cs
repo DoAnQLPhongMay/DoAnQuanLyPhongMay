@@ -17,19 +17,7 @@ namespace QuanLyPhongMay.Controller
         {
             return mayData.GetID();
         }
-        public void HienThiPhongCbo(ComboBox cb)
-        {
-            cb.DataSource = mayData.LayDSMay().Tables[0];
-            cb.DisplayMember = "MaPhongMay";
-            cb.ValueMember = "TenPhongMay";
-        }
-
-        /* public void HienThiTrangThaiCbo(ComboBox cb)
-         {
-             cb.DataSource = mayData.LayDSMay().Tables[0];
-             cb.DisplayMember = "MaTrangThai";
-             cb.ValueMember = "TenTrangThai";
-         }*/
+       
 
         public void HienThi(DataGridView dgv)
         {
@@ -41,8 +29,7 @@ namespace QuanLyPhongMay.Controller
         }
         public int Them(May m)
         {
-           /* if (!KiemTraMaMay(m.MaMay))
-                return -1;*/
+          
             if (KiemTraTenMay(m.TenMay))
                 return 0;
             return mayData.Them(m);
@@ -55,10 +42,7 @@ namespace QuanLyPhongMay.Controller
         {
             return mayData.Luu(m);
         }
-      /*  public bool KiemTraMaMay(int mamay)
-        {
-            return mayData.KiemTraMaMay(mamay);
-        }*/
+     
         public bool KiemTraTenMay(string tenmay)
         {
             return mayData.KiemTraTenMay(tenmay);

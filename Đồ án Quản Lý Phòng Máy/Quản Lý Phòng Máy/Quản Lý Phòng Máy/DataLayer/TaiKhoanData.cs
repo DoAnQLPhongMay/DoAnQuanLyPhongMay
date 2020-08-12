@@ -61,10 +61,11 @@ namespace QuanLyPhongMay.DataLayer
            cmd.Parameters.Add("maquyen", SqlDbType.Int).Value = gv.LoaiTaiKhoan;
             return cls.CapNhatDL(cmd);
         }
+       
         public int Luu(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,SDT=@sdt, NgaySinh=@ngsinh,DiaChi=@diachi where TenDangNhap=@tendangnhap";
+            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gioitinh, SDT=@sdt, NgaySinh=@ngsinh,DiaChi=@diachi where TenDangNhap=@tendangnhap";
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
             cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;

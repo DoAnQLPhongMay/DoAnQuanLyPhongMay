@@ -16,6 +16,9 @@ namespace QuanLyPhongMay
 {
     public partial class frmQLMay : Form
     {
+        TrangThaiCtrl ttctrl = new TrangThaiCtrl();
+        ThietBiCtrl tbctrl = new ThietBiCtrl();
+        PhongMayCtrl phongctrl = new PhongMayCtrl();
         MayCtrl mctrl = new MayCtrl();
 
         public frmQLMay()
@@ -29,8 +32,8 @@ namespace QuanLyPhongMay
             {
                 txt_MaMay.Text = dgv_DSMay.CurrentRow.Cells[0].Value.ToString();
                 txt_TenMay.Text = dgv_DSMay.CurrentRow.Cells[1].Value.ToString();
-                txtMaPhong.Text = dgv_DSMay.CurrentRow.Cells[2].Value.ToString();
-                txtTrangThai.Text = dgv_DSMay.CurrentRow.Cells[5].Value.ToString();
+                cbPhong.Text = dgv_DSMay.CurrentRow.Cells[2].Value.ToString();
+                cbTrangThai.Text = dgv_DSMay.CurrentRow.Cells[5].Value.ToString();
                 txt_GhiChu.Text = dgv_DSMay.CurrentRow.Cells[6].Value.ToString();
             }
         }
@@ -66,6 +69,8 @@ namespace QuanLyPhongMay
             May may = new May(); 
             may.TenMay = txt_TenMay.Text;
             may.GhiChu = txt_GhiChu.Text;
+            may.MaPhong = int.Parse(cbPhong.SelectedValue.ToString());
+            may.TrangThai = int.Parse(cbTrangThai.SelectedValue.ToString());
             may.MaMay = int.Parse(txt_MaMay.Text);
 
             string mamay = dgv_DSMay.CurrentRow.Cells[0].Value.ToString();
@@ -73,12 +78,12 @@ namespace QuanLyPhongMay
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
 
-                if (mctrl.Luu(may) > 0)
+                if(mctrl.Luu(may) > 0)
                 {
                     MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     mctrl.HienThi(dgv_DSMay);
                     HienThiThongTin();
-                }
+                }   
             }
             
         }
@@ -98,6 +103,9 @@ namespace QuanLyPhongMay
         private void frmQLMay_Load(object sender, EventArgs e)
         {
             mctrl.HienThi(dgv_DSMay);
+            ttctrl.HienThiCbo(cbTrangThai);
+            
+            phongctrl.HienThiCbo(cbPhong);
             HienThiThongTin();
         }
         private void dgv_DSMay_Click(object sender, EventArgs e)

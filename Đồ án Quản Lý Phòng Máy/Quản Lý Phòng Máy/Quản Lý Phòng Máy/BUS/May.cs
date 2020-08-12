@@ -46,7 +46,17 @@ namespace QuanLyPhongMay.BUS
         }
 
         public int Mathietbi { get => _mathietbi; set => _mathietbi = value; }
+        public int MaCapNhat { get => _macapnhat; set => _macapnhat = value; }
 
         private int _mathietbi;
+
+        private int _macapnhat;
+        private DateTime _ngaycapnhat;
+
+        public DateTime NgayCapNhat
+        {
+            get { return _ngaycapnhat; }
+            set { _ngaycapnhat = value; }
+        }
     }
 }

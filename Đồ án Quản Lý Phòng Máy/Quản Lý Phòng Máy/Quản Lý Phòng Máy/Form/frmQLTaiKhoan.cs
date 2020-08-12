@@ -19,6 +19,7 @@ namespace QuanLyPhongMay
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
+
         public frm_QLTaiKhoan()
         {
             InitializeComponent();
