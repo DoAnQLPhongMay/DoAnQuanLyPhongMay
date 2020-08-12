@@ -38,7 +38,6 @@
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
             this.btnTiemKiem = new System.Windows.Forms.Button();
             this.rad_TenMay = new System.Windows.Forms.RadioButton();
-            this.rad_MaMay = new System.Windows.Forms.RadioButton();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
@@ -153,7 +152,6 @@
             // 
             this.grp_TimKiem.Controls.Add(this.btnTiemKiem);
             this.grp_TimKiem.Controls.Add(this.rad_TenMay);
-            this.grp_TimKiem.Controls.Add(this.rad_MaMay);
             this.grp_TimKiem.Controls.Add(this.txt_TimKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(22, 327);
             this.grp_TimKiem.Name = "grp_TimKiem";
@@ -177,7 +175,7 @@
             // rad_TenMay
             // 
             this.rad_TenMay.AutoSize = true;
-            this.rad_TenMay.Location = new System.Drawing.Point(285, 29);
+            this.rad_TenMay.Location = new System.Drawing.Point(330, 29);
             this.rad_TenMay.Name = "rad_TenMay";
             this.rad_TenMay.Size = new System.Drawing.Size(74, 17);
             this.rad_TenMay.TabIndex = 2;
@@ -185,22 +183,11 @@
             this.rad_TenMay.Text = "Tên Máy";
             this.rad_TenMay.UseVisualStyleBackColor = true;
             // 
-            // rad_MaMay
-            // 
-            this.rad_MaMay.AutoSize = true;
-            this.rad_MaMay.Location = new System.Drawing.Point(193, 29);
-            this.rad_MaMay.Name = "rad_MaMay";
-            this.rad_MaMay.Size = new System.Drawing.Size(69, 17);
-            this.rad_MaMay.TabIndex = 1;
-            this.rad_MaMay.TabStop = true;
-            this.rad_MaMay.Text = "Mã Máy";
-            this.rad_MaMay.UseVisualStyleBackColor = true;
-            // 
             // txt_TimKiem
             // 
             this.txt_TimKiem.Location = new System.Drawing.Point(10, 28);
             this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(159, 20);
+            this.txt_TimKiem.Size = new System.Drawing.Size(259, 20);
             this.txt_TimKiem.TabIndex = 0;
             // 
             // btn_Xoa
@@ -411,7 +398,6 @@
         private System.Windows.Forms.GroupBox grp_TimKiem;
         private System.Windows.Forms.Button btnTiemKiem;
         private System.Windows.Forms.RadioButton rad_TenMay;
-        private System.Windows.Forms.RadioButton rad_MaMay;
         private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.GroupBox grp_ChiTietMay;
         private System.Windows.Forms.ComboBox cbo_RAM;

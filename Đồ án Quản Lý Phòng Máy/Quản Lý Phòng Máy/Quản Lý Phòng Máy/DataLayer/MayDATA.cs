@@ -28,27 +28,25 @@ namespace QuanLyPhongMay.DataLayer
 
         public DataSet LayDSMay()
         {
-            string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu from dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
-            SqlCommand sqlcmd = new SqlCommand(sql);
+            string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu ",
+                from =  "From dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai ",
+                where = "where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
+            SqlCommand sqlcmd = new SqlCommand(sql + from + where);
             return cls.LayDuLieu(sqlcmd);
         }
 
         public DataSet LayDSTK(string tukhoa, string tieuchi)
         {
-            string sql = "select * from dtb_May";
+            string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu ",
+               from = "From dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai ",
+               where = "Where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
             switch (tieuchi)
             {
-                case "mamay":
-                    sql += " where MaMay like \"%" + tukhoa + "%\"";
-                    break;
                 case "tenmay":
-                    sql += " where TenMay like \"%" + tukhoa + "%\"";
-                    break;
-                default:
-                    sql += " where TrangThai like \"%" + tukhoa + "%\"";
+                    where += " And TenMay = '" + tukhoa + "'";
                     break;
             }
-            SqlCommand sqlcmd = new SqlCommand(sql);
+            SqlCommand sqlcmd = new SqlCommand(sql + from+ where);
             return cls.LayDuLieu(sqlcmd);
         }
 

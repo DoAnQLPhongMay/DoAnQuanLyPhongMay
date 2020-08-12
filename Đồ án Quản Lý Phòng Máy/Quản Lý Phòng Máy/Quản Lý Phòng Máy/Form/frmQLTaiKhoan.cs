@@ -28,11 +28,7 @@ namespace QuanLyPhongMay
 
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
-            /*string querry = "SELECT * FROM dtb_TaiKhoan";
-            DataSet ds = DBUtils.dsTable(querry, conn);
-
-            dgv_DSTaiKhoan.DataSource = ds.Tables[0];
-            dgv_DSTaiKhoan.Refresh();*/
+  
            tkctrl.HienThi(dgv_DSTaiKhoan);
             HienThiThongTin();
         }
@@ -41,18 +37,17 @@ namespace QuanLyPhongMay
             if (dgv_DSTaiKhoan.CurrentRow != null)
             {
                 txt_Username.Text = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txt_Password.Text = dgv_DSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
-                txt_TenTaiKhoan.Text = dgv_DSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
+                txt_TenTaiKhoan.Text = dgv_DSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
                 checkRadio();
-                txt_SDT.Text = dgv_DSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
-                dtm_NgaySinh.Value = DateTime.Parse(dgv_DSTaiKhoan.CurrentRow.Cells[7].Value.ToString());
-                txt_DiaChi.Text = dgv_DSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
-                txtMaQuyen.Text = dgv_DSTaiKhoan.CurrentRow.Cells[9].Value.ToString();
+                txt_SDT.Text = dgv_DSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+                dtm_NgaySinh.Value = DateTime.Parse(dgv_DSTaiKhoan.CurrentRow.Cells[6].Value.ToString());
+                txt_DiaChi.Text = dgv_DSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
+                txtMaQuyen.Text = dgv_DSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
             }
         }
         void checkRadio()
         {
-            string gtri = dgv_DSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+            string gtri = dgv_DSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
             rad_Nam.Checked = (gtri == "True") ? true : false;
             rad_Nu.Checked = (gtri == "False") ? true : false;
         }
@@ -107,7 +102,7 @@ namespace QuanLyPhongMay
         {
             string tieuchi = "";
             if (rad_TenTaiKhoan.Checked)
-                tieuchi = "tentaikhoan";
+                tieuchi = "hovaten";
             else if (rad_SDT.Checked)
                 tieuchi = "sdt";
             else

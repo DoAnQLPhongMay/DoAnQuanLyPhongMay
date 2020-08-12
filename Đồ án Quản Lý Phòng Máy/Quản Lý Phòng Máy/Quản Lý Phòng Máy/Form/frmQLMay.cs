@@ -85,13 +85,9 @@ namespace QuanLyPhongMay
         private void btnTiemKiem_Click(object sender, EventArgs e)
         {
             string tieuchi = "";
-            if (rad_MaMay.Checked)
-                tieuchi = "mamay";
-            else if (rad_TenMay.Checked)
+          
+            if (rad_TenMay.Checked)
                 tieuchi = "tenmay";
-            else
-                tieuchi = "trangthai";
-
             if (txt_TimKiem.Text.Length == 0)
                 mctrl.HienThi(dgv_DSMay);
             else
