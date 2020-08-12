@@ -107,6 +107,7 @@
             // 
             // txtMaQuyen
             // 
+            this.txtMaQuyen.Enabled = false;
             this.txtMaQuyen.Location = new System.Drawing.Point(122, 33);
             this.txtMaQuyen.Name = "txtMaQuyen";
             this.txtMaQuyen.Size = new System.Drawing.Size(136, 21);

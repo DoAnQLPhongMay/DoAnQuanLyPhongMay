@@ -80,6 +80,13 @@ namespace QuanLyPhongMay
                         break;
                     case 1:
                         MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtTenDangNhap.Text = "";
+                        txtTenTaiKhoan.Text = "";
+                        txtSDT.Text = "";
+                        txtMatKhau.Text = "";
+                        txtMaTaiKhoan.Text = "";
+                        txtEmail.Text = "";
+                        txtDiaChi.Text = "";
                         break;
                 }
             }

@@ -64,13 +64,12 @@ namespace QuanLyPhongMay.DataLayer
         public int Luu(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,SDT=@sdt,Email=@email,NgaySinh=@ngsinh,DiaChi=@diachi where TenDangNhap=@tendangnhap";
+            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,SDT=@sdt, NgaySinh=@ngsinh,DiaChi=@diachi where TenDangNhap=@tendangnhap";
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
             cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
-            cmd.Parameters.Add("email", SqlDbType.NChar).Value = gv.Email;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
-            cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
+            cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;  
            cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = gv.TenDangNhap;
             return cls.CapNhatDL(cmd);
         }

@@ -37,7 +37,7 @@ namespace QuanLyPhongMay
             if (dgv_DSTaiKhoan.CurrentRow != null)
             {
                 txt_Username.Text = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txt_TenTaiKhoan.Text = dgv_DSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
+                txt_TenTaiKhoan.Text = dgv_DSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
                 checkRadio();
                 txt_SDT.Text = dgv_DSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
                 dtm_NgaySinh.Value = DateTime.Parse(dgv_DSTaiKhoan.CurrentRow.Cells[6].Value.ToString());
@@ -79,23 +79,27 @@ namespace QuanLyPhongMay
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
             TaiKhoan tk = new TaiKhoan();
-
             tk.TenGV = txt_TenTaiKhoan.Text;
-            /*tk.Gioitinh = (rad_Nam.Checked) ? true : false;*/
+            tk.Gioitinh = (rad_Nam.Checked) ? true : false;
             tk.SDT = txt_SDT.Text;
             tk.Ngaysinh = Convert.ToDateTime(dtm_NgaySinh.Value);
             tk.Diachi = txt_DiaChi.Text;
-            
-            if (tkctrl.Luu(tk) > 0)
+            tk.TenDangNhap = txt_Username.Text;
+
+            string tendn = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tkctrl.HienThi(dgv_DSTaiKhoan);
-                HienThiThongTin();
+                if (tkctrl.Luu(tk) > 0)
+                {
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tkctrl.HienThi(dgv_DSTaiKhoan);
+                    HienThiThongTin();
+                }
             }
-            else
-            {
-                MessageBox.Show("Lưu thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }    
+
+            
+             
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)

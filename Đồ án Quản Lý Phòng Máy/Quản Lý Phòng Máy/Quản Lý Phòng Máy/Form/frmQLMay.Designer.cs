@@ -57,6 +57,22 @@
             this.lbl_TenMay = new System.Windows.Forms.Label();
             this.txt_MaMay = new System.Windows.Forms.TextBox();
             this.lbl_MaMay = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSMay)).BeginInit();
             this.grp_QLMay.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
@@ -75,7 +91,7 @@
             this.dgv_DSMay.Location = new System.Drawing.Point(0, 481);
             this.dgv_DSMay.Name = "dgv_DSMay";
             this.dgv_DSMay.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgv_DSMay.Size = new System.Drawing.Size(625, 251);
+            this.dgv_DSMay.Size = new System.Drawing.Size(844, 266);
             this.dgv_DSMay.TabIndex = 5;
             this.dgv_DSMay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSMay_CellClick);
             this.dgv_DSMay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSMay_CellContentClick);
@@ -106,10 +122,12 @@
             this.grp_QLMay.Controls.Add(this.lbl_TenMay);
             this.grp_QLMay.Controls.Add(this.txt_MaMay);
             this.grp_QLMay.Controls.Add(this.lbl_MaMay);
+            this.grp_QLMay.Controls.Add(this.label2);
+            this.grp_QLMay.Controls.Add(this.txt_GhiChu);
             this.grp_QLMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_QLMay.Location = new System.Drawing.Point(12, 73);
             this.grp_QLMay.Name = "grp_QLMay";
-            this.grp_QLMay.Size = new System.Drawing.Size(613, 402);
+            this.grp_QLMay.Size = new System.Drawing.Size(832, 402);
             this.grp_QLMay.TabIndex = 4;
             this.grp_QLMay.TabStop = false;
             this.grp_QLMay.Text = "Quản Lý Máy";
@@ -117,7 +135,7 @@
             // txtTrangThai
             // 
             this.txtTrangThai.Enabled = false;
-            this.txtTrangThai.Location = new System.Drawing.Point(333, 76);
+            this.txtTrangThai.Location = new System.Drawing.Point(326, 79);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(105, 20);
             this.txtTrangThai.TabIndex = 29;
@@ -125,7 +143,7 @@
             // txtMaPhong
             // 
             this.txtMaPhong.Enabled = false;
-            this.txtMaPhong.Location = new System.Drawing.Point(102, 76);
+            this.txtMaPhong.Location = new System.Drawing.Point(102, 79);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.Size = new System.Drawing.Size(105, 20);
             this.txtMaPhong.TabIndex = 28;
@@ -133,7 +151,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 79);
+            this.label1.Location = new System.Drawing.Point(29, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 27;
@@ -142,7 +160,7 @@
             // lbl_TrangThai
             // 
             this.lbl_TrangThai.AutoSize = true;
-            this.lbl_TrangThai.Location = new System.Drawing.Point(253, 79);
+            this.lbl_TrangThai.Location = new System.Drawing.Point(246, 82);
             this.lbl_TrangThai.Name = "lbl_TrangThai";
             this.lbl_TrangThai.Size = new System.Drawing.Size(77, 13);
             this.lbl_TrangThai.TabIndex = 25;
@@ -155,7 +173,7 @@
             this.grp_TimKiem.Controls.Add(this.txt_TimKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(22, 327);
             this.grp_TimKiem.Name = "grp_TimKiem";
-            this.grp_TimKiem.Size = new System.Drawing.Size(582, 65);
+            this.grp_TimKiem.Size = new System.Drawing.Size(668, 65);
             this.grp_TimKiem.TabIndex = 24;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
@@ -164,7 +182,7 @@
             // 
             this.btnTiemKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnTiemKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTiemKiem.Location = new System.Drawing.Point(454, 20);
+            this.btnTiemKiem.Location = new System.Drawing.Point(551, 20);
             this.btnTiemKiem.Name = "btnTiemKiem";
             this.btnTiemKiem.Size = new System.Drawing.Size(97, 34);
             this.btnTiemKiem.TabIndex = 30;
@@ -175,7 +193,7 @@
             // rad_TenMay
             // 
             this.rad_TenMay.AutoSize = true;
-            this.rad_TenMay.Location = new System.Drawing.Point(330, 29);
+            this.rad_TenMay.Location = new System.Drawing.Point(408, 29);
             this.rad_TenMay.Name = "rad_TenMay";
             this.rad_TenMay.Size = new System.Drawing.Size(74, 17);
             this.rad_TenMay.TabIndex = 2;
@@ -187,14 +205,14 @@
             // 
             this.txt_TimKiem.Location = new System.Drawing.Point(10, 28);
             this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(259, 20);
+            this.txt_TimKiem.Size = new System.Drawing.Size(307, 20);
             this.txt_TimKiem.TabIndex = 0;
             // 
             // btn_Xoa
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Xoa.Location = new System.Drawing.Point(476, 262);
+            this.btn_Xoa.Location = new System.Drawing.Point(717, 259);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(97, 34);
             this.btn_Xoa.TabIndex = 23;
@@ -206,7 +224,7 @@
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sua.Location = new System.Drawing.Point(476, 184);
+            this.btn_Sua.Location = new System.Drawing.Point(717, 204);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(97, 34);
             this.btn_Sua.TabIndex = 22;
@@ -218,7 +236,7 @@
             // 
             this.btn_ThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_ThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(476, 103);
+            this.btn_ThemMoi.Location = new System.Drawing.Point(717, 141);
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(97, 34);
             this.btn_ThemMoi.TabIndex = 21;
@@ -228,8 +246,22 @@
             // 
             // grp_ChiTietMay
             // 
-            this.grp_ChiTietMay.Controls.Add(this.txt_GhiChu);
-            this.grp_ChiTietMay.Controls.Add(this.label2);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox5);
+            this.grp_ChiTietMay.Controls.Add(this.label7);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox6);
+            this.grp_ChiTietMay.Controls.Add(this.label8);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox7);
+            this.grp_ChiTietMay.Controls.Add(this.label9);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox8);
+            this.grp_ChiTietMay.Controls.Add(this.label10);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox1);
+            this.grp_ChiTietMay.Controls.Add(this.label3);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox2);
+            this.grp_ChiTietMay.Controls.Add(this.label4);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox3);
+            this.grp_ChiTietMay.Controls.Add(this.label5);
+            this.grp_ChiTietMay.Controls.Add(this.comboBox4);
+            this.grp_ChiTietMay.Controls.Add(this.label6);
             this.grp_ChiTietMay.Controls.Add(this.cbo_RAM);
             this.grp_ChiTietMay.Controls.Add(this.lbl_RAM);
             this.grp_ChiTietMay.Controls.Add(this.cbo_MainBoard);
@@ -240,7 +272,7 @@
             this.grp_ChiTietMay.Controls.Add(this.lbl_ManHinh);
             this.grp_ChiTietMay.Location = new System.Drawing.Point(22, 121);
             this.grp_ChiTietMay.Name = "grp_ChiTietMay";
-            this.grp_ChiTietMay.Size = new System.Drawing.Size(433, 192);
+            this.grp_ChiTietMay.Size = new System.Drawing.Size(668, 192);
             this.grp_ChiTietMay.TabIndex = 4;
             this.grp_ChiTietMay.TabStop = false;
             this.grp_ChiTietMay.Text = "Chi Tiết Máy";
@@ -248,7 +280,7 @@
             // txt_GhiChu
             // 
             this.txt_GhiChu.Enabled = false;
-            this.txt_GhiChu.Location = new System.Drawing.Point(80, 118);
+            this.txt_GhiChu.Location = new System.Drawing.Point(556, 34);
             this.txt_GhiChu.Name = "txt_GhiChu";
             this.txt_GhiChu.Size = new System.Drawing.Size(114, 20);
             this.txt_GhiChu.TabIndex = 15;
@@ -256,7 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 121);
+            this.label2.Location = new System.Drawing.Point(473, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 14;
@@ -333,7 +365,7 @@
             // txt_TenMay
             // 
             this.txt_TenMay.Enabled = false;
-            this.txt_TenMay.Location = new System.Drawing.Point(333, 34);
+            this.txt_TenMay.Location = new System.Drawing.Point(326, 34);
             this.txt_TenMay.Name = "txt_TenMay";
             this.txt_TenMay.Size = new System.Drawing.Size(105, 20);
             this.txt_TenMay.TabIndex = 3;
@@ -341,7 +373,7 @@
             // lbl_TenMay
             // 
             this.lbl_TenMay.AutoSize = true;
-            this.lbl_TenMay.Location = new System.Drawing.Point(253, 37);
+            this.lbl_TenMay.Location = new System.Drawing.Point(246, 37);
             this.lbl_TenMay.Name = "lbl_TenMay";
             this.lbl_TenMay.Size = new System.Drawing.Size(64, 13);
             this.lbl_TenMay.TabIndex = 2;
@@ -364,11 +396,147 @@
             this.lbl_MaMay.TabIndex = 0;
             this.lbl_MaMay.Text = "Mã Máy: ";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(311, 151);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(108, 21);
+            this.comboBox1.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(231, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "RAM:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(311, 111);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(108, 21);
+            this.comboBox2.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(231, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "MainBoard: ";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(80, 151);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(114, 21);
+            this.comboBox3.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Chuột: ";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(80, 111);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(114, 21);
+            this.comboBox4.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Màn Hình: ";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(540, 151);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(108, 21);
+            this.comboBox5.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(460, 154);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "RAM:";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(540, 111);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(108, 21);
+            this.comboBox6.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(460, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "MainBoard: ";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(540, 71);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(108, 21);
+            this.comboBox7.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(460, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "RAM:";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(540, 31);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(108, 21);
+            this.comboBox8.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(460, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "MainBoard: ";
+            // 
             // frmQLMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 736);
+            this.ClientSize = new System.Drawing.Size(847, 749);
             this.Controls.Add(this.dgv_DSMay);
             this.Controls.Add(this.lbl_QLMay);
             this.Controls.Add(this.grp_QLMay);
@@ -418,5 +586,21 @@
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_ThemMoi;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label6;
     }
 }
