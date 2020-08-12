@@ -75,13 +75,10 @@ namespace QuanLyPhongMay.DataLayer
         public int Luu(May m)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_May set MaPhong=@maphong,TenMay=@tenmay,TrangThai=@trangthai,GhiChu=@ghichu, MaThietBi=@mathietbi where MaMay=@mamay";
+            cmd.CommandText = "update dtb_May set TenMay=@tenmay, GhiChu=@ghichu where MaMay=@mamay";
             cmd.Parameters.Add("mamay", SqlDbType.Int).Value = m.MaMay;
-            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
-            cmd.Parameters.Add("soluong", SqlDbType.NVarChar).Value = m.TenMay;
-            cmd.Parameters.Add("trangthai", SqlDbType.Int).Value = m.TrangThai;
+            cmd.Parameters.Add("tenmay", SqlDbType.NVarChar).Value = m.TenMay;
             cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
-            cmd.Parameters.Add("mahietbi", SqlDbType.Int).Value = m.Mathietbi;
             return cls.CapNhatDL(cmd);
         }
 

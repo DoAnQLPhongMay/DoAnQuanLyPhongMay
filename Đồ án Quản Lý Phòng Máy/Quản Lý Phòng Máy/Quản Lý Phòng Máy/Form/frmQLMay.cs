@@ -63,23 +63,24 @@ namespace QuanLyPhongMay
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            May may = new May();
-
-            
+            May may = new May(); 
             may.TenMay = txt_TenMay.Text;
             may.GhiChu = txt_GhiChu.Text;
-            may.MaPhong = int.Parse(txtMaPhong.Text);
-            may.TrangThai = int.Parse(txtTrangThai.Text);
-            if (mctrl.Luu(may) > 0)
+            may.MaMay = int.Parse(txt_MaMay.Text);
+
+            string mamay = dgv_DSMay.CurrentRow.Cells[0].Value.ToString();
+            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                mctrl.HienThi(dgv_DSMay);
-                HienThiThongTin();
+
+                if (mctrl.Luu(may) > 0)
+                {
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mctrl.HienThi(dgv_DSMay);
+                    HienThiThongTin();
+                }
             }
-            else
-            {
-                MessageBox.Show("Lưu không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void btnTiemKiem_Click(object sender, EventArgs e)

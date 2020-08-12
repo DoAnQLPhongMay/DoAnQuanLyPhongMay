@@ -325,7 +325,7 @@
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThemTaiKhoan);
             this.Name = "frmThemTaiKhoan";
-            this.Text = "frmThemTaiKhoan";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmThemTaiKhoan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
