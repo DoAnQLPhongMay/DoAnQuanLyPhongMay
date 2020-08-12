@@ -54,6 +54,10 @@ namespace QuanLyPhongMay
                     mctrl.HienThi(dgv_DSMay);
                     HienThiThongTin();
                 }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }    
             }
         }
 
@@ -61,10 +65,11 @@ namespace QuanLyPhongMay
         {
             May may = new May();
 
-            may.MaMay = int.Parse(txt_MaMay.Text);
+            
             may.TenMay = txt_TenMay.Text;
             may.GhiChu = txt_GhiChu.Text;
-
+            may.MaPhong = int.Parse(txtMaPhong.Text);
+            may.TrangThai = int.Parse(txtTrangThai.Text);
             if (mctrl.Luu(may) > 0)
             {
                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

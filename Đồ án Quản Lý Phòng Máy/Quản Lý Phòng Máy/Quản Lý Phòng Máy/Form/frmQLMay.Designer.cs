@@ -66,11 +66,9 @@
             // 
             // dgv_DSMay
             // 
-            this.dgv_DSMay.AllowUserToDeleteRows = false;
-            this.dgv_DSMay.AllowUserToOrderColumns = true;
             this.dgv_DSMay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_DSMay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_DSMay.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgv_DSMay.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_DSMay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_DSMay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgv_DSMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

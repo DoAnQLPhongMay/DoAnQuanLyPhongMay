@@ -113,6 +113,7 @@
             // 
             // txtMaMay
             // 
+            this.txtMaMay.Enabled = false;
             this.txtMaMay.Location = new System.Drawing.Point(107, 41);
             this.txtMaMay.Name = "txtMaMay";
             this.txtMaMay.Size = new System.Drawing.Size(182, 21);

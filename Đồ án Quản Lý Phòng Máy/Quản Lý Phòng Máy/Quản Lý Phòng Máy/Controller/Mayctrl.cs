@@ -13,6 +13,10 @@ namespace QuanLyPhongMay.Controller
     {
 
         MayData mayData = new MayData();
+        public int GetID()
+        {
+            return mayData.GetID();
+        }
         public void HienThiPhongCbo(ComboBox cb)
         {
             cb.DataSource = mayData.LayDSMay().Tables[0];
@@ -37,8 +41,8 @@ namespace QuanLyPhongMay.Controller
         }
         public int Them(May m)
         {
-            if (!KiemTraMaMay(m.MaMay))
-                return -1;
+           /* if (!KiemTraMaMay(m.MaMay))
+                return -1;*/
             if (KiemTraTenMay(m.TenMay))
                 return 0;
             return mayData.Them(m);
@@ -51,10 +55,10 @@ namespace QuanLyPhongMay.Controller
         {
             return mayData.Luu(m);
         }
-        public bool KiemTraMaMay(int mamay)
+      /*  public bool KiemTraMaMay(int mamay)
         {
             return mayData.KiemTraMaMay(mamay);
-        }
+        }*/
         public bool KiemTraTenMay(string tenmay)
         {
             return mayData.KiemTraTenMay(tenmay);

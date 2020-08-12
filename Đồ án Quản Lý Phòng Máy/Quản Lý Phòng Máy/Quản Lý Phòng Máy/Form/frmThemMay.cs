@@ -25,32 +25,17 @@ namespace QuanLyPhongMay
         private void btnThemMay_Click(object sender, EventArgs e)
         {
             May m = new May();
-            m.MaMay = int.Parse(txtMaMay.Text);
+            m.MaMay = mctrl.GetID() + 1;
             m.TenMay = txtTenMay.Text;
             m.MaPhong = int.Parse(cbMaPhong.SelectedValue.ToString());
             m.TrangThai = int.Parse(cbMaPhong.SelectedValue.ToString());
             m.Mathietbi = int.Parse(cbMaThietBi.SelectedValue.ToString());
             m.GhiChu = txtGhiChu.Text;
-            if (txtMaMay.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập Mã Máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtTenMay.Text == "")
+             if (txtTenMay.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên Máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (cbMaThietBi.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập Mã Thiết Bị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (cbMaPhong.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập Mã Phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (cbTrangThai.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập Trạng Thái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
             else if (txtGhiChu.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Ghi Chú", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,11 +43,11 @@ namespace QuanLyPhongMay
             else
                 switch (mctrl.Them(m))
                 {
-                    case -1:
-                        MessageBox.Show("Tên Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
-                    case 0:
+                  /*  case -1:
                         MessageBox.Show("Mã Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;*/
+                    case 0:
+                        MessageBox.Show("Tên Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
                     case 1:
                         MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
