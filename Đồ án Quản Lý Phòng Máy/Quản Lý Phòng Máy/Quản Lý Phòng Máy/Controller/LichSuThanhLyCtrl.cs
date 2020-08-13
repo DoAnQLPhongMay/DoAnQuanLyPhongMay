@@ -30,6 +30,11 @@ namespace QuanLyPhongMay.Controller
             return lsThanhLyData.Them(lsThanhLy);
         }
 
+        public int CapNhatSL(LichSuThanhLy lsThanhLy)
+        {
+            return lsThanhLyData.CapNhatSL(lsThanhLy);
+        }
+
         public void TimKiem(DataGridView dgv, string key, string loaiTK)
         {
             dgv.DataSource = lsThanhLyData.LayDSTK(key, loaiTK).Tables[0];

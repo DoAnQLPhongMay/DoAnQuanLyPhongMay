@@ -57,7 +57,6 @@ namespace QuanLyPhongMay
             txtNamSX.Text = dgvDSThanhLy.CurrentRow.Cells[4].Value.ToString();
             txtSoLuong.Text = dgvDSThanhLy.CurrentRow.Cells[5].Value.ToString();
             txtDonGia.Text = dgvDSThanhLy.CurrentRow.Cells[6].Value.ToString();
-            txtNguoiPhuTrach.Text = "vmkhoi";
             rtbGhiChu.Text = dgvDSThanhLy.CurrentRow.Cells[8].Value.ToString();
 
             btnThemMoi.Enabled = false;
@@ -71,6 +70,21 @@ namespace QuanLyPhongMay
                 thongTin = thietBiCtrl.LayThongTin(maThietBi);
                 txtNSX.Text = thongTin.NhaSanXuat;
                 txtNamSX.Text = thongTin.NamSanXuat.ToString();
+            }
+        }
+
+        private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Cho phép nhập số thực.
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
 
@@ -91,26 +105,32 @@ namespace QuanLyPhongMay
         public bool kiemTra()
         {
             bool kTra = true;
+            thongTin = thietBiCtrl.LayThongTin(Convert.ToInt32(cboTenThietBi.SelectedValue));
 
-            if (cboTenThietBi.Text == "")
+            if (txtNamSX.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn lại thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else if (cboTenThietBi.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn thiết bị.", "Thông báo!", MessageBoxButtons.OK);
                 kTra = false;
             }
-            else
+            else if (txtSoLuong.Text == "")
             {
-                if (txtDonGia.Text == "")
-                {
-                    txtDonGia.Text = "0";
-                }
-                if (txtNamSX.Text == "")
-                {
-                    txtNamSX.Text = DateTime.Now.Year.ToString();
-                }
-                if (txtSoLuong.Text == "")
-                {
-                    txtSoLuong.Text = "0";
-                }
+                MessageBox.Show("Vui lòng nhập số lương.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else if (txtDonGia.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else if(thongTin.SoLuong < Convert.ToInt32(txtSoLuong.Text))
+            {
+                MessageBox.Show("Số lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
             }
 
             return kTra;
@@ -122,7 +142,7 @@ namespace QuanLyPhongMay
             {
                 thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
                 thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
-                thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue.ToString());
+                thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
                 thanhLy.NhaSanXuat = txtNSX.Text;
                 thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
                 thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
@@ -131,6 +151,7 @@ namespace QuanLyPhongMay
                 thanhLy.GhiChu = rtbGhiChu.Text;
 
                 thanhLyCtrl.Them(thanhLy);
+                thanhLyCtrl.CapNhatSL(thanhLy);
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
             }
@@ -179,5 +200,6 @@ namespace QuanLyPhongMay
         {
 
         }
+
     }
 }

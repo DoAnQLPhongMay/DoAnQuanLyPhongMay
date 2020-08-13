@@ -13,6 +13,12 @@ namespace QuanLyPhongMay.Controller
     {
         LichSuNhapData lsNhapData = new LichSuNhapData();
 
+        //Hàm xử lý lấy giá trị ID lớn nhất trong database.
+        public int GetID()
+        {
+            return lsNhapData.GetID();
+        }
+
         public void HienThiDgv(DataGridView dgv)
         {
             dgv.DataSource = lsNhapData.LayDSLichSuNhap().Tables[0];
@@ -21,6 +27,11 @@ namespace QuanLyPhongMay.Controller
         public int Them(LichSuNhap lsNhap)
         {
             return lsNhapData.Them(lsNhap);
+        }
+
+        public int CapNhatSL(LichSuNhap lsNhap)
+        {
+            return lsNhapData.CapNhatSL(lsNhap);
         }
 
         public void TimKiem(DataGridView dgv, string key, string loaiTK)

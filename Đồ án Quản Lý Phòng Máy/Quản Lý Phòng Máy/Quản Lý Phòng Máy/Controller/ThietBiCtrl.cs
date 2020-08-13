@@ -42,6 +42,7 @@ namespace QuanLyPhongMay.Controller
                     thongTin.TenThietBi = dr["TenThietBi"].ToString();
                     thongTin.NamSanXuat = Convert.ToInt32(dr["NamSanXuat"]);
                     thongTin.NhaSanXuat = dr["NhaSanXuat"].ToString();
+                    thongTin.SoLuong = Convert.ToInt32(dr["SoLuong"]);
                 }
             }
 

@@ -135,6 +135,7 @@
             // 
             // cboTenThietBi
             // 
+            this.cboTenThietBi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTenThietBi.FormattingEnabled = true;
             this.cboTenThietBi.Location = new System.Drawing.Point(325, 49);
             this.cboTenThietBi.Name = "cboTenThietBi";
@@ -279,6 +280,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(100, 20);
             this.txtDonGia.TabIndex = 34;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // lblDonGia
             // 
@@ -295,6 +297,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuong.TabIndex = 32;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // lblSoLuong
             // 
@@ -309,6 +312,7 @@
             // 
             this.txtNamSX.Location = new System.Drawing.Point(325, 95);
             this.txtNamSX.Name = "txtNamSX";
+            this.txtNamSX.ReadOnly = true;
             this.txtNamSX.Size = new System.Drawing.Size(100, 20);
             this.txtNamSX.TabIndex = 30;
             // 
@@ -325,6 +329,7 @@
             // 
             this.txtNSX.Location = new System.Drawing.Point(106, 94);
             this.txtNSX.Name = "txtNSX";
+            this.txtNSX.ReadOnly = true;
             this.txtNSX.Size = new System.Drawing.Size(100, 20);
             this.txtNSX.TabIndex = 28;
             // 

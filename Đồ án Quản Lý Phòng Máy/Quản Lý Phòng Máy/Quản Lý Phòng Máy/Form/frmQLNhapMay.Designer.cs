@@ -271,11 +271,13 @@
             // 
             // cboTenThietBi
             // 
+            this.cboTenThietBi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTenThietBi.FormattingEnabled = true;
             this.cboTenThietBi.Location = new System.Drawing.Point(315, 31);
             this.cboTenThietBi.Name = "cboTenThietBi";
             this.cboTenThietBi.Size = new System.Drawing.Size(100, 21);
             this.cboTenThietBi.TabIndex = 22;
+            this.cboTenThietBi.SelectionChangeCommitted += new System.EventHandler(this.cbo_Selected);
             // 
             // rtbGhiChu
             // 
@@ -312,6 +314,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(100, 20);
             this.txtDonGia.TabIndex = 13;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // lblDonGia
             // 
@@ -341,9 +344,11 @@
             // txtNamSX
             // 
             this.txtNamSX.Location = new System.Drawing.Point(315, 80);
+            this.txtNamSX.MaxLength = 4;
             this.txtNamSX.Name = "txtNamSX";
             this.txtNamSX.Size = new System.Drawing.Size(100, 20);
             this.txtNamSX.TabIndex = 9;
+            this.txtNamSX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // lblNamSX
             // 

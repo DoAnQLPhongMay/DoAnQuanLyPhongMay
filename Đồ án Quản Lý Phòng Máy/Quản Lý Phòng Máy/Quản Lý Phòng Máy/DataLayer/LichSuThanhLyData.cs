@@ -61,6 +61,21 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        public int CapNhatSL(LichSuThanhLy lsThanhLy)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            string update = "UPDATE dtb_ChiTietThietBi ",
+                set = "SET SoLuong = SoLuong - @soLuong ",
+                where = "WHERE MaThietBi = @maThietBi";
+
+            cmd.CommandText = update + set + where;
+            cmd.Parameters.Add("maThietBi", SqlDbType.Int).Value = lsThanhLy.MaThietBi;
+            cmd.Parameters.Add("soLuong", SqlDbType.Int).Value = lsThanhLy.SoLuong;
+
+            return cls.CapNhatDL(cmd);
+        }
+
         //Hàm xử lý tìm kiếm lịch sử thanh lý.
         public DataSet LayDSTK(string key, string loaiTK)
         {

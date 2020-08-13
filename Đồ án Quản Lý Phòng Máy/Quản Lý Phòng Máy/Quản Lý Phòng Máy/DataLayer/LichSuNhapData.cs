@@ -15,6 +15,18 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm lấy ra ID có giá trị cao nhất.
+        public int GetID()
+        {
+            string select = "SELECT MaNhap ",
+                from = "FROM dtb_LichSuNhap ",
+                orderBy = "ORDER BY MaNhap DESC";
+
+            SqlCommand cmd = new SqlCommand(select + from + orderBy);
+
+            return cls.GetID(cmd);
+        }
+
         //Hàm xử lý lấy danh sách lịch sử nhập.
         public DataSet LayDSLichSuNhap()
         {
@@ -46,6 +58,23 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("donGia", SqlDbType.Int).Value = lsNhap.DonGia;
             cmd.Parameters.Add("nguoiPhuTrach", SqlDbType.VarChar).Value = lsNhap.NguoiPhuTrach;
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = lsNhap.GhiChu;
+
+            return cls.CapNhatDL(cmd);
+        }
+
+        public int CapNhatSL(LichSuNhap lsNhap)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            string update = "UPDATE dtb_ChiTietThietBi ",
+                set = "SET SoLuong = SoLuong + @soLuong, NamSanXuat = @namSanxuat, NhaSanXuat = @nhaSanXuat ",
+                where = "WHERE MaThietBi = @maThietBi";
+
+            cmd.CommandText = update + set + where;
+            cmd.Parameters.Add("maThietBi", SqlDbType.Int).Value = lsNhap.MaThietBi;
+            cmd.Parameters.Add("nhaSanXuat", SqlDbType.NVarChar).Value = lsNhap.NhaSanXuat;
+            cmd.Parameters.Add("namSanxuat", SqlDbType.Int).Value = lsNhap.NamSanXuat;
+            cmd.Parameters.Add("soLuong", SqlDbType.Int).Value = lsNhap.SoLuong;
 
             return cls.CapNhatDL(cmd);
         }
