@@ -16,12 +16,14 @@ namespace QuanLyPhongMay
 {
     public partial class frmQLThanhLy : Form
     {
+        //Khởi tạo các biến giá trị.
         LichSuThanhLyCtrl thanhLyCtrl = new LichSuThanhLyCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
         LichSuThanhLy thanhLy = new LichSuThanhLy();
         User user = new User();
         TTThietBi thongTin = new TTThietBi();
 
+        //Hàm khởi tạo mặc định của form.
         public frmQLThanhLy()
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        //Hàm load dữ liệu khi mở form.
         private void frm_QLThanhLy_Load(object sender, EventArgs e)
         {
             if(user.TenTK != "")
@@ -47,7 +50,8 @@ namespace QuanLyPhongMay
             thietBiCtrl.HienThiCbo(cboTenThietBi);
             cboTenThietBi.Text = "";
         }
-        
+
+        //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
             txtMaThanhLy.Text = dgvDSThanhLy.CurrentRow.Cells[0].Value.ToString();
@@ -62,6 +66,7 @@ namespace QuanLyPhongMay
             btnThemMoi.Enabled = false;
         }
 
+        //Hàm gán giá trị từ combox sang text.
         private void cbo_Selected(object sender, EventArgs e)
         {
             if (cboTenThietBi.SelectedValue != null)
@@ -73,6 +78,7 @@ namespace QuanLyPhongMay
             }
         }
 
+        //Hàm xử lý chỉ cho nhập số.
         private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
@@ -88,6 +94,7 @@ namespace QuanLyPhongMay
             }
         }
 
+        //Hàm làm mới các text.
         private void lamMoi()
         {
             txtMaThanhLy.Text = "";
@@ -102,6 +109,7 @@ namespace QuanLyPhongMay
             thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
         }
 
+        //Hàm kiểm tra dữ liệu nhập vào.
         public bool kiemTra()
         {
             bool kTra = true;
@@ -132,31 +140,47 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Số lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK);
                 kTra = false;
             }
+            else if (Convert.ToInt32(txtDonGia.Text) < 0)
+            {
+                MessageBox.Show("Đơn giá không thể âm.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
+            else if (Convert.ToInt32(txtSoLuong.Text) <= 0)
+            {
+                MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK);
+                kTra = false;
+            }
 
             return kTra;
         }
 
+        //Hàm xử lý cho button thêm mới.
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             if(kiemTra())
             {
-                thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
-                thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
-                thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
-                thanhLy.NhaSanXuat = txtNSX.Text;
-                thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
-                thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-                thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
-                thanhLy.NguoiPhuTrach = txtNguoiPhuTrach.Text;
-                thanhLy.GhiChu = rtbGhiChu.Text;
+                DialogResult dlg = MessageBox.Show("Lịch sử thanh lý không thể chỉnh sửa sau khi đã thêm.\nHày chắc rằng dữ liệu nhập vào là đúng.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
+                    thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
+                    thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+                    thanhLy.NhaSanXuat = txtNSX.Text;
+                    thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+                    thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                    thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
+                    thanhLy.NguoiPhuTrach = txtNguoiPhuTrach.Text;
+                    thanhLy.GhiChu = rtbGhiChu.Text;
 
-                thanhLyCtrl.Them(thanhLy);
-                thanhLyCtrl.CapNhatSL(thanhLy);
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lamMoi();
+                    thanhLyCtrl.Them(thanhLy);
+                    thanhLyCtrl.CapNhatSL(thanhLy);
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lamMoi();
+                }
             }
         }
 
+        //Hàm xử lý cho button tìm kiếm.
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string loaiTK = "";
@@ -182,6 +206,7 @@ namespace QuanLyPhongMay
             }
         }
 
+        //Hàm xử lý cho button làm mới.
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             lamMoi();
@@ -195,7 +220,7 @@ namespace QuanLyPhongMay
             }
         }
 
-        //Hàm không xử dụng -------------------------------------------------------------------------------------//
+        //-------------------------------------- Hàm không xử dụng --------------------------------------//
         private void dtmNgayThanhLy_ValueChanged(object sender, EventArgs e)
         {
 

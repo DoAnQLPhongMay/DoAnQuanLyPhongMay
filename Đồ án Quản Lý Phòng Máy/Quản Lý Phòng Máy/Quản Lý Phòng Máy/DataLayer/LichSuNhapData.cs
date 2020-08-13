@@ -62,6 +62,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý cập nhật lại số lượng của thiết bị sau khi nhập.
         public int CapNhatSL(LichSuNhap lsNhap)
         {
             SqlCommand cmd = new SqlCommand();
@@ -93,7 +94,7 @@ namespace QuanLyPhongMay.DataLayer
                     where += "AND dtb_LichSuNhap.MaNhap = " + key + "";
                     break;
                 case "ngayNhap":
-                    where += "AND dtb_LichSuNhap.NgayNhap like \"%" + key + "%\"";
+                    where += "AND dtb_LichSuNhap.NgayNhap = '" + key + "'";
                     break;
                 case "nhaSanXuat":
                     where += "AND dtb_LichSuNhap.NhaSanXuat = '" + key + "'";

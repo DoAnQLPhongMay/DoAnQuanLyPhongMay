@@ -8,7 +8,7 @@ namespace QuanLyPhongMay.BUS
 {
     class LichSuNhap
     {
-        //Khởi tạo getter setter cho lịch sử nhập thiết bị.
+        //Khởi tạo các biến giá trị.
         private int _maNhap;
         private DateTime _ngayNhap;
         private int _maThietBi;
@@ -20,6 +20,7 @@ namespace QuanLyPhongMay.BUS
         private string _nguoiPhuTrach;
         private string _ghiChu;
 
+        //Hàm xử lý getter và setter.
         public int MaNhap
         {
             get { return _maNhap; }
@@ -71,6 +72,7 @@ namespace QuanLyPhongMay.BUS
             set { _ghiChu = value; }
         }
 
+        //Hàm khởi tạo mặc định của class.
         public LichSuNhap()
         {
 

@@ -12,6 +12,7 @@ namespace QuanLyPhongMay.Controller
 {
     class LichSuThanhLyCtrl
     {
+        //Khởi tạo biến giá trị.
         LichSuThanhLyData lsThanhLyData = new LichSuThanhLyData();
 
         //Hàm xử lý lấy giá trị ID lớn nhất trong database.
@@ -20,21 +21,25 @@ namespace QuanLyPhongMay.Controller
             return lsThanhLyData.GetID();
         }
 
+        //Hàm hiển thị danh sách LSThanhLy lên datagridview.
         public void HienThiDgv(DataGridView dgv)
         {
             dgv.DataSource = lsThanhLyData.LayDSLichSuThanhLy().Tables[0];
         }
 
+        //Hàm xử lý thêm mới LSThanhLy.
         public int Them(LichSuThanhLy lsThanhLy)
         {
             return lsThanhLyData.Them(lsThanhLy);
         }
 
+        //Hàm cập nhật lại số lượng sau khi thêm mới LSThanhLy.
         public int CapNhatSL(LichSuThanhLy lsThanhLy)
         {
             return lsThanhLyData.CapNhatSL(lsThanhLy);
         }
 
+        //Hàm xử lý tìm kiếm LSThanhLy.
         public void TimKiem(DataGridView dgv, string key, string loaiTK)
         {
             dgv.DataSource = lsThanhLyData.LayDSTK(key, loaiTK).Tables[0];

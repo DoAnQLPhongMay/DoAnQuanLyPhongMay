@@ -61,6 +61,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        //Hàm xử lý cập nhật lại số lượng của thiết bị sau khi thanh lý.
         public int CapNhatSL(LichSuThanhLy lsThanhLy)
         {
             SqlCommand cmd = new SqlCommand();
