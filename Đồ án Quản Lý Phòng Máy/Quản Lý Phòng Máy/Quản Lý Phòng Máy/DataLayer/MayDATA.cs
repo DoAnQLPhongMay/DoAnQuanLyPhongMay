@@ -25,13 +25,22 @@ namespace QuanLyPhongMay.DataLayer
             return cls.GetID(cmd);
         }
 
-
         public DataSet LayDSMay()
         {
             string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu ",
                 from =  "From dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai ",
                 where = "where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
             SqlCommand sqlcmd = new SqlCommand(sql + from + where);
+            return cls.LayDuLieu(sqlcmd);
+        }
+
+        public DataSet LayDSMay(int maPhong)
+        {
+            string select = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu ",
+                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai ",
+                where = "WHERE dtb_May.MaPhong = dtb_PhongMay.MaPhongMay AND dtb_May.TrangThai = dtb_TrangThai.MaTrangThai AND dtb_May.MaPhong = '" + maPhong + "'";
+            SqlCommand sqlcmd = new SqlCommand(select + from + where);
+
             return cls.LayDuLieu(sqlcmd);
         }
 
@@ -50,7 +59,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(sqlcmd);
         }
 
-
         public int Them(May m)
         {
             SqlCommand cmd = new SqlCommand();
@@ -63,6 +71,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("mathietbi", SqlDbType.Int).Value = m.Mathietbi;
             return cls.CapNhatDL(cmd);
         }
+
         public int LuuLichSuCapNhat(May m)
         {
             SqlCommand cmd = new SqlCommand();
@@ -96,8 +105,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
- 
-
         public bool KiemTraTenMay(string tenmay)
         {
             SqlCommand cmd = new SqlCommand();
@@ -105,8 +112,6 @@ namespace QuanLyPhongMay.DataLayer
             cmd.CommandText = "select * from dtb_May where TenMay=@tenmay";
             cmd.Parameters.Add("tenmay", SqlDbType.VarChar).Value = tenmay;
             return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
-
-
         }
     }
 }

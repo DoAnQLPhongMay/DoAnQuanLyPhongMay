@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDSMay = new System.Windows.Forms.DataGridView();
             this.txt_MaMay = new System.Windows.Forms.TextBox();
             this.lbl_MaMay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,33 +60,33 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.MaMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDSMay
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDSMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaMay,
             this.TenMay,
             this.TenPhong,
             this.TrangThai,
             this.GhiChu,
             this.MaPhong1});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(283, 410);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDSMay.Location = new System.Drawing.Point(6, 19);
+            this.dgvDSMay.Name = "dgvDSMay";
+            this.dgvDSMay.Size = new System.Drawing.Size(283, 440);
+            this.dgvDSMay.TabIndex = 0;
             // 
             // txt_MaMay
             // 
@@ -368,25 +368,16 @@
             this.textBox14.Size = new System.Drawing.Size(104, 20);
             this.textBox14.TabIndex = 54;
             // 
-            // textBox15
-            // 
-            this.textBox15.Enabled = false;
-            this.textBox15.Location = new System.Drawing.Point(379, 409);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(104, 20);
-            this.textBox15.TabIndex = 57;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.dgvDSMay);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txt_MaMay);
             this.groupBox1.Controls.Add(this.lbl_MaMay);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbl_TenMay);
             this.groupBox1.Controls.Add(this.lbl_TrangThai);
-            this.groupBox1.Controls.Add(this.textBox15);
             this.groupBox1.Controls.Add(this.lbl_ManHinh);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.lbl_Chuot);
@@ -414,7 +405,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 438);
+            this.groupBox1.Size = new System.Drawing.Size(489, 465);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Máy";
@@ -429,53 +420,69 @@
             this.lblQLPhongMay.TabIndex = 62;
             this.lblQLPhongMay.Text = "Chi Tiết Phòng Máy";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(379, 410);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(104, 49);
+            this.richTextBox1.TabIndex = 57;
+            this.richTextBox1.Text = "";
+            // 
             // MaMay
             // 
+            this.MaMay.DataPropertyName = "MaMay";
             this.MaMay.HeaderText = "ID";
             this.MaMay.Name = "MaMay";
             this.MaMay.ReadOnly = true;
             // 
             // TenMay
             // 
+            this.TenMay.DataPropertyName = "TenMay";
             this.TenMay.HeaderText = "Tên";
             this.TenMay.Name = "TenMay";
             this.TenMay.ReadOnly = true;
             // 
             // TenPhong
             // 
+            this.TenPhong.DataPropertyName = "TenPhongMay";
             this.TenPhong.HeaderText = "Phòng Máy";
             this.TenPhong.Name = "TenPhong";
             this.TenPhong.ReadOnly = true;
             // 
             // TrangThai
             // 
+            this.TrangThai.DataPropertyName = "TenTrangThai";
             this.TrangThai.HeaderText = "Trạng Thái";
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
             // 
             // GhiChu
             // 
+            this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi Chú";
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.ReadOnly = true;
             // 
             // MaPhong1
             // 
+            this.MaPhong1.DataPropertyName = "MaPhong";
             this.MaPhong1.HeaderText = "MaPhong";
             this.MaPhong1.Name = "MaPhong1";
             this.MaPhong1.ReadOnly = true;
+            this.MaPhong1.Visible = false;
             // 
             // frmChiTietPhongMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 512);
+            this.ClientSize = new System.Drawing.Size(507, 550);
             this.Controls.Add(this.lblQLPhongMay);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmChiTietPhongMay";
             this.Text = "Chi Tiết Phòng Máy";
             this.Load += new System.EventHandler(this.frm_QLPhongMay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMay)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -485,7 +492,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDSMay;
         private System.Windows.Forms.TextBox txt_MaMay;
         private System.Windows.Forms.Label lbl_MaMay;
         private System.Windows.Forms.Label label1;
@@ -517,9 +524,9 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblQLPhongMay;
+        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;

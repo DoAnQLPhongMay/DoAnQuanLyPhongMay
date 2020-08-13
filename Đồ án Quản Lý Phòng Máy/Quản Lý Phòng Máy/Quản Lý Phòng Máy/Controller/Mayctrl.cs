@@ -11,22 +11,28 @@ namespace QuanLyPhongMay.Controller
 {
     class MayCtrl
     {
-
         MayData mayData = new MayData();
+
         public int GetID()
         {
             return mayData.GetID();
         }
-       
 
         public void HienThi(DataGridView dgv)
         {
             dgv.DataSource = mayData.LayDSMay().Tables[0];
         }
+
+        public void HienThi(DataGridView dgv, int maPhong)
+        {
+            dgv.DataSource = mayData.LayDSMay(maPhong).Tables[0];
+        }
+
         public void TimKiem(DataGridView dgv, string tukhoa, string tieuchi)
         {
             dgv.DataSource = mayData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
+
         public int Them(May m)
         {
           
@@ -34,10 +40,12 @@ namespace QuanLyPhongMay.Controller
                 return 0;
             return mayData.Them(m);
         }
+
         public int Xoa(int ma)
         {
             return mayData.Xoa(ma);
         }
+
         public int Luu(May m)
         {
             return mayData.Luu(m);
@@ -47,6 +55,5 @@ namespace QuanLyPhongMay.Controller
         {
             return mayData.KiemTraTenMay(tenmay);
         }
-
     }
 }

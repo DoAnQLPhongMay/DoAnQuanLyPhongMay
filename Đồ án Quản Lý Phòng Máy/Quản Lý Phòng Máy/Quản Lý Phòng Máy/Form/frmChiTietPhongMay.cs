@@ -17,6 +17,8 @@ namespace QuanLyPhongMay
     public partial class frmChiTietPhongMay : Form
     {
         int maPhong = 0;
+        MayCtrl mayCtrl = new MayCtrl();
+
         public frmChiTietPhongMay()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace QuanLyPhongMay
 
         private void frm_QLPhongMay_Load(object sender, EventArgs e)
         {
+            mayCtrl.HienThi(dgvDSMay, maPhong);
         }
 
         private void label3_Click(object sender, EventArgs e)
