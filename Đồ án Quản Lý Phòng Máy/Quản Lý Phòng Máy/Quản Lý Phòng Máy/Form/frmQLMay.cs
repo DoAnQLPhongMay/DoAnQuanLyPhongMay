@@ -19,9 +19,10 @@ namespace QuanLyPhongMay
         TrangThaiCtrl ttctrl = new TrangThaiCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
         PhongMayCtrl phongctrl = new PhongMayCtrl();
-        MayCtrl mctrl = new MayCtrl();
-        TTThietBi[] thongTin = new TTThietBi[11];
+        MayCtrl mayCtrl = new MayCtrl();
         User user = new User();
+        TTThietBi[] thongTin = new TTThietBi[11];
+        ComboBox[] cbo = new ComboBox[11];
 
         public frmQLMay()
         {
@@ -46,29 +47,97 @@ namespace QuanLyPhongMay
             }
         }*/
 
+        private void LuuCbo()
+        {
+            cbo[0] = cboManHinh;
+            cbo[1] = cboChuot;
+            cbo[2] = cboBanPhim;
+            cbo[3] = cboCase;
+            cbo[4] = cboCPU;
+            cbo[5] = cboMainBoard;
+            cbo[6] = cboRAM;
+            cbo[7] = cboOCung;
+            cbo[8] = cboVGA;
+            cbo[9] = cboPSU;
+            cbo[10] = cboHDH;
+        }
+
+        private void LamMoi()
+        {
+            LuuCbo();
+
+            for (int i = 0; i < 11; i++)
+            {
+                cbo[i].Text = "";
+            }
+
+            rtbGhiChu.Clear();
+            txtMaMay.Clear();
+            txtTenMay.Clear();
+            cboPhong.Text = "";
+            cboTrangThai.Text = "";
+
+            btnThemMoi.Enabled = true;
+            btnCapNhat.Enabled = false;
+
+            mayCtrl.HienThi(dgvDSMay);
+        }
+
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
             /*frmThemMay frm = new frmThemMay();
             frm.Show();
             this.Hide();*/
+
+            May may = new May();
+            may.MaMay = mayCtrl.GetID() + 1;
+            may.TenMay = txtTenMay.Text;
+            may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
+            may.TrangThai = Convert.ToInt32(cboPhong.SelectedValue);
+            may.GhiChu = rtbGhiChu.Text;
+
+            if (txtTenMay.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập Tên Máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(mayCtrl.ThemMoi(may) == 0)
+            {
+                MessageBox.Show("Tên Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LuuCbo();
+                for(int i = 0; i < 11; i++)
+                {
+                    if (cbo[i].Text != "")
+                    {
+                        mayCtrl.ThemChiTietMay(may.MaMay, i+1, Convert.ToInt32(cbo[i].SelectedValue));
+                    }
+                }
+                LamMoi();
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (dlg == System.Windows.Forms.DialogResult.Yes)
+            if(dgvDSMay.CurrentRow != null)
             {
-                if (mctrl.Xoa(int.Parse(txtMaMay.Text)) > 0)
+                if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mctrl.HienThi(dgvDSMay);
-                    //HienThiThongTin();
+                    if (mayCtrl.Xoa(Convert.ToInt32(dgvDSMay.CurrentRow.Cells[0].Value)) > 0)
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LamMoi();
+                        //HienThiThongTin();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
             }
         }
 
@@ -86,10 +155,10 @@ namespace QuanLyPhongMay
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
 
-                if(mctrl.Luu(may) > 0)
+                if(mayCtrl.Luu(may) > 0)
                 {
                     MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mctrl.HienThi(dgvDSMay);
+                    LamMoi();
                     //HienThiThongTin();
                 }   
             }
@@ -102,61 +171,33 @@ namespace QuanLyPhongMay
             if (rad_TenMay.Checked)
                 tieuchi = "tenmay";
             if (txt_TimKiem.Text.Length == 0)
-                mctrl.HienThi(dgvDSMay);
+                mayCtrl.HienThi(dgvDSMay);
             else
-                mctrl.TimKiem(dgvDSMay, txt_TimKiem.Text, tieuchi);
+                mayCtrl.TimKiem(dgvDSMay, txt_TimKiem.Text, tieuchi);
         }
 
         private void frmQLMay_Load(object sender, EventArgs e)
         {
-            mctrl.HienThi(dgvDSMay);
+            LuuCbo();
+            mayCtrl.HienThi(dgvDSMay);
             ttctrl.HienThiCbo(cboTrangThai);
             phongctrl.HienThiCbo(cboPhong);
-            thietBiCtrl.HienThiCbo(cboManHinh, 1);
-            thietBiCtrl.HienThiCbo(cboChuot, 2);
-            thietBiCtrl.HienThiCbo(cboBanPhim, 3);
-            thietBiCtrl.HienThiCbo(cboCase, 4);
-            thietBiCtrl.HienThiCbo(cboCPU, 5);
-            thietBiCtrl.HienThiCbo(cboMainBoard, 6);
-            thietBiCtrl.HienThiCbo(cboRAM, 7);
-            thietBiCtrl.HienThiCbo(cboOCung, 8);
-            thietBiCtrl.HienThiCbo(cboVGA, 9);
-            thietBiCtrl.HienThiCbo(cboPSU, 10);
-            thietBiCtrl.HienThiCbo(cboHDH, 11);
 
-            cboTrangThai.Text = "";
             cboPhong.Text = "";
-            cboManHinh.Text = "";
-            cboChuot.Text = "";
-            cboBanPhim.Text = "";
-            cboCase.Text = "";
-            cboCPU.Text = "";
-            cboMainBoard.Text = "";
-            cboRAM.Text = "";
-            cboOCung.Text = "";
-            cboVGA.Text = "";
-            cboPSU.Text = "";
-            cboHDH.Text = "";
+            cboTrangThai.Text = "";
 
-            //HienThiThongTin();
-        }
-        private void dgv_DSMay_Click(object sender, EventArgs e)
-        {
-            //HienThiThongTin();
-        }
+            for(int i = 0; i < 11; i++)
+            {
+                thietBiCtrl.HienThiCbo(cbo[i], i + 1);
+                cbo[i].Text = "";
+            }
 
-        private void dgv_DSMay_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //HienThiThongTin();
-        }
-
-        private void dgv_DSMay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             //HienThiThongTin();
         }
 
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
+            LuuCbo();
             int maMay = Convert.ToInt32(dgvDSMay.CurrentRow.Cells[0].Value);
 
             for (int i = 0; i < 11; i++)
@@ -165,23 +206,21 @@ namespace QuanLyPhongMay
                 thongTin[i] = thietBiCtrl.LayThongTinMay(maMay, i + 1);
             }
 
-            cboManHinh.SelectedValue = thongTin[0].MaThietBi;
-            cboChuot.SelectedValue = thongTin[1].MaThietBi;
-            cboBanPhim.SelectedValue = thongTin[2].MaThietBi;
-            cboCase.SelectedValue = thongTin[3].MaThietBi;
-            cboCPU.SelectedValue = thongTin[4].MaThietBi;
-            cboMainBoard.SelectedValue = thongTin[5].MaThietBi;
-            cboRAM.SelectedValue = thongTin[6].MaThietBi;
-            cboOCung.SelectedValue = thongTin[7].MaThietBi;
-            cboVGA.SelectedValue = thongTin[8].MaThietBi;
-            cboPSU.SelectedValue = thongTin[9].MaThietBi;
-            cboHDH.SelectedValue = thongTin[10].MaThietBi;
+            for(int i = 0; i< 11; i++)
+            {
+                cbo[i].SelectedValue = thongTin[i].MaThietBi;
+            }
 
             txtMaMay.Text = dgvDSMay.CurrentRow.Cells[0].Value.ToString();
             txtTenMay.Text = dgvDSMay.CurrentRow.Cells[1].Value.ToString();
             cboPhong.SelectedValue = dgvDSMay.CurrentRow.Cells[6].Value.ToString();
             cboTrangThai.SelectedValue = dgvDSMay.CurrentRow.Cells[5].Value.ToString();
             rtbGhiChu.Text = dgvDSMay.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
         }
     }
 }

@@ -81,11 +81,43 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
-        public int Xoa(int ma)
+        public int ThemMoi(May may)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "delete from dtb_May where MaMay=@mamay";
-            cmd.Parameters.Add("mamay", SqlDbType.SmallInt).Value = ma;
+            string insert = "INSERT INTO dtb_May(MaMay,MaPhong,TenMay,TrangThai,GhiChu) ",
+                values = "VALUES (@maMay,@maPhong,@tenMay,@trangThai,@ghiChu)";
+
+            cmd.CommandText = insert + values;
+            cmd.Parameters.Add("maMay", SqlDbType.Int).Value = may.MaMay;
+            cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = may.MaPhong;
+            cmd.Parameters.Add("tenMay", SqlDbType.NVarChar).Value = may.TenMay;
+            cmd.Parameters.Add("trangThai", SqlDbType.Int).Value = may.TrangThai;
+            cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = may.GhiChu;
+
+            return cls.CapNhatDL(cmd);
+        }
+
+        public int Xoa(int maMay)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string delete = "DELETE FROM dtb_May ",
+                where = "WHERE MaMay=@maMay";
+
+            cmd.CommandText = delete + where;
+            cmd.Parameters.Add("maMay", SqlDbType.SmallInt).Value = maMay;
+
+            return cls.CapNhatDL(cmd);
+        }
+
+        public int XoaChiTiet(int maMay)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string delete = "DELETE FROM dtb_ChiTietMay ",
+                where = "WHERE MaMay=@maMay";
+
+            cmd.CommandText = delete + where;
+            cmd.Parameters.Add("maMay", SqlDbType.SmallInt).Value = maMay;
+
             return cls.CapNhatDL(cmd);
         }
 
@@ -101,7 +133,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
-        public int ThemChiTiet(int maMay, int maLoai, int maThietBi)
+        public int ThemChiTietMay(int maMay, int maLoai, int maThietBi)
         {
             SqlCommand cmd = new SqlCommand();
             string insert = "INSERT INTO dtb_ChiTietMay(MaMay, MaLoaiThietBi, MaThietBi) ",

@@ -41,16 +41,29 @@ namespace QuanLyPhongMay.Controller
             return mayData.Them(m);
         }
 
-        public int Xoa(int ma)
+        public int ThemMoi(May may)
         {
-            return mayData.Xoa(ma);
+            if (KiemTraTenMay(may.TenMay))
+                return 0;
+            return mayData.ThemMoi(may);
+        }
+
+        public int Xoa(int maMay)
+        {
+            mayData.XoaChiTiet(maMay);
+            return mayData.Xoa(maMay);
         }
 
         public int Luu(May m)
         {
             return mayData.Luu(m);
         }
-     
+
+        public int ThemChiTietMay(int maMay, int maLoai, int maThietBi)
+        {
+            return mayData.ThemChiTietMay(maMay, maLoai, maThietBi);
+        }
+
         public bool KiemTraTenMay(string tenmay)
         {
             return mayData.KiemTraTenMay(tenmay);
