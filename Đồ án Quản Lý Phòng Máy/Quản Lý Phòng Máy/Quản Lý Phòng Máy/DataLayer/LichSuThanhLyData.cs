@@ -15,6 +15,18 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm lấy ra ID có giá trị cao nhất.
+        public int GetID()
+        {
+            string select = "SELECT MaThanhLy ",
+                from = "FROM dtb_LichSuThanhLy ",
+                orderBy = "ORDER BY MaThanhLy DESC";
+
+            SqlCommand cmd = new SqlCommand(select + from + orderBy);
+
+            return cls.GetID(cmd);
+        }
+
         //Hàm xử lý lấy danh sách lịch sử thanh lý.
         public DataSet LayDSLichSuThanhLy()
         {

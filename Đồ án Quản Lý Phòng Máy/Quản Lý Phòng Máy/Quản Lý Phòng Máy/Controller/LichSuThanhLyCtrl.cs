@@ -14,6 +14,12 @@ namespace QuanLyPhongMay.Controller
     {
         LichSuThanhLyData lsThanhLyData = new LichSuThanhLyData();
 
+        //Hàm xử lý lấy giá trị ID lớn nhất trong database.
+        public int GetID()
+        {
+            return lsThanhLyData.GetID();
+        }
+
         public void HienThiDgv(DataGridView dgv)
         {
             dgv.DataSource = lsThanhLyData.LayDSLichSuThanhLy().Tables[0];

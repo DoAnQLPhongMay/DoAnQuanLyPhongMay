@@ -35,10 +35,17 @@ namespace QuanLyPhongMay
 
         private void frm_QLThanhLy_Load(object sender, EventArgs e)
         {
+            if(user.TenTK != "")
+            {
+                txtNguoiPhuTrach.Text = user.TenUser;
+            }
+            else
+            {
+                txtNguoiPhuTrach.Text = "vmkhoi";
+            }
             thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
             cboTenThietBi.Text = "";
-            txtNguoiPhuTrach.Text = "vmkhoi";
         }
         
         private void dgv_DoubleClick(object sender, EventArgs e)
@@ -53,10 +60,19 @@ namespace QuanLyPhongMay
             txtNguoiPhuTrach.Text = "vmkhoi";
             rtbGhiChu.Text = dgvDSThanhLy.CurrentRow.Cells[8].Value.ToString();
 
-            btnThemMoi.Hide();
+            btnThemMoi.Enabled = false;
         }
 
-
+        private void cbo_Selected(object sender, EventArgs e)
+        {
+            if (cboTenThietBi.SelectedValue != null)
+            {
+                int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+                thongTin = thietBiCtrl.LayThongTin(maThietBi);
+                txtNSX.Text = thongTin.NhaSanXuat;
+                txtNamSX.Text = thongTin.NamSanXuat.ToString();
+            }
+        }
 
         private void lamMoi()
         {
@@ -68,22 +84,8 @@ namespace QuanLyPhongMay
             cboTenThietBi.Text = "";
             rtbGhiChu.Text = "";
 
-            btnThemMoi.Show();
+            btnThemMoi.Enabled = true;
             thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
-        }
-
-        public int autoID()
-        {
-            int id = 1, row;
-
-            row = dgvDSThanhLy.Rows.Count;
-
-            if (row != 0)
-            {
-                id = row;
-            }
-
-            return id;
         }
 
         public bool kiemTra()
@@ -118,7 +120,7 @@ namespace QuanLyPhongMay
         {
             if(kiemTra())
             {
-                thanhLy.MaThanhLy = autoID();
+                thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
                 thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
                 thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue.ToString());
                 thanhLy.NhaSanXuat = txtNSX.Text;
@@ -174,30 +176,6 @@ namespace QuanLyPhongMay
 
         //Hàm không xử dụng -------------------------------------------------------------------------------------//
         private void dtmNgayThanhLy_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void CboSelected(object sender, EventArgs e)
-        {
-
-        }
-        private void cbo_Selected(object sender, EventArgs e)
-        {
-            if (cboTenThietBi.SelectedValue != null)
-            {
-                int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
-                thongTin = thietBiCtrl.LayThongTin(maThietBi);
-                MessageBox.Show(thongTin.NhaSanXuat);
-                txtNSX.Text = thongTin.NhaSanXuat;
-                txtNamSX.Text = thongTin.NamSanXuat.ToString();
-            }
-        }
-        private void cbo_Selected(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void cbo_Selected(object sender, UICuesEventArgs e)
         {
 
         }
