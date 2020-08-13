@@ -51,6 +51,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayDSThietBi(int maLoai)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND dtb_ChiTietThietBi.MaLoai = '" + maLoai + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         public DataSet LayThongTin()
         {
             string select = "SELECT * ",

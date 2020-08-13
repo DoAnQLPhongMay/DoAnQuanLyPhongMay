@@ -53,7 +53,7 @@ namespace QuanLyPhongMay
             txtTenThietBi.Text = dgvDSThietBi.CurrentRow.Cells[1].Value.ToString();
             rtbThongSo.Text = dgvDSThietBi.CurrentRow.Cells[2].Value.ToString();
             txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells[3].Value.ToString();
-            cboLoaiThietBi.SelectedValue = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
+            cboLoaiThietBi.Text = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
             txtNhaSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[6].Value.ToString();
             txtNamSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[5].Value.ToString();
             txtHanThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[7].Value.ToString();

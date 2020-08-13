@@ -36,7 +36,7 @@ namespace QuanLyPhongMay.DataLayer
 
         public DataSet LayDSMay()
         {
-            string sql = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu ",
+            string sql = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu, dtb_May.TrangThai, dtb_May.MaPhong ",
                 from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai ",
                 where = "WHERE  dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.TrangThai = dtb_TrangThai.MaTrangThai";
             SqlCommand sqlcmd = new SqlCommand(sql + from + where);
@@ -81,19 +81,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
-        public int LuuLichSuCapNhat(May m)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into dtb_LichSuCapNhat(MaCapNhat, MaPhong, MaMay,NgayCapNhat, GhiChu) values (@macapnhat,@maphong,@mamay,@ngcapnhat,@ghichu)";
-            cmd.Parameters.Add("macapnhat", SqlDbType.Int).Value = m.MaCapNhat;
-            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
-            cmd.Parameters.Add("MaMay", SqlDbType.NVarChar).Value = m.MaMay;
-            cmd.Parameters.Add("ngaycapnhat", SqlDbType.Date).Value = m.NgayCapNhat;
-            cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
-            
-            return cls.CapNhatDL(cmd);
-        }
-
         public int Xoa(int ma)
         {
             SqlCommand cmd = new SqlCommand();
@@ -114,6 +101,20 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        public int ThemChiTiet(int maMay, int maLoai, int maThietBi)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string insert = "INSERT INTO dtb_ChiTietMay(MaMay, MaLoaiThietBi, MaThietBi) ",
+                values = "VALUES (@maMay, @maLoaiThietBi, @maThietBi)";
+
+            cmd.CommandText = insert + values;
+            cmd.Parameters.Add("maMay", SqlDbType.Int).Value = maMay;
+            cmd.Parameters.Add("maLoaiThietBi", SqlDbType.Int).Value = maLoai;
+            cmd.Parameters.Add("maThietBi", SqlDbType.Int).Value = maThietBi;
+
+            return cls.CapNhatDL(cmd);
+        }
+
         public bool KiemTraTenMay(string tenmay)
         {
             SqlCommand cmd = new SqlCommand();
@@ -121,6 +122,19 @@ namespace QuanLyPhongMay.DataLayer
             cmd.CommandText = "select * from dtb_May where TenMay=@tenmay";
             cmd.Parameters.Add("tenmay", SqlDbType.VarChar).Value = tenmay;
             return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+        }
+
+        public int LuuLichSuCapNhat(May m)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "insert into dtb_LichSuCapNhat(MaCapNhat, MaPhong, MaMay,NgayCapNhat, GhiChu) values (@macapnhat,@maphong,@mamay,@ngcapnhat,@ghichu)";
+            cmd.Parameters.Add("macapnhat", SqlDbType.Int).Value = m.MaCapNhat;
+            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
+            cmd.Parameters.Add("MaMay", SqlDbType.NVarChar).Value = m.MaMay;
+            cmd.Parameters.Add("ngaycapnhat", SqlDbType.Date).Value = m.NgayCapNhat;
+            cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
+
+            return cls.CapNhatDL(cmd);
         }
     }
 }

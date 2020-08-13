@@ -81,6 +81,13 @@ namespace QuanLyPhongMay.Controller
             cb.ValueMember = "MaThietBi";
         }
 
+        public void HienThiCbo(ComboBox cb, int maLoai)
+        {
+            cb.DataSource = thietBiData.LayDSThietBi(maLoai).Tables[0];
+            cb.DisplayMember = "TenThietBi";
+            cb.ValueMember = "MaThietBi";
+        }
+
         //Hàm xử lý thêm mới thiết bị.
         public int Them(ThietBi thietBi)
         {
