@@ -55,10 +55,10 @@
             this.txt_TenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbl_TenTaiKhoan = new System.Windows.Forms.Label();
             this.lblQuyenHan = new System.Windows.Forms.Label();
-            this.dgv_DSTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.dgvDSTaiKhoan = new System.Windows.Forms.DataGridView();
             this.grp_ThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_QLTaiKhoan
@@ -98,9 +98,9 @@
             this.grp_ThongTinTaiKhoan.Controls.Add(this.lbl_TenTaiKhoan);
             this.grp_ThongTinTaiKhoan.Controls.Add(this.lblQuyenHan);
             this.grp_ThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_ThongTinTaiKhoan.Location = new System.Drawing.Point(3, 94);
+            this.grp_ThongTinTaiKhoan.Location = new System.Drawing.Point(13, 94);
             this.grp_ThongTinTaiKhoan.Name = "grp_ThongTinTaiKhoan";
-            this.grp_ThongTinTaiKhoan.Size = new System.Drawing.Size(729, 280);
+            this.grp_ThongTinTaiKhoan.Size = new System.Drawing.Size(709, 280);
             this.grp_ThongTinTaiKhoan.TabIndex = 1;
             this.grp_ThongTinTaiKhoan.TabStop = false;
             this.grp_ThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
@@ -117,7 +117,7 @@
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Xoa.Location = new System.Drawing.Point(618, 141);
+            this.btn_Xoa.Location = new System.Drawing.Point(567, 117);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(101, 37);
             this.btn_Xoa.TabIndex = 21;
@@ -129,7 +129,7 @@
             // 
             this.btn_CapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_CapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CapNhat.Location = new System.Drawing.Point(618, 85);
+            this.btn_CapNhat.Location = new System.Drawing.Point(567, 74);
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.Size = new System.Drawing.Size(101, 37);
             this.btn_CapNhat.TabIndex = 20;
@@ -141,7 +141,7 @@
             // 
             this.btn_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Them.Location = new System.Drawing.Point(618, 31);
+            this.btn_Them.Location = new System.Drawing.Point(567, 31);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(101, 37);
             this.btn_Them.TabIndex = 19;
@@ -157,19 +157,19 @@
             this.grp_TimKiem.Controls.Add(this.txt_TiemKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(13, 196);
             this.grp_TimKiem.Name = "grp_TimKiem";
-            this.grp_TimKiem.Size = new System.Drawing.Size(655, 61);
+            this.grp_TimKiem.Size = new System.Drawing.Size(690, 78);
             this.grp_TimKiem.TabIndex = 18;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.BackColor = System.Drawing.Color.Lime;
+            this.btn_TimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TimKiem.Location = new System.Drawing.Point(552, 20);
             this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(86, 29);
+            this.btn_TimKiem.Size = new System.Drawing.Size(101, 37);
             this.btn_TimKiem.TabIndex = 3;
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = false;
@@ -355,30 +355,20 @@
             this.lblQuyenHan.TabIndex = 0;
             this.lblQuyenHan.Text = "Quyền Hạn:";
             // 
-            // dgv_DSTaiKhoan
+            // dgvDSTaiKhoan
             // 
-            this.dgv_DSTaiKhoan.AllowUserToAddRows = false;
-            this.dgv_DSTaiKhoan.AllowUserToDeleteRows = false;
-            this.dgv_DSTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_DSTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_DSTaiKhoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgv_DSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSTaiKhoan.Location = new System.Drawing.Point(3, 380);
-            this.dgv_DSTaiKhoan.Name = "dgv_DSTaiKhoan";
-            this.dgv_DSTaiKhoan.ReadOnly = true;
-            this.dgv_DSTaiKhoan.Size = new System.Drawing.Size(729, 262);
-            this.dgv_DSTaiKhoan.TabIndex = 2;
-            this.dgv_DSTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSTaiKhoan_CellContentClick);
-            this.dgv_DSTaiKhoan.Click += new System.EventHandler(this.dgv_DSTaiKhoan_Click);
+            this.dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSTaiKhoan.Location = new System.Drawing.Point(13, 381);
+            this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
+            this.dgvDSTaiKhoan.Size = new System.Drawing.Size(709, 243);
+            this.dgvDSTaiKhoan.TabIndex = 2;
             // 
             // frm_QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 636);
-            this.Controls.Add(this.dgv_DSTaiKhoan);
+            this.Controls.Add(this.dgvDSTaiKhoan);
             this.Controls.Add(this.grp_ThongTinTaiKhoan);
             this.Controls.Add(this.lbl_QLTaiKhoan);
             this.Name = "frm_QLTaiKhoan";
@@ -389,7 +379,7 @@
             this.grp_ThongTinTaiKhoan.PerformLayout();
             this.grp_TimKiem.ResumeLayout(false);
             this.grp_TimKiem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,8 +412,8 @@
         private System.Windows.Forms.Label lbl_NgaySinh;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.Label lbl_SDT;
-        private System.Windows.Forms.DataGridView dgv_DSTaiKhoan;
         private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.TextBox txtMaQuyen;
+        private System.Windows.Forms.DataGridView dgvDSTaiKhoan;
     }
 }

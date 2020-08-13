@@ -12,7 +12,7 @@ namespace QuanLyPhongMay
     class CaiDat
     {
 
-        DataProvider cls = new DataProvider();
+        /*DataProvider cls = new DataProvider();
         public CaiDat()
         {
             KhoiTaoAdmin();
@@ -36,8 +36,6 @@ namespace QuanLyPhongMay
                 scmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = 1;
                 cls.CapNhatDL(scmd);
             }
-        }
-        
-
+        }*/
     }
 }

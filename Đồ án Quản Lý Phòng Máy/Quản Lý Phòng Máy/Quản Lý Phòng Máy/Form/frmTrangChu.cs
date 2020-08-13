@@ -17,8 +17,8 @@ namespace QuanLyPhongMay
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
 
-        Color clr = Color.Teal;
-        Color declr = Color.FromArgb(0, 0, 64);
+        /*Color clr = Color.Teal;
+        Color declr = Color.FromArgb(0, 0, 64);*/
         User user = new User();
 
 
@@ -53,14 +53,12 @@ namespace QuanLyPhongMay
         {
             frm_QLTaiKhoan frm = new frm_QLTaiKhoan();
             frm.Show();
-            
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
             frmQLThanhLy frm = new frmQLThanhLy();
             frm.Show();
-            
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
@@ -74,32 +72,29 @@ namespace QuanLyPhongMay
         {
             frmQLMay frm = new frmQLMay();
             frm.Show();
-           
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
             frmQLPhongMay frm = new frmQLPhongMay();
             frm.Show();
-            
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
             frmQLThietBi frm = new frmQLThietBi();
             frm.Show();
-           
         }
-        void HienThiForm(object form)
+        /*void HienThiForm(object form)
         {
             this.pnShowForm.Controls.Clear();
             (form as Form).TopLevel = false;
             this.pnShowForm.Controls.Add((form as Form));
             (form as Form).Show();
             btnQLThietBi.BackColor = clr;
-        }
+        }*/
 
-        void LamMoiMauNen(object sender)
+        /*void LamMoiMauNen(object sender)
         {
             (sender as Button).BackColor = clr;
             Control.ControlCollection ctrls = pnMenu.Controls;
@@ -110,7 +105,7 @@ namespace QuanLyPhongMay
                 else
                     (c as Button).BackColor = clr;
             }
-        }
+        }*/
 
         private void btnQLThietBi_Click(object sender, EventArgs e)
         {

@@ -12,7 +12,6 @@ namespace QuanLyPhongMay.Controller
     class MayCtrl
     {
         MayData mayData = new MayData();
-        MayCtrl mayCtrl = new MayCtrl();
 
         public int GetID()
         {
@@ -88,7 +87,11 @@ namespace QuanLyPhongMay.Controller
         public void ThemLSCapNhat(May may, string user)
         {
             DateTime ngayCapNhat = DateTime.Now;
-            mayData.ThemLSCapNhat(may, mayCtrl.GetIDLSCapNhat(), user, ngayCapNhat);
+            mayData.ThemLSCapNhat(this.GetIDLSCapNhat()+1, may , user, ngayCapNhat);
+        }
+        public void ThemChiTietCapNhat(May may, int maLoai, int maThietBi)
+        {
+            mayData.ThemChiTietLSCapNhat(this.GetIDLSCapNhat(), may, maLoai, maThietBi);
         }
     }
 }

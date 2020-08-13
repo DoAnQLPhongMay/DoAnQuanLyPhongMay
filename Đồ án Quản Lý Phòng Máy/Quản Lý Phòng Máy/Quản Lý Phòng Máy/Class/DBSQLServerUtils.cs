@@ -17,7 +17,7 @@ namespace QuanLyPhongMay.Class
             // Data Source=TRAN-VMWARE\SQLEXPRESS;Initial Catalog=simplehr;Persist Security Info=True;User ID=sa;Password=12345
             //
             string connString = @"Data Source="+datasource+";Initial Catalog="
-                        +database+";Persist Security Info=True;User ID="+username+";Password="+password;
+                        +database+";Persist Security Info=True;User ID="+username+";Password="+password+ ";Max Pool Size=1000;Min Pool Size=5";
  
             SqlConnection conn = new SqlConnection(connString);
  

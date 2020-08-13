@@ -202,23 +202,24 @@ namespace QuanLyPhongMay.DataLayer
             return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
         }
 
-        public int ThemLSCapNhat(May may, int maCapNhat, string user, DateTime ngayCapNhat)
+        public int ThemLSCapNhat(int maCapNhat, May may,string user , DateTime ngayCapNhat)
         {
             SqlCommand cmd = new SqlCommand();
-            string insert = "INSERT INTO dtb_LichSuCapNhat(MaCapNhat, MaPhongMay, MaMay, TenDangNhap, NgayCapNhat, GhiChu)",
-                values = "VALUES (@maCapNhat, @maPhong, @maMay, @ngayCapNhat, @ghiChu)";
+            string insert = "INSERT INTO dtb_LichSuCapNhat(MaCapNhat, MaPhongMay, MaMay, TenDangNhap, NgayCapNhat, GhiChu) ",
+                values = "VALUES (@maCapNhat, @maPhong, @maMay, @tenDangNhap, @ngayCapNhat, @ghiChu)";
 
             cmd.CommandText = insert + values;
             cmd.Parameters.Add("maCapNhat", SqlDbType.Int).Value = maCapNhat;
             cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = may.MaPhong;
             cmd.Parameters.Add("maMay", SqlDbType.Int).Value = may.MaMay;
+            cmd.Parameters.Add("tenDangNhap", SqlDbType.VarChar).Value = user;
             cmd.Parameters.Add("ngayCapNhat", SqlDbType.Date).Value = ngayCapNhat;
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = may.GhiChu;
 
             return cls.CapNhatDL(cmd);
         }
 
-        public int ThemChiTietLSCapNhat(int maCapNhat,string tenMay, int maLoai, int maThietBi, string ghiChu)
+        public int ThemChiTietLSCapNhat(int maCapNhat, May may, int maLoai, int maThietBi)
         {
             SqlCommand cmd = new SqlCommand();
             string insert = "INSERT INTO dtb_ChiTietCapNhat(MaCapNhat, TenMay, MaLoaiThietBi, MaThietBi, GhiChu) ",
@@ -227,9 +228,9 @@ namespace QuanLyPhongMay.DataLayer
             cmd.CommandText = insert + values;
             cmd.Parameters.Add("maCapNhat", SqlDbType.Int).Value = maCapNhat;
             cmd.Parameters.Add("maLoai", SqlDbType.Int).Value = maLoai;
-            cmd.Parameters.Add("tenMay", SqlDbType.NVarChar).Value = tenMay;
+            cmd.Parameters.Add("tenMay", SqlDbType.NVarChar).Value = may.TenMay;
             cmd.Parameters.Add("maThietBi", SqlDbType.Int).Value = maThietBi;
-            cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = ghiChu;
+            cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = may.GhiChu;
 
             return cls.CapNhatDL(cmd);
         }

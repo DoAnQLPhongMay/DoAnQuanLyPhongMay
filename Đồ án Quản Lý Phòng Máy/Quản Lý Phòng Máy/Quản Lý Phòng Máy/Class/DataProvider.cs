@@ -14,7 +14,8 @@ namespace QuanLyPhongMay
 {
     class DataProvider
     {
-        SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
+        //SqlConnection conn = DBUtils.GetDBConnection(); //Khoi
+        SqlConnection conn = new SqlConnection(@"Data Source=BV-PC;Initial Catalog=QLPHONGMAY;Integrated Security=True;Max Pool Size=300;Min Pool Size=5");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KUOPHKV\SQLEXPRESS;Initial Catalog=QLPHONGMAY;Integrated Security=True");
 
         public DataProvider()
@@ -26,12 +27,6 @@ namespace QuanLyPhongMay
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-        }
-        
-        void DongKetNoi()
-        {
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
         }
        
         public DataSet LayDuLieu(SqlCommand sqlcmd)
@@ -48,10 +43,10 @@ namespace QuanLyPhongMay
         public int CapNhatDL(SqlCommand sqlcmd)
         {
             SqlCommand cmd = sqlcmd;
-
             cmd.Connection = conn;
+            int kq = cmd.ExecuteNonQuery();
 
-            return cmd.ExecuteNonQuery();
+            return kq;
         }
 
         public int GetID(SqlCommand sqlcmd)

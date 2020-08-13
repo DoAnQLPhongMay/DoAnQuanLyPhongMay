@@ -30,25 +30,25 @@ namespace QuanLyPhongMay
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
   
-           tkctrl.HienThi(dgv_DSTaiKhoan);
+           tkctrl.HienThi(dgvDSTaiKhoan);
             HienThiThongTin();
         }
         void HienThiThongTin()
         {
-            if (dgv_DSTaiKhoan.CurrentRow != null)
+            if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                txt_Username.Text = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txt_TenTaiKhoan.Text = dgv_DSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+                txt_Username.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                txt_TenTaiKhoan.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
                 checkRadio();
-                txt_SDT.Text = dgv_DSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
-                dtm_NgaySinh.Value = DateTime.Parse(dgv_DSTaiKhoan.CurrentRow.Cells[6].Value.ToString());
-                txt_DiaChi.Text = dgv_DSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
-                txtMaQuyen.Text = dgv_DSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
+                txt_SDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+                dtm_NgaySinh.Value = DateTime.Parse(dgvDSTaiKhoan.CurrentRow.Cells[6].Value.ToString());
+                txt_DiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
+                txtMaQuyen.Text = dgvDSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
             }
         }
         void checkRadio()
         {
-            string gtri = dgv_DSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
+            string gtri = dgvDSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
             rad_Nam.Checked = (gtri == "True") ? true : false;
             rad_Nu.Checked = (gtri == "False") ? true : false;
         }
@@ -61,16 +61,16 @@ namespace QuanLyPhongMay
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dgv_DSTaiKhoan.CurrentRow != null)
+            if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                string tendn = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
                     tkctrl.Xoa(tendn);
                     {
                         MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        tkctrl.HienThi(dgv_DSTaiKhoan);
+                        tkctrl.HienThi(dgvDSTaiKhoan);
                     }
                 }
             }    
@@ -87,14 +87,14 @@ namespace QuanLyPhongMay
             tk.Diachi = txt_DiaChi.Text;
             tk.TenDangNhap = txt_Username.Text;
 
-            string tendn = dgv_DSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+            string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
                 if (tkctrl.Luu(tk) > 0)
                 {
                     MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tkctrl.HienThi(dgv_DSTaiKhoan);
+                    tkctrl.HienThi(dgvDSTaiKhoan);
                     HienThiThongTin();
                 }
             }
@@ -117,18 +117,18 @@ namespace QuanLyPhongMay
             if (txt_TiemKiem.Text.Length != 0 && tieuchi != "")
             {
 
-                tkctrl.HienThiTK(dgv_DSTaiKhoan, txt_TiemKiem.Text, tieuchi);
+                tkctrl.HienThiTK(dgvDSTaiKhoan, txt_TiemKiem.Text, tieuchi);
             }    
                 
             
         }
 
-        private void dgv_DSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             HienThiThongTin();
         }
 
-        private void dgv_DSTaiKhoan_Click(object sender, EventArgs e)
+        private void dgvDSTaiKhoan_Click(object sender, EventArgs e)
         {
             HienThiThongTin();
         }
