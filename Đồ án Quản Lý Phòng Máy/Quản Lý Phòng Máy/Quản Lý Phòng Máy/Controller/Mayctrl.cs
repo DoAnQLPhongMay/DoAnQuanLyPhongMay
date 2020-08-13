@@ -12,10 +12,16 @@ namespace QuanLyPhongMay.Controller
     class MayCtrl
     {
         MayData mayData = new MayData();
+        MayCtrl mayCtrl = new MayCtrl();
 
         public int GetID()
         {
             return mayData.GetID();
+        }
+
+        public int GetIDLSCapNhat()
+        {
+            return mayData.GetIDLSCapNhat();
         }
 
         public void HienThi(DataGridView dgv)
@@ -33,13 +39,13 @@ namespace QuanLyPhongMay.Controller
             dgv.DataSource = mayData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
 
-        public int Them(May m)
+        /*public int Them(May m)
         {
           
             if (KiemTraTenMay(m.TenMay))
                 return 0;
             return mayData.Them(m);
-        }
+        }*/
 
         public int ThemMoi(May may)
         {
@@ -54,9 +60,19 @@ namespace QuanLyPhongMay.Controller
             return mayData.Xoa(maMay);
         }
 
-        public int Luu(May m)
+        public int CapNhatMay(May m)
         {
-            return mayData.Luu(m);
+            return mayData.CapNhatMay(m);
+        }
+
+        public int CapNhatChiTiet(int maMay, int maLoai, int maThietBi)
+        {
+            if(mayData.KiemTraChiTiet(maMay, maLoai))
+            {
+                return mayData.CapNhatChiTiet(maMay, maLoai, maThietBi);
+            }
+            return mayData.ThemChiTietMay(maMay, maLoai, maThietBi);
+
         }
 
         public int ThemChiTietMay(int maMay, int maLoai, int maThietBi)
@@ -67,6 +83,12 @@ namespace QuanLyPhongMay.Controller
         public bool KiemTraTenMay(string tenmay)
         {
             return mayData.KiemTraTenMay(tenmay);
+        }
+
+        public void ThemLSCapNhat(May may, string user)
+        {
+            DateTime ngayCapNhat = DateTime.Now;
+            mayData.ThemLSCapNhat(may, mayCtrl.GetIDLSCapNhat(), user, ngayCapNhat);
         }
     }
 }

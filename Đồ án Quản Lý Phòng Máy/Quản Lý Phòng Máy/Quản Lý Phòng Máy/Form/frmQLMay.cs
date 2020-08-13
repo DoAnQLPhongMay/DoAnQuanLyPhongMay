@@ -78,6 +78,7 @@ namespace QuanLyPhongMay
             cboTrangThai.Text = "";
 
             btnThemMoi.Enabled = true;
+            btnXoa.Enabled = true;
             btnCapNhat.Enabled = false;
 
             mayCtrl.HienThi(dgvDSMay);
@@ -115,6 +116,8 @@ namespace QuanLyPhongMay
                         mayCtrl.ThemChiTietMay(may.MaMay, i+1, Convert.ToInt32(cbo[i].SelectedValue));
                     }
                 }
+
+                mayCtrl.ThemLSCapNhat(may, user.TenTK);
                 LamMoi();
             }
         }
@@ -143,24 +146,28 @@ namespace QuanLyPhongMay
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            May may = new May(); 
+            LuuCbo();
+            May may = new May();
+            may.MaMay = Convert.ToInt32(txtMaMay.Text);
             may.TenMay = txtTenMay.Text;
+            may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
+            may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
             may.GhiChu = rtbGhiChu.Text;
-            may.MaPhong = int.Parse(cboPhong.SelectedValue.ToString());
-            may.TrangThai = int.Parse(cboTrangThai.SelectedValue.ToString());
-            may.MaMay = int.Parse(txtMaMay.Text);
 
             string mamay = dgvDSMay.CurrentRow.Cells[0].Value.ToString();
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
-
-                if(mayCtrl.Luu(may) > 0)
+                mayCtrl.CapNhatMay(may);
+                for(int i = 0; i < 11; i++)
                 {
-                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LamMoi();
-                    //HienThiThongTin();
-                }   
+                    if(cbo[i].Text != "")
+                    {
+                        mayCtrl.CapNhatChiTiet(may.MaMay, i + 1, Convert.ToInt32(cbo[i].SelectedValue));
+                    }
+                }
+                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LamMoi();
             }
         }
 
@@ -182,6 +189,8 @@ namespace QuanLyPhongMay
             mayCtrl.HienThi(dgvDSMay);
             ttctrl.HienThiCbo(cboTrangThai);
             phongctrl.HienThiCbo(cboPhong);
+            cboPhong.Refresh();
+            cboTrangThai.Refresh();
 
             cboPhong.Text = "";
             cboTrangThai.Text = "";
@@ -189,6 +198,7 @@ namespace QuanLyPhongMay
             for(int i = 0; i < 11; i++)
             {
                 thietBiCtrl.HienThiCbo(cbo[i], i + 1);
+                cbo[i].Refresh();
                 cbo[i].Text = "";
             }
 
@@ -216,6 +226,10 @@ namespace QuanLyPhongMay
             cboPhong.SelectedValue = dgvDSMay.CurrentRow.Cells[6].Value.ToString();
             cboTrangThai.SelectedValue = dgvDSMay.CurrentRow.Cells[5].Value.ToString();
             rtbGhiChu.Text = dgvDSMay.CurrentRow.Cells[4].Value.ToString();
+
+            btnCapNhat.Enabled = true;
+            btnThemMoi.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)

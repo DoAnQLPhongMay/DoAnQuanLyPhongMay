@@ -20,7 +20,7 @@ namespace QuanLyPhongMay.Class
         //Khởi tạo mặc định của class.
         public User()
         {
-            this.TenTK = "";
+            this.TenTK = "vmkhoi";
             this.TenUser = "";
             this.PhanQuyen = false;
         }

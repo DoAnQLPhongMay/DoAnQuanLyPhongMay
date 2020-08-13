@@ -40,7 +40,8 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Vui lòng nhập Ghi Chú", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            /*else
+            {
                 switch (mctrl.Them(m))
                 {
                     case 0:
@@ -50,6 +51,7 @@ namespace QuanLyPhongMay
                         MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
+            }*/
         }
 
         private void frmThemMay_Load(object sender, EventArgs e)
