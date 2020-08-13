@@ -18,7 +18,7 @@ namespace QuanLyPhongMay.BUS
 
         }
 
-        //Hàm getter, setter.
+        //Hàm xử lý getter và setter.
         public int MaLoai 
         { get => _maLoai; set => _maLoai = value; }
         public string TenLoaiThietBi 

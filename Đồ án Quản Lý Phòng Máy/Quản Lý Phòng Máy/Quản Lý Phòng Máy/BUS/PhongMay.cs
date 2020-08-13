@@ -8,13 +8,19 @@ namespace QuanLyPhongMay.BUS
 {
     class PhongMay
     {
-        //Khởi tạo getter setter cho phòng máy.
+        //Khởi tạo các biến giá trị.
         private int _maPhong;
         private int _soLuongMay;
         private string _tenPhong;
         private int _trangThai;
         private string _ghiChu;
 
+        //Hàm khởi tạo mặc định của class.
+        public PhongMay()
+        {
+        }
+
+        //Hàm xử lý getter và setter.
         public int MaPhong
         {
             get { return _maPhong; }
@@ -41,8 +47,5 @@ namespace QuanLyPhongMay.BUS
             set { _ghiChu = value; }
         }
 
-        public PhongMay()
-        {
-        }
     }
 }

@@ -15,6 +15,7 @@ namespace QuanLyPhongMay.DataLayer
         //Khởi tạo biến DataProvider.
         DataProvider cls = new DataProvider();
 
+        //Hàm lấy ra ID có giá trị cao nhất.
         public int GetID()
         {
             string select = "SELECT MaPhongMay ",
@@ -26,6 +27,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.GetID(cmd);
         }
 
+        //Hàm kiểm tra tên phòng đã tồn tại chưa.
         public bool KTTenPhong(string tenPhong)
         {
             string select = "SELECT * ",

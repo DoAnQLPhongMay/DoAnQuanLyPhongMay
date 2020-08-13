@@ -51,6 +51,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        //Hàm xử lý lấy danh sách thiết bị theo mã loại.
         public DataSet LayDSThietBi(int maLoai)
         {
             string select = "SELECT * ",
@@ -62,6 +63,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        //Hàm xử lý lấy thông tin thiết bị.
         public DataSet LayThongTin()
         {
             string select = "SELECT * ",
@@ -72,6 +74,7 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        //Hàm xử lý lấy thông tin thiết bị của máy.
         public DataSet LayThongTinMay()
         {
             string select = "SELECT dtb_May.*, dtb_ChiTietThietBi.TenThietBi, dtb_ChiTietMay.MaThietBi, dtb_ChiTietThietBi.MaLoai ",
@@ -149,7 +152,7 @@ namespace QuanLyPhongMay.DataLayer
             switch (loaiTK)
             {
                 case "maThietBi":
-                    where += "dtb_ChiTietThietBi.MaThietBi = " + key + "";
+                    where += "dtb_ChiTietThietBi.MaThietBi = '" + key + "'";
                     break;
                 case "tenThietBi":
                     where += "dtb_ChiTietThietBi.TenThietBi = N'" + key + "'";
@@ -158,7 +161,7 @@ namespace QuanLyPhongMay.DataLayer
                     where += "dtb_ChiTietThietBi.NhaSanXuat = N'" + key + "'";
                     break;
                 default:
-                    where += "dtb_ChiTietThietBi.MaLoai = " + key + "";
+                    where += "dtb_ChiTietThietBi.MaLoai = '" + key + "'";
                     break;
             }
 

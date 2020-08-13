@@ -146,17 +146,31 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng xóa 1 thiết bị.
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if(dgvDSThietBi.CurrentRow != null)
+            if (user.PhanQuyen)
             {
-                int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
-                thietBiCtrl.Xoa(maThietBi);
-                MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK);
-                thietBiCtrl.HienThiDgv(dgvDSThietBi);
-                lamMoi();
+
+                if (dgvDSThietBi.CurrentRow != null)
+                {
+                    DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa thiết bị này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    
+                    if (dlg == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
+                        thietBiCtrl.Xoa(maThietBi);
+
+                        MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK);
+                        thietBiCtrl.HienThiDgv(dgvDSThietBi);
+                        lamMoi();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK);
             }
         }
 

@@ -11,13 +11,16 @@ namespace QuanLyPhongMay.Controller
 {
     class PhongMayCtrl
     {
+        //Khởi tạo biến giá trị.
         PhongMayData phongData = new PhongMayData();
 
+        //Hàm xử lý lấy giá trị ID lớn nhất trong database.
         public int GetID()
         {
             return phongData.GetID();
         }
 
+        //Hàm kiểm tra tên phòng đã tồn tại chưa.
         public bool KTTenPhong(string tenPhong)
         {
             return phongData.KTTenPhong(tenPhong);
@@ -53,6 +56,7 @@ namespace QuanLyPhongMay.Controller
             return phongData.CapNhat(phong);
         }
 
+        //Hàm hiển thị dữ liệu lên combox.
         public void HienThiCbo(ComboBox cb)
         {
             cb.DataSource = phongData.LayDSPhong().Tables[0];

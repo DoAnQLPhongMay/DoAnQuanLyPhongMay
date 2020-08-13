@@ -19,6 +19,12 @@ namespace QuanLyPhongMay.BUS
         private string _nguoiPhuTrach;
         private string _ghiChu;
 
+        //Hàm khởi tạo mặc định của class.
+        public LichSuThanhLy()
+        {
+
+        }
+
         //Hàm xử lý getter và setter.
         public int MaThanhLy
         {
@@ -64,12 +70,6 @@ namespace QuanLyPhongMay.BUS
         {
             get { return _ghiChu; }
             set { _ghiChu = value; }
-        }
-
-        //Hàm khởi tạo mặc định của class.
-        public LichSuThanhLy()
-        {
-
         }
     }
 }
