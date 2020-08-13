@@ -25,11 +25,20 @@ namespace QuanLyPhongMay.DataLayer
             return cls.GetID(cmd);
         }
 
-        public DataSet LayDSMay()
+        /*public DataSet LayDSMay()
         {
             string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu ",
                 from =  "From dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai ",
                 where = "where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
+            SqlCommand sqlcmd = new SqlCommand(sql + from + where);
+            return cls.LayDuLieu(sqlcmd);
+        }*/
+
+        public DataSet LayDSMay()
+        {
+            string sql = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu ",
+                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai ",
+                where = "WHERE  dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.TrangThai = dtb_TrangThai.MaTrangThai";
             SqlCommand sqlcmd = new SqlCommand(sql + from + where);
             return cls.LayDuLieu(sqlcmd);
         }

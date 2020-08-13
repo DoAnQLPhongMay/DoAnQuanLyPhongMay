@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvDSMay = new System.Windows.Forms.DataGridView();
-            this.txt_MaMay = new System.Windows.Forms.TextBox();
+            this.MaMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaMay = new System.Windows.Forms.TextBox();
             this.lbl_MaMay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_TenMay = new System.Windows.Forms.Label();
@@ -39,12 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_MainBoard = new System.Windows.Forms.Label();
             this.lbl_RAM = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTenMay = new System.Windows.Forms.TextBox();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.txtManHinh = new System.Windows.Forms.TextBox();
+            this.txtChuot = new System.Windows.Forms.TextBox();
+            this.txtBanPhim = new System.Windows.Forms.TextBox();
+            this.txtThung = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,23 +57,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtMainBoard = new System.Windows.Forms.TextBox();
+            this.txtCPU = new System.Windows.Forms.TextBox();
+            this.txtHDH = new System.Windows.Forms.TextBox();
+            this.txtOCung = new System.Windows.Forms.TextBox();
+            this.txtRAM = new System.Windows.Forms.TextBox();
+            this.txtTrangThai = new System.Windows.Forms.TextBox();
+            this.txtVGA = new System.Windows.Forms.TextBox();
+            this.txtPSU = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.MaMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,23 +78,58 @@
             this.dgvDSMay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaMay,
             this.TenMay,
-            this.TenPhong,
+            this.TenPhongMay,
             this.TrangThai,
-            this.GhiChu,
-            this.MaPhong1});
+            this.GhiChu});
             this.dgvDSMay.Location = new System.Drawing.Point(6, 19);
             this.dgvDSMay.Name = "dgvDSMay";
             this.dgvDSMay.Size = new System.Drawing.Size(283, 440);
             this.dgvDSMay.TabIndex = 0;
+            this.dgvDSMay.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
-            // txt_MaMay
+            // MaMay
             // 
-            this.txt_MaMay.Enabled = false;
-            this.txt_MaMay.Location = new System.Drawing.Point(379, 19);
-            this.txt_MaMay.Name = "txt_MaMay";
-            this.txt_MaMay.ReadOnly = true;
-            this.txt_MaMay.Size = new System.Drawing.Size(104, 20);
-            this.txt_MaMay.TabIndex = 2;
+            this.MaMay.DataPropertyName = "MaMay";
+            this.MaMay.HeaderText = "ID";
+            this.MaMay.Name = "MaMay";
+            this.MaMay.ReadOnly = true;
+            // 
+            // TenMay
+            // 
+            this.TenMay.DataPropertyName = "TenMay";
+            this.TenMay.HeaderText = "Tên Máy";
+            this.TenMay.Name = "TenMay";
+            this.TenMay.ReadOnly = true;
+            // 
+            // TenPhongMay
+            // 
+            this.TenPhongMay.DataPropertyName = "TenPhongMay";
+            this.TenPhongMay.HeaderText = "Phòng";
+            this.TenPhongMay.Name = "TenPhongMay";
+            this.TenPhongMay.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TenTrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            // 
+            // txtMaMay
+            // 
+            this.txtMaMay.Enabled = false;
+            this.txtMaMay.Location = new System.Drawing.Point(379, 19);
+            this.txtMaMay.Name = "txtMaMay";
+            this.txtMaMay.ReadOnly = true;
+            this.txtMaMay.Size = new System.Drawing.Size(104, 20);
+            this.txtMaMay.TabIndex = 2;
             // 
             // lbl_MaMay
             // 
@@ -113,7 +147,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Mã Phòng: ";
+            this.label1.Text = "Tên phòng:";
             // 
             // lbl_TenMay
             // 
@@ -178,59 +212,59 @@
             this.lbl_RAM.TabIndex = 35;
             this.lbl_RAM.Text = "RAM:";
             // 
-            // textBox1
+            // txtTenMay
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(379, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(104, 20);
-            this.textBox1.TabIndex = 36;
+            this.txtTenMay.Enabled = false;
+            this.txtTenMay.Location = new System.Drawing.Point(379, 45);
+            this.txtTenMay.Name = "txtTenMay";
+            this.txtTenMay.ReadOnly = true;
+            this.txtTenMay.Size = new System.Drawing.Size(104, 20);
+            this.txtTenMay.TabIndex = 36;
             // 
-            // textBox2
+            // txtTenPhong
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(379, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(104, 20);
-            this.textBox2.TabIndex = 37;
+            this.txtTenPhong.Enabled = false;
+            this.txtTenPhong.Location = new System.Drawing.Point(379, 71);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.ReadOnly = true;
+            this.txtTenPhong.Size = new System.Drawing.Size(104, 20);
+            this.txtTenPhong.TabIndex = 37;
             // 
-            // textBox3
+            // txtManHinh
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(379, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(104, 20);
-            this.textBox3.TabIndex = 38;
+            this.txtManHinh.Enabled = false;
+            this.txtManHinh.Location = new System.Drawing.Point(379, 97);
+            this.txtManHinh.Name = "txtManHinh";
+            this.txtManHinh.ReadOnly = true;
+            this.txtManHinh.Size = new System.Drawing.Size(104, 20);
+            this.txtManHinh.TabIndex = 38;
             // 
-            // textBox4
+            // txtChuot
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(379, 123);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(104, 20);
-            this.textBox4.TabIndex = 39;
+            this.txtChuot.Enabled = false;
+            this.txtChuot.Location = new System.Drawing.Point(379, 123);
+            this.txtChuot.Name = "txtChuot";
+            this.txtChuot.ReadOnly = true;
+            this.txtChuot.Size = new System.Drawing.Size(104, 20);
+            this.txtChuot.TabIndex = 39;
             // 
-            // textBox5
+            // txtBanPhim
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(379, 149);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(104, 20);
-            this.textBox5.TabIndex = 40;
+            this.txtBanPhim.Enabled = false;
+            this.txtBanPhim.Location = new System.Drawing.Point(379, 149);
+            this.txtBanPhim.Name = "txtBanPhim";
+            this.txtBanPhim.ReadOnly = true;
+            this.txtBanPhim.Size = new System.Drawing.Size(104, 20);
+            this.txtBanPhim.TabIndex = 40;
             // 
-            // textBox6
+            // txtThung
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(379, 175);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(104, 20);
-            this.textBox6.TabIndex = 41;
+            this.txtThung.Enabled = false;
+            this.txtThung.Location = new System.Drawing.Point(379, 175);
+            this.txtThung.Name = "txtThung";
+            this.txtThung.ReadOnly = true;
+            this.txtThung.Size = new System.Drawing.Size(104, 20);
+            this.txtThung.TabIndex = 41;
             // 
             // label3
             // 
@@ -296,108 +330,108 @@
             this.label9.TabIndex = 48;
             this.label9.Text = "Hệ Điều Hành:";
             // 
-            // textBox7
+            // txtMainBoard
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(379, 227);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(104, 20);
-            this.textBox7.TabIndex = 50;
+            this.txtMainBoard.Enabled = false;
+            this.txtMainBoard.Location = new System.Drawing.Point(379, 227);
+            this.txtMainBoard.Name = "txtMainBoard";
+            this.txtMainBoard.ReadOnly = true;
+            this.txtMainBoard.Size = new System.Drawing.Size(104, 20);
+            this.txtMainBoard.TabIndex = 50;
             // 
-            // textBox8
+            // txtCPU
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(379, 201);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(104, 20);
-            this.textBox8.TabIndex = 49;
+            this.txtCPU.Enabled = false;
+            this.txtCPU.Location = new System.Drawing.Point(379, 201);
+            this.txtCPU.Name = "txtCPU";
+            this.txtCPU.ReadOnly = true;
+            this.txtCPU.Size = new System.Drawing.Size(104, 20);
+            this.txtCPU.TabIndex = 49;
             // 
-            // textBox9
+            // txtHDH
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(379, 357);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(104, 20);
-            this.textBox9.TabIndex = 53;
+            this.txtHDH.Enabled = false;
+            this.txtHDH.Location = new System.Drawing.Point(379, 357);
+            this.txtHDH.Name = "txtHDH";
+            this.txtHDH.ReadOnly = true;
+            this.txtHDH.Size = new System.Drawing.Size(104, 20);
+            this.txtHDH.TabIndex = 53;
             // 
-            // textBox10
+            // txtOCung
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(379, 279);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(104, 20);
-            this.textBox10.TabIndex = 52;
+            this.txtOCung.Enabled = false;
+            this.txtOCung.Location = new System.Drawing.Point(379, 279);
+            this.txtOCung.Name = "txtOCung";
+            this.txtOCung.ReadOnly = true;
+            this.txtOCung.Size = new System.Drawing.Size(104, 20);
+            this.txtOCung.TabIndex = 52;
             // 
-            // textBox11
+            // txtRAM
             // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(379, 253);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(104, 20);
-            this.textBox11.TabIndex = 51;
+            this.txtRAM.Enabled = false;
+            this.txtRAM.Location = new System.Drawing.Point(379, 253);
+            this.txtRAM.Name = "txtRAM";
+            this.txtRAM.ReadOnly = true;
+            this.txtRAM.Size = new System.Drawing.Size(104, 20);
+            this.txtRAM.TabIndex = 51;
             // 
-            // textBox12
+            // txtTrangThai
             // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(379, 383);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(104, 20);
-            this.textBox12.TabIndex = 56;
+            this.txtTrangThai.Enabled = false;
+            this.txtTrangThai.Location = new System.Drawing.Point(379, 383);
+            this.txtTrangThai.Name = "txtTrangThai";
+            this.txtTrangThai.ReadOnly = true;
+            this.txtTrangThai.Size = new System.Drawing.Size(104, 20);
+            this.txtTrangThai.TabIndex = 56;
             // 
-            // textBox13
+            // txtVGA
             // 
-            this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(379, 305);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(104, 20);
-            this.textBox13.TabIndex = 55;
+            this.txtVGA.Enabled = false;
+            this.txtVGA.Location = new System.Drawing.Point(379, 305);
+            this.txtVGA.Name = "txtVGA";
+            this.txtVGA.ReadOnly = true;
+            this.txtVGA.Size = new System.Drawing.Size(104, 20);
+            this.txtVGA.TabIndex = 55;
             // 
-            // textBox14
+            // txtPSU
             // 
-            this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(379, 331);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(104, 20);
-            this.textBox14.TabIndex = 54;
+            this.txtPSU.Enabled = false;
+            this.txtPSU.Location = new System.Drawing.Point(379, 331);
+            this.txtPSU.Name = "txtPSU";
+            this.txtPSU.ReadOnly = true;
+            this.txtPSU.Size = new System.Drawing.Size(104, 20);
+            this.txtPSU.TabIndex = 54;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.rtbGhiChu);
             this.groupBox1.Controls.Add(this.dgvDSMay);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txt_MaMay);
+            this.groupBox1.Controls.Add(this.txtMaMay);
             this.groupBox1.Controls.Add(this.lbl_MaMay);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbl_TenMay);
             this.groupBox1.Controls.Add(this.lbl_TrangThai);
             this.groupBox1.Controls.Add(this.lbl_ManHinh);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.txtTrangThai);
             this.groupBox1.Controls.Add(this.lbl_Chuot);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.txtVGA);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.txtPSU);
             this.groupBox1.Controls.Add(this.lbl_MainBoard);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.txtHDH);
             this.groupBox1.Controls.Add(this.lbl_RAM);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtOCung);
+            this.groupBox1.Controls.Add(this.txtTenMay);
+            this.groupBox1.Controls.Add(this.txtRAM);
+            this.groupBox1.Controls.Add(this.txtTenPhong);
+            this.groupBox1.Controls.Add(this.txtMainBoard);
+            this.groupBox1.Controls.Add(this.txtManHinh);
+            this.groupBox1.Controls.Add(this.txtCPU);
+            this.groupBox1.Controls.Add(this.txtChuot);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtBanPhim);
+            this.groupBox1.Controls.Add(this.txtThung);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
@@ -410,6 +444,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Máy";
             // 
+            // rtbGhiChu
+            // 
+            this.rtbGhiChu.Location = new System.Drawing.Point(379, 410);
+            this.rtbGhiChu.Name = "rtbGhiChu";
+            this.rtbGhiChu.ReadOnly = true;
+            this.rtbGhiChu.Size = new System.Drawing.Size(104, 49);
+            this.rtbGhiChu.TabIndex = 57;
+            this.rtbGhiChu.Text = "";
+            // 
             // lblQLPhongMay
             // 
             this.lblQLPhongMay.AutoSize = true;
@@ -419,58 +462,6 @@
             this.lblQLPhongMay.Size = new System.Drawing.Size(489, 61);
             this.lblQLPhongMay.TabIndex = 62;
             this.lblQLPhongMay.Text = "Chi Tiết Phòng Máy";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(379, 410);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(104, 49);
-            this.richTextBox1.TabIndex = 57;
-            this.richTextBox1.Text = "";
-            // 
-            // MaMay
-            // 
-            this.MaMay.DataPropertyName = "MaMay";
-            this.MaMay.HeaderText = "ID";
-            this.MaMay.Name = "MaMay";
-            this.MaMay.ReadOnly = true;
-            // 
-            // TenMay
-            // 
-            this.TenMay.DataPropertyName = "TenMay";
-            this.TenMay.HeaderText = "Tên";
-            this.TenMay.Name = "TenMay";
-            this.TenMay.ReadOnly = true;
-            // 
-            // TenPhong
-            // 
-            this.TenPhong.DataPropertyName = "TenPhongMay";
-            this.TenPhong.HeaderText = "Phòng Máy";
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TenTrangThai";
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi Chú";
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.ReadOnly = true;
-            // 
-            // MaPhong1
-            // 
-            this.MaPhong1.DataPropertyName = "MaPhong";
-            this.MaPhong1.HeaderText = "MaPhong";
-            this.MaPhong1.Name = "MaPhong1";
-            this.MaPhong1.ReadOnly = true;
-            this.MaPhong1.Visible = false;
             // 
             // frmChiTietPhongMay
             // 
@@ -493,7 +484,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDSMay;
-        private System.Windows.Forms.TextBox txt_MaMay;
+        private System.Windows.Forms.TextBox txtMaMay;
         private System.Windows.Forms.Label lbl_MaMay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_TenMay;
@@ -503,12 +494,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_MainBoard;
         private System.Windows.Forms.Label lbl_RAM;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTenMay;
+        private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.TextBox txtManHinh;
+        private System.Windows.Forms.TextBox txtChuot;
+        private System.Windows.Forms.TextBox txtBanPhim;
+        private System.Windows.Forms.TextBox txtThung;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -516,22 +507,21 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtMainBoard;
+        private System.Windows.Forms.TextBox txtCPU;
+        private System.Windows.Forms.TextBox txtHDH;
+        private System.Windows.Forms.TextBox txtOCung;
+        private System.Windows.Forms.TextBox txtRAM;
+        private System.Windows.Forms.TextBox txtTrangThai;
+        private System.Windows.Forms.TextBox txtVGA;
+        private System.Windows.Forms.TextBox txtPSU;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblQLPhongMay;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbGhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong1;
     }
 }

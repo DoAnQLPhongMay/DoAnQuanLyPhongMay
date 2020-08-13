@@ -61,6 +61,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayThongTinMay()
+        {
+            string select = "SELECT dtb_May.*, dtb_ChiTietThietBi.TenThietBi, dtb_ChiTietMay.MaThietBi, dtb_ChiTietThietBi.MaLoai ",
+                from = "FROM dtb_May, dtb_ChiTietMay, dtb_ChiTietThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_May.MaMay =  dtb_ChiTietMay.MaMay AND dtb_ChiTietMay.MaThietBi = dtb_ChiTietThietBi.MaThietBi AND dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm xử lý thêm mới thiết bị.
         public int Them(ThietBi thietBi)
         {
