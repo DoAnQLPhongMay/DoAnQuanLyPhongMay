@@ -137,16 +137,25 @@ namespace QuanLyPhongMay
             frm.Show();
             this.Hide();*/
 
+            //Khởi tạo biến giá trị.
             May may = new May();
             may.MaMay = mayCtrl.GetID() + 1;
             may.TenMay = txtTenMay.Text;
             may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
-            may.TrangThai = Convert.ToInt32(cboPhong.SelectedValue);
+            may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
             may.GhiChu = rtbGhiChu.Text;
 
             if (txtTenMay.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên Máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(cboPhong.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cboTrangThai.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái máy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(mayCtrl.ThemMoi(may) == 0)
             {
