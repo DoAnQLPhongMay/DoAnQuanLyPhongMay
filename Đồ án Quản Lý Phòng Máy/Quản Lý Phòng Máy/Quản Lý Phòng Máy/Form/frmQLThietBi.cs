@@ -95,12 +95,12 @@ namespace QuanLyPhongMay
 
             if(txtTenThietBi.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập tên thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if(cboLoaiThietBi.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn loại thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn loại thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else
@@ -111,7 +111,7 @@ namespace QuanLyPhongMay
                 }
                 if (txtHanThanhLy.Text == "")
                 {
-                    txtHanThanhLy.Text = "0";
+                    txtHanThanhLy.Text = "5";
                 }
                 if (txtNamSanXuat.Text == "")
                 {
@@ -138,7 +138,7 @@ namespace QuanLyPhongMay
                 thietBi.GhiChu = rtbGhiChu.Text;
 
                 thietBiCtrl.Them(thietBi);
-                MessageBox.Show("Thêm thiết bị thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm thiết bị thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 lamMoi();
             }
         }
@@ -148,7 +148,6 @@ namespace QuanLyPhongMay
         {
             if (user.PhanQuyen)
             {
-
                 if (dgvDSThietBi.CurrentRow != null)
                 {
                     DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa thiết bị này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -158,19 +157,19 @@ namespace QuanLyPhongMay
                         int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
                         thietBiCtrl.Xoa(maThietBi);
 
-                        MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         thietBiCtrl.HienThiDgv(dgvDSThietBi);
                         lamMoi();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -218,7 +217,7 @@ namespace QuanLyPhongMay
                 loaiTK = "maLoai";
             else
             {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")

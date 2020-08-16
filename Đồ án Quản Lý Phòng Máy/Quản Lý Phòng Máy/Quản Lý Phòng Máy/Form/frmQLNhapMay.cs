@@ -38,7 +38,7 @@ namespace QuanLyPhongMay
         //Hàm load dữ liệu khi mở form.
         private void frm_QLNhapMay_Load(object sender, EventArgs e)
         {
-            if (user.TenTK != "")
+            if (user.TenUser != "")
             {
                 txtNguoiPhuTrach.Text = user.TenUser;
             }
@@ -46,6 +46,7 @@ namespace QuanLyPhongMay
             {
                 txtNguoiPhuTrach.Text = "vmkhoi";
             }
+
             nhapCtrl.HienThiDgv(dgvDSNhap);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
             cboTenThietBi.Text = "";
@@ -56,13 +57,14 @@ namespace QuanLyPhongMay
         {
             txtMaNhap.Text = dgvDSNhap.CurrentRow.Cells[0].Value.ToString();
             dtmNgayNhap.Text = dgvDSNhap.CurrentRow.Cells[1].Value.ToString();
-            cboTenThietBi.SelectedItem = Convert.ToInt32(dgvDSNhap.CurrentRow.Cells[2].Value.ToString());
+            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSNhap.CurrentRow.Cells[2].Value.ToString());
             txtNhaCungCap.Text = dgvDSNhap.CurrentRow.Cells[3].Value.ToString();
             txtNSX.Text = dgvDSNhap.CurrentRow.Cells[4].Value.ToString();
             txtNamSX.Text = dgvDSNhap.CurrentRow.Cells[5].Value.ToString();
             txtSoLuong.Text = dgvDSNhap.CurrentRow.Cells[6].Value.ToString();
             txtDonGia.Text = dgvDSNhap.CurrentRow.Cells[7].Value.ToString();
-            rtbGhiChu.Text = dgvDSNhap.CurrentRow.Cells[8].Value.ToString();
+            rtbGhiChu.Text = dgvDSNhap.CurrentRow.Cells[9].Value.ToString();
+            txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
 
             btnThemMoi.Enabled = false;
         }
@@ -166,6 +168,7 @@ namespace QuanLyPhongMay
             if (kiemTra())
             {
                 DialogResult dlg = MessageBox.Show("Lịch sử nhập không thể chỉnh sửa sau khi đã thêm.\nHày chắc rằng dữ liệu nhập vào là đúng.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
                     nhap.MaNhap = nhapCtrl.GetID() + 1;
@@ -176,7 +179,7 @@ namespace QuanLyPhongMay
                     nhap.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
                     nhap.SoLuong = Convert.ToInt32(txtSoLuong.Text);
                     nhap.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    nhap.NguoiPhuTrach = txtNguoiPhuTrach.Text;
+                    nhap.NguoiPhuTrach = user.TenTK;
                     nhap.GhiChu = rtbGhiChu.Text;
 
                     nhapCtrl.Them(nhap);

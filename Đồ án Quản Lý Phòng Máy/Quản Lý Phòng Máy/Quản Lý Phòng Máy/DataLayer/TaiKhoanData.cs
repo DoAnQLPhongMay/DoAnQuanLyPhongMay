@@ -11,17 +11,26 @@ namespace QuanLyPhongMay.DataLayer
     class TaiKhoanData
     {
         DataProvider cls = new DataProvider();
+
         public DataSet LayDLMotDong(string ten)
         {
             SqlCommand cmd = new SqlCommand("select * from dtb_TaiKhoan where TenDangNhap=@tendangnhap");
             cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = ten;
             return cls.LayDuLieu(cmd);
         }
-        public DataSet LayDSGiangVien()
+
+        /*public DataSet LayDSGiangVien()
         {
             SqlCommand sqlcmd = new SqlCommand("select TenDangNhap, MaTaiKhoan, HoVaTen, GioiTinh, SDT, Email, NgaySinh, DiaChi, TenQuyen from dtb_Quyen, dtb_TaiKhoan where dtb_Quyen.MaQuyen = dtb_TaiKhoan.MaQuyen");
             return cls.LayDuLieu(sqlcmd);
+        }*/
+
+        public DataSet LayDSGiangVien()
+        {
+            SqlCommand sqlcmd = new SqlCommand("select * from dtb_TaiKhoan");
+            return cls.LayDuLieu(sqlcmd);
         }
+
         public DataSet LayDSTK(string tukhoa, string tieuchi)
         {
             string sql = "select TenDangNhap, MaTaiKhoan, HoVaTen, GioiTinh, SDT, Email, NgaySinh, DiaChi, TenQuyen from dtb_Quyen, dtb_TaiKhoan where dtb_Quyen.MaQuyen = dtb_TaiKhoan.MaQuyen ";

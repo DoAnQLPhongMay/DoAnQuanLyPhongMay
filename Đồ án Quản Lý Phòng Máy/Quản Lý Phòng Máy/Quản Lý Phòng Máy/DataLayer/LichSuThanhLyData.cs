@@ -90,7 +90,7 @@ namespace QuanLyPhongMay.DataLayer
                     where += "AND dtb_LichSuThanhLy.MaThanhLy = " + key + "";
                     break;
                 case "ngayThanhLy":
-                    where += "AND dtb_LichSuThanhLy.NgayThanhLy like \"%" + key + "%\"";
+                    where += "AND dtb_LichSuThanhLy.NgayThanhLy = '" + key + "'";
                     break;
                 case "nhaSanXuat":
                     where += "AND dtb_LichSuThanhLy.NhaSanXuat = '" + key + "'";

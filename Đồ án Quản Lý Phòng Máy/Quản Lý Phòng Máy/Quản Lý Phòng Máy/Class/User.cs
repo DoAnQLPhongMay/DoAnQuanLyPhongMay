@@ -22,7 +22,7 @@ namespace QuanLyPhongMay.Class
         {
             this.TenTK = "vmkhoi";
             this.TenUser = "";
-            this.PhanQuyen = false;
+            this.PhanQuyen = true;
         }
 
         public User(User user)

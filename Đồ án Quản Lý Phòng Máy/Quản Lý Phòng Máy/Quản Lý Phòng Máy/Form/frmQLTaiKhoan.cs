@@ -29,28 +29,31 @@ namespace QuanLyPhongMay
 
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
-  
-           tkctrl.HienThi(dgvDSTaiKhoan);
+            tkctrl.HienThi(dgvDSTaiKhoan);
+            cboQuyenHan.Items.Insert(0, "User");
+            cboQuyenHan.Items.Insert(1, "Admin");
             HienThiThongTin();
         }
         void HienThiThongTin()
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                txt_Username.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txt_TenTaiKhoan.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+                txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                txtMaTK.Text = dgvDSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
+                txtHoTen.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
                 checkRadio();
-                txt_SDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
-                dtm_NgaySinh.Value = DateTime.Parse(dgvDSTaiKhoan.CurrentRow.Cells[6].Value.ToString());
-                txt_DiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
-                txtMaQuyen.Text = dgvDSTaiKhoan.CurrentRow.Cells[8].Value.ToString();
+                txtSDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+                txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
+                dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
+                txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
+                cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
             }
         }
         void checkRadio()
         {
             string gtri = dgvDSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
-            rad_Nam.Checked = (gtri == "True") ? true : false;
-            rad_Nu.Checked = (gtri == "False") ? true : false;
+            radNam.Checked = (gtri == "True") ? true : false;
+            radNu.Checked = (gtri == "False") ? true : false;
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -61,10 +64,14 @@ namespace QuanLyPhongMay
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if(tkctrl.KiemTraMaQuyen(Convert.ToInt32(txtMaQuyen.Text)) != true)
+            /*if(tkctrl.KiemTraMaQuyen(Convert.ToInt32(txtMaQuyen.Text)) != true)
                 {
-                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }*/
+            if (Convert.ToInt32(cboQuyenHan.SelectedValue) == 0)
+            {
+                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (dgvDSTaiKhoan.CurrentRow != null)
             {
@@ -85,12 +92,12 @@ namespace QuanLyPhongMay
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
             TaiKhoan tk = new TaiKhoan();
-            tk.TenGV = txt_TenTaiKhoan.Text;
-            tk.Gioitinh = (rad_Nam.Checked) ? true : false;
-            tk.SDT = txt_SDT.Text;
-            tk.Ngaysinh = Convert.ToDateTime(dtm_NgaySinh.Value);
-            tk.Diachi = txt_DiaChi.Text;
-            tk.TenDangNhap = txt_Username.Text;
+            tk.TenGV = txtHoTen.Text;
+            tk.Gioitinh = (radNam.Checked) ? true : false;
+            tk.SDT = txtSDT.Text;
+            tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
+            tk.Diachi = txtDiaChi.Text;
+            tk.TenDangNhap = txtUsername.Text;
 
             string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
 

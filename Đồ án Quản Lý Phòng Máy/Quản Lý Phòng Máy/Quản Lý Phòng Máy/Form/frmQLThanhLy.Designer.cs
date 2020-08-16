@@ -70,6 +70,8 @@
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NguoiPhuTrach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTong = new System.Windows.Forms.Label();
+            this.txtTong = new System.Windows.Forms.TextBox();
             this.grpChiTietThanhLy.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThanhLy)).BeginInit();
@@ -87,6 +89,8 @@
             // 
             // grpChiTietThanhLy
             // 
+            this.grpChiTietThanhLy.Controls.Add(this.txtTong);
+            this.grpChiTietThanhLy.Controls.Add(this.lblTong);
             this.grpChiTietThanhLy.Controls.Add(this.txtNguoiPhuTrach);
             this.grpChiTietThanhLy.Controls.Add(this.lblNguoiPhuTrach);
             this.grpChiTietThanhLy.Controls.Add(this.cboTenThietBi);
@@ -118,7 +122,7 @@
             // 
             // txtNguoiPhuTrach
             // 
-            this.txtNguoiPhuTrach.Location = new System.Drawing.Point(325, 181);
+            this.txtNguoiPhuTrach.Location = new System.Drawing.Point(327, 94);
             this.txtNguoiPhuTrach.Name = "txtNguoiPhuTrach";
             this.txtNguoiPhuTrach.ReadOnly = true;
             this.txtNguoiPhuTrach.Size = new System.Drawing.Size(100, 20);
@@ -127,7 +131,7 @@
             // lblNguoiPhuTrach
             // 
             this.lblNguoiPhuTrach.AutoSize = true;
-            this.lblNguoiPhuTrach.Location = new System.Drawing.Point(212, 184);
+            this.lblNguoiPhuTrach.Location = new System.Drawing.Point(214, 97);
             this.lblNguoiPhuTrach.Name = "lblNguoiPhuTrach";
             this.lblNguoiPhuTrach.Size = new System.Drawing.Size(107, 13);
             this.lblNguoiPhuTrach.TabIndex = 46;
@@ -137,7 +141,7 @@
             // 
             this.cboTenThietBi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTenThietBi.FormattingEnabled = true;
-            this.cboTenThietBi.Location = new System.Drawing.Point(325, 49);
+            this.cboTenThietBi.Location = new System.Drawing.Point(327, 43);
             this.cboTenThietBi.Name = "cboTenThietBi";
             this.cboTenThietBi.Size = new System.Drawing.Size(100, 21);
             this.cboTenThietBi.TabIndex = 45;
@@ -147,7 +151,7 @@
             // 
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Location = new System.Drawing.Point(635, 92);
+            this.btnLamMoi.Location = new System.Drawing.Point(635, 89);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(107, 40);
             this.btnLamMoi.TabIndex = 44;
@@ -247,7 +251,7 @@
             // 
             // rtbGhiChu
             // 
-            this.rtbGhiChu.Location = new System.Drawing.Point(497, 46);
+            this.rtbGhiChu.Location = new System.Drawing.Point(500, 43);
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(116, 73);
             this.rtbGhiChu.TabIndex = 42;
@@ -257,7 +261,7 @@
             // 
             this.btnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemMoi.Location = new System.Drawing.Point(635, 46);
+            this.btnThemMoi.Location = new System.Drawing.Point(635, 43);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(107, 40);
             this.btnThemMoi.TabIndex = 39;
@@ -268,7 +272,7 @@
             // lblGhiChu
             // 
             this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Location = new System.Drawing.Point(431, 52);
+            this.lblGhiChu.Location = new System.Drawing.Point(433, 46);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(60, 13);
             this.lblGhiChu.TabIndex = 37;
@@ -276,7 +280,7 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(106, 138);
+            this.txtDonGia.Location = new System.Drawing.Point(327, 181);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(100, 20);
             this.txtDonGia.TabIndex = 34;
@@ -285,7 +289,7 @@
             // lblDonGia
             // 
             this.lblDonGia.AutoSize = true;
-            this.lblDonGia.Location = new System.Drawing.Point(6, 141);
+            this.lblDonGia.Location = new System.Drawing.Point(214, 184);
             this.lblDonGia.Name = "lblDonGia";
             this.lblDonGia.Size = new System.Drawing.Size(61, 13);
             this.lblDonGia.TabIndex = 33;
@@ -293,7 +297,7 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(106, 181);
+            this.txtSoLuong.Location = new System.Drawing.Point(108, 181);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuong.TabIndex = 32;
@@ -310,7 +314,7 @@
             // 
             // txtNamSX
             // 
-            this.txtNamSX.Location = new System.Drawing.Point(325, 95);
+            this.txtNamSX.Location = new System.Drawing.Point(108, 139);
             this.txtNamSX.Name = "txtNamSX";
             this.txtNamSX.ReadOnly = true;
             this.txtNamSX.Size = new System.Drawing.Size(100, 20);
@@ -319,7 +323,7 @@
             // lblNamSX
             // 
             this.lblNamSX.AutoSize = true;
-            this.lblNamSX.Location = new System.Drawing.Point(212, 98);
+            this.lblNamSX.Location = new System.Drawing.Point(6, 142);
             this.lblNamSX.Name = "lblNamSX";
             this.lblNamSX.Size = new System.Drawing.Size(96, 13);
             this.lblNamSX.TabIndex = 29;
@@ -327,7 +331,7 @@
             // 
             // txtNSX
             // 
-            this.txtNSX.Location = new System.Drawing.Point(106, 94);
+            this.txtNSX.Location = new System.Drawing.Point(108, 94);
             this.txtNSX.Name = "txtNSX";
             this.txtNSX.ReadOnly = true;
             this.txtNSX.Size = new System.Drawing.Size(100, 20);
@@ -336,7 +340,7 @@
             // lblNSX
             // 
             this.lblNSX.AutoSize = true;
-            this.lblNSX.Location = new System.Drawing.Point(6, 98);
+            this.lblNSX.Location = new System.Drawing.Point(6, 97);
             this.lblNSX.Name = "lblNSX";
             this.lblNSX.Size = new System.Drawing.Size(94, 13);
             this.lblNSX.TabIndex = 27;
@@ -345,7 +349,7 @@
             // lblTenThietBi
             // 
             this.lblTenThietBi.AutoSize = true;
-            this.lblTenThietBi.Location = new System.Drawing.Point(212, 52);
+            this.lblTenThietBi.Location = new System.Drawing.Point(214, 46);
             this.lblTenThietBi.Name = "lblTenThietBi";
             this.lblTenThietBi.Size = new System.Drawing.Size(81, 13);
             this.lblTenThietBi.TabIndex = 25;
@@ -354,7 +358,7 @@
             // dtmNgayThanhLy
             // 
             this.dtmNgayThanhLy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmNgayThanhLy.Location = new System.Drawing.Point(325, 135);
+            this.dtmNgayThanhLy.Location = new System.Drawing.Point(327, 136);
             this.dtmNgayThanhLy.Name = "dtmNgayThanhLy";
             this.dtmNgayThanhLy.Size = new System.Drawing.Size(100, 20);
             this.dtmNgayThanhLy.TabIndex = 24;
@@ -363,7 +367,7 @@
             // lblNgayThanhLy
             // 
             this.lblNgayThanhLy.AutoSize = true;
-            this.lblNgayThanhLy.Location = new System.Drawing.Point(212, 141);
+            this.lblNgayThanhLy.Location = new System.Drawing.Point(214, 142);
             this.lblNgayThanhLy.Name = "lblNgayThanhLy";
             this.lblNgayThanhLy.Size = new System.Drawing.Size(101, 13);
             this.lblNgayThanhLy.TabIndex = 23;
@@ -371,7 +375,7 @@
             // 
             // txtMaThanhLy
             // 
-            this.txtMaThanhLy.Location = new System.Drawing.Point(106, 48);
+            this.txtMaThanhLy.Location = new System.Drawing.Point(108, 43);
             this.txtMaThanhLy.Name = "txtMaThanhLy";
             this.txtMaThanhLy.ReadOnly = true;
             this.txtMaThanhLy.Size = new System.Drawing.Size(100, 20);
@@ -380,7 +384,7 @@
             // lblMaThanhLy
             // 
             this.lblMaThanhLy.AutoSize = true;
-            this.lblMaThanhLy.Location = new System.Drawing.Point(6, 51);
+            this.lblMaThanhLy.Location = new System.Drawing.Point(6, 46);
             this.lblMaThanhLy.Name = "lblMaThanhLy";
             this.lblMaThanhLy.Size = new System.Drawing.Size(89, 13);
             this.lblMaThanhLy.TabIndex = 21;
@@ -493,6 +497,22 @@
             this.MaThietBi.ReadOnly = true;
             this.MaThietBi.Visible = false;
             // 
+            // lblTong
+            // 
+            this.lblTong.AutoSize = true;
+            this.lblTong.Location = new System.Drawing.Point(433, 184);
+            this.lblTong.Name = "lblTong";
+            this.lblTong.Size = new System.Drawing.Size(44, 13);
+            this.lblTong.TabIndex = 48;
+            this.lblTong.Text = "Tổng: ";
+            // 
+            // txtTong
+            // 
+            this.txtTong.Location = new System.Drawing.Point(500, 181);
+            this.txtTong.Name = "txtTong";
+            this.txtTong.Size = new System.Drawing.Size(116, 20);
+            this.txtTong.TabIndex = 49;
+            // 
             // frmQLThanhLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,5 +578,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn NguoiPhuTrach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
+        private System.Windows.Forms.TextBox txtTong;
+        private System.Windows.Forms.Label lblTong;
     }
 }

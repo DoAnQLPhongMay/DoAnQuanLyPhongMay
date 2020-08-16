@@ -38,7 +38,7 @@ namespace QuanLyPhongMay
         //Hàm load dữ liệu khi mở form.
         private void frm_QLThanhLy_Load(object sender, EventArgs e)
         {
-            if(user.TenTK != "")
+            if(user.TenUser != "")
             {
                 txtNguoiPhuTrach.Text = user.TenUser;
             }
@@ -46,6 +46,7 @@ namespace QuanLyPhongMay
             {
                 txtNguoiPhuTrach.Text = "vmkhoi";
             }
+
             thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
             cboTenThietBi.Text = "";
@@ -56,12 +57,13 @@ namespace QuanLyPhongMay
         {
             txtMaThanhLy.Text = dgvDSThanhLy.CurrentRow.Cells[0].Value.ToString();
             dtmNgayThanhLy.Text = dgvDSThanhLy.CurrentRow.Cells[1].Value.ToString();
-            cboTenThietBi.SelectedItem = Convert.ToInt32(dgvDSThanhLy.CurrentRow.Cells[2].Value.ToString());
+            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThanhLy.CurrentRow.Cells[2].Value);
             txtNSX.Text = dgvDSThanhLy.CurrentRow.Cells[3].Value.ToString();
             txtNamSX.Text = dgvDSThanhLy.CurrentRow.Cells[4].Value.ToString();
             txtSoLuong.Text = dgvDSThanhLy.CurrentRow.Cells[5].Value.ToString();
             txtDonGia.Text = dgvDSThanhLy.CurrentRow.Cells[6].Value.ToString();
             rtbGhiChu.Text = dgvDSThanhLy.CurrentRow.Cells[8].Value.ToString();
+            txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
 
             btnThemMoi.Enabled = false;
         }
@@ -169,7 +171,7 @@ namespace QuanLyPhongMay
                     thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
                     thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
                     thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    thanhLy.NguoiPhuTrach = txtNguoiPhuTrach.Text;
+                    thanhLy.NguoiPhuTrach = user.TenTK;
                     thanhLy.GhiChu = rtbGhiChu.Text;
 
                     thanhLyCtrl.Them(thanhLy);
