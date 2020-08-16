@@ -362,6 +362,7 @@
             this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
             this.dgvDSTaiKhoan.Size = new System.Drawing.Size(709, 243);
             this.dgvDSTaiKhoan.TabIndex = 2;
+            this.dgvDSTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTaiKhoan_CellClick);
             // 
             // frm_QLTaiKhoan
             // 

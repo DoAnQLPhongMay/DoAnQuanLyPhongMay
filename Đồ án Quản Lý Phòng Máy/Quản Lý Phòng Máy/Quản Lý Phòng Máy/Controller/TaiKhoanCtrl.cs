@@ -76,6 +76,10 @@ namespace QuanLyPhongMay.Controller
         {
             return GVData.KiemTra(taikhoan);
         }
+        public bool KiemTraMaQuyen(int maquyen)
+        {
+            return GVData.KiemTraQuyen(maquyen);
+        }
         public bool KiemTraMatk(string matk)
         {
             return GVData.KiemTraMaTaiKhoan(matk);

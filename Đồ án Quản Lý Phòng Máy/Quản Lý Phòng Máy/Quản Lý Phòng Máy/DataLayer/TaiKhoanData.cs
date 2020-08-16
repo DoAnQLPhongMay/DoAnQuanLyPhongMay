@@ -29,7 +29,7 @@ namespace QuanLyPhongMay.DataLayer
             switch (tieuchi)
             {
                 case "hovaten":
-                    sql += " And HoVaTen = '" + tukhoa + "'";
+                    sql += " And HoVaTen = N'" + tukhoa + "'";
                     break;
                 default:
                     sql += " And SDT = '" + tukhoa + "'";
@@ -94,6 +94,17 @@ namespace QuanLyPhongMay.DataLayer
 
 
         }
+        public bool KiemTraQuyen(int maquyen)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "select * from dtb_TaiKhoan where MaQuyen=@maquyen";
+            cmd.Parameters.Add("maquyen", SqlDbType.VarChar).Value = maquyen;
+            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+
+
+        }
+
         public int DoiThongTin(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();

@@ -61,7 +61,12 @@ namespace QuanLyPhongMay
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dgvDSTaiKhoan.CurrentRow != null)
+            if(tkctrl.KiemTraMaQuyen(Convert.ToInt32(txtMaQuyen.Text)) != true)
+                {
+                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (dgvDSTaiKhoan.CurrentRow != null)
             {
                 string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -88,6 +93,7 @@ namespace QuanLyPhongMay
             tk.TenDangNhap = txt_Username.Text;
 
             string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+
             DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
@@ -129,6 +135,11 @@ namespace QuanLyPhongMay
         }
 
         private void dgvDSTaiKhoan_Click(object sender, EventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void dgvDSTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HienThiThongTin();
         }

@@ -78,6 +78,10 @@ namespace QuanLyPhongMay.BUS
             get { return _loaitaikhoan; }
             set { _loaitaikhoan = value; }
         }
+
+        public int Maquyen { get => _maquyen; set => _maquyen = value; }
+
+        private int _maquyen;
         public TaiKhoan()
         {
             
