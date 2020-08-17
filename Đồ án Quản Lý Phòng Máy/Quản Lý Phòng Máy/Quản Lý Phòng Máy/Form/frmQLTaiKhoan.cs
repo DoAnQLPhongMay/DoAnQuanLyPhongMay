@@ -19,13 +19,18 @@ namespace QuanLyPhongMay
         /*SqlConnection conn = DBUtils.GetDBConnection();
         public User user;*/
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
+        User user = new User();
 
         public frm_QLTaiKhoan()
         {
             InitializeComponent();
         }
 
-        
+        public frm_QLTaiKhoan(User user)
+        {
+            this.user = user;
+            InitializeComponent();
+        }
 
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
@@ -38,15 +43,15 @@ namespace QuanLyPhongMay
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                //txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
                 txtMaTK.Text = dgvDSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
                 txtHoTen.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
                 checkRadio();
                 txtSDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
                 txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
-                dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
+                //dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
                 txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
-                cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
+                //cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
             }
         }
         void checkRadio()
@@ -69,7 +74,7 @@ namespace QuanLyPhongMay
                                 MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }*/
-            if (Convert.ToInt32(cboQuyenHan.SelectedValue) == 0)
+            if (user.PhanQuyen == false)
             {
                 MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

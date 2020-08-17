@@ -20,74 +20,94 @@ namespace QuanLyPhongMay
         }
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
         Quyenctrl quyenctrl = new Quyenctrl();
-        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
+
+        bool KiemTra()
         {
-            TaiKhoan tk = new TaiKhoan();
-            tk.TenGV = txtTenTaiKhoan.Text;
-            tk.MaGV = txtMaTaiKhoan.Text;
-            tk.Gioitinh = (rdNam.Checked) ? true : false;
-            tk.SDT = txtSDT.Text;
-            tk.Email = txtEmail.Text;
-            tk.Ngaysinh = Convert.ToDateTime(dtNgaySinh.Value);
-            tk.Diachi = txtDiaChi.Text;
-            tk.TenDangNhap = txtTenDangNhap.Text;
-            tk.MatKhau = txtMatKhau.Text;
-            tk.LoaiTaiKhoan = int.Parse(cbLoaiTaiKhoan.SelectedValue.ToString());
+            bool ktra = true;
+
             if (txtTenTaiKhoan.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (txtMaTaiKhoan.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (txtSDT.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (txtEmail.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (dtNgaySinh.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
-            else if (txtDiaChi.Text == "")
+            else if (cboLoaiTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (txtTenDangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
             else if (txtMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
             }
-            else
+
+            return ktra;
+        }
+
+        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            if (KiemTra())
             {
-                switch (tkctrl.Them(tk))
+                TaiKhoan tk = new TaiKhoan();
+                tk.TenGV = txtTenTaiKhoan.Text;
+                tk.MaGV = txtMaTaiKhoan.Text;
+                tk.Gioitinh = (rdNam.Checked) ? true : false;
+                tk.SDT = txtSDT.Text;
+                tk.Email = txtEmail.Text;
+                tk.Ngaysinh = Convert.ToDateTime(dtNgaySinh.Value);
+                tk.Diachi = txtDiaChi.Text;
+                tk.TenDangNhap = txtTenDangNhap.Text;
+                tk.MatKhau = txtMatKhau.Text;
+                tk.LoaiTaiKhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
+
                 {
-                    case -1:
-                        MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
-                    case 0:
-                        MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
-                    case 2:
-                        MessageBox.Show("Mã Tài Khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
-                    case 1:
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtTenDangNhap.Text = "";
-                        txtTenTaiKhoan.Text = "";
-                        txtSDT.Text = "";
-                        txtMatKhau.Text = "";
-                        txtMaTaiKhoan.Text = "";
-                        txtEmail.Text = "";
-                        txtDiaChi.Text = "";
-                        break;
+                    switch (tkctrl.Them(tk))
+                    {
+                        case -1:
+                            MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        case 0:
+                            MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        case 2:
+                            MessageBox.Show("Mã Tài Khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        case 1:
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtTenDangNhap.Text = "";
+                            txtTenTaiKhoan.Text = "";
+                            txtSDT.Text = "";
+                            txtMatKhau.Text = "";
+                            txtMaTaiKhoan.Text = "";
+                            txtEmail.Text = "";
+                            txtDiaChi.Text = "";
+                            break;
+                    }
                 }
             }
         }
@@ -118,7 +138,9 @@ namespace QuanLyPhongMay
 
         private void frmThemTaiKhoan_Load(object sender, EventArgs e)
         {
-            quyenctrl.HienThiCbo(cbLoaiTaiKhoan);
+            quyenctrl.HienThiCbo(cboLoaiTaiKhoan);
+            cboLoaiTaiKhoan.Items.Insert(0, "User");
+            cboLoaiTaiKhoan.Items.Insert(1, "Admin");
         }
     }
 }

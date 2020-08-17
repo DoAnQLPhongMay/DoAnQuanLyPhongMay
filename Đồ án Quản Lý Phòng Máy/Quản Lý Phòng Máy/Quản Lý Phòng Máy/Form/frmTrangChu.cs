@@ -51,38 +51,88 @@ namespace QuanLyPhongMay
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan frm = new frm_QLTaiKhoan();
+            frm_QLTaiKhoan frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frm_QLTaiKhoan(user);
+            }
+            else
+            {
+                frm = new frm_QLTaiKhoan();
+            }
+
             frm.Show();
         }
 
         private void btn_QLThanhLy_Click(object sender, EventArgs e)
         {
-            frmQLThanhLy frm = new frmQLThanhLy();
+            frmQLThanhLy frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLThanhLy(user);
+            }
+            else
+            {
+                frm = new frmQLThanhLy();
+            }
+
             frm.Show();
         }
 
         private void btn_QLNhapMay_Click(object sender, EventArgs e)
         {
-            frmQLNhapMay frm = new frmQLNhapMay();
+            frmQLNhapMay frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLNhapMay(user);
+            }
+            else
+            {
+                frm = new frmQLNhapMay();
+            }
+
             frm.Show();
             
         }
 
         private void btn_QLMay_Click(object sender, EventArgs e)
         {
-            frmQLMay frm = new frmQLMay();
+            frmQLMay frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLMay(user);
+            }
+            else
+            {
+                frm = new frmQLMay();
+            }
+
             frm.Show();
         }
 
         private void btn_QLPhongMay_Click(object sender, EventArgs e)
         {
-            frmQLPhongMay frm = new frmQLPhongMay();
+            frmQLPhongMay frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLPhongMay(user);
+            }
+            else
+            {
+                frm = new frmQLPhongMay();
+            }
+
             frm.Show();
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
-            frmQLThietBi frm = new frmQLThietBi();
+            frmQLThietBi frm = new frmQLThietBi(user);
             frm.Show();
         }
         /*void HienThiForm(object form)
@@ -109,13 +159,38 @@ namespace QuanLyPhongMay
 
         private void btnQLThietBi_Click(object sender, EventArgs e)
         {
-            frmQLThietBi frm = new frmQLThietBi();
+            frmQLThietBi frm;
+            if(user.TenUser != "")
+            {
+                frm = new frmQLThietBi(user);
+            }
+            else
+            {
+                frm = new frmQLThietBi();
+            }
+
             frm.Show();
         }
 
         private void lblUsername_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_LichSu_Click(object sender, EventArgs e)
+        {
+            frmLichSuCapNhat frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmLichSuCapNhat(user);
+            }
+            else
+            {
+                frm = new frmLichSuCapNhat();
+            }
+
+            frm.Show();
         }
     }
 }

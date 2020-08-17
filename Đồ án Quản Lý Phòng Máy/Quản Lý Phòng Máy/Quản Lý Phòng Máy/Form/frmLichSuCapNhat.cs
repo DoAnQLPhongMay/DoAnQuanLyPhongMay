@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhongMay.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace QuanLyPhongMay
 {
     public partial class frmLichSuCapNhat : Form
     {
+        User user = new User();
         public frmLichSuCapNhat()
         {
+            InitializeComponent();
+        }
+
+        public frmLichSuCapNhat(User user)
+        {
+            this.user = user;
             InitializeComponent();
         }
 

@@ -255,6 +255,7 @@
             this.btn_LichSu.Text = "Quản Lý Lịch Sử Máy";
             this.btn_LichSu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_LichSu.UseVisualStyleBackColor = true;
+            this.btn_LichSu.Click += new System.EventHandler(this.btn_LichSu_Click);
             // 
             // btn_QLThanhLy
             // 

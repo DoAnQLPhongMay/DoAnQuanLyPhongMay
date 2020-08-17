@@ -15,7 +15,7 @@ namespace QuanLyPhongMay.Controller
         TaiKhoanData GVData = new TaiKhoanData();
         public void HienThiComboBox(ComboBox cb)
         {
-            cb.DataSource = GVData.LayDSGiangVien().Tables[0];
+            cb.DataSource = GVData.LayDSTK().Tables[0];
             cb.DisplayMember = "tentaikhoan";
             cb.ValueMember = "MaTaiKhoan";
         }
@@ -40,7 +40,7 @@ namespace QuanLyPhongMay.Controller
         }
         public void HienThi(DataGridView dgv)
         {
-         dgv.DataSource = GVData.LayDSGiangVien().Tables[0];
+         dgv.DataSource = GVData.LayDSTK().Tables[0];
         }
         public int Them(TaiKhoan gv)
         {

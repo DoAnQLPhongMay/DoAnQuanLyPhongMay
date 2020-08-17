@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
+            this.cboLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbLoaiTaiKhoan);
+            this.groupBox2.Controls.Add(this.cboLoaiTaiKhoan);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtMaTaiKhoan);
@@ -87,16 +87,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
             // 
-            // cbLoaiTaiKhoan
+            // cboLoaiTaiKhoan
             // 
-            this.cbLoaiTaiKhoan.FormattingEnabled = true;
-            this.cbLoaiTaiKhoan.Items.AddRange(new object[] {
+            this.cboLoaiTaiKhoan.FormattingEnabled = true;
+            this.cboLoaiTaiKhoan.Items.AddRange(new object[] {
             "Admin",
             "Thường"});
-            this.cbLoaiTaiKhoan.Location = new System.Drawing.Point(409, 194);
-            this.cbLoaiTaiKhoan.Name = "cbLoaiTaiKhoan";
-            this.cbLoaiTaiKhoan.Size = new System.Drawing.Size(178, 22);
-            this.cbLoaiTaiKhoan.TabIndex = 28;
+            this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(409, 194);
+            this.cboLoaiTaiKhoan.Name = "cboLoaiTaiKhoan";
+            this.cboLoaiTaiKhoan.Size = new System.Drawing.Size(178, 22);
+            this.cboLoaiTaiKhoan.TabIndex = 28;
             // 
             // txtEmail
             // 
@@ -359,6 +359,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaTaiKhoan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbLoaiTaiKhoan;
+        private System.Windows.Forms.ComboBox cboLoaiTaiKhoan;
     }
 }
