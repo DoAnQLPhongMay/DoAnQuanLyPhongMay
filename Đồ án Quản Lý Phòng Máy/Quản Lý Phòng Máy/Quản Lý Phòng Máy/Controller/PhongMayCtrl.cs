@@ -20,6 +20,12 @@ namespace QuanLyPhongMay.Controller
             return phongData.GetID();
         }
 
+        //Hàm kiểm tra thiết bị có đang sử dụng.
+        public bool KTSuDung(int maPhong)
+        {
+            return phongData.KTSuDung(maPhong);
+        }
+
         //Hàm kiểm tra tên phòng đã tồn tại chưa.
         public bool KTTenPhong(string tenPhong)
         {

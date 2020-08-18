@@ -22,6 +22,7 @@ namespace QuanLyPhongMay
         KhoaCtrl khoaCtrl = new KhoaCtrl();
         TrangThaiCtrl trangThaiCtrl = new TrangThaiCtrl();
         User user = new User();
+        string tenPhong;
 
         public frmQLPhongMay()
         {
@@ -54,6 +55,7 @@ namespace QuanLyPhongMay
             cboKhoa.SelectedValue = dgvDSPhong.CurrentRow.Cells["MaKhoa"].Value.ToString();
             cboTrangThai.SelectedValue = dgvDSPhong.CurrentRow.Cells["TrangThai"].Value.ToString();
             rtbGhiChu.Text = dgvDSPhong.CurrentRow.Cells["GhiChu"].Value.ToString();
+            tenPhong = txtTenPhong.Text;
 
             btnThemMoi.Enabled = false;
             btnXoa.Enabled = false;
@@ -66,9 +68,11 @@ namespace QuanLyPhongMay
             txtMaPhong.Clear();
             txtSoLuongMay.Clear();
             txtTenPhong.Clear();
+            txtTimKiem.Clear();
             rtbGhiChu.Clear();
             cboTrangThai.Text = "";
             cboKhoa.Text = "";
+            tenPhong = "";
             radTenPhong.Checked = false;
             radTenKhoa.Checked = false;
             radTrangThai.Checked = false;
@@ -86,22 +90,22 @@ namespace QuanLyPhongMay
 
             if (txtTenPhong.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên phòng.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (cboTrangThai.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn trạng thái phòng.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn trạng thái phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (cboKhoa.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn khoa phụ trách.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn khoa phụ trách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (phongCtrl.KTTenPhong(txtTenPhong.Text))
+            else if (phongCtrl.KTTenPhong(txtTenPhong.Text) && tenPhong != txtTenPhong.Text)
             {
-                MessageBox.Show("Tên phòng máy đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên phòng máy đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else
@@ -127,24 +131,43 @@ namespace QuanLyPhongMay
                 phong.GhiChu = rtbGhiChu.Text;
 
                 phongCtrl.Them(phong);
-                MessageBox.Show("Thêm phòng máy thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm phòng máy thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvDSPhong.CurrentRow != null)
+            if (user.PhanQuyen)
             {
-                int maPhong = Convert.ToInt32(dgvDSPhong.CurrentRow.Cells[0].Value);
-                phongCtrl.Xoa(maPhong);
-                MessageBox.Show("Xóa phòng máy thành công.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                phongCtrl.HienThiDgv(dgvDSPhong);
-                lamMoi();
+                if (dgvDSPhong.CurrentRow != null)
+                {
+                    if (phongCtrl.KTSuDung(Convert.ToInt32(dgvDSPhong.CurrentRow.Cells[0].Value)) == false)
+                    {
+                        DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục. \nBạn thật sự muốn xóa khoa này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (dlg == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            int maPhong = Convert.ToInt32(dgvDSPhong.CurrentRow.Cells[0].Value);
+                            phongCtrl.Xoa(maPhong);
+                            MessageBox.Show("Xóa phòng máy thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            phongCtrl.HienThiDgv(dgvDSPhong);
+                            lamMoi();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa. Vẫn còn máy thuộc phòng này!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phòng muốn xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn không được cấp quyền để xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -160,7 +183,7 @@ namespace QuanLyPhongMay
                 phong.GhiChu = rtbGhiChu.Text;
 
                 phongCtrl.CapNhat(phong);
-                MessageBox.Show("Cập nhật phòng máy thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật phòng máy thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
             }
         }
@@ -206,7 +229,7 @@ namespace QuanLyPhongMay
             lamMoi();
         }
 
-        //Hàm không xử dụng -------------------------------------------------------------------------------------//
+        //-------------------------------------- Hàm không xử dụng --------------------------------------//
         private void grp_QLPhongMay_Enter(object sender, EventArgs e)
         {
 

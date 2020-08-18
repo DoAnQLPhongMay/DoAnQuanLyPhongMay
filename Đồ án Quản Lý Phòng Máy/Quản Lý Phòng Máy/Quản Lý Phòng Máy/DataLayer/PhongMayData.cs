@@ -39,6 +39,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.KiemTra(cmd);
         }
 
+        //Hàm kiểm tra có đang sử dụng.
+        public bool KTSuDung(int maPhong)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_May ",
+                where = "WHERE MaPhong = N'" + maPhong + "'";
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.KiemTra(cmd);
+        }
+
         //Hàm xử lý lấy danh sách phòng máy.
         public DataSet LayDSPhong()
         {

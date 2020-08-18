@@ -110,13 +110,13 @@ namespace QuanLyPhongMay
                             int maKhoa = Convert.ToInt32(dgvDSKhoa.CurrentRow.Cells[0].Value);
                             khoaCtrl.Xoa(maKhoa);
 
-                            MessageBox.Show("Xóa khoa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Xóa khoa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             lamMoi();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Không thể xóa. Vẫn còn phòng thuộc khoa này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Không thể xóa. Vẫn còn phòng thuộc khoa này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
