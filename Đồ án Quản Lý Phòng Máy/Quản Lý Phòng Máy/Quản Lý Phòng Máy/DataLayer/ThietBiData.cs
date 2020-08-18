@@ -13,7 +13,7 @@ namespace QuanLyPhongMay.DataLayer
         public int GetID()
         {
             string select = "SELECT MaThietBi ",
-                from = "FROM dtb_ChiTietThietBi ",
+                from = "FROM dtb_ThietBi ",
                 orderBy = "ORDER BY MaThietBi DESC";
 
             SqlCommand cmd = new SqlCommand(select + from + orderBy);
@@ -36,8 +36,8 @@ namespace QuanLyPhongMay.DataLayer
         public DataSet LayDSThietBi()
         {
             string select = "SELECT * ",
-                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ", 
-                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
+                from = "FROM dtb_ThietBi, dtb_LoaiThietBi ", 
+                where = "WHERE dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
 
             SqlCommand cmd = new SqlCommand(select + from + where);
 
@@ -48,8 +48,8 @@ namespace QuanLyPhongMay.DataLayer
         public DataSet LayDSThietBi(int maLoai)
         {
             string select = "SELECT * ",
-                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ",
-                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND dtb_ChiTietThietBi.MaLoai = '" + maLoai + "'";
+                from = "FROM dtb_ThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND dtb_ThietBi.MaLoai = '" + maLoai + "'";
 
             SqlCommand cmd = new SqlCommand(select + from + where);
 
@@ -60,7 +60,7 @@ namespace QuanLyPhongMay.DataLayer
         public DataSet LayThongTin()
         {
             string select = "SELECT * ",
-                from = "FROM dtb_ChiTietThietBi ";
+                from = "FROM dtb_ThietBi ";
 
             SqlCommand cmd = new SqlCommand(select + from);
 
@@ -70,9 +70,9 @@ namespace QuanLyPhongMay.DataLayer
         //Hàm xử lý lấy thông tin thiết bị của máy.
         public DataSet LayThongTinMay()
         {
-            string select = "SELECT dtb_May.*, dtb_ChiTietThietBi.TenThietBi, dtb_ChiTietMay.MaThietBi, dtb_ChiTietThietBi.MaLoai ",
-                from = "FROM dtb_May, dtb_ChiTietMay, dtb_ChiTietThietBi, dtb_LoaiThietBi ",
-                where = "WHERE dtb_May.MaMay =  dtb_ChiTietMay.MaMay AND dtb_ChiTietMay.MaThietBi = dtb_ChiTietThietBi.MaThietBi AND dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
+            string select = "SELECT dtb_May.*, dtb_ThietBi.TenThietBi, dtb_ChiTietMay.MaThietBi, dtb_ThietBi.MaLoai ",
+                from = "FROM dtb_May, dtb_ChiTietMay, dtb_ThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_May.MaMay =  dtb_ChiTietMay.MaMay AND dtb_ChiTietMay.MaThietBi = dtb_ThietBi.MaThietBi AND dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
 
             SqlCommand cmd = new SqlCommand(select + from + where);
 
@@ -83,7 +83,7 @@ namespace QuanLyPhongMay.DataLayer
         public int Them(ThietBi thietBi)
         {
             SqlCommand cmd = new SqlCommand();
-            string insert = "INSERT INTO dtb_ChiTietThietBi(MaThietBi, TenThietBi, TSThietBi, SoLuong, MaLoai, NamSanXuat, NhaSanXuat, HanThanhLy, GhiChu) ",
+            string insert = "INSERT INTO dtb_ThietBi(MaThietBi, TenThietBi, TSThietBi, SoLuong, MaLoai, NamSanXuat, NhaSanXuat, HanThanhLy, GhiChu) ",
                 values = "VALUES(@maThietBi, @tenThietBi, @tsThietBi, @soLuong, @maLoai, @namSanXuat, @nhaSanXuat, @hanThanhLy, @ghiChu)";
             cmd.CommandText = insert + values;
 
@@ -104,7 +104,7 @@ namespace QuanLyPhongMay.DataLayer
         public int Xoa(int maThietBi)
         {
             SqlCommand cmd = new SqlCommand();
-            string delete = "DELETE FROM dtb_ChiTietThietBi ",
+            string delete = "DELETE FROM dtb_ThietBi ",
                 where = "WHERE MaThietBi = @maThietBi";
             cmd.CommandText = delete + where;
 
@@ -117,7 +117,7 @@ namespace QuanLyPhongMay.DataLayer
         public int CapNhat(ThietBi thietBi)
         {
             SqlCommand cmd = new SqlCommand();
-            string update = "UPDATE dtb_ChiTietThietBi ",
+            string update = "UPDATE dtb_ThietBi ",
                 set = "SET TenThietBi = @tenThietBi, TSThietBi = @tsThietBi, SoLuong = @soLuong, MaLoai = @maLoai, NamSanXuat = @namSanXuat, NhaSanXuat = @nhaSanXuat, HanThanhLy = @hanThanhLy, GhiChu = @ghiChu ",
                 where = "WHERE MaThietBi = @maThietBi";
             cmd.CommandText = update + set + where;
@@ -139,22 +139,22 @@ namespace QuanLyPhongMay.DataLayer
         public DataSet LayDSTK(string key, string loaiTK)
         {
             string select = "SELECT * ",
-                from = "FROM dtb_ChiTietThietBi, dtb_LoaiThietBi ",
-                where = "WHERE dtb_ChiTietThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND ";
+                from = "FROM dtb_ThietBi, dtb_LoaiThietBi ",
+                where = "WHERE dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND ";
 
             switch (loaiTK)
             {
                 case "maThietBi":
-                    where += "dtb_ChiTietThietBi.MaThietBi = '" + key + "'";
+                    where += "dtb_ThietBi.MaThietBi = '" + key + "'";
                     break;
                 case "tenThietBi":
-                    where += "dtb_ChiTietThietBi.TenThietBi = N'" + key + "'";
+                    where += "dtb_ThietBi.TenThietBi = N'" + key + "'";
                     break;
                 case "nhaSanXuat":
-                    where += "dtb_ChiTietThietBi.NhaSanXuat = N'" + key + "'";
+                    where += "dtb_ThietBi.NhaSanXuat = N'" + key + "'";
                     break;
                 default:
-                    where += "dtb_ChiTietThietBi.MaLoai = '" + key + "'";
+                    where += "dtb_ThietBi.MaLoai = '" + key + "'";
                     break;
             }
 

@@ -192,5 +192,37 @@ namespace QuanLyPhongMay
 
             frm.Show();
         }
+
+        private void btnQLCauHinh_Click(object sender, EventArgs e)
+        {
+            frmQLCauHinh frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLCauHinh(user);
+            }
+            else
+            {
+                frm = new frmQLCauHinh();
+            }
+
+            frm.Show();
+        }
+
+        private void btnQLKhoa_Click(object sender, EventArgs e)
+        {
+            frmQLKhoa frm;
+
+            if (user.TenUser != "")
+            {
+                frm = new frmQLKhoa(user);
+            }
+            else
+            {
+                frm = new frmQLKhoa();
+            }
+
+            frm.Show();
+        }
     }
 }

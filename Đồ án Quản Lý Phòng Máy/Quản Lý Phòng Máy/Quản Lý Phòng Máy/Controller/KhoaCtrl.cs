@@ -1,9 +1,6 @@
-﻿using System;
-using QuanLyPhongMay.DataLayer;
+﻿using QuanLyPhongMay.DataLayer;
 using QuanLyPhongMay.BUS;
 using System.Windows.Forms;
-using System.Data;
-using QuanLyPhongMay.Class;
 
 namespace QuanLyPhongMay.Controller
 {
@@ -37,11 +34,11 @@ namespace QuanLyPhongMay.Controller
         }
 
         //Hàm xử lý hiển thị thiết bị lên combox.
-        public void HienThiCbo(ComboBox cb)
+        public void HienThiCbo(ComboBox cbo)
         {
-            cb.DataSource = khoaData.LayDSKhoa().Tables[0];
-            cb.DisplayMember = "TenKhoa";
-            cb.ValueMember = "MaKhoa";
+            cbo.DataSource = khoaData.LayDSKhoa().Tables[0];
+            cbo.DisplayMember = "TenKhoa";
+            cbo.ValueMember = "MaKhoa";
         }
 
         //Hàm xử lý thêm mới thiết bị.

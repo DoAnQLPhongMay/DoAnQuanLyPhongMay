@@ -147,7 +147,7 @@ namespace QuanLyPhongMay
 
             if (radTenKhoa.Checked)
             {
-                loaiTK = "maThietBi";
+                loaiTK = "tenKhoa";
             }
             else
             {

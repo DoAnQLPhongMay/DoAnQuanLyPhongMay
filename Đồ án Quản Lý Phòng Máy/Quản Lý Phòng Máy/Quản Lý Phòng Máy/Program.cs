@@ -19,8 +19,8 @@ namespace QuanLyPhongMay
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmDangNhap());
-            //Application.Run(new frmTrangChu());
-            Application.Run(new frmQLKhoa());
+            Application.Run(new frmTrangChu());
+            //Application.Run(new frmQLCauHinh());
         }
     }
 }

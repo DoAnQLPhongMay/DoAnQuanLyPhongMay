@@ -56,6 +56,7 @@
     <Compile Include="BUS\TrangThai.cs" />
     <Compile Include="Class\TTThietBi.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Controller\CauHinhCtrl.cs" />
     <Compile Include="Controller\KhoaCtrl.cs" />
     <Compile Include="Controller\LichSuNhapCtrl.cs" />
     <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Controller\MayCtrl.cs" />
     <Compile Include="Controller\ThietBiCtrl.cs" />
     <Compile Include="Controller\TrangThaiCtrl.cs" />
+    <Compile Include="DataLayer\CauHinhData.cs" />
     <Compile Include="DataLayer\KhoaData.cs" />
     <Compile Include="DataLayer\LichSuNhapData.cs" />
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
@@ -88,6 +90,12 @@
     </Compile>
     <Compile Include="Form\frmChiTietPhongMay.Designer.cs">
       <DependentUpon>frmChiTietPhongMay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmQLCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmQLCauHinh.Designer.cs">
+      <DependentUpon>frmQLCauHinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmQuenMatKhau.cs">
       <SubType>Form</SubType>
@@ -170,6 +178,9 @@
     <Compile Include="Class\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\frmQLCauHinh.resx">
+      <DependentUpon>frmQLCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLMay.resx">
       <DependentUpon>frmQLMay.cs</DependentUpon>
     </EmbeddedResource>
