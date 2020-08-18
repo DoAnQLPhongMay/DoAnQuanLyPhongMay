@@ -67,10 +67,11 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập tên khoa.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            /*else if ()
+            else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
             {
-                kTra = false
-            }*/
+                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
 
             return kTra;
         }
@@ -96,15 +97,22 @@ namespace QuanLyPhongMay
             {
                 if (dgvDSKhoa.CurrentRow != null)
                 {
-                    DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa khoa này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (dlg == System.Windows.Forms.DialogResult.Yes)
+                    if(khoaCtrl.KTSuDung(Convert.ToInt32(dgvDSKhoa.CurrentRow.Cells[0].Value)) == false)
                     {
-                        int maKhoa = Convert.ToInt32(dgvDSKhoa.CurrentRow.Cells[0].Value);
-                        khoaCtrl.Xoa(maKhoa);
+                        DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa khoa này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        MessageBox.Show("Xóa khoa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        lamMoi();
+                        if (dlg == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            int maKhoa = Convert.ToInt32(dgvDSKhoa.CurrentRow.Cells[0].Value);
+                            khoaCtrl.Xoa(maKhoa);
+
+                            MessageBox.Show("Xóa khoa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            lamMoi();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa. Vẫn còn phòng thuộc khoa này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
                 else
@@ -121,13 +129,9 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng cập nhật.
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            /*if (khoaCtrl.KTThietBi(Convert.ToInt32(txtMaThietBi.Text)) && loaiThietBi != cboLoaiThietBi.Text)
+            if (kiemTra())
             {
-                MessageBox.Show("Thiết bị đang được sử dụng không thể thay loại thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else */if (kiemTra())
-            {
-                khoa.MaKhoa = khoaCtrl.GetID() + 1;
+                khoa.MaKhoa = Convert.ToInt32(txtMaKhoa.Text);
                 khoa.TenKhoa = txtTenKhoa.Text;
 
                 MessageBox.Show("Cập nhập khoa thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -33,7 +33,7 @@ namespace QuanLyPhongMay.DataLayer
         }
 
         //Hàm kiểm tra tên đã tồn tại chưa.
-        public bool KiemTraTenKhoa(string tenKhoa)
+        public bool KTTenKhoa(string tenKhoa)
         {
             SqlCommand cmd = new SqlCommand();
             string select = "SELECT * ",
@@ -44,6 +44,17 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("tenKhoa", SqlDbType.VarChar).Value = tenKhoa;
 
             return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+        }
+
+        //Hàm kiểm tra có đang sử dụng.
+        public bool KTSuDung(int maKhoa)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_PhongMay ",
+                where = "WHERE Khoa = '" + maKhoa + "'";
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.KiemTra(cmd);
         }
 
         //Hàm xử lý thêm mới.

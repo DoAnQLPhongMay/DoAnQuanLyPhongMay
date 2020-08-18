@@ -18,6 +18,18 @@ namespace QuanLyPhongMay.Controller
             return khoaData.GetID();
         }
 
+        //Hàm kiểm tra thiết bị có đang sử dụng.
+        public bool KTSuDung(int maKhoa)
+        {
+            return khoaData.KTSuDung(maKhoa);
+        }
+
+        //Hàm kiểm tra tên.
+        public bool KTTenKhoa(string tenKhoa)
+        {
+            return khoaData.KTTenKhoa(tenKhoa);
+        }
+
         //Hàm xử lý hiển thị ds thiết bị lên datagridview.
         public void HienThiDgv(DataGridView dgv)
         {

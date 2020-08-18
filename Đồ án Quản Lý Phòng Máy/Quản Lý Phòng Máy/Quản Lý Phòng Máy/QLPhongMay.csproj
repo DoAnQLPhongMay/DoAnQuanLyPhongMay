@@ -131,11 +131,11 @@
     <Compile Include="Form\frmQLThanhLy.Designer.cs">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmThemKoa.cs">
+    <Compile Include="Form\frmQLKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmThemKoa.Designer.cs">
-      <DependentUpon>frmThemKoa.cs</DependentUpon>
+    <Compile Include="Form\frmQLKhoa.Designer.cs">
+      <DependentUpon>frmQLKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmTrangChu.cs">
       <SubType>Form</SubType>
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="Form\frmQLThanhLy.resx">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmThemKoa.resx">
-      <DependentUpon>frmThemKoa.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmQLKhoa.resx">
+      <DependentUpon>frmQLKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmThemMay.resx">
       <DependentUpon>frmThemMay.cs</DependentUpon>
