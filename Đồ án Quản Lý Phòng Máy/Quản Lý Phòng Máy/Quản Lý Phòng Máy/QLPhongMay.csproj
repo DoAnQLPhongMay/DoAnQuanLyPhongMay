@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CauHinh.cs" />
+    <Compile Include="BUS\Khoa.cs" />
     <Compile Include="BUS\LoaiThietBi.cs" />
     <Compile Include="BUS\TaiKhoan.cs" />
     <Compile Include="BUS\LichSuNhap.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="BUS\TrangThai.cs" />
     <Compile Include="Class\TTThietBi.cs" />
     <Compile Include="Class\User.cs" />
+    <Compile Include="Controller\KhoaCtrl.cs" />
     <Compile Include="Controller\LichSuNhapCtrl.cs" />
     <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
     <Compile Include="Controller\LoaiThietBiCtrl.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Controller\MayCtrl.cs" />
     <Compile Include="Controller\ThietBiCtrl.cs" />
     <Compile Include="Controller\TrangThaiCtrl.cs" />
+    <Compile Include="DataLayer\KhoaData.cs" />
     <Compile Include="DataLayer\LichSuNhapData.cs" />
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
     <Compile Include="DataLayer\LoaiThietBiData.cs" />
@@ -126,6 +130,12 @@
     </Compile>
     <Compile Include="Form\frmQLThanhLy.Designer.cs">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemKoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmThemKoa.Designer.cs">
+      <DependentUpon>frmThemKoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmTrangChu.cs">
       <SubType>Form</SubType>
@@ -192,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLThanhLy.resx">
       <DependentUpon>frmQLThanhLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmThemKoa.resx">
+      <DependentUpon>frmThemKoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmThemMay.resx">
       <DependentUpon>frmThemMay.cs</DependentUpon>
