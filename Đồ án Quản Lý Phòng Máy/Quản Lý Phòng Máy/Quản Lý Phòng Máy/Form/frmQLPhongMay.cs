@@ -19,6 +19,7 @@ namespace QuanLyPhongMay
         //Khởi tạo các biến giá trị và kết nối.
         PhongMayCtrl phongCtrl = new PhongMayCtrl();
         PhongMay phong = new PhongMay();
+        KhoaCtrl khoaCtrl = new KhoaCtrl();
         TrangThaiCtrl trangThaiCtrl = new TrangThaiCtrl();
         User user = new User();
 
@@ -39,16 +40,20 @@ namespace QuanLyPhongMay
             phongCtrl.HienThiDgv(dgvDSPhong);
             trangThaiCtrl.HienThiCbo(cboTrangThai);
             cboTrangThai.Text = "";
+            khoaCtrl.HienThiCbo(cboKhoa);
+            cboKhoa.Text = "";
+
             btnCapNhap.Enabled = false;
         }
 
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            txtMaPhong.Text = dgvDSPhong.CurrentRow.Cells[0].Value.ToString();
-            txtTenPhong.Text = dgvDSPhong.CurrentRow.Cells[1].Value.ToString();
-            txtSoLuongMay.Text = dgvDSPhong.CurrentRow.Cells[2].Value.ToString();
-            cboTrangThai.SelectedValue = dgvDSPhong.CurrentRow.Cells[3].Value.ToString();
-            rtbGhiChu.Text = dgvDSPhong.CurrentRow.Cells[4].Value.ToString();
+            txtMaPhong.Text = dgvDSPhong.CurrentRow.Cells["MaPhongMay"].Value.ToString();
+            txtTenPhong.Text = dgvDSPhong.CurrentRow.Cells["TenPhongMay"].Value.ToString();
+            txtSoLuongMay.Text = dgvDSPhong.CurrentRow.Cells["SoLuongMay"].Value.ToString();
+            cboKhoa.SelectedValue = dgvDSPhong.CurrentRow.Cells["MaKhoa"].Value.ToString();
+            cboTrangThai.SelectedValue = dgvDSPhong.CurrentRow.Cells["TrangThai"].Value.ToString();
+            rtbGhiChu.Text = dgvDSPhong.CurrentRow.Cells["GhiChu"].Value.ToString();
 
             btnThemMoi.Enabled = false;
             btnXoa.Enabled = false;
@@ -63,8 +68,9 @@ namespace QuanLyPhongMay
             txtTenPhong.Clear();
             rtbGhiChu.Clear();
             cboTrangThai.Text = "";
-            radMaPhong.Checked = false;
+            cboKhoa.Text = "";
             radTenPhong.Checked = false;
+            radTenKhoa.Checked = false;
             radTrangThai.Checked = false;
 
             btnThemMoi.Enabled = true;
@@ -80,17 +86,22 @@ namespace QuanLyPhongMay
 
             if (txtTenPhong.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên phòng.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập tên phòng.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (cboTrangThai.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn trạng thái phòng.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn trạng thái phòng.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else if (cboKhoa.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn khoa phụ trách.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (phongCtrl.KTTenPhong(txtTenPhong.Text))
             {
-                MessageBox.Show("Tên phòng máy đã tồn tại.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Tên phòng máy đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else
@@ -111,6 +122,7 @@ namespace QuanLyPhongMay
                 phong.MaPhong = phongCtrl.GetID() + 1;
                 phong.TenPhong = txtTenPhong.Text;
                 phong.SoLuongMay = Convert.ToInt32(txtSoLuongMay.Text);
+                phong.Khoa = Convert.ToInt32(cboKhoa.SelectedValue.ToString());
                 phong.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue.ToString());
                 phong.GhiChu = rtbGhiChu.Text;
 
@@ -126,13 +138,13 @@ namespace QuanLyPhongMay
             {
                 int maPhong = Convert.ToInt32(dgvDSPhong.CurrentRow.Cells[0].Value);
                 phongCtrl.Xoa(maPhong);
-                MessageBox.Show("Xóa phòng máy thành công.", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Xóa phòng máy thành công.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 phongCtrl.HienThiDgv(dgvDSPhong);
                 lamMoi();
             }
             else
             {
-                MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Vùi lòng chọn thiết bị muốn xóa ở danh sách thiết bị!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         
@@ -143,6 +155,7 @@ namespace QuanLyPhongMay
                 phong.MaPhong = Convert.ToInt32(txtMaPhong.Text);
                 phong.TenPhong = txtTenPhong.Text;
                 phong.SoLuongMay = Convert.ToInt32(txtSoLuongMay.Text);
+                phong.Khoa = Convert.ToInt32(cboKhoa.SelectedValue.ToString());
                 phong.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue.ToString());
                 phong.GhiChu = rtbGhiChu.Text;
 
@@ -156,8 +169,8 @@ namespace QuanLyPhongMay
         {
             string loaiTK = "";
 
-            if (radMaPhong.Checked)
-                loaiTK = "maPhong";
+            if (radTenKhoa.Checked)
+                loaiTK = "tenKhoa";
             else if (radTenPhong.Checked)
                 loaiTK = "tenPhong";
             else if (radTrangThai.Checked)
@@ -195,6 +208,11 @@ namespace QuanLyPhongMay
 
         //Hàm không xử dụng -------------------------------------------------------------------------------------//
         private void grp_QLPhongMay_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblQLPhongMay_Click(object sender, EventArgs e)
         {
 
         }

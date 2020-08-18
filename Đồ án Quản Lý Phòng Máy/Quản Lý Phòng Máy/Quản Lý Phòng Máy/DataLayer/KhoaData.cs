@@ -38,12 +38,10 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
             string select = "SELECT * ",
                 from = "FROM dtb_Khoa ",
-                where = "WHERE TenKhoa=@tenKhoa";
+                where = "WHERE TenKhoa = N'" + tenKhoa + "'";
             cmd.CommandText = select + from + where;
 
-            cmd.Parameters.Add("tenKhoa", SqlDbType.VarChar).Value = tenKhoa;
-
-            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+            return cls.KiemTra(cmd);
         }
 
         //Hàm kiểm tra có đang sử dụng.

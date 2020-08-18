@@ -15,6 +15,7 @@ namespace QuanLyPhongMay
         User user = new User();
         ComboBox[] cboCN = new ComboBox[12];
         ComboBox[] cboTemp = new ComboBox[12];
+        string tenCauHinh;
 
         //Hàm xử lý khởi tạo mặc định của form.
         public frmQLCauHinh()
@@ -50,6 +51,7 @@ namespace QuanLyPhongMay
             LuuCbo(cboCN);
             txtMaCauHinh.Text = dgvDSCauHinh.CurrentRow.Cells[0].Value.ToString();
             txtTenCauHinh.Text = dgvDSCauHinh.CurrentRow.Cells[1].Value.ToString();
+            tenCauHinh = txtTenCauHinh.Text;
 
             for (int i = 1; i < 12; i++)
             {
@@ -89,8 +91,10 @@ namespace QuanLyPhongMay
 
             txtMaCauHinh.Clear();
             txtTenCauHinh.Clear();
+            txtTimKiem.Clear();
             radTenCauHinh.Checked = false;
             radThietBi.Checked = false;
+            tenCauHinh = "";
 
             btnThemMoi.Enabled = true;
             btnXoa.Enabled = true;
@@ -109,12 +113,20 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập tên cấu hình.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            for (int i = 1; i < 12; i++)
+            else if (cauHinhCtrl.KTCauHinh(txtTenCauHinh.Text) && tenCauHinh != txtTenCauHinh.Text)
             {
-                if (cboTemp[i].Text == "")
+                MessageBox.Show("Tên cấu hình đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else
+            {
+                for (int i = 1; i < 12; i++)
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ các thiết bị cho cấu hình.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
+                    if (cboTemp[i].Text == "")
+                    {
+                        MessageBox.Show("Vui lòng chọn đầy đủ các thiết bị cho cấu hình.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
             }
 
@@ -124,11 +136,7 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng thêm mới.
         private void btnThemMay_Click(object sender, EventArgs e)
         {
-            if (cauHinhCtrl.KTCauHinh(txtTenCauHinh.Text))
-            {
-                MessageBox.Show("Tên cấu hình đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (kiemTra())
+            if (kiemTra())
             {
                 LuuCbo(cboTemp);
                 cauHinh.MaCauHinh = cauHinhCtrl.GetID() + 1;
@@ -194,6 +202,17 @@ namespace QuanLyPhongMay
             {
                 cauHinh.MaCauHinh = Convert.ToInt32(txtMaCauHinh.Text);
                 cauHinh.TenCauHinh = txtTenCauHinh.Text;
+                cauHinh.ManHinh = Convert.ToInt32(cboTemp[1].SelectedValue);
+                cauHinh.Chuot = Convert.ToInt32(cboTemp[2].SelectedValue);
+                cauHinh.BanPhim = Convert.ToInt32(cboTemp[3].SelectedValue);
+                cauHinh.Case = Convert.ToInt32(cboTemp[4].SelectedValue);
+                cauHinh.CPU = Convert.ToInt32(cboTemp[5].SelectedValue);
+                cauHinh.MainBoard = Convert.ToInt32(cboTemp[6].SelectedValue);
+                cauHinh.RAM = Convert.ToInt32(cboTemp[7].SelectedValue);
+                cauHinh.OCung = Convert.ToInt32(cboTemp[8].SelectedValue);
+                cauHinh.VGA = Convert.ToInt32(cboTemp[9].SelectedValue);
+                cauHinh.PSU = Convert.ToInt32(cboTemp[10].SelectedValue);
+                cauHinh.HDH = Convert.ToInt32(cboTemp[11].SelectedValue);
 
                 MessageBox.Show("Cập nhập cấu hình thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cauHinhCtrl.CapNhat(cauHinh);

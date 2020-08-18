@@ -38,12 +38,10 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand cmd = new SqlCommand();
             string select = "SELECT * ",
                 from = "FROM dtb_CauHinh ",
-                where = "WHERE TenCauHinh=@tenCauHinh";
+                where = "WHERE TenCauHinh = N'" + tenCauHinh + "'";
             cmd.CommandText = select + from + where;
 
-            cmd.Parameters.Add("tenCauHinh", SqlDbType.VarChar).Value = tenCauHinh;
-
-            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+            return cls.KiemTra(cmd);
         }
 
         //Hàm kiểm tra có đang sử dụng.
@@ -100,12 +98,23 @@ namespace QuanLyPhongMay.DataLayer
         {
             SqlCommand cmd = new SqlCommand();
             string update = "UPDATE dtb_CauHinh ",
-                set = "SET TenCauHinh = @tenCauHinh ",
+                set = "SET TenCauHinh = @tenCauHinh, ManHinh = @manHinh, Chuot = @chuot, BanPhim = @banPhim, Thung = @thung, CPU = @CPU, MainBoard = @mainBoard, RAM = @RAM, OCung = @oCung, VGA = @VGA, PSU = @PSU, HeDieuHanh = @heDieuHanh ",
                 where = "WHERE MaCauHinh = @maCauHinh";
             cmd.CommandText = update + set + where;
 
             cmd.Parameters.Add("maCauHinh", SqlDbType.Int).Value = cauHinh.MaCauHinh;
             cmd.Parameters.Add("tenCauHinh", SqlDbType.NVarChar).Value = cauHinh.TenCauHinh;
+            cmd.Parameters.Add("manHinh", SqlDbType.Int).Value = cauHinh.ManHinh;
+            cmd.Parameters.Add("banPhim", SqlDbType.Int).Value = cauHinh.BanPhim;
+            cmd.Parameters.Add("chuot", SqlDbType.Int).Value = cauHinh.Chuot;
+            cmd.Parameters.Add("thung", SqlDbType.Int).Value = cauHinh.Case;
+            cmd.Parameters.Add("CPU", SqlDbType.Int).Value = cauHinh.CPU;
+            cmd.Parameters.Add("mainBoard", SqlDbType.Int).Value = cauHinh.MainBoard;
+            cmd.Parameters.Add("RAM", SqlDbType.Int).Value = cauHinh.RAM;
+            cmd.Parameters.Add("oCung", SqlDbType.Int).Value = cauHinh.OCung;
+            cmd.Parameters.Add("VGA", SqlDbType.Int).Value = cauHinh.VGA;
+            cmd.Parameters.Add("PSU", SqlDbType.Int).Value = cauHinh.PSU;
+            cmd.Parameters.Add("heDieuHanh", SqlDbType.Int).Value = cauHinh.HDH;
 
             return cls.CapNhatDL(cmd);
         }

@@ -12,6 +12,7 @@ namespace QuanLyPhongMay.BUS
         private int _maPhong;
         private int _soLuongMay;
         private string _tenPhong;
+        private int _khoa;
         private int _trangThai;
         private string _ghiChu;
 
@@ -46,6 +47,7 @@ namespace QuanLyPhongMay.BUS
             get { return _ghiChu; }
             set { _ghiChu = value; }
         }
-
+        public int Khoa 
+        { get => _khoa; set => _khoa = value; }
     }
 }

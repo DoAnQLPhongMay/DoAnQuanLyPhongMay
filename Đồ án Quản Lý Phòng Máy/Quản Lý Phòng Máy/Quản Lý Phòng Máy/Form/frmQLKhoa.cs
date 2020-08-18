@@ -12,6 +12,7 @@ namespace QuanLyPhongMay
         Khoa khoa = new Khoa();
         KhoaCtrl khoaCtrl = new KhoaCtrl();
         User user = new User();
+        string tenKhoa;
 
         //Hàm xử lý khởi tạo mặc định của form.
         public frmQLKhoa()
@@ -38,6 +39,7 @@ namespace QuanLyPhongMay
         {
             txtMaKhoa.Text = dgvDSKhoa.CurrentRow.Cells[0].Value.ToString();
             txtTenKhoa.Text = dgvDSKhoa.CurrentRow.Cells[1].Value.ToString();
+            tenKhoa = txtTenKhoa.Text;
 
             btnThemMoi.Enabled = false;
             btnXoa.Enabled = false;
@@ -49,7 +51,9 @@ namespace QuanLyPhongMay
         {
             txtMaKhoa.Clear();
             txtTenKhoa.Clear();
+            txtTimKiem.Clear();
             radTenKhoa.Checked = false;
+            tenKhoa = "";
 
             btnThemMoi.Enabled = true;
             btnXoa.Enabled = true;
@@ -67,6 +71,11 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập tên khoa.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
+            else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
+            {
+                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
 
             return kTra;
         }
@@ -74,11 +83,7 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng thêm mới.
         private void btnThemMay_Click(object sender, EventArgs e)
         {
-            if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
-            {
-                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (kiemTra())
+           if (kiemTra())
             {
                 khoa.MaKhoa = khoaCtrl.GetID() + 1;
                 khoa.TenKhoa = txtTenKhoa.Text;
