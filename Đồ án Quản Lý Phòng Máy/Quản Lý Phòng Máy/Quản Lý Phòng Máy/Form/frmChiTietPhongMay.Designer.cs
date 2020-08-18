@@ -36,6 +36,7 @@
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.GhiChu});
             this.dgvDSMay.Location = new System.Drawing.Point(6, 19);
             this.dgvDSMay.Name = "dgvDSMay";
-            this.dgvDSMay.Size = new System.Drawing.Size(477, 440);
+            this.dgvDSMay.Size = new System.Drawing.Size(471, 440);
             this.dgvDSMay.TabIndex = 0;
             // 
             // MaMay
@@ -94,7 +95,7 @@
             this.groupBox1.Controls.Add(this.dgvDSMay);
             this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 465);
+            this.groupBox1.Size = new System.Drawing.Size(483, 465);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Máy";
@@ -109,11 +110,26 @@
             this.lblQLPhongMay.TabIndex = 62;
             this.lblQLPhongMay.Text = "Chi Tiết Phòng Máy";
             // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuayLai.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnQuayLai.Location = new System.Drawing.Point(408, 544);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(87, 35);
+            this.btnQuayLai.TabIndex = 64;
+            this.btnQuayLai.Text = "Quay Lại";
+            this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
             // frmChiTietPhongMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 550);
+            this.ClientSize = new System.Drawing.Size(507, 591);
+            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.lblQLPhongMay);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmChiTietPhongMay";
@@ -136,5 +152,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.Button btnQuayLai;
     }
 }
