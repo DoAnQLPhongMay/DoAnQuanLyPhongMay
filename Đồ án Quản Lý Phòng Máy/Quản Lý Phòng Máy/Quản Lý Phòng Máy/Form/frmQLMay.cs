@@ -236,12 +236,12 @@ namespace QuanLyPhongMay
         {
             string tieuchi = "";
           
-            if (rad_TenMay.Checked)
+            if (radTenMay.Checked)
                 tieuchi = "tenmay";
-            if (txt_TimKiem.Text.Length == 0)
+            if (txtTimKiem.Text.Length == 0)
                 mayCtrl.HienThi(dgvDSMay);
             else
-                mayCtrl.TimKiem(dgvDSMay, txt_TimKiem.Text, tieuchi);
+                mayCtrl.TimKiem(dgvDSMay, txtTimKiem.Text, tieuchi);
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
