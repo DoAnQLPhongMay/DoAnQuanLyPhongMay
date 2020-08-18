@@ -47,18 +47,18 @@ namespace QuanLyPhongMay.DataLayer
 
         public DataSet LayDSMay()
         {
-            string sql = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu, dtb_May.TrangThai, dtb_May.MaPhong ",
-                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai ",
-                where = "WHERE  dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.TrangThai = dtb_TrangThai.MaTrangThai";
-            SqlCommand sqlcmd = new SqlCommand(sql + from + where);
+            string select = "SELECT dtb_May.*, TenPhongMay, TenTrangThai, TenCauHinh ",
+                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai, dtb_CauHinh ",
+                where = "WHERE dtb_May.MaPhong = dtb_PhongMay.MaPhongMay AND dtb_May.TrangThai = dtb_TrangThai.MaTrangThai AND dtb_May.MaCauHinh = dtb_CauHinh.MaCauHinh";
+            SqlCommand sqlcmd = new SqlCommand(select + from + where);
             return cls.LayDuLieu(sqlcmd);
         }
 
         public DataSet LayDSMay(int maPhong)
         {
-            string select = "SELECT MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenTrangThai, dtb_May.GhiChu ",
-                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai ",
-                where = "WHERE dtb_May.MaPhong = dtb_PhongMay.MaPhongMay AND dtb_May.TrangThai = dtb_TrangThai.MaTrangThai AND dtb_May.MaPhong = '" + maPhong + "'";
+            string select = "SELECT dtb_May.*, TenPhongMay, TenTrangThai, TenCauHinh ",
+                from = "FROM dtb_May, dtb_PhongMay, dtb_TrangThai, dtb_CauHinh ",
+                where = "WHERE dtb_May.MaPhong = dtb_PhongMay.MaPhongMay AND dtb_May.TrangThai = dtb_TrangThai.MaTrangThai AND dtb_May.MaCauHinh = dtb_CauHinh.MaCauHinh AND dtb_May.MaPhong = '" + maPhong + "'";
             SqlCommand sqlcmd = new SqlCommand(select + from + where);
 
             return cls.LayDuLieu(sqlcmd);

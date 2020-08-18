@@ -37,6 +37,8 @@
             this.lblPhong = new System.Windows.Forms.Label();
             this.lblTrangThai = new System.Windows.Forms.Label();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.radThietBi = new System.Windows.Forms.RadioButton();
+            this.lblTimKiem = new System.Windows.Forms.Label();
             this.btnTiemKiem = new System.Windows.Forms.Button();
             this.radTenMay = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -83,8 +85,6 @@
             this.MaTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTimKiem = new System.Windows.Forms.Label();
-            this.radThietBi = new System.Windows.Forms.RadioButton();
             this.grpQLMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             this.grp_ChiTietMay.SuspendLayout();
@@ -131,7 +131,7 @@
             // 
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Location = new System.Drawing.Point(474, 212);
+            this.btnLamMoi.Location = new System.Drawing.Point(479, 211);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(97, 34);
             this.btnLamMoi.TabIndex = 34;
@@ -142,14 +142,14 @@
             // cboPhong
             // 
             this.cboPhong.FormattingEnabled = true;
-            this.cboPhong.Location = new System.Drawing.Point(87, 60);
+            this.cboPhong.Location = new System.Drawing.Point(92, 60);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(114, 21);
             this.cboPhong.TabIndex = 33;
             // 
             // rtbGhiChu
             // 
-            this.rtbGhiChu.Location = new System.Drawing.Point(474, 34);
+            this.rtbGhiChu.Location = new System.Drawing.Point(479, 34);
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(97, 52);
             this.rtbGhiChu.TabIndex = 30;
@@ -158,7 +158,7 @@
             // cboTrangThai
             // 
             this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(288, 65);
+            this.cboTrangThai.Location = new System.Drawing.Point(293, 65);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(114, 21);
             this.cboTrangThai.TabIndex = 32;
@@ -175,7 +175,7 @@
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(207, 68);
+            this.lblTrangThai.Location = new System.Drawing.Point(212, 68);
             this.lblTrangThai.Name = "lblTrangThai";
             this.lblTrangThai.Size = new System.Drawing.Size(77, 13);
             this.lblTrangThai.TabIndex = 25;
@@ -190,16 +190,36 @@
             this.grpTimKiem.Controls.Add(this.txtTimKiem);
             this.grpTimKiem.Location = new System.Drawing.Point(6, 279);
             this.grpTimKiem.Name = "grpTimKiem";
-            this.grpTimKiem.Size = new System.Drawing.Size(574, 71);
+            this.grpTimKiem.Size = new System.Drawing.Size(581, 71);
             this.grpTimKiem.TabIndex = 24;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
+            // 
+            // radThietBi
+            // 
+            this.radThietBi.AutoSize = true;
+            this.radThietBi.Location = new System.Drawing.Point(306, 34);
+            this.radThietBi.Name = "radThietBi";
+            this.radThietBi.Size = new System.Drawing.Size(69, 17);
+            this.radThietBi.TabIndex = 43;
+            this.radThietBi.TabStop = true;
+            this.radThietBi.Text = "Thiết Bị";
+            this.radThietBi.UseVisualStyleBackColor = true;
+            // 
+            // lblTimKiem
+            // 
+            this.lblTimKiem.AutoSize = true;
+            this.lblTimKiem.Location = new System.Drawing.Point(6, 16);
+            this.lblTimKiem.Name = "lblTimKiem";
+            this.lblTimKiem.Size = new System.Drawing.Size(59, 13);
+            this.lblTimKiem.TabIndex = 42;
+            this.lblTimKiem.Text = "Từ Khóa:";
             // 
             // btnTiemKiem
             // 
             this.btnTiemKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnTiemKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTiemKiem.Location = new System.Drawing.Point(468, 25);
+            this.btnTiemKiem.Location = new System.Drawing.Point(473, 25);
             this.btnTiemKiem.Name = "btnTiemKiem";
             this.btnTiemKiem.Size = new System.Drawing.Size(97, 34);
             this.btnTiemKiem.TabIndex = 30;
@@ -229,7 +249,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Location = new System.Drawing.Point(474, 172);
+            this.btnXoa.Location = new System.Drawing.Point(479, 171);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(97, 34);
             this.btnXoa.TabIndex = 23;
@@ -241,7 +261,7 @@
             // 
             this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.Location = new System.Drawing.Point(474, 132);
+            this.btnCapNhat.Location = new System.Drawing.Point(479, 132);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(97, 34);
             this.btnCapNhat.TabIndex = 22;
@@ -253,7 +273,7 @@
             // 
             this.btnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemMoi.Location = new System.Drawing.Point(474, 92);
+            this.btnThemMoi.Location = new System.Drawing.Point(479, 92);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(97, 34);
             this.btnThemMoi.TabIndex = 21;
@@ -500,7 +520,7 @@
             // 
             // txtTenMay
             // 
-            this.txtTenMay.Location = new System.Drawing.Point(288, 34);
+            this.txtTenMay.Location = new System.Drawing.Point(293, 34);
             this.txtTenMay.Name = "txtTenMay";
             this.txtTenMay.Size = new System.Drawing.Size(114, 20);
             this.txtTenMay.TabIndex = 3;
@@ -508,7 +528,7 @@
             // lblTenMay
             // 
             this.lblTenMay.AutoSize = true;
-            this.lblTenMay.Location = new System.Drawing.Point(207, 37);
+            this.lblTenMay.Location = new System.Drawing.Point(212, 37);
             this.lblTenMay.Name = "lblTenMay";
             this.lblTenMay.Size = new System.Drawing.Size(64, 13);
             this.lblTenMay.TabIndex = 2;
@@ -517,7 +537,7 @@
             // txtMaMay
             // 
             this.txtMaMay.Enabled = false;
-            this.txtMaMay.Location = new System.Drawing.Point(87, 34);
+            this.txtMaMay.Location = new System.Drawing.Point(92, 34);
             this.txtMaMay.Name = "txtMaMay";
             this.txtMaMay.ReadOnly = true;
             this.txtMaMay.Size = new System.Drawing.Size(114, 20);
@@ -535,7 +555,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 37);
+            this.label2.Location = new System.Drawing.Point(413, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 14;
@@ -583,6 +603,7 @@
             // 
             // TenCauHinh
             // 
+            this.TenCauHinh.DataPropertyName = "TenCauHinh";
             this.TenCauHinh.HeaderText = "Cấu Hình";
             this.TenCauHinh.Name = "TenCauHinh";
             this.TenCauHinh.ReadOnly = true;
@@ -611,6 +632,7 @@
             // 
             // MaCauHinh
             // 
+            this.MaCauHinh.DataPropertyName = "MaCauHinh";
             this.MaCauHinh.HeaderText = "MaCauHinh";
             this.MaCauHinh.Name = "MaCauHinh";
             this.MaCauHinh.ReadOnly = true;
@@ -623,26 +645,6 @@
             this.MaPhong.Name = "MaPhong";
             this.MaPhong.ReadOnly = true;
             this.MaPhong.Visible = false;
-            // 
-            // lblTimKiem
-            // 
-            this.lblTimKiem.AutoSize = true;
-            this.lblTimKiem.Location = new System.Drawing.Point(6, 16);
-            this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(59, 13);
-            this.lblTimKiem.TabIndex = 42;
-            this.lblTimKiem.Text = "Từ Khóa:";
-            // 
-            // radThietBi
-            // 
-            this.radThietBi.AutoSize = true;
-            this.radThietBi.Location = new System.Drawing.Point(306, 34);
-            this.radThietBi.Name = "radThietBi";
-            this.radThietBi.Size = new System.Drawing.Size(69, 17);
-            this.radThietBi.TabIndex = 43;
-            this.radThietBi.TabStop = true;
-            this.radThietBi.Text = "Thiết Bị";
-            this.radThietBi.UseVisualStyleBackColor = true;
             // 
             // frmQLMay
             // 
@@ -714,6 +716,8 @@
         private System.Windows.Forms.TextBox txtCPU;
         private System.Windows.Forms.TextBox txtRAM;
         private System.Windows.Forms.TextBox txtMainBoard;
+        private System.Windows.Forms.RadioButton radThietBi;
+        private System.Windows.Forms.Label lblTimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
@@ -723,7 +727,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.RadioButton radThietBi;
-        private System.Windows.Forms.Label lblTimKiem;
     }
 }
