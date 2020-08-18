@@ -14,7 +14,7 @@ namespace QuanLyPhongMay
 {
     public partial class frmQuenMatKhau : Form
     {
-        SqlConnection conn = DBUtils.GetDBConnection();
+        Login log = new Login();
 
         public frmQuenMatKhau()
         {
@@ -32,12 +32,8 @@ namespace QuanLyPhongMay
 
         private bool kiemTra()
         {
-            string query = "SELECT * FROM dtb_TaiKhoan WHERE TenDangNhap = '" + txtTenTaiKhoan.Text + "' AND SDT = '" + txtSDT.Text + "' AND Email = '" + txtEmail.Text + "'";
-
-            if (DBUtils.exeReaderData(query, conn))
+            if (log.XacThuc(Convert.ToInt32(txtSDT.Text), txtEmail.Text, txtTenTaiKhoan.Text))
             {
-
-                //Hiển thị hộp thoại báo thành công và trả về true.
                 MessageBox.Show("Kiểm tra thành công.");
                 return true;
             }

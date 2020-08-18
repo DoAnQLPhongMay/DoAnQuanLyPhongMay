@@ -52,9 +52,6 @@
     <Compile Include="BUS\PhongMay.cs" />
     <Compile Include="BUS\ThietBi.cs" />
     <Compile Include="BUS\TrangThai.cs" />
-    <Compile Include="Class\CaiDat.cs" />
-    <Compile Include="Class\DBSQLServerUtils.cs" />
-    <Compile Include="Class\DBUtils.cs" />
     <Compile Include="Class\TTThietBi.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Controller\LichSuNhapCtrl.cs" />

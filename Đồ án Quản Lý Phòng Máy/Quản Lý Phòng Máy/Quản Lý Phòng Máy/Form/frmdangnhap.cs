@@ -31,7 +31,7 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Vui lòng không bỏ trống thông tin đăng nhập!", "Đăng Nhập Thất Bại");
             }
-            else if (log.XacThuc(txtTenDangNhap.Text, txtMatKhau.Text, user))
+            else if (log.DangNhap(txtTenDangNhap.Text, txtMatKhau.Text, user))
             {
                 //Nếu đăng nhập thành công thì ẩn frmDangNhap và mở frmTrangChu.
                 frmTrangChu frm = new frmTrangChu(user);

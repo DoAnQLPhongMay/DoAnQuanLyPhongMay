@@ -14,7 +14,7 @@ namespace QuanLyPhongMay
 {
     public partial class frmDoiMatKhau : Form
     {
-        SqlConnection conn = DBUtils.GetDBConnection();
+        Login log = new Login();
         string taiKhoan;
 
         public frmDoiMatKhau(string tenTK)
@@ -24,15 +24,10 @@ namespace QuanLyPhongMay
             taiKhoan = tenTK;
         }
 
-        private bool doiMatKhau()
+        private void doiMatKhau()
         {
-            string query = "UPDATE dtb_TaiKhoan SET MatKhau = '" + txtMatKhau1.Text + "' WHERE TenDangNhap = '" + taiKhoan + "'";
-            if(DBUtils.exeNonQueryData(query, conn))
-            {
-                MessageBox.Show("Thay đổi mật khẩu thành công.");
-                return true;
-            }
-            return false;
+            log.DoiMatKhau(txtMatKhau1.Text, taiKhoan);
+            MessageBox.Show("Thay đổi mật khẩu thành công.");
         }
 
         //Hàm xử lý khi ấn nút thoát.
@@ -57,8 +52,9 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Hai mật khẩu không trùng khớp.\nVui lòng kiểm tra và nhập lại.");
             }
-            else if (doiMatKhau())
+            else
             {
+                doiMatKhau();
                 frmDangNhap frm = new frmDangNhap();
                 this.Hide();
                 frm.Show();
