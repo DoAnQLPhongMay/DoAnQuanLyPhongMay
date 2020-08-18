@@ -66,7 +66,6 @@
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.dgvDSCauHinh = new System.Windows.Forms.DataGridView();
-            this.lblQLCauHinh = new System.Windows.Forms.Label();
             this.MaCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +79,7 @@
             this.VGA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeDieuHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblQLCauHinh = new System.Windows.Forms.Label();
             this.grbThongTin.SuspendLayout();
             this.grbTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCauHinh)).BeginInit();
@@ -362,10 +362,10 @@
             this.radThietBi.AutoSize = true;
             this.radThietBi.Location = new System.Drawing.Point(293, 36);
             this.radThietBi.Name = "radThietBi";
-            this.radThietBi.Size = new System.Drawing.Size(69, 17);
+            this.radThietBi.Size = new System.Drawing.Size(90, 17);
             this.radThietBi.TabIndex = 33;
             this.radThietBi.TabStop = true;
-            this.radThietBi.Text = "Thiết Bị";
+            this.radThietBi.Text = "Mã Thiết Bị";
             this.radThietBi.UseVisualStyleBackColor = true;
             // 
             // txtTimKiem
@@ -492,16 +492,6 @@
             this.dgvDSCauHinh.TabIndex = 9;
             this.dgvDSCauHinh.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
-            // lblQLCauHinh
-            // 
-            this.lblQLCauHinh.AutoSize = true;
-            this.lblQLCauHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLCauHinh.Location = new System.Drawing.Point(12, 9);
-            this.lblQLCauHinh.Name = "lblQLCauHinh";
-            this.lblQLCauHinh.Size = new System.Drawing.Size(458, 61);
-            this.lblQLCauHinh.TabIndex = 10;
-            this.lblQLCauHinh.Text = "Quản Lý Cấu Hình";
-            // 
             // MaCauHinh
             // 
             this.MaCauHinh.DataPropertyName = "MaCauHinh";
@@ -592,6 +582,16 @@
             this.HeDieuHanh.HeaderText = "Hệ Điều Hành";
             this.HeDieuHanh.Name = "HeDieuHanh";
             this.HeDieuHanh.ReadOnly = true;
+            // 
+            // lblQLCauHinh
+            // 
+            this.lblQLCauHinh.AutoSize = true;
+            this.lblQLCauHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLCauHinh.Location = new System.Drawing.Point(12, 9);
+            this.lblQLCauHinh.Name = "lblQLCauHinh";
+            this.lblQLCauHinh.Size = new System.Drawing.Size(458, 61);
+            this.lblQLCauHinh.TabIndex = 10;
+            this.lblQLCauHinh.Text = "Quản Lý Cấu Hình";
             // 
             // frmQLCauHinh
             // 

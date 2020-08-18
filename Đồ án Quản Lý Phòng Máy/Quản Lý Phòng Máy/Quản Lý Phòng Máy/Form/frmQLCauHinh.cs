@@ -104,7 +104,12 @@ namespace QuanLyPhongMay
             LuuCbo(cboTemp);
             bool kTra = true;
 
-            for(int i = 1; i < 12; i++)
+            if (txtTenCauHinh.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên cấu hình.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            for (int i = 1; i < 12; i++)
             {
                 if (cboTemp[i].Text == "")
                 {
@@ -113,24 +118,17 @@ namespace QuanLyPhongMay
                 }
             }
 
-            if (txtTenCauHinh.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên cấu hình.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kTra = false;
-            }
-            else if (cauHinhCtrl.KTCauHinh(txtTenCauHinh.Text))
-            {
-                MessageBox.Show("Tên cấu hình đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kTra = false;
-            }
-
             return kTra;
         }
 
         //Hàm xử lý chức năng thêm mới.
         private void btnThemMay_Click(object sender, EventArgs e)
         {
-            if (kiemTra())
+            if (cauHinhCtrl.KTCauHinh(txtTenCauHinh.Text))
+            {
+                MessageBox.Show("Tên cấu hình đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (kiemTra())
             {
                 LuuCbo(cboTemp);
                 cauHinh.MaCauHinh = cauHinhCtrl.GetID() + 1;
@@ -162,7 +160,7 @@ namespace QuanLyPhongMay
                 {
                     if(cauHinhCtrl.KTSuDung(Convert.ToInt32(dgvDSCauHinh.CurrentRow.Cells[0].Value)) == false)
                     {
-                        DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa khoa này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa cấu hình này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (dlg == System.Windows.Forms.DialogResult.Yes)
                         {
@@ -197,7 +195,7 @@ namespace QuanLyPhongMay
                 cauHinh.MaCauHinh = Convert.ToInt32(txtMaCauHinh.Text);
                 cauHinh.TenCauHinh = txtTenCauHinh.Text;
 
-                MessageBox.Show("Cập nhập khoa thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhập cấu hình thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cauHinhCtrl.CapNhat(cauHinh);
                 lamMoi();
             }

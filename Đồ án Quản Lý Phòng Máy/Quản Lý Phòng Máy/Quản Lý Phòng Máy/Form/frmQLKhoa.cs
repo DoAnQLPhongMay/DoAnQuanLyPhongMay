@@ -67,11 +67,6 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập tên khoa.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
-            {
-                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kTra = false;
-            }
 
             return kTra;
         }
@@ -79,7 +74,11 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng thêm mới.
         private void btnThemMay_Click(object sender, EventArgs e)
         {
-            if (kiemTra())
+            if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
+            {
+                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (kiemTra())
             {
                 khoa.MaKhoa = khoaCtrl.GetID() + 1;
                 khoa.TenKhoa = txtTenKhoa.Text;
