@@ -59,7 +59,7 @@ namespace QuanLyPhongMay.DataLayer
         public int Them(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into dtb_TaiKhoan (TenDangNhap,MatKhau,MaTaiKhoan,HoVaTen,GioiTinh,SDT,Email,NgaySinh,DiaChi) values(@tendn,@mk,@matk,@ten,@gioitinh,@sdt,@mail,@ngsinh,@dchi)";
+            cmd.CommandText = "insert into dtb_TaiKhoan (TenDangNhap,MatKhau,MaTaiKhoan,HoVaTen,GioiTinh,SDT,Email,NgaySinh,DiaChi, LoaiTK) values(@tendn,@mk,@matk,@ten,@gioitinh,@sdt,@mail,@ngsinh,@dchi, @loaitk)";
             
             cmd.Parameters.Add("tendn", SqlDbType.VarChar).Value = gv.TenDangNhap;
             cmd.Parameters.Add("mk", SqlDbType.VarChar).Value = gv.MatKhau;
@@ -70,7 +70,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("mail", SqlDbType.VarChar).Value = gv.Email;
             cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
             cmd.Parameters.Add("dchi", SqlDbType.NVarChar).Value = gv.Diachi;
-           // cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.LoaiTaiKhoan;
+            cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.Loaitaikhoan;
 
             return cls.CapNhatDL(cmd);
         }
@@ -78,7 +78,7 @@ namespace QuanLyPhongMay.DataLayer
         public int Luu(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gioitinh, SDT=@sdt, NgaySinh=@ngsinh,DiaChi=@diachi, Email=@email where TenDangNhap=@tendangnhap";
+            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gioitinh, SDT=@sdt, NgaySinh=@ngsinh,DiaChi=@diachi, Email=@email, LoaiTK=@loaitk where TenDangNhap=@tendangnhap";
             
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
             cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
@@ -87,6 +87,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;  
             cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = gv.TenDangNhap;
             cmd.Parameters.Add("email", SqlDbType.VarChar).Value = gv.Email;
+            cmd.Parameters.Add("loaitk", SqlDbType.Bit).Value = gv.Loaitaikhoan;
 
             return cls.CapNhatDL(cmd);
         }

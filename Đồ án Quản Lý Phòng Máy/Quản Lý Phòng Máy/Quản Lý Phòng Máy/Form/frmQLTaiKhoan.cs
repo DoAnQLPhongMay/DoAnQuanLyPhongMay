@@ -35,23 +35,27 @@ namespace QuanLyPhongMay
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
             tkctrl.HienThi(dgvDSTaiKhoan);
-            cboQuyenHan.Items.Insert(0, "User");
-            cboQuyenHan.Items.Insert(1, "Admin");
+            Dictionary<int, string> test = new Dictionary<int, string>();
+            test.Add(0, "User");
+            test.Add(1, "Admin");
+            cboQuyenHan.DataSource = new BindingSource(test, null);
+            cboQuyenHan.DisplayMember = "Value";
+            cboQuyenHan.ValueMember = "Key";
             HienThiThongTin();
         }
         void HienThiThongTin()
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txtMaTK.Text = dgvDSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
-                txtHoTen.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+                txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells["TenDangNhap"].Value.ToString();
+                txtMaTK.Text = dgvDSTaiKhoan.CurrentRow.Cells["MaTaiKhoan"].Value.ToString();
+                txtHoTen.Text = dgvDSTaiKhoan.CurrentRow.Cells["HoVaTen"].Value.ToString();
                 checkRadio();
-                txtSDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
-                txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
-                dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
-                txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
-               // cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
+                txtSDT.Text = dgvDSTaiKhoan.CurrentRow.Cells["SDT"].Value.ToString();
+                txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells["Email"].Value.ToString();
+                dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells["NgaySinh"].Value);
+                txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells["DiaChi"].Value.ToString();
+                cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LoaiTK"].Value);
             }
         }
         void checkRadio()
@@ -152,6 +156,11 @@ namespace QuanLyPhongMay
         private void dgvDSTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HienThiThongTin();
+        }
+
+        private void grpThongTinTaiKhoan_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

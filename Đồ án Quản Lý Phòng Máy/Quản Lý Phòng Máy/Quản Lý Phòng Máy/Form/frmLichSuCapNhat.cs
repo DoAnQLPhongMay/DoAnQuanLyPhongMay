@@ -1,19 +1,16 @@
-﻿using QuanLyPhongMay.Class;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using QuanLyPhongMay.BUS;
+using QuanLyPhongMay.Class;
+using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
     public partial class frmLichSuCapNhat : Form
     {
+        LSCapNhatCtrl lsCtrl = new LSCapNhatCtrl();
         User user = new User();
+
         public frmLichSuCapNhat()
         {
             InitializeComponent();
@@ -27,7 +24,7 @@ namespace QuanLyPhongMay
 
         private void frmLichSuCapNhat_Load(object sender, EventArgs e)
         {
-
+            lsCtrl.HienThi(dgvLSCapNhat);
         }
     }
 }

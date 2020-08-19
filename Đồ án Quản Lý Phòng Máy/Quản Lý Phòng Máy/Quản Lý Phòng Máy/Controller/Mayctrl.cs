@@ -18,11 +18,6 @@ namespace QuanLyPhongMay.Controller
             return mayData.GetID();
         }
 
-        public int GetIDLSCapNhat()
-        {
-            return mayData.GetIDLSCapNhat();
-        }
-
         public void HienThi(DataGridView dgv)
         {
             dgv.DataSource = mayData.LayDSMay().Tables[0];
@@ -62,34 +57,9 @@ namespace QuanLyPhongMay.Controller
             return mayData.CapNhatMay(may);
         }
 
-        public int CapNhatChiTiet(int maMay, int maLoai, int maThietBi)
-        {
-            if(mayData.KiemTraChiTiet(maMay, maLoai))
-            {
-                return mayData.CapNhatChiTiet(maMay, maLoai, maThietBi);
-            }
-            return mayData.ThemChiTietMay(maMay, maLoai, maThietBi);
-
-        }
-
-        public int ThemChiTietMay(int maMay, int maLoai, int maThietBi)
-        {
-            return mayData.ThemChiTietMay(maMay, maLoai, maThietBi);
-        }
-
         public bool KiemTraTenMay(string tenmay)
         {
             return mayData.KiemTraTenMay(tenmay);
-        }
-
-        public void ThemLSCapNhat(May may, string user)
-        {
-            DateTime ngayCapNhat = DateTime.Now;
-            mayData.ThemLSCapNhat(this.GetIDLSCapNhat()+1, may , user, ngayCapNhat);
-        }
-        public void ThemChiTietCapNhat(May may, int maLoai, int maThietBi)
-        {
-            mayData.ThemChiTietLSCapNhat(this.GetIDLSCapNhat(), may, maLoai, maThietBi);
         }
     }
 }

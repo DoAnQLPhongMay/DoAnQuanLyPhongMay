@@ -21,6 +21,16 @@ namespace QuanLyPhongMay.Controller
             return phongData.GetID();
         }
 
+        public int GetSL(int maPhong)
+        {
+            return phongData.GetSLMay(maPhong);
+        }
+
+        public int GetCountMay(int maPhong)
+        {
+            return phongData.GetCountMay(maPhong);
+        }
+
         //Hàm kiểm tra thiết bị có đang sử dụng.
         public bool KTSuDung(int maPhong)
         {

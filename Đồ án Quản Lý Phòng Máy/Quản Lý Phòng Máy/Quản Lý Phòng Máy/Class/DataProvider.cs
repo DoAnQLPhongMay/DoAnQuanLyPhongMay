@@ -57,7 +57,7 @@ namespace QuanLyPhongMay
 
             if (dr.Read())
             {
-                id = Convert.ToInt32(dr[0].ToString());
+                id = Convert.ToInt32(dr[0]);
             }
             dr.Close();
 

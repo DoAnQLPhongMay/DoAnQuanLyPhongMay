@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BUS\CauHinh.cs" />
     <Compile Include="BUS\Khoa.cs" />
+    <Compile Include="BUS\LichSuCapNhat.cs" />
     <Compile Include="BUS\LoaiThietBi.cs" />
     <Compile Include="BUS\TaiKhoan.cs" />
     <Compile Include="BUS\LichSuNhap.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Controller\LichSuNhapCtrl.cs" />
     <Compile Include="Controller\LichSuThanhLyCtrl.cs" />
     <Compile Include="Controller\LoaiThietBiCtrl.cs" />
+    <Compile Include="Controller\LSCapNhatCtrl.cs" />
     <Compile Include="Controller\PhongMayCtrl.cs" />
     <Compile Include="Controller\Quyenctrl.cs" />
     <Compile Include="Controller\TaiKhoanCtrl.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="DataLayer\LichSuNhapData.cs" />
     <Compile Include="DataLayer\LichSuThanhLyData.cs" />
     <Compile Include="DataLayer\LoaiThietBiData.cs" />
+    <Compile Include="DataLayer\LSCapNhatData.cs" />
     <Compile Include="DataLayer\PhongMayData.cs" />
     <Compile Include="DataLayer\QuyenData.cs" />
     <Compile Include="DataLayer\TaiKhoanData.cs" />

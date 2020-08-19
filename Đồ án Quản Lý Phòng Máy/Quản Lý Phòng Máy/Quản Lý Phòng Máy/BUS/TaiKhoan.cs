@@ -72,12 +72,10 @@ namespace QuanLyPhongMay.BUS
             get { return _email; }
             set { _email = value; }
         }
-        private bool _loaitaikhoan;
-        public bool LoaiTaiKhoan
-        {
-            get { return _loaitaikhoan; }
-            set { _loaitaikhoan = value; }
-        }
+
+        public int Loaitaikhoan { get => _loaitaikhoan; set => _loaitaikhoan = value; }
+
+        private int _loaitaikhoan;
 
        
 

@@ -27,6 +27,30 @@ namespace QuanLyPhongMay.DataLayer
             return cls.GetID(cmd);
         }
 
+        //Hàm lấy ra số lượng máy của 1 phòng.
+        public int GetSLMay(int maPhong)
+        {
+            string select = "SELECT SoLuongMay ",
+                from = "FROM dtb_PhongMay ",
+                where = "WHERE MaPhongMay = '" + maPhong + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.GetID(cmd);
+        }
+
+        //Hàm lấy ra số lượng máy của 1 phòng.
+        public int GetCountMay(int maPhong)
+        {
+            string select = "SELECT COUNT(*) ",
+                from = "FROM dtb_PhongMay, dtb_May ",
+                where = "WHERE dtb_PhongMay.MaPhongMay = dtb_May.MaPhong AND MaPhongMay = '" + maPhong + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.GetID(cmd);
+        }
+
         //Hàm kiểm tra tên phòng đã tồn tại chưa.
         public bool KTTenPhong(string tenPhong)
         {

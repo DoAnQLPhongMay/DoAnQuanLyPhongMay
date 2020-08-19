@@ -33,8 +33,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.cboQuyenHan = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
@@ -61,6 +59,15 @@
             this.lblHoTen = new System.Windows.Forms.Label();
             this.lblQuyenHan = new System.Windows.Forms.Label();
             this.dgvDSTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
@@ -84,8 +91,6 @@
             this.grpThongTinTaiKhoan.Controls.Add(this.txtEmail);
             this.grpThongTinTaiKhoan.Controls.Add(this.lblEmail);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnLamMoi);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtPassword);
-            this.grpThongTinTaiKhoan.Controls.Add(this.lblPassword);
             this.grpThongTinTaiKhoan.Controls.Add(this.cboQuyenHan);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnXoa);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnCapNhat);
@@ -114,6 +119,7 @@
             this.grpThongTinTaiKhoan.TabIndex = 1;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
+            this.grpThongTinTaiKhoan.Enter += new System.EventHandler(this.grpThongTinTaiKhoan_Enter);
             // 
             // txtEmail
             // 
@@ -142,24 +148,6 @@
             this.btnLamMoi.TabIndex = 25;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(123, 122);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(136, 21);
-            this.txtPassword.TabIndex = 24;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(6, 125);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(63, 15);
-            this.lblPassword.TabIndex = 23;
-            this.lblPassword.Text = "Mật Khẩu:";
             // 
             // cboQuyenHan
             // 
@@ -338,7 +326,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(407, 152);
+            this.txtSDT.Location = new System.Drawing.Point(123, 122);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(136, 21);
             this.txtSDT.TabIndex = 8;
@@ -347,7 +335,7 @@
             // 
             this.lblSDT.AutoSize = true;
             this.lblSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSDT.Location = new System.Drawing.Point(290, 155);
+            this.lblSDT.Location = new System.Drawing.Point(6, 125);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(88, 15);
             this.lblSDT.TabIndex = 7;
@@ -417,11 +405,84 @@
             // dgvDSTaiKhoan
             // 
             this.dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSTaiKhoan.Location = new System.Drawing.Point(0, 395);
+            this.dgvDSTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenDangNhap,
+            this.MaTaiKhoan,
+            this.HoVaTen,
+            this.GioiTinh,
+            this.SDT,
+            this.Email,
+            this.NgaySinh,
+            this.DiaChi,
+            this.LoaiTK});
+            this.dgvDSTaiKhoan.Location = new System.Drawing.Point(12, 395);
             this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
-            this.dgvDSTaiKhoan.Size = new System.Drawing.Size(763, 251);
+            this.dgvDSTaiKhoan.Size = new System.Drawing.Size(741, 242);
             this.dgvDSTaiKhoan.TabIndex = 2;
             this.dgvDSTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTaiKhoan_CellClick);
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.DataPropertyName = "TenDangNhap";
+            this.TenDangNhap.HeaderText = "Tên Đăng Nhập";
+            this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.ReadOnly = true;
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã TK";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
+            // 
+            // HoVaTen
+            // 
+            this.HoVaTen.DataPropertyName = "HoVaTen";
+            this.HoVaTen.HeaderText = "Họ & Tên";
+            this.HoVaTen.Name = "HoVaTen";
+            this.HoVaTen.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // LoaiTK
+            // 
+            this.LoaiTK.DataPropertyName = "LoaiTK";
+            this.LoaiTK.HeaderText = "Loại TK";
+            this.LoaiTK.Name = "LoaiTK";
+            this.LoaiTK.ReadOnly = true;
             // 
             // frm_QLTaiKhoan
             // 
@@ -474,11 +535,18 @@
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.DataGridView dgvDSTaiKhoan;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.ComboBox cboQuyenHan;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTK;
     }
 }

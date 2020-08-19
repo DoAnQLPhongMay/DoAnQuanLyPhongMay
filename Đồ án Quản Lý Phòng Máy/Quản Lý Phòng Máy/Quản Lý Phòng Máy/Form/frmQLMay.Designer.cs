@@ -85,6 +85,7 @@
             this.MaTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.grpQLMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             this.grp_ChiTietMay.SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // grpQLMay
             // 
+            this.grpQLMay.Controls.Add(this.txtSoLuong);
             this.grpQLMay.Controls.Add(this.btnLamMoi);
             this.grpQLMay.Controls.Add(this.cboPhong);
             this.grpQLMay.Controls.Add(this.rtbGhiChu);
@@ -522,7 +524,7 @@
             // 
             this.txtTenMay.Location = new System.Drawing.Point(293, 34);
             this.txtTenMay.Name = "txtTenMay";
-            this.txtTenMay.Size = new System.Drawing.Size(114, 20);
+            this.txtTenMay.Size = new System.Drawing.Size(73, 20);
             this.txtTenMay.TabIndex = 3;
             // 
             // lblTenMay
@@ -646,6 +648,14 @@
             this.MaPhong.ReadOnly = true;
             this.MaPhong.Visible = false;
             // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(372, 34);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(35, 20);
+            this.txtSoLuong.TabIndex = 35;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
             // frmQLMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -727,5 +737,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.TextBox txtSoLuong;
     }
 }

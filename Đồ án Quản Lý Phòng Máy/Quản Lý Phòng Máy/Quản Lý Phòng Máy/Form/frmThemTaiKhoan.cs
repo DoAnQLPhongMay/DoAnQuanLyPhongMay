@@ -83,7 +83,8 @@ namespace QuanLyPhongMay
                 tk.Diachi = txtDiaChi.Text;
                 tk.TenDangNhap = txtTenDangNhap.Text;
                 tk.MatKhau = txtMatKhau.Text;
-               // tk.LoaiTaiKhoan = (bool)(cboLoaiTaiKhoan.SelectedValue) ? true : false;
+                tk.Loaitaikhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
+                MessageBox.Show(cboLoaiTaiKhoan.SelectedValue.ToString());
 
                 {
                     switch (tkctrl.Them(tk))
@@ -138,9 +139,12 @@ namespace QuanLyPhongMay
 
         private void frmThemTaiKhoan_Load(object sender, EventArgs e)
         {
-            cboLoaiTaiKhoan.Items.Insert(0, "User");
-            cboLoaiTaiKhoan.Items.Insert(1, "Admin");
-
+            Dictionary<int,string> test = new Dictionary<int, string>();
+            test.Add(0, "User");
+            test.Add(1, "Admin");
+            cboLoaiTaiKhoan.DataSource = new BindingSource(test, null);
+            cboLoaiTaiKhoan.DisplayMember = "Value";
+            cboLoaiTaiKhoan.ValueMember = "Key";
         }
     }
 }
