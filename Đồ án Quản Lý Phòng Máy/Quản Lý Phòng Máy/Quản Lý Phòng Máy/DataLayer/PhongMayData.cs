@@ -62,6 +62,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayPhong(int maPhong)
+        {
+            string select = "SELECT TenPhongMay, SoLuongMay ",
+                from = "FROM dtb_PhongMay ",
+                where = "WHERE MaPhongMay = '" + maPhong + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm xử lý thêm mới phòng máy.
         public int Them(PhongMay phong)
         {

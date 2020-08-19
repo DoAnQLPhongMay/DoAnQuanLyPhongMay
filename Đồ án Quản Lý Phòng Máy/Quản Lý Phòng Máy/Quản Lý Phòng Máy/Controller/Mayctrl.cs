@@ -38,30 +38,28 @@ namespace QuanLyPhongMay.Controller
             dgv.DataSource = mayData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
 
-        /*public int Them(May m)
+        public bool KTTenMay(string tenMay)
         {
-          
-            if (KiemTraTenMay(m.TenMay))
-                return 0;
-            return mayData.Them(m);
-        }*/
+            if (KiemTraTenMay(tenMay))
+            {
+                return true;
+            }
+            return false;
+        }
 
         public int ThemMoi(May may)
         {
-            if (KiemTraTenMay(may.TenMay))
-                return 0;
             return mayData.ThemMoi(may);
         }
 
         public int Xoa(int maMay)
         {
-            mayData.XoaChiTiet(maMay);
             return mayData.Xoa(maMay);
         }
 
-        public int CapNhatMay(May m)
+        public int CapNhatMay(May may)
         {
-            return mayData.CapNhatMay(m);
+            return mayData.CapNhatMay(may);
         }
 
         public int CapNhatChiTiet(int maMay, int maLoai, int maThietBi)

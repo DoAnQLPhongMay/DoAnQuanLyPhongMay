@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuanLyPhongMay.DataLayer;
 using QuanLyPhongMay.BUS;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QuanLyPhongMay.Controller
 {
@@ -30,6 +31,20 @@ namespace QuanLyPhongMay.Controller
         public bool KTTenPhong(string tenPhong)
         {
             return phongData.KTTenPhong(tenPhong);
+        }
+
+        //Hàm xử lý lấy số lượng máy của phòng.
+        public int LaySLMay(int maPhong)
+        {
+            DataSet ds = phongData.LayPhong(maPhong);
+            return Convert.ToInt32(ds.Tables[0].Rows[0]["SoLuongMay"]);
+        }
+
+        //Hàm xử lý lấy tên của phòng.
+        public string LayTenPhong(int maPhong)
+        {
+            DataSet ds = phongData.LayPhong(maPhong);
+            return ds.Tables[0].Rows[0]["TenPhongMay"].ToString();
         }
 
         //Hàm hiển thị danh sách phòng máy lên Datagridview.

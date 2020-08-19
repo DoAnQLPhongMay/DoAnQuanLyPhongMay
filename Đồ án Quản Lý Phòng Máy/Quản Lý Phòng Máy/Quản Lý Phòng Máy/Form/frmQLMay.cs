@@ -14,6 +14,8 @@ namespace QuanLyPhongMay
         CauHinhCtrl cauHinhCtrl = new CauHinhCtrl();
         MayCtrl mayCtrl = new MayCtrl();
         User user = new User();
+        TextBox[] txt = new TextBox[12];
+        string tenMay;
 
         public frmQLMay()
         {
@@ -40,26 +42,49 @@ namespace QuanLyPhongMay
 
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            int maMay = Convert.ToInt32(dgvDSMay.CurrentRow.Cells[0].Value);
-
-            txtMaMay.Text = dgvDSMay.CurrentRow.Cells[0].Value.ToString();
-            txtTenMay.Text = dgvDSMay.CurrentRow.Cells[1].Value.ToString();
-            cboPhong.SelectedValue = dgvDSMay.CurrentRow.Cells[6].Value.ToString();
-            cboTrangThai.SelectedValue = dgvDSMay.CurrentRow.Cells[5].Value.ToString();
-            rtbGhiChu.Text = dgvDSMay.CurrentRow.Cells[4].Value.ToString();
+            tenMay = dgvDSMay.CurrentRow.Cells["TenMay"].Value.ToString();
+            txtMaMay.Text = dgvDSMay.CurrentRow.Cells["MaMay"].Value.ToString();
+            txtTenMay.Text = dgvDSMay.CurrentRow.Cells["TenMay"].Value.ToString();
+            cboPhong.SelectedValue = dgvDSMay.CurrentRow.Cells["MaPhong"].Value.ToString();
+            cboTrangThai.SelectedValue = dgvDSMay.CurrentRow.Cells["MaTrangThai"].Value.ToString();
+            cboCauHinh.SelectedValue = dgvDSMay.CurrentRow.Cells["MaCauHinh"].Value.ToString();
+            rtbGhiChu.Text = dgvDSMay.CurrentRow.Cells["GhiChu"].Value.ToString();
 
             btnCapNhat.Enabled = true;
             btnThemMoi.Enabled = false;
             btnXoa.Enabled = false;
         }
 
+        private void LuuTxt(TextBox[] txt)
+        {
+            txt[1] = txtManHinh;
+            txt[2] = txtChuot;
+            txt[3] = txtBanPhim;
+            txt[4] = txtCase;
+            txt[5] = txtCPU;
+            txt[6] = txtMainBoard;
+            txt[7] = txtRAM;
+            txt[8] = txtOCung;
+            txt[9] = txtVGA;
+            txt[10] = txtPSU;
+            txt[11] = txtHDH;
+        }
+
         private void LamMoi()
         {
+            LuuTxt(txt);
             rtbGhiChu.Clear();
             txtMaMay.Clear();
             txtTenMay.Clear();
+            
+            for(int i = 1;i < 12; i++)
+            {
+                txt[i].Clear();
+            }
+
             cboPhong.Text = "";
             cboTrangThai.Text = "";
+            cboCauHinh.Text = "";
 
             btnThemMoi.Enabled = true;
             btnXoa.Enabled = true;
@@ -68,78 +93,97 @@ namespace QuanLyPhongMay
             mayCtrl.HienThi(dgvDSMay);
         }
 
-        private void btn_ThemMoi_Click(object sender, EventArgs e)
+        private bool KiemTra()
         {
-            May may = new May();
-            may.MaMay = mayCtrl.GetID() + 1;
-            may.TenMay = txtTenMay.Text;
-            may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
-            may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
-            may.GhiChu = rtbGhiChu.Text;
-
             if (txtTenMay.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Tên Máy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên máy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            else if(cboPhong.Text == "")
+            else if (cboPhong.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else if (cboTrangThai.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn trạng thái máy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn trạng thái máy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            else if(mayCtrl.ThemMoi(may) == 0)
+            else if (cboCauHinh.Text == "")
             {
-                MessageBox.Show("Tên Máy đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn cấu hình máy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            else
+            else if (mayCtrl.KTTenMay(txtTenMay.Text) && tenMay != txtTenMay.Text)
             {
-                mayCtrl.ThemLSCapNhat(may, user.TenTK);
+                MessageBox.Show("Tên máy đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btn_ThemMoi_Click(object sender, EventArgs e)
+        {
+            if (KiemTra())
+            {
+                May may = new May();
+                may.MaMay = mayCtrl.GetID() + 1;
+                may.TenMay = txtTenMay.Text;
+                may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
+                may.MaCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+                may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
+                may.GhiChu = rtbGhiChu.Text;
+
+                mayCtrl.ThemMoi(may);
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
                 LamMoi();
             }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if(dgvDSMay.CurrentRow != null)
+            if (user.PhanQuyen)
             {
-                if (dlg == System.Windows.Forms.DialogResult.Yes)
+                if (dgvDSMay.CurrentRow != null)
                 {
-                    if (mayCtrl.Xoa(Convert.ToInt32(dgvDSMay.CurrentRow.Cells[0].Value)) > 0)
+                    DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dlg == System.Windows.Forms.DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int maMay = Convert.ToInt32(dgvDSMay.CurrentRow.Cells["MaMay"].Value);
+                        mayCtrl.Xoa(maMay);
+
+                        MessageBox.Show("Xóa khoa thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LamMoi();
-                        //HienThiThongTin();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Vùi lòng chọn khoa muốn xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            May may = new May();
-            may.MaMay = Convert.ToInt32(txtMaMay.Text);
-            may.TenMay = txtTenMay.Text;
-            may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
-            may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
-            may.GhiChu = rtbGhiChu.Text;
-
-            string mamay = dgvDSMay.CurrentRow.Cells[0].Value.ToString();
-            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dlg == System.Windows.Forms.DialogResult.Yes)
+            if (KiemTra())
             {
+                May may = new May();
+                may.MaMay = Convert.ToInt32(txtMaMay.Text);
+                may.TenMay = txtTenMay.Text;
+                may.MaPhong = Convert.ToInt32(cboPhong.SelectedValue);
+                may.MaCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+                may.TrangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
+                may.GhiChu = rtbGhiChu.Text;
+
+                MessageBox.Show("Cập nhập khoa thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mayCtrl.CapNhatMay(may);
-                mayCtrl.ThemLSCapNhat(may, user.TenTK);
-                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LamMoi();
             }
         }

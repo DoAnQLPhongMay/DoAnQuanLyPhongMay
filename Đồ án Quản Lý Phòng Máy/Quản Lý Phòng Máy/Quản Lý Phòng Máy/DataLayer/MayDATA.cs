@@ -36,15 +36,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.GetID(cmd);
         }
 
-        /*public DataSet LayDSMay()
-        {
-            string sql = "select MaMay, TenMay, dtb_PhongMay.TenPhongMay, TenThietBi, TSThietBi, TenTrangThai, dtb_May.GhiChu ",
-                from =  "From dtb_May, dtb_PhongMay, dtb_ChiTietThietBi, dtb_TrangThai ",
-                where = "where dtb_May.MaThietBi = dtb_ChiTietThietBi.MaThietBi and dtb_May.MaPhong = dtb_PhongMay.MaPhongMay and dtb_May.MaTrangThai = dtb_TrangThai.MaTrangThai";
-            SqlCommand sqlcmd = new SqlCommand(sql + from + where);
-            return cls.LayDuLieu(sqlcmd);
-        }*/
-
         public DataSet LayDSMay()
         {
             string select = "SELECT dtb_May.*, TenPhongMay, TenTrangThai, TenCauHinh ",
@@ -79,29 +70,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(sqlcmd);
         }
 
-        /*public int Them(May m)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into dtb_May(MaMay,MaPhong,TenMay,MaTrangThai,GhiChu,MaThietBi) values (@mamay,@maphong,@tenmay,@matrangthai,@ghichu,@mathietbi)";
-            cmd.Parameters.Add("mamay", SqlDbType.Int).Value = m.MaMay;
-            cmd.Parameters.Add("maphong", SqlDbType.Int).Value = m.MaPhong;
-            cmd.Parameters.Add("tenmay", SqlDbType.NVarChar).Value = m.TenMay;
-            cmd.Parameters.Add("matrangthai", SqlDbType.Int).Value = m.TrangThai;
-            cmd.Parameters.Add("ghichu", SqlDbType.NVarChar).Value = m.GhiChu;
-            cmd.Parameters.Add("mathietbi", SqlDbType.Int).Value = m.Mathietbi;
-            return cls.CapNhatDL(cmd);
-        }*/
-
         public int ThemMoi(May may)
         {
             SqlCommand cmd = new SqlCommand();
-            string insert = "INSERT INTO dtb_May(MaMay,MaPhong,TenMay,TrangThai,GhiChu) ",
-                values = "VALUES (@maMay,@maPhong,@tenMay,@trangThai,@ghiChu)";
+            string insert = "INSERT INTO dtb_May(MaMay, MaPhong, TenMay, MaCauHinh, TrangThai, GhiChu) ",
+                values = "VALUES (@maMay, @maPhong, @tenMay, @cauHinh, @trangThai, @ghiChu)";
 
             cmd.CommandText = insert + values;
             cmd.Parameters.Add("maMay", SqlDbType.Int).Value = may.MaMay;
             cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = may.MaPhong;
             cmd.Parameters.Add("tenMay", SqlDbType.NVarChar).Value = may.TenMay;
+            cmd.Parameters.Add("cauHinh", SqlDbType.Int).Value = may.MaCauHinh;
             cmd.Parameters.Add("trangThai", SqlDbType.Int).Value = may.TrangThai;
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = may.GhiChu;
 
@@ -126,9 +105,9 @@ namespace QuanLyPhongMay.DataLayer
         {
             SqlCommand cmd = new SqlCommand();
             string delete = "DELETE FROM dtb_May ",
-                where = "WHERE MaMay=@maMay";
-
+                where = "WHERE MaMay = @maMay";
             cmd.CommandText = delete + where;
+
             cmd.Parameters.Add("maMay", SqlDbType.SmallInt).Value = maMay;
 
             return cls.CapNhatDL(cmd);
@@ -150,12 +129,13 @@ namespace QuanLyPhongMay.DataLayer
         {
             SqlCommand cmd = new SqlCommand();
             string update = "UPDATE dtb_May ",
-                set = "SET TenMay = @tenMay, MaPhong = @maPhong, TrangThai = @trangThai, GhiChu = @ghiChu ",
+                set = "SET TenMay = @tenMay, MaPhong = @maPhong, MaCauHinh = @maCauHinh, TrangThai = @trangThai, GhiChu = @ghiChu ",
                 where = "WHERE MaMay=@maMay";
 
             cmd.CommandText = update + set + where;
             cmd.Parameters.Add("maMay", SqlDbType.Int).Value = may.MaMay;
             cmd.Parameters.Add("maPhong", SqlDbType.Int).Value = may.MaPhong;
+            cmd.Parameters.Add("maCauHinh", SqlDbType.Int).Value = may.MaCauHinh;
             cmd.Parameters.Add("trangThai", SqlDbType.Int).Value = may.TrangThai;
             cmd.Parameters.Add("tenMay", SqlDbType.NVarChar).Value = may.TenMay;
             cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = may.GhiChu;

@@ -71,7 +71,7 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập tên khoa.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text))
+            else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text) && tenKhoa != txtTenKhoa.Text)
             {
                 MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;

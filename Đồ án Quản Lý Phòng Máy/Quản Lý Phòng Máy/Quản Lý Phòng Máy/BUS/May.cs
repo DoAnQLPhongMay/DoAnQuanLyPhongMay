@@ -8,7 +8,6 @@ namespace QuanLyPhongMay.BUS
 {
     class May
     {
-
         private int _mamay;
 
         public int MaMay
@@ -58,5 +57,9 @@ namespace QuanLyPhongMay.BUS
             get { return _ngaycapnhat; }
             set { _ngaycapnhat = value; }
         }
+
+        public int MaCauHinh { get => _maCauHinh; set => _maCauHinh = value; }
+
+        private int _maCauHinh;
     }
 }
