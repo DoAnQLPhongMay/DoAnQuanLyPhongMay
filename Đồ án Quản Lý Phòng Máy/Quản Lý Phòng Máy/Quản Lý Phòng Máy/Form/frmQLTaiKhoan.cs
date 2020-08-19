@@ -43,15 +43,15 @@ namespace QuanLyPhongMay
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
             {
-                //txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                txtUsername.Text = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
                 txtMaTK.Text = dgvDSTaiKhoan.CurrentRow.Cells[1].Value.ToString();
                 txtHoTen.Text = dgvDSTaiKhoan.CurrentRow.Cells[2].Value.ToString();
                 checkRadio();
                 txtSDT.Text = dgvDSTaiKhoan.CurrentRow.Cells[4].Value.ToString();
                 txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells[5].Value.ToString();
-                //dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
+                dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells[6].Value);
                 txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells[7].Value.ToString();
-                //cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
+               // cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells[8].Value);
             }
         }
         void checkRadio()
@@ -60,6 +60,7 @@ namespace QuanLyPhongMay
             radNam.Checked = (gtri == "True") ? true : false;
             radNu.Checked = (gtri == "False") ? true : false;
         }
+      
         private void btn_Them_Click(object sender, EventArgs e)
         {
             frmThemTaiKhoan themtk = new frmThemTaiKhoan();
@@ -69,11 +70,7 @@ namespace QuanLyPhongMay
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            /*if(tkctrl.KiemTraMaQuyen(Convert.ToInt32(txtMaQuyen.Text)) != true)
-                {
-                                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }*/
+           
             if (user.PhanQuyen == false)
             {
                 MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,6 +100,7 @@ namespace QuanLyPhongMay
             tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
             tk.Diachi = txtDiaChi.Text;
             tk.TenDangNhap = txtUsername.Text;
+            tk.Email = txtEmail.Text;
 
             string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
 

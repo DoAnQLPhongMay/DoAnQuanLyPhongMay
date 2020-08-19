@@ -90,9 +90,6 @@
             // cboLoaiTaiKhoan
             // 
             this.cboLoaiTaiKhoan.FormattingEnabled = true;
-            this.cboLoaiTaiKhoan.Items.AddRange(new object[] {
-            "Admin",
-            "Thường"});
             this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(409, 194);
             this.cboLoaiTaiKhoan.Name = "cboLoaiTaiKhoan";
             this.cboLoaiTaiKhoan.Size = new System.Drawing.Size(178, 22);

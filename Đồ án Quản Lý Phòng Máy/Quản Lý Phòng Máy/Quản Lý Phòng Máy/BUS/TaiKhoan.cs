@@ -72,20 +72,14 @@ namespace QuanLyPhongMay.BUS
             get { return _email; }
             set { _email = value; }
         }
-        private int _loaitaikhoan;
-        public int LoaiTaiKhoan
+        private bool _loaitaikhoan;
+        public bool LoaiTaiKhoan
         {
             get { return _loaitaikhoan; }
             set { _loaitaikhoan = value; }
         }
 
-        public int Maquyen { get => _maquyen; set => _maquyen = value; }
-
-        private int _maquyen;
-        public TaiKhoan()
-        {
-            
-        }
+       
 
         public static implicit operator TaiKhoan(May v)
         {

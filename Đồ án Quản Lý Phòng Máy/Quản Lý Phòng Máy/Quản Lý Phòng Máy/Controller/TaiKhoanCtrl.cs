@@ -36,11 +36,12 @@ namespace QuanLyPhongMay.Controller
             gv.Email = ds.Tables[0].Rows[0]["Email"].ToString();
             gv.Ngaysinh = DateTime.Parse(ds.Tables[0].Rows[0]["NgaySinh"].ToString());
             gv.Diachi = ds.Tables[0].Rows[0]["DiaChi"].ToString();
+            gv.LoaiTaiKhoan = (bool)ds.Tables[0].Rows[0]["LoaiTaiKhoan"];
             return gv;
         }
         public void HienThi(DataGridView dgv)
         {
-         dgv.DataSource = GVData.LayDSTK().Tables[0];
+         dgv.DataSource = GVData.LayDSGiangVien().Tables[0];
         }
         public int Them(TaiKhoan gv)
         {

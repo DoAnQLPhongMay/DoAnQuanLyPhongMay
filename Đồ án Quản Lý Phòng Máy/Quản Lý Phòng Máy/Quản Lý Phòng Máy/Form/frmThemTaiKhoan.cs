@@ -50,11 +50,11 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
-            else if (cboLoaiTaiKhoan.Text == "")
-            {
-                MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ktra = false;
-            }
+            //else if (cboLoaiTaiKhoan.Text == "")
+            //{
+            //    MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    ktra = false;
+            //}
             else if (txtTenDangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,7 +83,7 @@ namespace QuanLyPhongMay
                 tk.Diachi = txtDiaChi.Text;
                 tk.TenDangNhap = txtTenDangNhap.Text;
                 tk.MatKhau = txtMatKhau.Text;
-                tk.LoaiTaiKhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
+               // tk.LoaiTaiKhoan = (bool)(cboLoaiTaiKhoan.SelectedValue) ? true : false;
 
                 {
                     switch (tkctrl.Them(tk))
@@ -138,9 +138,9 @@ namespace QuanLyPhongMay
 
         private void frmThemTaiKhoan_Load(object sender, EventArgs e)
         {
-            quyenctrl.HienThiCbo(cboLoaiTaiKhoan);
             cboLoaiTaiKhoan.Items.Insert(0, "User");
             cboLoaiTaiKhoan.Items.Insert(1, "Admin");
+
         }
     }
 }
