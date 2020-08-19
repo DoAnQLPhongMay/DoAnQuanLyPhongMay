@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using QuanLyPhongMay.BUS;
 using QuanLyPhongMay.Class;
 using QuanLyPhongMay.Controller;
@@ -19,9 +11,11 @@ namespace QuanLyPhongMay
         //Khởi tạo các biến giá trị.
         LichSuNhapCtrl nhapCtrl = new LichSuNhapCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
+        CauHinhCtrl cauHinhCtrl = new CauHinhCtrl();
         LichSuNhap nhap = new LichSuNhap();
         User user = new User();
         TTThietBi thongTin = new TTThietBi();
+        bool loaiNhap = false;
 
         //Hàm khởi tạo mặc định của form.
         public frmQLNhapMay()
@@ -47,23 +41,43 @@ namespace QuanLyPhongMay
                 txtNguoiPhuTrach.Text = "vmkhoi";
             }
 
-            nhapCtrl.HienThiDgv(dgvDSNhap);
+            nhapCtrl.HienThiDgv(dgvDSNThietBi, dgvDSNCauHinh);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
+            cauHinhCtrl.HienThiCbo(cboCauHinh);
             cboTenThietBi.Text = "";
+            cboCauHinh.Text = "";
         }
 
         //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            txtMaNhap.Text = dgvDSNhap.CurrentRow.Cells[0].Value.ToString();
-            dtmNgayNhap.Text = dgvDSNhap.CurrentRow.Cells[1].Value.ToString();
-            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSNhap.CurrentRow.Cells[2].Value.ToString());
-            txtNhaCungCap.Text = dgvDSNhap.CurrentRow.Cells[3].Value.ToString();
-            txtNSX.Text = dgvDSNhap.CurrentRow.Cells[4].Value.ToString();
-            txtNamSX.Text = dgvDSNhap.CurrentRow.Cells[5].Value.ToString();
-            txtSoLuong.Text = dgvDSNhap.CurrentRow.Cells[6].Value.ToString();
-            txtDonGia.Text = dgvDSNhap.CurrentRow.Cells[7].Value.ToString();
-            rtbGhiChu.Text = dgvDSNhap.CurrentRow.Cells[9].Value.ToString();
+            lamMoi();
+            txtMaNhap.Text = dgvDSNThietBi.CurrentRow.Cells["MaNhap"].Value.ToString();
+            dtmNgayNhap.Text = dgvDSNThietBi.CurrentRow.Cells["NgayNhap"].Value.ToString();
+            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSNThietBi.CurrentRow.Cells["MaThietBi"].Value);
+            txtNhaCungCap.Text = dgvDSNThietBi.CurrentRow.Cells["NhaCungCap"].Value.ToString();
+            txtNSX.Text = dgvDSNThietBi.CurrentRow.Cells["NhaSanXuat"].Value.ToString();
+            txtNamSX.Text = dgvDSNThietBi.CurrentRow.Cells["NamSanXuat"].Value.ToString();
+            txtSoLuong.Text = dgvDSNThietBi.CurrentRow.Cells["SoLuong"].Value.ToString();
+            txtDonGia.Text = dgvDSNThietBi.CurrentRow.Cells["DonGia"].Value.ToString();
+            rtbGhiChu.Text = dgvDSNThietBi.CurrentRow.Cells["GhiChu"].Value.ToString();
+            txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
+
+            btnThemMoi.Enabled = false;
+        }
+
+        private void dgv_DoubleClickCH(object sender, EventArgs e)
+        {
+            lamMoi();
+            txtMaNhap.Text = dgvDSNCauHinh.CurrentRow.Cells["ID"].Value.ToString();
+            dtmNgayNhap.Text = dgvDSNCauHinh.CurrentRow.Cells["Ngay"].Value.ToString();
+            cboCauHinh.SelectedValue = Convert.ToInt32(dgvDSNCauHinh.CurrentRow.Cells["MaCH"].Value);
+            txtNhaCungCap.Text = dgvDSNCauHinh.CurrentRow.Cells["NCC"].Value.ToString();
+            txtNSX.Text = dgvDSNCauHinh.CurrentRow.Cells["NSX"].Value.ToString();
+            txtNamSX.Text = dgvDSNCauHinh.CurrentRow.Cells["NamSX"].Value.ToString();
+            txtSoLuong.Text = dgvDSNCauHinh.CurrentRow.Cells["SL"].Value.ToString();
+            txtDonGia.Text = dgvDSNCauHinh.CurrentRow.Cells["DG"].Value.ToString();
+            rtbGhiChu.Text = dgvDSNCauHinh.CurrentRow.Cells["GC"].Value.ToString();
             txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
 
             btnThemMoi.Enabled = false;
@@ -100,17 +114,18 @@ namespace QuanLyPhongMay
         //Hàm làm mới các text.
         private void lamMoi()
         {
-            txtMaNhap.Text = "";
-            txtNSX.Text = "";
-            txtNamSX.Text = "";
-            txtDonGia.Text = "";
-            txtSoLuong.Text = "";
+            txtMaNhap.Clear();
+            txtNSX.Clear();
+            txtNamSX.Clear();
+            txtDonGia.Clear();
+            txtSoLuong.Clear();
+            txtNhaCungCap.Clear();
+            rtbGhiChu.Clear();
             cboTenThietBi.Text = "";
-            txtNhaCungCap.Text = "";
-            rtbGhiChu.Text = "";
+            cboCauHinh.Text = "";
+            loaiNhap = false;
 
             btnThemMoi.Enabled = true;
-            nhapCtrl.HienThiDgv(dgvDSNhap);
         }
 
         //Hàm kiểm tra dữ liệu nhập vào.
@@ -120,46 +135,101 @@ namespace QuanLyPhongMay
 
             if (txtNamSX.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn lại thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập năm sản xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (cboTenThietBi.Text == "")
+            else if (cboTenThietBi.Text == "" && cboCauHinh.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn nhập thiết bị hoặc nhập cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else if (cboTenThietBi.Text != "" && cboCauHinh.Text != "")
+            {
+                MessageBox.Show("Vui lòng để trống 1 trong 2 mục thiết bị hoặc cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (txtSoLuong.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập số lương.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập số lương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (txtDonGia.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (txtNhaCungCap.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập nhà cung cấp.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập nhà cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (Convert.ToInt32(txtNamSX.Text) < 2000 || Convert.ToInt32(txtNamSX.Text) > 3000)
             {
-                MessageBox.Show("Năm sản xuất không hơp lệ.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Năm sản xuất không hơp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (Convert.ToInt32(txtDonGia.Text) < 0)
             {
-                MessageBox.Show("Đơn giá không thể âm.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Đơn giá không thể âm.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (Convert.ToInt32(txtSoLuong.Text) <= 0)
             {
-                MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
 
+            if(cboCauHinh.Text != "")
+            {
+                loaiNhap = true;
+            }
+
             return kTra;
+        }
+
+        public void NhapThietBi()
+        {
+            nhap.MaNhap = nhapCtrl.GetID() + 1;
+            nhap.NgayNhap = Convert.ToDateTime(dtmNgayNhap.Value);
+            nhap.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+            nhap.NhaCungCap = txtNhaCungCap.Text;
+            nhap.NhaSanXuat = txtNSX.Text;
+            nhap.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            nhap.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+            nhap.DonGia = Convert.ToInt32(txtDonGia.Text);
+            nhap.NguoiPhuTrach = user.TenTK;
+            nhap.GhiChu = rtbGhiChu.Text;
+
+            nhapCtrl.ThemThietBi(nhap);
+            nhapCtrl.CapNhatSL(nhap);
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
+        }
+
+        public void NhapCauHinh()
+        {
+            int[] maThietBi = new int[12];
+            maThietBi = cauHinhCtrl.LayCauHinh(Convert.ToInt32(cboCauHinh.SelectedValue.ToString()));
+            
+            nhap.MaNhap = nhapCtrl.GetID() + 1;
+            nhap.NgayNhap = Convert.ToDateTime(dtmNgayNhap.Value);
+            nhap.MaCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue.ToString());
+            nhap.NhaCungCap = txtNhaCungCap.Text;
+            nhap.NhaSanXuat = txtNSX.Text;
+            nhap.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            nhap.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+            nhap.DonGia = Convert.ToInt32(txtDonGia.Text);
+            nhap.NguoiPhuTrach = user.TenTK;
+            nhap.GhiChu = rtbGhiChu.Text;
+
+            nhapCtrl.ThemCauHinh(nhap);
+            for (int i = 1; i < 12; i++)
+            {
+                nhap.MaThietBi = maThietBi[i];
+                nhapCtrl.CapNhatSL(nhap);
+            }
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
         }
 
         //Hàm xử lý cho button thêm mới.
@@ -171,21 +241,15 @@ namespace QuanLyPhongMay
                 
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
-                    nhap.MaNhap = nhapCtrl.GetID() + 1;
-                    nhap.NgayNhap = Convert.ToDateTime(dtmNgayNhap.Value);
-                    nhap.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue.ToString());
-                    nhap.NhaCungCap = txtNhaCungCap.Text;
-                    nhap.NhaSanXuat = txtNSX.Text;
-                    nhap.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
-                    nhap.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-                    nhap.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    nhap.NguoiPhuTrach = user.TenTK;
-                    nhap.GhiChu = rtbGhiChu.Text;
-
-                    nhapCtrl.Them(nhap);
-                    nhapCtrl.CapNhatSL(nhap);
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lamMoi();
+                    if (loaiNhap)
+                    {
+                        NhapCauHinh();
+                    }
+                    else
+                    {
+                        NhapThietBi();
+                    }
+                    nhapCtrl.HienThiDgv(dgvDSNThietBi, dgvDSNCauHinh);
                 }
             }
         }
@@ -195,9 +259,7 @@ namespace QuanLyPhongMay
         {
             string loaiTK = "";
 
-            if (radMaNhap.Checked)
-                loaiTK = "maNhap";
-            else if (radMaThietBi.Checked)
+            if (radMaThietBi.Checked)
                 loaiTK = "maThietBi";
             else if (radNgayNhap.Checked)
                 loaiTK = "ngayNhap";
@@ -214,7 +276,7 @@ namespace QuanLyPhongMay
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")
             {
-                nhapCtrl.TimKiem(dgvDSNhap, txtTimKiem.Text, loaiTK);
+                nhapCtrl.TimKiem(dgvDSNThietBi, txtTimKiem.Text, loaiTK);
             }
         }
         
@@ -223,5 +285,6 @@ namespace QuanLyPhongMay
         {
             lamMoi();
         }
+
     }
 }

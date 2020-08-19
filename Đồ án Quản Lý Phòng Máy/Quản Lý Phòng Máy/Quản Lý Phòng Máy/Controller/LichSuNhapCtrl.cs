@@ -21,15 +21,21 @@ namespace QuanLyPhongMay.Controller
         }
 
         //Hàm hiển thị danh sách LSNhap lên datagridview.
-        public void HienThiDgv(DataGridView dgv)
+        public void HienThiDgv(DataGridView dgvTB, DataGridView dgvCH)
         {
-            dgv.DataSource = lsNhapData.LayDSLichSuNhap().Tables[0];
+            dgvTB.DataSource = lsNhapData.LayDSLichSuNhapTB().Tables[0];
+            dgvCH.DataSource = lsNhapData.LayDSLichSuNhapCH().Tables[0];
         }
 
         //Hàm xử lý thêm mới LSNhap.
-        public int Them(LichSuNhap lsNhap)
+        public int ThemThietBi(LichSuNhap lsNhap)
         {
-            return lsNhapData.Them(lsNhap);
+            return lsNhapData.ThemThietBi(lsNhap);
+        }
+
+        public int ThemCauHinh(LichSuNhap lsNhap)
+        {
+            return lsNhapData.ThemCauHinh(lsNhap);
         }
 
         //Hàm cập nhật lại số lượng sau khi thêm mới LSNhap.

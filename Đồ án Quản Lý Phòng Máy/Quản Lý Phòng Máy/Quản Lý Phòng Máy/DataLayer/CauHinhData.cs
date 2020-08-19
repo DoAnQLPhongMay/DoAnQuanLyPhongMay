@@ -32,6 +32,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayDSCauHinh(int maCauHinh)
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_CauHinh ",
+                where = "WHERE MaCauHinh = '" + maCauHinh + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm kiểm tra tên đã tồn tại chưa.
         public bool KTCauHinh(string tenCauHinh)
         {
