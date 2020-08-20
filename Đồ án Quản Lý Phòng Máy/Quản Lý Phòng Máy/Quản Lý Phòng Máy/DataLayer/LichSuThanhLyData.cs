@@ -28,11 +28,22 @@ namespace QuanLyPhongMay.DataLayer
         }
 
         //Hàm xử lý lấy danh sách lịch sử thanh lý.
-        public DataSet LayDSLichSuThanhLy()
+        public DataSet LayDSLichSuThanhLyTB()
         {
-            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ChiTietThietBi.TenThietBi ",
-                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ChiTietThietBi ",
-                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ChiTietThietBi.MaThietBi";
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ThietBi.TenThietBi ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ThietBi ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ThietBi.MaThietBi";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
+        public DataSet LayDSLichSuThanhLyCH()
+        {
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_CauHinh.TenCauHinh ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_CauHinh ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaCauHinh = dtb_CauHinh.MaCauHinh";
 
             SqlCommand cmd = new SqlCommand(select + from + where);
 
@@ -40,7 +51,7 @@ namespace QuanLyPhongMay.DataLayer
         }
 
         //Hàm xử lý thêm mới lịch sử thanh lý.
-        public int Them(LichSuThanhLy lsThanhLy)
+        public int ThemThietBi(LichSuThanhLy lsThanhLy)
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -61,12 +72,33 @@ namespace QuanLyPhongMay.DataLayer
             return cls.CapNhatDL(cmd);
         }
 
+        public int ThemCauHinh(LichSuThanhLy lsThanhLy)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            string insert = "INSERT INTO dtb_LichSuThanhLy(MaThanhLy, NgayThanhLy, MaCauHinh, NhaSanXuat, NamSanxuat, SoLuong, DonGia, NguoiPhuTrach, GhiChu) ",
+                values = "VALUES(@maThanhLy, @ngayThanhLy, @maCauHinh, @nhaSanXuat, @namSanxuat, @soLuong, @donGia, @nguoiPhuTrach, @ghiChu)";
+
+            cmd.CommandText = insert + values;
+            cmd.Parameters.Add("maThanhLy", SqlDbType.Int).Value = lsThanhLy.MaThanhLy;
+            cmd.Parameters.Add("ngayThanhLy", SqlDbType.Date).Value = lsThanhLy.NgayThanhLy;
+            cmd.Parameters.Add("maCauHinh", SqlDbType.Int).Value = lsThanhLy.MaCauHinh;
+            cmd.Parameters.Add("nhaSanXuat", SqlDbType.NVarChar).Value = lsThanhLy.NhaSanXuat;
+            cmd.Parameters.Add("namSanxuat", SqlDbType.Int).Value = lsThanhLy.NamSanXuat;
+            cmd.Parameters.Add("soLuong", SqlDbType.Int).Value = lsThanhLy.SoLuong;
+            cmd.Parameters.Add("donGia", SqlDbType.Int).Value = lsThanhLy.DonGia;
+            cmd.Parameters.Add("nguoiPhuTrach", SqlDbType.VarChar).Value = lsThanhLy.NguoiPhuTrach;
+            cmd.Parameters.Add("ghiChu", SqlDbType.NVarChar).Value = lsThanhLy.GhiChu;
+
+            return cls.CapNhatDL(cmd);
+        }
+
         //Hàm xử lý cập nhật lại số lượng của thiết bị sau khi thanh lý.
         public int CapNhatSL(LichSuThanhLy lsThanhLy)
         {
             SqlCommand cmd = new SqlCommand();
 
-            string update = "UPDATE dtb_ChiTietThietBi ",
+            string update = "UPDATE dtb_ThietBi ",
                 set = "SET SoLuong = SoLuong - @soLuong ",
                 where = "WHERE MaThietBi = @maThietBi";
 
@@ -78,28 +110,52 @@ namespace QuanLyPhongMay.DataLayer
         }
 
         //Hàm xử lý tìm kiếm lịch sử thanh lý.
-        public DataSet LayDSTK(string key, string loaiTK)
+        public DataSet LayDSTKTB(string key1, string key2, string loaiTK)
         {
-            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ChiTietThietBi.TenThietBi ",
-                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ChiTietThietBi ",
-                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ChiTietThietBi.MaThietBi ";
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_ThietBi.TenThietBi ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_ThietBi ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaThietBi = dtb_ThietBi.MaThietBi ";
 
             switch (loaiTK)
             {
-                case "maThanhLy":
-                    where += "AND dtb_LichSuThanhLy.MaThanhLy = " + key + "";
-                    break;
-                case "ngayThanhLy":
-                    where += "AND dtb_LichSuThanhLy.NgayThanhLy = '" + key + "'";
+                case "ngayThanhLY":
+                    where += "AND dtb_LichSuThanhLy.NgayThanhLy BETWEEN '" + key1 + "' AND '" + key2 + "'";
                     break;
                 case "nhaSanXuat":
-                    where += "AND dtb_LichSuThanhLy.NhaSanXuat = '" + key + "'";
+                    where += "AND dtb_LichSuThanhLy.NhaSanXuat like N'%" + key1 + "%'";
                     break;
-                case "maThietBi":
-                    where += "AND dtb_LichSuThanhLy.MaThietBi = " + key + "";
+                case "thietBi":
+                    where += "AND (dtb_LichSuThanhLy.MaThietBi like '%" + key1 + "%' OR dtb_ThietBi.TenThietBi like N'%" + key1 + "%')";
                     break;
                 default:
-                    where += "AND (dtb_LichSuThanhLy.NguoiPhuTrach = '" + key + "' OR dtb_TaiKhoan.HoVaTen = '" + key + "')";
+                    where += "AND (dtb_LichSuThanhLy.NguoiPhuTrach like N'%" + key1 + "%' OR dtb_TaiKhoan.HoVaTen like N'%" + key1 + "%')";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
+        public DataSet LayDSTKCH(string key1, string key2, string loaiTK)
+        {
+            string select = "SELECT dtb_LichSuThanhLy.*, dtb_TaiKhoan.HoVaTen, dtb_CauHinh.TenCauHinh ",
+                from = "FROM dtb_LichSuThanhLy, dtb_TaiKhoan, dtb_CauHinh ",
+                where = "WHERE dtb_LichSuThanhLy.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuThanhLy.MaCauHinh = dtb_CauHinh.MaCauHinh ";
+
+            switch (loaiTK)
+            {
+                case "ngayThanhLY":
+                    where += "AND dtb_LichSuThanhLy.NgayThanhLy BETWEEN '" + key1 + "' AND '" + key2 + "'";
+                    break;
+                case "nhaSanXuat":
+                    where += "AND dtb_LichSuThanhLy.NhaSanXuat like N'%" + key1 + "%'";
+                    break;
+                case "cauHinh":
+                    where += "AND (dtb_LichSuThanhLy.MaCauHinh like '%" + key1 + "%' OR dtb_LichSuThanhLy.TenCauHinh like N'%" + key1 + "%')";
+                    break;
+                default:
+                    where += "AND (dtb_LichSuThanhLy.NguoiPhuTrach like N'%" + key1 + "%' OR dtb_TaiKhoan.HoVaTen like N'%" + key1 + "%')";
                     break;
             }
 

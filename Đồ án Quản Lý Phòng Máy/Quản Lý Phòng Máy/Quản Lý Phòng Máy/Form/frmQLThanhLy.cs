@@ -19,6 +19,7 @@ namespace QuanLyPhongMay
         //Khởi tạo các biến giá trị.
         LichSuThanhLyCtrl thanhLyCtrl = new LichSuThanhLyCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
+        CauHinhCtrl cauHinhCtrl = new CauHinhCtrl();
         LichSuThanhLy thanhLy = new LichSuThanhLy();
         User user = new User();
         TTThietBi thongTin = new TTThietBi();
@@ -47,25 +48,33 @@ namespace QuanLyPhongMay
                 txtNguoiPhuTrach.Text = "vmkhoi";
             }
 
-            thanhLyCtrl.HienThiDgv(dgvDSThietBi);
+            thanhLyCtrl.HienThiDgv(dgvDSThietBi, dgvDSCauHinh);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
+            cauHinhCtrl.HienThiCbo(cboCauHinh);
             cboTenThietBi.Text = "";
+            cboCauHinh.Text = "";
         }
 
         //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            txtMaThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[0].Value.ToString();
-            dtmNgayThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[1].Value.ToString();
-            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[2].Value);
-            txtNSX.Text = dgvDSThietBi.CurrentRow.Cells[3].Value.ToString();
-            txtNamSX.Text = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
-            txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells[5].Value.ToString();
-            txtDonGia.Text = dgvDSThietBi.CurrentRow.Cells[6].Value.ToString();
-            rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells[8].Value.ToString();
+            lamMoi();
+            txtMaThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["MaThanhLy"].Value.ToString();
+            dtmNgayThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["NgayThanhLy"].Value.ToString();
+            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells["MaThietBi"].Value);
+            txtNSX.Text = dgvDSThietBi.CurrentRow.Cells["NhaSanXuat"].Value.ToString();
+            txtNamSX.Text = dgvDSThietBi.CurrentRow.Cells["NamSanxuat"].Value.ToString();
+            txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells["SoLuong"].Value.ToString();
+            txtDonGia.Text = dgvDSThietBi.CurrentRow.Cells["DonGia"].Value.ToString();
+            rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells["GhiChu"].Value.ToString();
             txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
 
             btnThemMoi.Enabled = false;
+        }
+
+        private void dgv_DoubleClickCH(object sender, EventArgs e)
+        {
+            lamMoi();
         }
 
         //Hàm gán giá trị từ combox sang text.
@@ -96,19 +105,30 @@ namespace QuanLyPhongMay
             }
         }
 
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         //Hàm làm mới các text.
         private void lamMoi()
         {
-            txtMaThanhLy.Text = "";
-            txtNSX.Text = "";
-            txtNamSX.Text = "";
-            txtDonGia.Text = "";
-            txtSoLuong.Text = "";
+            txtMaThanhLy.Clear();
+            txtNSX.Clear();
+            txtNamSX.Clear();
+            txtDonGia.Clear();
+            txtSoLuong.Clear();
+            txtTong.Clear();
+            txtTimKiem.Clear();
+            rtbGhiChu.Clear();
             cboTenThietBi.Text = "";
-            rtbGhiChu.Text = "";
+            cboCauHinh.Text = "";
 
             btnThemMoi.Enabled = true;
-            thanhLyCtrl.HienThiDgv(dgvDSThietBi);
         }
 
         //Hàm kiểm tra dữ liệu nhập vào.
@@ -117,14 +137,16 @@ namespace QuanLyPhongMay
             bool kTra = true;
             thongTin = thietBiCtrl.LayThongTin(Convert.ToInt32(cboTenThietBi.SelectedValue));
 
-            if (txtNamSX.Text == "")
+
+
+            if (cboTenThietBi.Text == "" && cboCauHinh.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn lại thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn thanh lý thiết bị hoặc nhập cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (cboTenThietBi.Text == "")
+            else if (cboTenThietBi.Text != "" && cboCauHinh.Text != "")
             {
-                MessageBox.Show("Vui lòng chọn thiết bị.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng để trống 1 trong 2 mục thiết bị hoặc cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (txtSoLuong.Text == "")
@@ -156,28 +178,67 @@ namespace QuanLyPhongMay
             return kTra;
         }
 
+        public void ThanhLyThietBi()
+        {
+            thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
+            thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
+            thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+            thanhLy.NhaSanXuat = txtNSX.Text;
+            thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+            thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
+            thanhLy.NguoiPhuTrach = user.TenTK;
+            thanhLy.GhiChu = rtbGhiChu.Text;
+
+            thanhLyCtrl.ThemThietBi(thanhLy);
+            thanhLyCtrl.CapNhatSL(thanhLy);
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
+        }
+
+        public void ThanhLyCauHinh()
+        {
+            int[] maThietBi = new int[12];
+            maThietBi = cauHinhCtrl.LayCauHinh(Convert.ToInt32(cboCauHinh.SelectedValue.ToString()));
+
+            thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
+            thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
+            thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+            thanhLy.NhaSanXuat = txtNSX.Text;
+            thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+            thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
+            thanhLy.NguoiPhuTrach = user.TenTK;
+            thanhLy.GhiChu = rtbGhiChu.Text;
+
+            thanhLyCtrl.ThemCauHinh(thanhLy);
+            for (int i = 1; i < 12; i++)
+            {
+                thanhLy.MaThietBi = maThietBi[i];
+                thanhLyCtrl.CapNhatSL(thanhLy);
+            }
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
+        }
+
         //Hàm xử lý cho button thêm mới.
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             if(kiemTra())
             {
                 DialogResult dlg = MessageBox.Show("Lịch sử thanh lý không thể chỉnh sửa sau khi đã thêm.\nHày chắc rằng dữ liệu nhập vào là đúng.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
-                    thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
-                    thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
-                    thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
-                    thanhLy.NhaSanXuat = txtNSX.Text;
-                    thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
-                    thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-                    thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
-                    thanhLy.NguoiPhuTrach = user.TenTK;
-                    thanhLy.GhiChu = rtbGhiChu.Text;
-
-                    thanhLyCtrl.Them(thanhLy);
-                    thanhLyCtrl.CapNhatSL(thanhLy);
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lamMoi();
+                    if (cboCauHinh.Text != "")
+                    {
+                        ThanhLyCauHinh();
+                    }
+                    else if (cboTenThietBi.Text != "")
+                    {
+                        ThanhLyThietBi();
+                    }
+                    thanhLyCtrl.HienThiDgv(dgvDSThietBi, dgvDSCauHinh);
                 }
             }
         }
@@ -186,17 +247,34 @@ namespace QuanLyPhongMay
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string loaiTK = "";
+            string key1 = "", key2 = "";
 
-            if (radCauHinh.Checked)
-                loaiTK = "cauHinh";
-            else if (radThietBi.Checked)
+            if (radThietBi.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "thietBi";
+            }
             else if (radNgayThanhLy.Checked)
-                loaiTK = "ngayThanhLy";
+            {
+                key1 = dtmTu.Value.ToString();
+                key2 = dtmDen.Value.ToString();
+                loaiTK = "ngayThanhLY";
+            }
             else if (radNguoiPhuTrach.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "nguoiPhuTrach";
+            }
             else if (radNhaSanXuat.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "nhaSanXuat";
+            }
+            else if (radCauHinh.Checked)
+            {
+                key1 = txtTimKiem.Text;
+                loaiTK = "cauHinh";
+            }
             else
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
@@ -204,7 +282,24 @@ namespace QuanLyPhongMay
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")
             {
-                thanhLyCtrl.TimKiem(dgvDSThietBi, txtTimKiem.Text, loaiTK);
+                if (radCauHinh.Checked != true && radThietBi.Checked != true)
+                {
+                    thanhLyCtrl.TimKiemTB(dgvDSThietBi, key1, key2, loaiTK);
+                    thanhLyCtrl.TimKiemCH(dgvDSCauHinh, key1, key2, loaiTK);
+                }
+                else if (radCauHinh.Checked == true)
+                {
+                    thanhLyCtrl.TimKiemCH(dgvDSCauHinh, key1, key2, loaiTK);
+                }
+                else
+                {
+                    thanhLyCtrl.TimKiemTB(dgvDSThietBi, key1, key2, loaiTK);
+                }
+            }
+            else if (radNgayThanhLy.Checked && loaiTK != "")
+            {
+                thanhLyCtrl.TimKiemTB(dgvDSThietBi, key1, key2, loaiTK);
+                thanhLyCtrl.TimKiemCH(dgvDSCauHinh, key1, key2, loaiTK);
             }
         }
 
@@ -212,14 +307,7 @@ namespace QuanLyPhongMay
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             lamMoi();
-            if (cboTenThietBi.SelectedValue != null)
-            {
-                //int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
-                thongTin = thietBiCtrl.LayThongTin(6);
-                MessageBox.Show(thongTin.NhaSanXuat);
-                txtNSX.Text = thongTin.NhaSanXuat;
-                txtNamSX.Text = thongTin.NamSanXuat.ToString();
-            }
+            thanhLyCtrl.HienThiDgv(dgvDSThietBi, dgvDSCauHinh);
         }
 
         //-------------------------------------- Hàm không xử dụng --------------------------------------//

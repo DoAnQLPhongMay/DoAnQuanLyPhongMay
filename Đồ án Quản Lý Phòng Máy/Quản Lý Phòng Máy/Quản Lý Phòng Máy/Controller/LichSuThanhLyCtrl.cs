@@ -22,15 +22,21 @@ namespace QuanLyPhongMay.Controller
         }
 
         //Hàm hiển thị danh sách LSThanhLy lên datagridview.
-        public void HienThiDgv(DataGridView dgv)
+        public void HienThiDgv(DataGridView dgvTB, DataGridView dgvCH)
         {
-            dgv.DataSource = lsThanhLyData.LayDSLichSuThanhLy().Tables[0];
+            dgvTB.DataSource = lsThanhLyData.LayDSLichSuThanhLyTB().Tables[0];
+            dgvCH.DataSource = lsThanhLyData.LayDSLichSuThanhLyCH().Tables[0];
         }
 
         //Hàm xử lý thêm mới LSThanhLy.
-        public int Them(LichSuThanhLy lsThanhLy)
+        public int ThemThietBi(LichSuThanhLy lsThanhLy)
         {
-            return lsThanhLyData.Them(lsThanhLy);
+            return lsThanhLyData.ThemThietBi(lsThanhLy);
+        }
+
+        public int ThemCauHinh(LichSuThanhLy lsThanhLy)
+        {
+            return lsThanhLyData.ThemCauHinh(lsThanhLy);
         }
 
         //Hàm cập nhật lại số lượng sau khi thêm mới LSThanhLy.
@@ -40,9 +46,14 @@ namespace QuanLyPhongMay.Controller
         }
 
         //Hàm xử lý tìm kiếm LSThanhLy.
-        public void TimKiem(DataGridView dgv, string key, string loaiTK)
+        public void TimKiemTB(DataGridView dgv, string key1, string key2, string loaiTK)
         {
-            dgv.DataSource = lsThanhLyData.LayDSTK(key, loaiTK).Tables[0];
+            dgv.DataSource = lsThanhLyData.LayDSTKTB(key1, key2, loaiTK).Tables[0];
+        }
+
+        public void TimKiemCH(DataGridView dgv, string key1, string key2, string loaiTK)
+        {
+            dgv.DataSource = lsThanhLyData.LayDSTKCH(key1, key2, loaiTK).Tables[0];
         }
     }
 }

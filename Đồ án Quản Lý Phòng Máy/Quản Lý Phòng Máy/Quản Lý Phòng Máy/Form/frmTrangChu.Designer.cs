@@ -40,6 +40,8 @@
             this.lbl_QL = new System.Windows.Forms.Label();
             this.pic_Menu = new System.Windows.Forms.PictureBox();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnQLCauHinh = new System.Windows.Forms.Button();
+            this.btnQLKhoa = new System.Windows.Forms.Button();
             this.btnQLThietBi = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Hiden = new System.Windows.Forms.Button();
@@ -49,8 +51,7 @@
             this.btn_QLPhongMay = new System.Windows.Forms.Button();
             this.btn_QLMay = new System.Windows.Forms.Button();
             this.btn_QLTaiKhoan = new System.Windows.Forms.Button();
-            this.btnQLCauHinh = new System.Windows.Forms.Button();
-            this.btnQLKhoa = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel_Xanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Bachground)).BeginInit();
@@ -178,6 +179,7 @@
             this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnMenu.Controls.Add(this.panel2);
             this.pnMenu.Controls.Add(this.btnQLCauHinh);
             this.pnMenu.Controls.Add(this.btnQLKhoa);
             this.pnMenu.Controls.Add(this.btnQLThietBi);
@@ -194,6 +196,42 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(243, 763);
             this.pnMenu.TabIndex = 1;
+            // 
+            // btnQLCauHinh
+            // 
+            this.btnQLCauHinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnQLCauHinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQLCauHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLCauHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLCauHinh.ForeColor = System.Drawing.Color.White;
+            this.btnQLCauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnQLCauHinh.Image")));
+            this.btnQLCauHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLCauHinh.Location = new System.Drawing.Point(3, 11);
+            this.btnQLCauHinh.Name = "btnQLCauHinh";
+            this.btnQLCauHinh.Size = new System.Drawing.Size(231, 47);
+            this.btnQLCauHinh.TabIndex = 11;
+            this.btnQLCauHinh.Text = "Quản Lý Cấu Hình";
+            this.btnQLCauHinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLCauHinh.UseVisualStyleBackColor = true;
+            this.btnQLCauHinh.Click += new System.EventHandler(this.btnQLCauHinh_Click);
+            // 
+            // btnQLKhoa
+            // 
+            this.btnQLKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnQLKhoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQLKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLKhoa.ForeColor = System.Drawing.Color.White;
+            this.btnQLKhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnQLKhoa.Image")));
+            this.btnQLKhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLKhoa.Location = new System.Drawing.Point(3, 64);
+            this.btnQLKhoa.Name = "btnQLKhoa";
+            this.btnQLKhoa.Size = new System.Drawing.Size(231, 47);
+            this.btnQLKhoa.TabIndex = 10;
+            this.btnQLKhoa.Text = "Quản Lý Khoa";
+            this.btnQLKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLKhoa.UseVisualStyleBackColor = true;
+            this.btnQLKhoa.Click += new System.EventHandler(this.btnQLKhoa_Click);
             // 
             // btnQLThietBi
             // 
@@ -351,41 +389,12 @@
             this.btn_QLTaiKhoan.UseVisualStyleBackColor = true;
             this.btn_QLTaiKhoan.Click += new System.EventHandler(this.btn_QLTaiKhoan_Click);
             // 
-            // btnQLCauHinh
+            // panel2
             // 
-            this.btnQLCauHinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnQLCauHinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLCauHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLCauHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLCauHinh.ForeColor = System.Drawing.Color.White;
-            this.btnQLCauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnQLCauHinh.Image")));
-            this.btnQLCauHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLCauHinh.Location = new System.Drawing.Point(3, 11);
-            this.btnQLCauHinh.Name = "btnQLCauHinh";
-            this.btnQLCauHinh.Size = new System.Drawing.Size(231, 47);
-            this.btnQLCauHinh.TabIndex = 11;
-            this.btnQLCauHinh.Text = "Quản Lý Cấu Hình";
-            this.btnQLCauHinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLCauHinh.UseVisualStyleBackColor = true;
-            this.btnQLCauHinh.Click += new System.EventHandler(this.btnQLCauHinh_Click);
-            // 
-            // btnQLKhoa
-            // 
-            this.btnQLKhoa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnQLKhoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLKhoa.ForeColor = System.Drawing.Color.White;
-            this.btnQLKhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnQLKhoa.Image")));
-            this.btnQLKhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLKhoa.Location = new System.Drawing.Point(3, 64);
-            this.btnQLKhoa.Name = "btnQLKhoa";
-            this.btnQLKhoa.Size = new System.Drawing.Size(231, 47);
-            this.btnQLKhoa.TabIndex = 10;
-            this.btnQLKhoa.Text = "Quản Lý Khoa";
-            this.btnQLKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLKhoa.UseVisualStyleBackColor = true;
-            this.btnQLKhoa.Click += new System.EventHandler(this.btnQLKhoa_Click);
+            this.panel2.Location = new System.Drawing.Point(243, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(589, 763);
+            this.panel2.TabIndex = 2;
             // 
             // frmTrangChu
             // 
@@ -435,5 +444,6 @@
         private System.Windows.Forms.Button btnQLThietBi;
         private System.Windows.Forms.Button btnQLCauHinh;
         private System.Windows.Forms.Button btnQLKhoa;
+        private System.Windows.Forms.Panel panel2;
     }
 }

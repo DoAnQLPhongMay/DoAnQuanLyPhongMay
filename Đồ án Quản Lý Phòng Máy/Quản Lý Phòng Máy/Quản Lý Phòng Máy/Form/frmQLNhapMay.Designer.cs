@@ -40,6 +40,10 @@
             this.txtNguoiPhuTrach = new System.Windows.Forms.TextBox();
             this.lblNguoiPhuTrach = new System.Windows.Forms.Label();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.dtmDen = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtmTu = new System.Windows.Forms.DateTimePicker();
             this.radCauHinh = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.radNhaCungCap = new System.Windows.Forms.RadioButton();
@@ -96,10 +100,6 @@
             this.MaCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDSThietbi = new System.Windows.Forms.Label();
             this.lblDSCauHinh = new System.Windows.Forms.Label();
-            this.dtmTu = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtmDen = new System.Windows.Forms.DateTimePicker();
             this.grpChiTietNhapMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNThietBi)).BeginInit();
@@ -254,6 +254,40 @@
             this.grpTimKiem.TabIndex = 44;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
+            // 
+            // dtmDen
+            // 
+            this.dtmDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmDen.Location = new System.Drawing.Point(180, 58);
+            this.dtmDen.Name = "dtmDen";
+            this.dtmDen.Size = new System.Drawing.Size(88, 20);
+            this.dtmDen.TabIndex = 61;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(144, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Đến:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Từ:";
+            // 
+            // dtmTu
+            // 
+            this.dtmTu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmTu.Location = new System.Drawing.Point(38, 58);
+            this.dtmTu.Name = "dtmTu";
+            this.dtmTu.Size = new System.Drawing.Size(88, 20);
+            this.dtmTu.TabIndex = 58;
             // 
             // radCauHinh
             // 
@@ -420,7 +454,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuong.TabIndex = 11;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // lblSoLuong
             // 
@@ -438,7 +472,7 @@
             this.txtNamSX.Name = "txtNamSX";
             this.txtNamSX.Size = new System.Drawing.Size(100, 20);
             this.txtNamSX.TabIndex = 9;
-            this.txtNamSX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
+            this.txtNamSX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // lblNamSX
             // 
@@ -762,40 +796,6 @@
             this.lblDSCauHinh.Size = new System.Drawing.Size(63, 13);
             this.lblDSCauHinh.TabIndex = 58;
             this.lblDSCauHinh.Text = "Cấu Hình:";
-            // 
-            // dtmTu
-            // 
-            this.dtmTu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmTu.Location = new System.Drawing.Point(38, 58);
-            this.dtmTu.Name = "dtmTu";
-            this.dtmTu.Size = new System.Drawing.Size(88, 20);
-            this.dtmTu.TabIndex = 58;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Từ:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(144, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Đến:";
-            // 
-            // dtmDen
-            // 
-            this.dtmDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmDen.Location = new System.Drawing.Point(180, 58);
-            this.dtmDen.Name = "dtmDen";
-            this.dtmDen.Size = new System.Drawing.Size(88, 20);
-            this.dtmDen.TabIndex = 61;
             // 
             // frmQLNhapMay
             // 

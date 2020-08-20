@@ -15,7 +15,6 @@ namespace QuanLyPhongMay
         LichSuNhap nhap = new LichSuNhap();
         User user = new User();
         TTThietBi thongTin = new TTThietBi();
-        bool loaiNhap = false;
 
         //Hàm khởi tạo mặc định của form.
         public frmQLNhapMay()
@@ -51,7 +50,9 @@ namespace QuanLyPhongMay
         //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            lamMoi();
+            cboCauHinh.Text = "";
+            txtNSX.Clear();
+            txtNamSX.Clear();
             txtMaNhap.Text = dgvDSNThietBi.CurrentRow.Cells["MaNhap"].Value.ToString();
             dtmNgayNhap.Text = dgvDSNThietBi.CurrentRow.Cells["NgayNhap"].Value.ToString();
             cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSNThietBi.CurrentRow.Cells["MaThietBi"].Value);
@@ -68,7 +69,9 @@ namespace QuanLyPhongMay
 
         private void dgv_DoubleClickCH(object sender, EventArgs e)
         {
-            lamMoi();
+            cboTenThietBi.Text = "";
+            txtNSX.Clear();
+            txtNamSX.Clear();
             txtMaNhap.Text = dgvDSNCauHinh.CurrentRow.Cells["ID"].Value.ToString();
             dtmNgayNhap.Text = dgvDSNCauHinh.CurrentRow.Cells["Ngay"].Value.ToString();
             cboCauHinh.SelectedValue = Convert.ToInt32(dgvDSNCauHinh.CurrentRow.Cells["MaCH"].Value);
@@ -110,20 +113,29 @@ namespace QuanLyPhongMay
                 e.Handled = true;
             }
         }
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         //Hàm làm mới các text.
         private void lamMoi()
         {
             txtMaNhap.Clear();
+            txtNhaCungCap.Clear();
             txtNSX.Clear();
             txtNamSX.Clear();
             txtDonGia.Clear();
             txtSoLuong.Clear();
-            txtNhaCungCap.Clear();
+            txtTong.Clear();
             rtbGhiChu.Clear();
+            txtTimKiem.Clear();
             cboTenThietBi.Text = "";
             cboCauHinh.Text = "";
-            loaiNhap = false;
 
             btnThemMoi.Enabled = true;
         }
@@ -177,11 +189,6 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
-            }
-
-            if(cboCauHinh.Text != "")
-            {
-                loaiNhap = true;
             }
 
             return kTra;
@@ -323,6 +330,7 @@ namespace QuanLyPhongMay
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             lamMoi();
+            nhapCtrl.HienThiDgv(dgvDSNThietBi, dgvDSNCauHinh);
         }
 
         private void radNgayNhap_CheckedChanged(object sender, EventArgs e)

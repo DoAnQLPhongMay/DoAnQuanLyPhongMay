@@ -12,6 +12,7 @@ namespace QuanLyPhongMay.BUS
         private int _maThanhLy;
         private DateTime _ngayThanhLy;
         private int _maThietBi;
+        private int _maCauHinh;
         private string _nhaSanXuat;
         private int _soLuong;
         private int _namSanXuat;
@@ -71,5 +72,7 @@ namespace QuanLyPhongMay.BUS
             get { return _ghiChu; }
             set { _ghiChu = value; }
         }
+        public int MaCauHinh 
+        { get => _maCauHinh; set => _maCauHinh = value; }
     }
 }
