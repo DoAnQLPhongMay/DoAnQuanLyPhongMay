@@ -272,9 +272,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(15, 83);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(90, 15);
+            this.label15.Size = new System.Drawing.Size(57, 15);
             this.label15.TabIndex = 1;
-            this.label15.Text = "Tên Tài Khoản:";
+            this.label15.Text = "Họ - Tên:";
             // 
             // btnThoat
             // 

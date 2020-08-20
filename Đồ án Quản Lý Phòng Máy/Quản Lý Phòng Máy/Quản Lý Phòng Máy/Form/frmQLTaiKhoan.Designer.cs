@@ -397,9 +397,9 @@
             this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoTen.Location = new System.Drawing.Point(290, 39);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(53, 15);
+            this.lblHoTen.Size = new System.Drawing.Size(57, 15);
             this.lblHoTen.TabIndex = 2;
-            this.lblHoTen.Text = "Họ & Tên:";
+            this.lblHoTen.Text = "Họ - Tên:";
             // 
             // lblQuyenHan
             // 
