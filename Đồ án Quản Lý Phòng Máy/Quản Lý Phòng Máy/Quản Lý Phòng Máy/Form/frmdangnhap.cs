@@ -54,7 +54,7 @@ namespace QuanLyPhongMay
             {
                 //Nếu đăng nhập thành công thì ẩn frmDangNhap và mở frmTrangChu.
                 //FormTrangChu frm = new FormTrangChu(user);
-                frmTrangChu frm = new frmTrangChu(user);
+                FormTrangChu frm = new FormTrangChu();
                 this.Hide();
                 frm.Show();
             }

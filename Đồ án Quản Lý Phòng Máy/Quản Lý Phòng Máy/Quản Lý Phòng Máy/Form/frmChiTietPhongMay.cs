@@ -48,19 +48,19 @@ namespace QuanLyPhongMay
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            frmQLPhongMay frm;
+            //frmQLPhongMay frm;
 
-            if (user.TenUser != "")
-            {
-                frm = new frmQLPhongMay(user);
-            }
-            else
-            {
-                frm = new frmQLPhongMay();
-            }
+            //if (user.TenUser != "")
+            //{
+            //    frm = new frmQLPhongMay(user);
+            //}
+            //else
+            //{
+            //    frm = new frmQLPhongMay();
+            //}
 
             this.Hide();
-            frm.Show();
+            //frm.Show();
         }
     }
 }

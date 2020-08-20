@@ -223,5 +223,49 @@ namespace QuanLyPhongMay
 
             frm.Show();
         }
+
+        //private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        //{
+        //    Form formulario;
+        //    formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+        //    //si el formulario/instancia no existe
+        //    if (formulario == null)
+        //    {
+        //        formulario = new MiForm();
+        //        formulario.TopLevel = false;
+        //        formulario.FormBorderStyle = FormBorderStyle.None;
+        //        formulario.Dock = DockStyle.Fill;
+        //        panelformularios.Controls.Add(formulario);
+        //        panelformularios.Tag = formulario;
+        //        formulario.Show();
+        //        formulario.BringToFront();
+        //        formulario.FormClosed += new FormClosedEventHandler(CloseForms);
+        //    }
+        //    //si el formulario/instancia existe
+        //    else
+        //    {
+        //        formulario.BringToFront();
+        //    }
+        //}
+
+        //private void CloseForms(object sender, FormClosedEventArgs e)
+        //{
+        //    if (Application.OpenForms["frmQLThietBi"] == null)
+        //        btnQLThietBi.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLTaiKhoan"] == null)
+        //        btnQLTaiKhoan.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLKhoa"] == null)
+        //        btnQLKhoa.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLMay"] == null)
+        //        btnQLMay.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLCauHinh"] == null)
+        //        btnQLCauHinh.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLPhongMay"] == null)
+        //        btnQLPhongMay.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmQLNhapMay"] == null)
+        //        btnQLNhapMay.BackColor = Color.FromArgb(4, 41, 68);
+        //    if (Application.OpenForms["frmLichSuCapNhat"] == null)
+        //        btnLichSuCapNhat.BackColor = Color.FromArgb(4, 41, 68);
+        //}
     }
 }

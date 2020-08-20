@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.picPassword = new System.Windows.Forms.PictureBox();
-            this.picUsername = new System.Windows.Forms.PictureBox();
             this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lblQuenMatKhau = new System.Windows.Forms.Label();
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.btnKiemTra = new System.Windows.Forms.Button();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picUsername = new System.Windows.Forms.PictureBox();
+            this.picPassword = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -56,17 +56,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(179, 23);
             this.txtEmail.TabIndex = 4;
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.picLogo.Image = global::QuanLyPhongMay.Properties.Resources.logo_cao_thang;
-            this.picLogo.Location = new System.Drawing.Point(12, 96);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(119, 191);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 8;
-            this.picLogo.TabStop = false;
             // 
             // btnThoat
             // 
@@ -82,24 +71,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // picPassword
-            // 
-            this.picPassword.Image = global::QuanLyPhongMay.Properties.Resources._lock;
-            this.picPassword.Location = new System.Drawing.Point(137, 129);
-            this.picPassword.Name = "picPassword";
-            this.picPassword.Size = new System.Drawing.Size(26, 25);
-            this.picPassword.TabIndex = 3;
-            this.picPassword.TabStop = false;
-            // 
-            // picUsername
-            // 
-            this.picUsername.Image = global::QuanLyPhongMay.Properties.Resources.user;
-            this.picUsername.Location = new System.Drawing.Point(137, 98);
-            this.picUsername.Name = "picUsername";
-            this.picUsername.Size = new System.Drawing.Size(26, 25);
-            this.picUsername.TabIndex = 1;
-            this.picUsername.TabStop = false;
             // 
             // txtTenTaiKhoan
             // 
@@ -168,12 +139,41 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::QuanLyPhongMay.Properties.Resources._lock;
+            this.pictureBox2.Image = global::QuanLyPhongMay.Properties.Resources.phone;
             this.pictureBox2.Location = new System.Drawing.Point(137, 160);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(26, 25);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.picLogo.Image = global::QuanLyPhongMay.Properties.Resources.logo_cao_thang;
+            this.picLogo.Location = new System.Drawing.Point(12, 96);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(119, 191);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 8;
+            this.picLogo.TabStop = false;
+            // 
+            // picUsername
+            // 
+            this.picUsername.Image = global::QuanLyPhongMay.Properties.Resources.user;
+            this.picUsername.Location = new System.Drawing.Point(137, 98);
+            this.picUsername.Name = "picUsername";
+            this.picUsername.Size = new System.Drawing.Size(26, 25);
+            this.picUsername.TabIndex = 1;
+            this.picUsername.TabStop = false;
+            // 
+            // picPassword
+            // 
+            this.picPassword.Image = global::QuanLyPhongMay.Properties.Resources.mail__1_;
+            this.picPassword.Location = new System.Drawing.Point(137, 129);
+            this.picPassword.Name = "picPassword";
+            this.picPassword.Size = new System.Drawing.Size(26, 25);
+            this.picPassword.TabIndex = 3;
+            this.picPassword.TabStop = false;
             // 
             // frmQuenMatKhau
             // 
@@ -197,10 +197,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

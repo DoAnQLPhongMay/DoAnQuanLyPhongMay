@@ -215,7 +215,7 @@ namespace QuanLyPhongMay
             {
                 int maPhong = Convert.ToInt32(dgvDSPhong.CurrentRow.Cells[0].Value.ToString());
                 frmChiTietPhongMay frm = new frmChiTietPhongMay(maPhong, user);
-                this.Hide();
+                
                 frm.Show();
             }
             else
