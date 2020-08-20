@@ -809,7 +809,7 @@
             this.Controls.Add(this.grpChiTietNhapMay);
             this.Controls.Add(this.lblNhapMay);
             this.Name = "frmQLNhapMay";
-            this.Text = "Quản Lý Nhập Máy";
+            this.Text = "Quản Lý Nhập";
             this.Load += new System.EventHandler(this.frm_QLNhapMay_Load);
             this.grpChiTietNhapMay.ResumeLayout(false);
             this.grpChiTietNhapMay.PerformLayout();

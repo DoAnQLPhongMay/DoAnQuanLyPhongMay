@@ -18,6 +18,7 @@ namespace QuanLyPhongMay
     {
         //Khởi tạo các biến giá trị.
         LichSuThanhLyCtrl thanhLyCtrl = new LichSuThanhLyCtrl();
+        LichSuNhapCtrl lsNhapCtrl = new LichSuNhapCtrl();
         ThietBiCtrl thietBiCtrl = new ThietBiCtrl();
         CauHinhCtrl cauHinhCtrl = new CauHinhCtrl();
         LichSuThanhLy thanhLy = new LichSuThanhLy();
@@ -58,7 +59,10 @@ namespace QuanLyPhongMay
         //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            lamMoi();
+            cboCauHinh.Text = "";
+            txtNSX.Clear();
+            txtNamSX.Clear();
+
             txtMaThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["MaThanhLy"].Value.ToString();
             dtmNgayThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["NgayThanhLy"].Value.ToString();
             cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells["MaThietBi"].Value);
@@ -74,7 +78,21 @@ namespace QuanLyPhongMay
 
         private void dgv_DoubleClickCH(object sender, EventArgs e)
         {
-            lamMoi();
+            cboTenThietBi.Text = "";
+            txtNSX.Clear();
+            txtNamSX.Clear();
+
+            txtMaThanhLy.Text = dgvDSCauHinh.CurrentRow.Cells["MaTL"].Value.ToString();
+            dtmNgayThanhLy.Text = dgvDSCauHinh.CurrentRow.Cells["Ngay"].Value.ToString();
+            cboCauHinh.SelectedValue = Convert.ToInt32(dgvDSCauHinh.CurrentRow.Cells["MaCH"].Value);
+            txtNSX.Text = dgvDSCauHinh.CurrentRow.Cells["NSX"].Value.ToString();
+            txtNamSX.Text = dgvDSCauHinh.CurrentRow.Cells["NamSX"].Value.ToString();
+            txtSoLuong.Text = dgvDSCauHinh.CurrentRow.Cells["SL"].Value.ToString();
+            txtDonGia.Text = dgvDSCauHinh.CurrentRow.Cells["DG"].Value.ToString();
+            rtbGhiChu.Text = dgvDSCauHinh.CurrentRow.Cells["GC"].Value.ToString();
+            txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
+
+            btnThemMoi.Enabled = false;
         }
 
         //Hàm gán giá trị từ combox sang text.
@@ -82,10 +100,21 @@ namespace QuanLyPhongMay
         {
             if (cboTenThietBi.SelectedValue != null)
             {
+                txtNamSX.Enabled = false;
+                txtNSX.Enabled = false;
                 int maThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
                 thongTin = thietBiCtrl.LayThongTin(maThietBi);
                 txtNSX.Text = thongTin.NhaSanXuat;
                 txtNamSX.Text = thongTin.NamSanXuat.ToString();
+            }
+        }
+
+        private void cboCH_Selected(object sender, EventArgs e)
+        {
+            if (cboCauHinh.SelectedValue != null)
+            {
+                txtNamSX.Enabled = true;
+                txtNSX.Enabled = true;
             }
         }
 
@@ -137,8 +166,6 @@ namespace QuanLyPhongMay
             bool kTra = true;
             thongTin = thietBiCtrl.LayThongTin(Convert.ToInt32(cboTenThietBi.SelectedValue));
 
-
-
             if (cboTenThietBi.Text == "" && cboCauHinh.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn thanh lý thiết bị hoặc nhập cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -159,7 +186,7 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo!", MessageBoxButtons.OK);
                 kTra = false;
             }
-            else if(thongTin.SoLuong < Convert.ToInt32(txtSoLuong.Text))
+            else if(thongTin.SoLuong < Convert.ToInt32(txtSoLuong.Text) && cboTenThietBi.Text != "")
             {
                 MessageBox.Show("Số lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK);
                 kTra = false;
@@ -203,9 +230,12 @@ namespace QuanLyPhongMay
 
             thanhLy.MaThanhLy = thanhLyCtrl.GetID() + 1;
             thanhLy.NgayThanhLy = Convert.ToDateTime(dtmNgayThanhLy.Value);
-            thanhLy.MaThietBi = Convert.ToInt32(cboTenThietBi.SelectedValue);
+            thanhLy.MaCauHinh = Convert.ToInt32(cboTenThietBi.SelectedValue);
             thanhLy.NhaSanXuat = txtNSX.Text;
-            thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            if(txtNamSX.Text != "")
+            {
+                thanhLy.NamSanXuat = Convert.ToInt32(txtNamSX.Text);
+            }
             thanhLy.SoLuong = Convert.ToInt32(txtSoLuong.Text);
             thanhLy.DonGia = Convert.ToInt32(txtDonGia.Text);
             thanhLy.NguoiPhuTrach = user.TenTK;
@@ -315,6 +345,5 @@ namespace QuanLyPhongMay
         {
 
         }
-
     }
 }

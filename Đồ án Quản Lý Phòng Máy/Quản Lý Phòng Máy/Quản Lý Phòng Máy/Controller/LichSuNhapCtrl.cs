@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuanLyPhongMay.DataLayer;
 using QuanLyPhongMay.BUS;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QuanLyPhongMay.Controller
 {
@@ -25,6 +26,23 @@ namespace QuanLyPhongMay.Controller
         {
             dgvTB.DataSource = lsNhapData.LayDSLichSuNhapTB().Tables[0];
             dgvCH.DataSource = lsNhapData.LayDSLichSuNhapCH().Tables[0];
+        }
+
+        public string[] LayThongTin(int maCauHinh)
+        {
+            string[] thongTin = new string[2];
+            DataSet ds = lsNhapData.LayThongTin();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if (Convert.ToInt32(dr["MaCauHinh"]) == maCauHinh)
+                {
+                    thongTin[0] = dr["NamSanXuat"].ToString();
+                    thongTin[1] = dr["NhaSanXuat"].ToString();
+                }
+            }
+
+            return thongTin;
         }
 
         //Hàm xử lý thêm mới LSNhap.

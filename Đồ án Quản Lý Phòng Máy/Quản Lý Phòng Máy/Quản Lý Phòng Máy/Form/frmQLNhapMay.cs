@@ -113,6 +113,7 @@ namespace QuanLyPhongMay
                 e.Handled = true;
             }
         }
+
         private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.

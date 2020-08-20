@@ -51,6 +51,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        //Hàm xử lý lấy thông tin LSNhap.
+        public DataSet LayThongTin()
+        {
+            string select = "SELECT * ",
+                from = "FROM dtb_LichSuNhap ";
+
+            SqlCommand cmd = new SqlCommand(select + from);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm xử lý thêm mới lịch sử nhập.
         public int ThemThietBi(LichSuNhap lsNhap)
         {
