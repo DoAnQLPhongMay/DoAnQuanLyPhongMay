@@ -43,6 +43,17 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
+        public DataSet LayDemCH(int maCauHinh)
+        {
+            string select = "SELECT COUNT (*) AS DemCH ",
+                from = "FROM dtb_May ",
+                where = "WHERE MaCauHinh = '" + maCauHinh + "'";
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
         //Hàm kiểm tra tên đã tồn tại chưa.
         public bool KTCauHinh(string tenCauHinh)
         {
@@ -53,6 +64,17 @@ namespace QuanLyPhongMay.DataLayer
             cmd.CommandText = select + from + where;
 
             return cls.KiemTra(cmd);
+        }
+
+        public DataSet KTThietBi(int maThietBi)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string select = "SELECT * ",
+                from = "FROM dtb_CauHinh ",
+                where = "WHERE ManHinh = '" + maThietBi + "' OR Chuot = '" + maThietBi + "' OR BanPhim = '" + maThietBi + "' OR Thung = '" + maThietBi + "' OR CPU = '" + maThietBi + "' OR MainBoard = '" + maThietBi + "' OR RAM = '" + maThietBi + "' OR OCung = '" + maThietBi + "' OR VGA = '" + maThietBi + "' OR PSU = '" + maThietBi + "' OR HeDieuHanh = '" + maThietBi + "'";
+            cmd.CommandText = select + from + where;
+
+            return cls.LayDuLieu(cmd);
         }
 
         //Hàm kiểm tra có đang sử dụng.

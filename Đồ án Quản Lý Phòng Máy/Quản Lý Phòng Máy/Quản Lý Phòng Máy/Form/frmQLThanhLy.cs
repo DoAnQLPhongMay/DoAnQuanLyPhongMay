@@ -40,7 +40,7 @@ namespace QuanLyPhongMay
         //Hàm load dữ liệu khi mở form.
         private void frm_QLThanhLy_Load(object sender, EventArgs e)
         {
-            if(user.TenUser != "")
+            if (user.TenUser != "")
             {
                 txtNguoiPhuTrach.Text = user.TenUser;
             }
@@ -165,6 +165,7 @@ namespace QuanLyPhongMay
         {
             bool kTra = true;
             thongTin = thietBiCtrl.LayThongTin(Convert.ToInt32(cboTenThietBi.SelectedValue));
+            int[] thietBi = new int[12];
 
             if (cboTenThietBi.Text == "" && cboCauHinh.Text == "")
             {
@@ -178,28 +179,62 @@ namespace QuanLyPhongMay
             }
             else if (txtSoLuong.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập số lương.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập số lương.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (txtDonGia.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập đơn giá.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if(thongTin.SoLuong < Convert.ToInt32(txtSoLuong.Text) && cboTenThietBi.Text != "")
+            else if (Convert.ToInt32(txtDonGia.Text) <= 0)
             {
-                MessageBox.Show("Số lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK);
-                kTra = false;
-            }
-            else if (Convert.ToInt32(txtDonGia.Text) < 0)
-            {
-                MessageBox.Show("Đơn giá không thể âm.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Đơn giá không thể âm.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if (Convert.ToInt32(txtSoLuong.Text) <= 0)
             {
-                MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK);
+                MessageBox.Show("Số lượng phải lớn hơn 0.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
+            }
+            else if (cboCauHinh.Text != "")
+            {
+                thietBi = cauHinhCtrl.LayCauHinh(Convert.ToInt32(cboCauHinh.SelectedValue));
+                TTThietBi ttin = new TTThietBi();
+                for(int i = 1; i < 12; i++)
+                {
+                    ttin = thietBiCtrl.LayThongTin(Convert.ToInt32(thietBi[i]));
+                    if ((ttin.SoLuong - cauHinhCtrl.DemCH(Convert.ToInt32(cboCauHinh.SelectedValue)) - Convert.ToInt32(txtSoLuong.Text)) < 0)
+                    {
+                        MessageBox.Show("Số lượng hiện có: " + ttin.SoLuong.ToString() + "\nSố lượng sử dụng: " + cauHinhCtrl.DemCH(Convert.ToInt32(cboCauHinh.SelectedValue)).ToString() + "\nSố lượng thanh lý: " + txtSoLuong.Text + "\nSố lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+            }
+            else if(cboTenThietBi.Text != "")
+            {
+                if(cauHinhCtrl.KTThietbi(Convert.ToInt32(cboTenThietBi.SelectedValue)) == 0)
+                {
+                    int slHienCo = thongTin.SoLuong;
+                    int slThanhLy = Convert.ToInt32(txtSoLuong.Text);
+                    if (slHienCo < slThanhLy)
+                    {
+                        MessageBox.Show("Số lượng hiện có: " + slHienCo.ToString() + "\nSố lượng thanh lý: " + slThanhLy.ToString() + "\nSố lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        kTra = false;
+                    }
+                }
+                else
+                {
+                    int slHienCo = thongTin.SoLuong;
+                    int slSuDung = cauHinhCtrl.DemCH(Convert.ToInt32(cboCauHinh.SelectedValue));
+                    int slThanhLy = Convert.ToInt32(txtSoLuong.Text);
+
+                    if (slHienCo - slSuDung - slThanhLy < 0)
+                    {
+                        MessageBox.Show("Số lượng hiện có: " + slHienCo.ToString() + "\nSố lượng sử dụng: " + slSuDung.ToString() + "\nSố lượng thanh lý: " + slThanhLy.ToString() + "\nSố lượng thanh lý lớn hơn số lượng thực tế.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        kTra = false;
+                    }
+                }
             }
 
             return kTra;

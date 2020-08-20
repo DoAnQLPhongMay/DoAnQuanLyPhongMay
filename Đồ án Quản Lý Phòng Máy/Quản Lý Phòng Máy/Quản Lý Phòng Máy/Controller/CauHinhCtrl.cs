@@ -63,6 +63,29 @@ namespace QuanLyPhongMay.Controller
             return cauHinh;
         }
 
+        public int DemCH(int maCauHinh)
+        {
+            int count;
+            DataSet ds = cauHinhData.LayDemCH(maCauHinh);
+
+            count = Convert.ToInt32(ds.Tables[0].Rows[0]["DemCH"]);
+
+            return count;
+        }
+
+        public int KTThietbi(int maThietBi)
+        {
+            DataSet ds = cauHinhData.KTThietBi(maThietBi);
+            if (ds == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return Convert.ToInt32(ds.Tables[0].Rows[0]["MaCauHinh"]);
+            }
+        }
+
         //Hàm xử lý thêm mới.
         public int Them(CauHinh cauHinh)
         {
