@@ -8,18 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyPhongMay.BUS;
+using QuanLyPhongMay.Class;
 using QuanLyPhongMay.Controller;
 
 namespace QuanLyPhongMay
 {
     public partial class frmThemTaiKhoan : Form
     {
+        TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
+        Quyenctrl quyenctrl = new Quyenctrl();
+        User user = new User();
+
         public frmThemTaiKhoan()
         {
             InitializeComponent();
         }
-        TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
-        Quyenctrl quyenctrl = new Quyenctrl();
+
+        public frmThemTaiKhoan(User user)
+        {
+            this.user = user;
+            InitializeComponent();
+        }
 
         bool KiemTra()
         {
@@ -27,46 +36,58 @@ namespace QuanLyPhongMay
 
             if (txtTenTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập họ & tên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
             else if (txtMaTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mã tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập mã tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
             else if (txtSDT.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập Số điện thoại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
             else if (txtEmail.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập Email.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
             else if (dtNgaySinh.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập ngày sinh.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
-            //else if (cboLoaiTaiKhoan.Text == "")
-            //{
-            //    MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    ktra = false;
-            //}
+            else if (cboLoaiTaiKhoan.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ktra = false;
+            }
             else if (txtTenDangNhap.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập Tên đăng nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
             else if (txtMatKhau.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ktra = false;
             }
 
             return ktra;
+        }
+
+        private void LamMoi()
+        {
+            txtTenDangNhap.Clear();
+            txtTenTaiKhoan.Clear();
+            txtSDT.Clear();
+            txtMatKhau.Clear();
+            txtMaTaiKhoan.Clear();
+            txtEmail.Clear();
+            txtDiaChi.Clear();
+            cboLoaiTaiKhoan.Text = "";
         }
 
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
@@ -84,7 +105,6 @@ namespace QuanLyPhongMay
                 tk.TenDangNhap = txtTenDangNhap.Text;
                 tk.MatKhau = txtMatKhau.Text;
                 tk.Loaitaikhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
-                MessageBox.Show(cboLoaiTaiKhoan.SelectedValue.ToString());
 
                 {
                     switch (tkctrl.Them(tk))
@@ -100,13 +120,7 @@ namespace QuanLyPhongMay
                             break;
                         case 1:
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtTenDangNhap.Text = "";
-                            txtTenTaiKhoan.Text = "";
-                            txtSDT.Text = "";
-                            txtMatKhau.Text = "";
-                            txtMaTaiKhoan.Text = "";
-                            txtEmail.Text = "";
-                            txtDiaChi.Text = "";
+                            LamMoi();
                             break;
                     }
                 }
@@ -115,24 +129,24 @@ namespace QuanLyPhongMay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            frm_QLTaiKhoan frm;
 
-            if (dlg == System.Windows.Forms.DialogResult.Yes)
+            if (user.TenUser != "")
             {
-                frm_QLTaiKhoan frm = new frm_QLTaiKhoan();
-                frm.Show();
-                this.Hide();
-            }    
+                frm = new frm_QLTaiKhoan(user);
+            }
+            else
+            {
+                frm = new frm_QLTaiKhoan();
+            }
+
+            this.Hide();
+            frm.Show();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            txtMaTaiKhoan.Text = "";
-            txtEmail.Text = "";
-            txtDiaChi.Text = "";
-            txtMatKhau.Text = "";
-            txtSDT.Text = "";
-            txtTenDangNhap.Text = "";
+            LamMoi();
         }
 
         public bool txtLoaiTaiKhoan { get; set; }
