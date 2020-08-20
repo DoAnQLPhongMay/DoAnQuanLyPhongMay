@@ -47,7 +47,7 @@ namespace QuanLyPhongMay
                 txtNguoiPhuTrach.Text = "vmkhoi";
             }
 
-            thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
+            thanhLyCtrl.HienThiDgv(dgvDSThietBi);
             thietBiCtrl.HienThiCbo(cboTenThietBi);
             cboTenThietBi.Text = "";
         }
@@ -55,14 +55,14 @@ namespace QuanLyPhongMay
         //Hàm gán giá trị từ datagridview lên text.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            txtMaThanhLy.Text = dgvDSThanhLy.CurrentRow.Cells[0].Value.ToString();
-            dtmNgayThanhLy.Text = dgvDSThanhLy.CurrentRow.Cells[1].Value.ToString();
-            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThanhLy.CurrentRow.Cells[2].Value);
-            txtNSX.Text = dgvDSThanhLy.CurrentRow.Cells[3].Value.ToString();
-            txtNamSX.Text = dgvDSThanhLy.CurrentRow.Cells[4].Value.ToString();
-            txtSoLuong.Text = dgvDSThanhLy.CurrentRow.Cells[5].Value.ToString();
-            txtDonGia.Text = dgvDSThanhLy.CurrentRow.Cells[6].Value.ToString();
-            rtbGhiChu.Text = dgvDSThanhLy.CurrentRow.Cells[8].Value.ToString();
+            txtMaThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[0].Value.ToString();
+            dtmNgayThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[1].Value.ToString();
+            cboTenThietBi.SelectedValue = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[2].Value);
+            txtNSX.Text = dgvDSThietBi.CurrentRow.Cells[3].Value.ToString();
+            txtNamSX.Text = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
+            txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells[5].Value.ToString();
+            txtDonGia.Text = dgvDSThietBi.CurrentRow.Cells[6].Value.ToString();
+            rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells[8].Value.ToString();
             txtTong.Text = (Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text)).ToString();
 
             btnThemMoi.Enabled = false;
@@ -108,7 +108,7 @@ namespace QuanLyPhongMay
             rtbGhiChu.Text = "";
 
             btnThemMoi.Enabled = true;
-            thanhLyCtrl.HienThiDgv(dgvDSThanhLy);
+            thanhLyCtrl.HienThiDgv(dgvDSThietBi);
         }
 
         //Hàm kiểm tra dữ liệu nhập vào.
@@ -189,7 +189,7 @@ namespace QuanLyPhongMay
 
             if (radMaThanhLy.Checked)
                 loaiTK = "maThanhLy";
-            else if (radMaThietBi.Checked)
+            else if (radThietBi.Checked)
                 loaiTK = "maThietBi";
             else if (radNgayThanhLy.Checked)
                 loaiTK = "ngayThanhLy";
@@ -204,7 +204,7 @@ namespace QuanLyPhongMay
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")
             {
-                thanhLyCtrl.TimKiem(dgvDSThanhLy, txtTimKiem.Text, loaiTK);
+                thanhLyCtrl.TimKiem(dgvDSThietBi, txtTimKiem.Text, loaiTK);
             }
         }
 

@@ -40,6 +40,7 @@
             this.txtNguoiPhuTrach = new System.Windows.Forms.TextBox();
             this.lblNguoiPhuTrach = new System.Windows.Forms.Label();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.radCauHinh = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.radNhaCungCap = new System.Windows.Forms.RadioButton();
             this.radNhaSanXuat = new System.Windows.Forms.RadioButton();
@@ -95,7 +96,6 @@
             this.MaCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDSThietbi = new System.Windows.Forms.Label();
             this.lblDSCauHinh = new System.Windows.Forms.Label();
-            this.radCauHinh = new System.Windows.Forms.RadioButton();
             this.grpChiTietNhapMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNThietBi)).BeginInit();
@@ -246,6 +246,17 @@
             this.grpTimKiem.TabIndex = 44;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
+            // 
+            // radCauHinh
+            // 
+            this.radCauHinh.AutoSize = true;
+            this.radCauHinh.Location = new System.Drawing.Point(321, 42);
+            this.radCauHinh.Name = "radCauHinh";
+            this.radCauHinh.Size = new System.Drawing.Size(77, 17);
+            this.radCauHinh.TabIndex = 58;
+            this.radCauHinh.TabStop = true;
+            this.radCauHinh.Text = "Cấu Hình";
+            this.radCauHinh.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -446,9 +457,9 @@
             this.lblTenThietBi.AutoSize = true;
             this.lblTenThietBi.Location = new System.Drawing.Point(6, 64);
             this.lblTenThietBi.Name = "lblTenThietBi";
-            this.lblTenThietBi.Size = new System.Drawing.Size(80, 13);
+            this.lblTenThietBi.Size = new System.Drawing.Size(59, 13);
             this.lblTenThietBi.TabIndex = 4;
-            this.lblTenThietBi.Text = "Mã Thiết Bị: ";
+            this.lblTenThietBi.Text = "Thiết Bị: ";
             // 
             // dtmNgayNhap
             // 
@@ -737,17 +748,6 @@
             this.lblDSCauHinh.Size = new System.Drawing.Size(63, 13);
             this.lblDSCauHinh.TabIndex = 58;
             this.lblDSCauHinh.Text = "Cấu Hình:";
-            // 
-            // radCauHinh
-            // 
-            this.radCauHinh.AutoSize = true;
-            this.radCauHinh.Location = new System.Drawing.Point(321, 42);
-            this.radCauHinh.Name = "radCauHinh";
-            this.radCauHinh.Size = new System.Drawing.Size(77, 17);
-            this.radCauHinh.TabIndex = 58;
-            this.radCauHinh.TabStop = true;
-            this.radCauHinh.Text = "Cấu Hình";
-            this.radCauHinh.UseVisualStyleBackColor = true;
             // 
             // frmQLNhapMay
             // 
