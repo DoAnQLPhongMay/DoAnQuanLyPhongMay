@@ -115,7 +115,7 @@ namespace QuanLyPhongMay.DataLayer
         }
 
         //Hàm xử lý tìm kiếm lịch sử nhập.
-        public DataSet LayDSTK(string key, string loaiTK)
+        public DataSet LayDSTKTB(string key1, string key2, string loaiTK)
         {
             string select = "SELECT dtb_LichSuNhap.*, dtb_TaiKhoan.HoVaTen, dtb_ThietBi.TenThietBi ",
                 from = "FROM dtb_LichSuNhap, dtb_TaiKhoan, dtb_ThietBi ",
@@ -125,19 +125,50 @@ namespace QuanLyPhongMay.DataLayer
             switch (loaiTK)
             {
                 case "ngayNhap":
-                    where += "AND dtb_LichSuNhap.NgayNhap = '" + key + "'";
+                    where += "AND dtb_LichSuNhap.NgayNhap BETWEEN '" + key1 + "' AND '" + key2 + "'";
                     break;
                 case "nhaSanXuat":
-                    where += "AND dtb_LichSuNhap.NhaSanXuat like N'%" + key + "%'";
+                    where += "AND dtb_LichSuNhap.NhaSanXuat like N'%" + key1 + "%'";
                     break;
                 case "nhaCungCap":
-                    where += "AND dtb_LichSuNhap.NhaCungCap like N'%" + key + "%'";
+                    where += "AND dtb_LichSuNhap.NhaCungCap like N'%" + key1 + "%'";
                     break;
-                case "maThietBi":
-                    where += "AND (dtb_LichSuNhap.MaThietBi like '%" + key + "%' OR dtb_ThietBi.TenThietBi like N'%" + key + "%')";
+                case "thietBi":
+                    where += "AND (dtb_LichSuNhap.MaThietBi like '%" + key1 + "%' OR dtb_ThietBi.TenThietBi like N'%" + key1 + "%')";
                     break;
                 default:
-                    where += "AND (dtb_LichSuNhap.NguoiPhuTrach like N'%" + key + "%' OR dtb_TaiKhoan.HoVaTen like N'%" + key + "%')";
+                    where += "AND (dtb_LichSuNhap.NguoiPhuTrach like N'%" + key1 + "%' OR dtb_TaiKhoan.HoVaTen like N'%" + key1 + "%')";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
+
+        public DataSet LayDSTKCH(string key1, string key2, string loaiTK)
+        {
+            string select = "SELECT dtb_LichSuNhap.*, dtb_TaiKhoan.HoVaTen, dtb_CauHinh.TenCauHinh ",
+                from = "FROM dtb_LichSuNhap, dtb_TaiKhoan, dtb_CauHinh ",
+                where = "WHERE dtb_LichSuNhap.NguoiPhuTrach = dtb_TaiKhoan.TenDangNhap AND dtb_LichSuNhap.MaCauHinh = dtb_CauHinh.MaCauHinh ";
+
+
+            switch (loaiTK)
+            {
+                case "ngayNhap":
+                    where += "AND dtb_LichSuNhap.NgayNhap BETWEEN '" + key1 + "' AND '" + key2 + "'";
+                    break;
+                case "nhaSanXuat":
+                    where += "AND dtb_LichSuNhap.NhaSanXuat like N'%" + key1 + "%'";
+                    break;
+                case "nhaCungCap":
+                    where += "AND dtb_LichSuNhap.NhaCungCap like N'%" + key1 + "%'";
+                    break;
+                case "cauHinh":
+                    where += "AND (dtb_LichSuNhap.MaCauHinh like '%" + key1 + "%' OR dtb_CauHinh.TenCauHinh like N'%" + key1 + "%')";
+                    break;
+                default:
+                    where += "AND (dtb_LichSuNhap.NguoiPhuTrach like N'%" + key1 + "%' OR dtb_TaiKhoan.HoVaTen like N'%" + key1 + "%')";
                     break;
             }
 

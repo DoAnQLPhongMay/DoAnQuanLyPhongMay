@@ -45,9 +45,14 @@ namespace QuanLyPhongMay.Controller
         }
 
         //Hàm xử lý tìm kiếm LSNhap.
-        public void TimKiem(DataGridView dgv, string key, string loaiTK)
+        public void TimKiemTB(DataGridView dgv, string key1, string key2, string loaiTK)
         {
-            dgv.DataSource = lsNhapData.LayDSTK(key, loaiTK).Tables[0];
+            dgv.DataSource = lsNhapData.LayDSTKTB(key1, key2, loaiTK).Tables[0];
+        }
+
+        public void TimKiemCH(DataGridView dgv, string key1, string key2, string loaiTK)
+        {
+            dgv.DataSource = lsNhapData.LayDSTKCH(key1, key2, loaiTK).Tables[0];
         }
     }
 }

@@ -96,6 +96,10 @@
             this.MaCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDSThietbi = new System.Windows.Forms.Label();
             this.lblDSCauHinh = new System.Windows.Forms.Label();
+            this.dtmTu = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtmDen = new System.Windows.Forms.DateTimePicker();
             this.grpChiTietNhapMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNThietBi)).BeginInit();
@@ -144,7 +148,7 @@
             this.grpChiTietNhapMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpChiTietNhapMay.Location = new System.Drawing.Point(12, 73);
             this.grpChiTietNhapMay.Name = "grpChiTietNhapMay";
-            this.grpChiTietNhapMay.Size = new System.Drawing.Size(756, 248);
+            this.grpChiTietNhapMay.Size = new System.Drawing.Size(756, 263);
             this.grpChiTietNhapMay.TabIndex = 1;
             this.grpChiTietNhapMay.TabStop = false;
             this.grpChiTietNhapMay.Text = "Chi Tiết";
@@ -231,6 +235,10 @@
             // 
             // grpTimKiem
             // 
+            this.grpTimKiem.Controls.Add(this.dtmDen);
+            this.grpTimKiem.Controls.Add(this.label5);
+            this.grpTimKiem.Controls.Add(this.label4);
+            this.grpTimKiem.Controls.Add(this.dtmTu);
             this.grpTimKiem.Controls.Add(this.radCauHinh);
             this.grpTimKiem.Controls.Add(this.label3);
             this.grpTimKiem.Controls.Add(this.radNhaCungCap);
@@ -242,7 +250,7 @@
             this.grpTimKiem.Controls.Add(this.txtTimKiem);
             this.grpTimKiem.Location = new System.Drawing.Point(6, 166);
             this.grpTimKiem.Name = "grpTimKiem";
-            this.grpTimKiem.Size = new System.Drawing.Size(743, 70);
+            this.grpTimKiem.Size = new System.Drawing.Size(743, 91);
             this.grpTimKiem.TabIndex = 44;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
@@ -250,13 +258,14 @@
             // radCauHinh
             // 
             this.radCauHinh.AutoSize = true;
-            this.radCauHinh.Location = new System.Drawing.Point(321, 42);
+            this.radCauHinh.Location = new System.Drawing.Point(371, 54);
             this.radCauHinh.Name = "radCauHinh";
             this.radCauHinh.Size = new System.Drawing.Size(77, 17);
             this.radCauHinh.TabIndex = 58;
             this.radCauHinh.TabStop = true;
             this.radCauHinh.Text = "Cấu Hình";
             this.radCauHinh.UseVisualStyleBackColor = true;
+            this.radCauHinh.CheckedChanged += new System.EventHandler(this.radNguoiPhuTrach_CheckedChanged);
             // 
             // label3
             // 
@@ -270,30 +279,32 @@
             // radNhaCungCap
             // 
             this.radNhaCungCap.AutoSize = true;
-            this.radNhaCungCap.Location = new System.Drawing.Point(448, 19);
+            this.radNhaCungCap.Location = new System.Drawing.Point(498, 31);
             this.radNhaCungCap.Name = "radNhaCungCap";
             this.radNhaCungCap.Size = new System.Drawing.Size(107, 17);
             this.radNhaCungCap.TabIndex = 48;
             this.radNhaCungCap.TabStop = true;
             this.radNhaCungCap.Text = "Nhà Cung Cấp";
             this.radNhaCungCap.UseVisualStyleBackColor = true;
+            this.radNhaCungCap.CheckedChanged += new System.EventHandler(this.radNguoiPhuTrach_CheckedChanged);
             // 
             // radNhaSanXuat
             // 
             this.radNhaSanXuat.AutoSize = true;
-            this.radNhaSanXuat.Location = new System.Drawing.Point(448, 42);
+            this.radNhaSanXuat.Location = new System.Drawing.Point(498, 54);
             this.radNhaSanXuat.Name = "radNhaSanXuat";
             this.radNhaSanXuat.Size = new System.Drawing.Size(104, 17);
             this.radNhaSanXuat.TabIndex = 47;
             this.radNhaSanXuat.TabStop = true;
             this.radNhaSanXuat.Text = "Nhà Sản Xuất";
             this.radNhaSanXuat.UseVisualStyleBackColor = true;
+            this.radNhaSanXuat.CheckedChanged += new System.EventHandler(this.radNguoiPhuTrach_CheckedChanged);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Location = new System.Drawing.Point(627, 19);
+            this.btnTimKiem.Location = new System.Drawing.Point(627, 31);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(107, 40);
             this.btnTimKiem.TabIndex = 45;
@@ -304,42 +315,45 @@
             // radNguoiPhuTrach
             // 
             this.radNguoiPhuTrach.AutoSize = true;
-            this.radNguoiPhuTrach.Location = new System.Drawing.Point(321, 19);
+            this.radNguoiPhuTrach.Location = new System.Drawing.Point(371, 31);
             this.radNguoiPhuTrach.Name = "radNguoiPhuTrach";
             this.radNguoiPhuTrach.Size = new System.Drawing.Size(121, 17);
             this.radNguoiPhuTrach.TabIndex = 32;
             this.radNguoiPhuTrach.TabStop = true;
             this.radNguoiPhuTrach.Text = "Người Phụ Trách";
             this.radNguoiPhuTrach.UseVisualStyleBackColor = true;
+            this.radNguoiPhuTrach.CheckedChanged += new System.EventHandler(this.radNguoiPhuTrach_CheckedChanged);
             // 
             // radThietBi
             // 
             this.radThietBi.AutoSize = true;
-            this.radThietBi.Location = new System.Drawing.Point(224, 42);
+            this.radThietBi.Location = new System.Drawing.Point(274, 54);
             this.radThietBi.Name = "radThietBi";
             this.radThietBi.Size = new System.Drawing.Size(69, 17);
             this.radThietBi.TabIndex = 46;
             this.radThietBi.TabStop = true;
             this.radThietBi.Text = "Thiết Bị";
             this.radThietBi.UseVisualStyleBackColor = true;
+            this.radThietBi.CheckedChanged += new System.EventHandler(this.radNguoiPhuTrach_CheckedChanged);
             // 
             // radNgayNhap
             // 
             this.radNgayNhap.AutoSize = true;
-            this.radNgayNhap.Location = new System.Drawing.Point(224, 19);
+            this.radNgayNhap.Location = new System.Drawing.Point(274, 31);
             this.radNgayNhap.Name = "radNgayNhap";
             this.radNgayNhap.Size = new System.Drawing.Size(88, 17);
             this.radNgayNhap.TabIndex = 1;
             this.radNgayNhap.TabStop = true;
             this.radNgayNhap.Text = "Ngày Nhập";
             this.radNgayNhap.UseVisualStyleBackColor = true;
+            this.radNgayNhap.CheckedChanged += new System.EventHandler(this.radNgayNhap_CheckedChanged);
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(6, 32);
             this.txtTimKiem.MaxLength = 100;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(212, 20);
+            this.txtTimKiem.Size = new System.Drawing.Size(262, 20);
             this.txtTimKiem.TabIndex = 0;
             // 
             // cboTenThietBi
@@ -749,6 +763,40 @@
             this.lblDSCauHinh.TabIndex = 58;
             this.lblDSCauHinh.Text = "Cấu Hình:";
             // 
+            // dtmTu
+            // 
+            this.dtmTu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmTu.Location = new System.Drawing.Point(38, 58);
+            this.dtmTu.Name = "dtmTu";
+            this.dtmTu.Size = new System.Drawing.Size(88, 20);
+            this.dtmTu.TabIndex = 58;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Từ:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(144, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Đến:";
+            // 
+            // dtmDen
+            // 
+            this.dtmDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmDen.Location = new System.Drawing.Point(180, 58);
+            this.dtmDen.Name = "dtmDen";
+            this.dtmDen.Size = new System.Drawing.Size(88, 20);
+            this.dtmDen.TabIndex = 61;
+            // 
             // frmQLNhapMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,5 +892,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCH;
         private System.Windows.Forms.RadioButton radCauHinh;
+        private System.Windows.Forms.DateTimePicker dtmDen;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtmTu;
     }
 }

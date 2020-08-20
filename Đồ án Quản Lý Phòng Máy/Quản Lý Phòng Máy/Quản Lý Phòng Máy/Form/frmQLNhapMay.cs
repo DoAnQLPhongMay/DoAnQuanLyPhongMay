@@ -241,11 +241,11 @@ namespace QuanLyPhongMay
                 
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
-                    if (loaiNhap)
+                    if (cboCauHinh.Text != "")
                     {
                         NhapCauHinh();
                     }
-                    else
+                    else if(cboTenThietBi.Text != "")
                     {
                         NhapThietBi();
                     }
@@ -258,19 +258,39 @@ namespace QuanLyPhongMay
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string loaiTK = "";
+            string key1 = "", key2 = "";
 
             if (radThietBi.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "thietBi";
+            }
             else if (radNgayNhap.Checked)
+            {
+                key1 = dtmTu.Value.ToString();
+                key2 = dtmDen.Value.ToString();
                 loaiTK = "ngayNhap";
+            }
             else if (radNguoiPhuTrach.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "nguoiPhuTrach";
+            }
             else if (radNhaSanXuat.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "nhaSanXuat";
+            }
             else if(radNhaCungCap.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "nhaCungCap";
+            }
             else if (radCauHinh.Checked)
+            {
+                key1 = txtTimKiem.Text;
                 loaiTK = "cauHinh";
+            }
             else
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
@@ -278,7 +298,24 @@ namespace QuanLyPhongMay
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")
             {
-                nhapCtrl.TimKiem(dgvDSNThietBi, txtTimKiem.Text, loaiTK);
+                if(radCauHinh.Checked!=true && radThietBi.Checked != true)
+                {
+                    nhapCtrl.TimKiemTB(dgvDSNThietBi, key1, key2, loaiTK);
+                    nhapCtrl.TimKiemCH(dgvDSNCauHinh, key1, key2, loaiTK);
+                }
+                else if(radCauHinh.Checked == true)
+                {
+                    nhapCtrl.TimKiemCH(dgvDSNCauHinh, key1, key2, loaiTK);
+                }
+                else
+                {
+                    nhapCtrl.TimKiemTB(dgvDSNThietBi, key1, key2, loaiTK);
+                }
+            }
+            else if (radNgayNhap.Checked && loaiTK != "")
+            {
+                nhapCtrl.TimKiemTB(dgvDSNThietBi, key1, key2, loaiTK);
+                nhapCtrl.TimKiemCH(dgvDSNCauHinh, key1, key2, loaiTK);
             }
         }
         
@@ -288,5 +325,24 @@ namespace QuanLyPhongMay
             lamMoi();
         }
 
+        private void radNgayNhap_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radNgayNhap.Checked == true)
+            {
+                dtmDen.Enabled = true;
+                dtmTu.Enabled = true;
+                txtTimKiem.Enabled = false;
+            }
+        }
+
+        private void radNguoiPhuTrach_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNgayNhap.Checked == false)
+            {
+                dtmDen.Enabled = false;
+                dtmTu.Enabled = false;
+                txtTimKiem.Enabled = true;
+            }
+        }
     }
 }

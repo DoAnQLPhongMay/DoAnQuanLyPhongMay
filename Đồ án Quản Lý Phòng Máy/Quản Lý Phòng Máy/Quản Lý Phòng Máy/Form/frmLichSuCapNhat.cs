@@ -94,7 +94,11 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
             }
 
-            if (txtTimKiem.Text.Length != 0 && loaiTK != "")
+            if (txtTimKiem.Text.Length != 0 && loaiTK != "" )
+            {
+                lsCtrl.TimKiem(dgvLSCapNhat, key1, key2, loaiTK);
+            }
+            else if (radNgay.Checked && loaiTK != "")
             {
                 lsCtrl.TimKiem(dgvLSCapNhat, key1, key2, loaiTK);
             }
