@@ -98,6 +98,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(409, 41);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 21);
             this.txtEmail.TabIndex = 26;
@@ -114,6 +115,7 @@
             // txtMaTaiKhoan
             // 
             this.txtMaTaiKhoan.Location = new System.Drawing.Point(110, 41);
+            this.txtMaTaiKhoan.MaxLength = 20;
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
             this.txtMaTaiKhoan.Size = new System.Drawing.Size(182, 21);
             this.txtMaTaiKhoan.TabIndex = 24;
@@ -150,6 +152,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(409, 156);
+            this.txtMatKhau.MaxLength = 20;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(179, 21);
@@ -158,6 +161,7 @@
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(409, 118);
+            this.txtTenDangNhap.MaxLength = 20;
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(179, 21);
             this.txtTenDangNhap.TabIndex = 6;
@@ -165,6 +169,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(409, 80);
+            this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(179, 21);
             this.txtDiaChi.TabIndex = 5;
@@ -230,6 +235,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(107, 196);
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(182, 21);
             this.txtSDT.TabIndex = 4;
@@ -256,6 +262,7 @@
             // txtTenTaiKhoan
             // 
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(107, 80);
+            this.txtTenTaiKhoan.MaxLength = 50;
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(182, 21);
             this.txtTenTaiKhoan.TabIndex = 0;

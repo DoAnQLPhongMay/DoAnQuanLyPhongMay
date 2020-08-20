@@ -30,6 +30,7 @@
         {
             this.lblQLMay = new System.Windows.Forms.Label();
             this.grpQLMay = new System.Windows.Forms.GroupBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.cboPhong = new System.Windows.Forms.ComboBox();
             this.rtbGhiChu = new System.Windows.Forms.RichTextBox();
@@ -85,7 +86,6 @@
             this.MaTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.grpQLMay.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             this.grp_ChiTietMay.SuspendLayout();
@@ -129,6 +129,15 @@
             this.grpQLMay.TabStop = false;
             this.grpQLMay.Text = "Quản Lý Máy";
             // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(372, 34);
+            this.txtSoLuong.MaxLength = 4;
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(35, 20);
+            this.txtSoLuong.TabIndex = 35;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
             // btnLamMoi
             // 
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -152,6 +161,7 @@
             // rtbGhiChu
             // 
             this.rtbGhiChu.Location = new System.Drawing.Point(479, 34);
+            this.rtbGhiChu.MaxLength = 100;
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(97, 52);
             this.rtbGhiChu.TabIndex = 30;
@@ -243,6 +253,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(6, 33);
+            this.txtTimKiem.MaxLength = 50;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(214, 20);
             this.txtTimKiem.TabIndex = 0;
@@ -523,6 +534,7 @@
             // txtTenMay
             // 
             this.txtTenMay.Location = new System.Drawing.Point(293, 34);
+            this.txtTenMay.MaxLength = 50;
             this.txtTenMay.Name = "txtTenMay";
             this.txtTenMay.Size = new System.Drawing.Size(73, 20);
             this.txtTenMay.TabIndex = 3;
@@ -647,14 +659,6 @@
             this.MaPhong.Name = "MaPhong";
             this.MaPhong.ReadOnly = true;
             this.MaPhong.Visible = false;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(372, 34);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(35, 20);
-            this.txtSoLuong.TabIndex = 35;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // frmQLMay
             // 

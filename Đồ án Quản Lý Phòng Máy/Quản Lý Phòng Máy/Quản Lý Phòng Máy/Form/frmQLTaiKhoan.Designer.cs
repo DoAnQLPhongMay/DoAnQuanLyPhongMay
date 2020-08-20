@@ -124,6 +124,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(123, 149);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 21);
             this.txtEmail.TabIndex = 27;
@@ -258,6 +259,7 @@
             // 
             this.txtMaTK.Enabled = false;
             this.txtMaTK.Location = new System.Drawing.Point(123, 66);
+            this.txtMaTK.MaxLength = 20;
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.Size = new System.Drawing.Size(136, 21);
             this.txtMaTK.TabIndex = 17;
@@ -277,6 +279,7 @@
             // 
             this.txtUsername.Enabled = false;
             this.txtUsername.Location = new System.Drawing.Point(123, 39);
+            this.txtUsername.MaxLength = 20;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(136, 21);
             this.txtUsername.TabIndex = 15;
@@ -302,6 +305,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(407, 93);
+            this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(136, 21);
             this.txtDiaChi.TabIndex = 12;
@@ -329,6 +333,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(123, 122);
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(136, 21);
             this.txtSDT.TabIndex = 8;
@@ -381,6 +386,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(407, 36);
+            this.txtHoTen.MaxLength = 50;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(136, 21);
             this.txtHoTen.TabIndex = 3;

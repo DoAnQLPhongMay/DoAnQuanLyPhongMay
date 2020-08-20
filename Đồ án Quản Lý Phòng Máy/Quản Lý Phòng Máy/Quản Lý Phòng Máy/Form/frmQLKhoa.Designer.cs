@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.grbThongTin = new System.Windows.Forms.GroupBox();
+            this.txtMaKhoa = new System.Windows.Forms.TextBox();
+            this.txtTenKhoa = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.grbTimKiem = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.radTenKhoa = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMaKhoa = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.lblTenKhoa = new System.Windows.Forms.Label();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -36,19 +45,10 @@
             this.dgvDSKhoa = new System.Windows.Forms.DataGridView();
             this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMaKhoa = new System.Windows.Forms.Label();
-            this.grbTimKiem = new System.Windows.Forms.GroupBox();
-            this.btnCapNhat = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radTenKhoa = new System.Windows.Forms.RadioButton();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.lblQLKhoa = new System.Windows.Forms.Label();
-            this.txtTenKhoa = new System.Windows.Forms.TextBox();
-            this.txtMaKhoa = new System.Windows.Forms.TextBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grbThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             this.grbTimKiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTin
@@ -70,6 +70,100 @@
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Thông Tin";
             this.grbThongTin.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtMaKhoa
+            // 
+            this.txtMaKhoa.Location = new System.Drawing.Point(77, 28);
+            this.txtMaKhoa.Name = "txtMaKhoa";
+            this.txtMaKhoa.ReadOnly = true;
+            this.txtMaKhoa.Size = new System.Drawing.Size(172, 20);
+            this.txtMaKhoa.TabIndex = 31;
+            // 
+            // txtTenKhoa
+            // 
+            this.txtTenKhoa.Location = new System.Drawing.Point(77, 55);
+            this.txtTenKhoa.MaxLength = 50;
+            this.txtTenKhoa.Name = "txtTenKhoa";
+            this.txtTenKhoa.Size = new System.Drawing.Size(172, 20);
+            this.txtTenKhoa.TabIndex = 30;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCapNhat.Location = new System.Drawing.Point(192, 95);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(87, 35);
+            this.btnCapNhat.TabIndex = 29;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // grbTimKiem
+            // 
+            this.grbTimKiem.Controls.Add(this.txtTimKiem);
+            this.grbTimKiem.Controls.Add(this.btnTimKiem);
+            this.grbTimKiem.Controls.Add(this.radTenKhoa);
+            this.grbTimKiem.Controls.Add(this.label2);
+            this.grbTimKiem.Location = new System.Drawing.Point(6, 152);
+            this.grbTimKiem.Name = "grbTimKiem";
+            this.grbTimKiem.Size = new System.Drawing.Size(372, 72);
+            this.grbTimKiem.TabIndex = 28;
+            this.grbTimKiem.TabStop = false;
+            this.grbTimKiem.Text = "Tìm Kiếm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 35);
+            this.txtTimKiem.MaxLength = 50;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(172, 20);
+            this.txtTimKiem.TabIndex = 32;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTimKiem.Location = new System.Drawing.Point(279, 27);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(87, 35);
+            this.btnTimKiem.TabIndex = 30;
+            this.btnTimKiem.Text = "Tim Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // radTenKhoa
+            // 
+            this.radTenKhoa.AutoSize = true;
+            this.radTenKhoa.Location = new System.Drawing.Point(184, 36);
+            this.radTenKhoa.Name = "radTenKhoa";
+            this.radTenKhoa.Size = new System.Drawing.Size(80, 17);
+            this.radTenKhoa.TabIndex = 31;
+            this.radTenKhoa.TabStop = true;
+            this.radTenKhoa.Text = "Tên Khoa";
+            this.radTenKhoa.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Từ khóa:";
+            // 
+            // lblMaKhoa
+            // 
+            this.lblMaKhoa.AutoSize = true;
+            this.lblMaKhoa.Location = new System.Drawing.Point(6, 31);
+            this.lblMaKhoa.Name = "lblMaKhoa";
+            this.lblMaKhoa.Size = new System.Drawing.Size(57, 13);
+            this.lblMaKhoa.TabIndex = 26;
+            this.lblMaKhoa.Text = "Mã Khoa";
             // 
             // btnXoa
             // 
@@ -148,76 +242,6 @@
             this.TenKhoa.Name = "TenKhoa";
             this.TenKhoa.ReadOnly = true;
             // 
-            // lblMaKhoa
-            // 
-            this.lblMaKhoa.AutoSize = true;
-            this.lblMaKhoa.Location = new System.Drawing.Point(6, 31);
-            this.lblMaKhoa.Name = "lblMaKhoa";
-            this.lblMaKhoa.Size = new System.Drawing.Size(57, 13);
-            this.lblMaKhoa.TabIndex = 26;
-            this.lblMaKhoa.Text = "Mã Khoa";
-            // 
-            // grbTimKiem
-            // 
-            this.grbTimKiem.Controls.Add(this.txtTimKiem);
-            this.grbTimKiem.Controls.Add(this.btnTimKiem);
-            this.grbTimKiem.Controls.Add(this.radTenKhoa);
-            this.grbTimKiem.Controls.Add(this.label2);
-            this.grbTimKiem.Location = new System.Drawing.Point(6, 152);
-            this.grbTimKiem.Name = "grbTimKiem";
-            this.grbTimKiem.Size = new System.Drawing.Size(372, 72);
-            this.grbTimKiem.TabIndex = 28;
-            this.grbTimKiem.TabStop = false;
-            this.grbTimKiem.Text = "Tìm Kiếm";
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCapNhat.Location = new System.Drawing.Point(192, 95);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(87, 35);
-            this.btnCapNhat.TabIndex = 29;
-            this.btnCapNhat.Text = "Cập Nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = false;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Từ khóa:";
-            // 
-            // radTenKhoa
-            // 
-            this.radTenKhoa.AutoSize = true;
-            this.radTenKhoa.Location = new System.Drawing.Point(184, 36);
-            this.radTenKhoa.Name = "radTenKhoa";
-            this.radTenKhoa.Size = new System.Drawing.Size(80, 17);
-            this.radTenKhoa.TabIndex = 31;
-            this.radTenKhoa.TabStop = true;
-            this.radTenKhoa.Text = "Tên Khoa";
-            this.radTenKhoa.UseVisualStyleBackColor = true;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTimKiem.Location = new System.Drawing.Point(279, 27);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(87, 35);
-            this.btnTimKiem.TabIndex = 30;
-            this.btnTimKiem.Text = "Tim Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
             // lblQLKhoa
             // 
             this.lblQLKhoa.AutoSize = true;
@@ -227,28 +251,6 @@
             this.lblQLKhoa.Size = new System.Drawing.Size(361, 61);
             this.lblQLKhoa.TabIndex = 10;
             this.lblQLKhoa.Text = "Quản Lý Khoa";
-            // 
-            // txtTenKhoa
-            // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(77, 55);
-            this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(172, 20);
-            this.txtTenKhoa.TabIndex = 30;
-            // 
-            // txtMaKhoa
-            // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(77, 28);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.ReadOnly = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(172, 20);
-            this.txtMaKhoa.TabIndex = 31;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(6, 35);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(172, 20);
-            this.txtTimKiem.TabIndex = 32;
             // 
             // frmQLKhoa
             // 
@@ -263,9 +265,9 @@
             this.Load += new System.EventHandler(this.frmThemMay_Load);
             this.grbThongTin.ResumeLayout(false);
             this.grbThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).EndInit();
             this.grbTimKiem.ResumeLayout(false);
             this.grbTimKiem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

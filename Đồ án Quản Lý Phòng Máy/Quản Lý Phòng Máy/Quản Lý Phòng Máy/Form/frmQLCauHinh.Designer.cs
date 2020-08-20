@@ -325,6 +325,7 @@
             // txtTenCauHinh
             // 
             this.txtTenCauHinh.Location = new System.Drawing.Point(101, 54);
+            this.txtTenCauHinh.MaxLength = 50;
             this.txtTenCauHinh.Name = "txtTenCauHinh";
             this.txtTenCauHinh.Size = new System.Drawing.Size(124, 20);
             this.txtTenCauHinh.TabIndex = 30;
@@ -371,6 +372,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(6, 35);
+            this.txtTimKiem.MaxLength = 50;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(172, 20);
             this.txtTimKiem.TabIndex = 32;

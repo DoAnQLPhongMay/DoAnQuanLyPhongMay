@@ -244,6 +244,7 @@
             // rtbGhiChu
             // 
             this.rtbGhiChu.Location = new System.Drawing.Point(307, 156);
+            this.rtbGhiChu.MaxLength = 100;
             this.rtbGhiChu.Name = "rtbGhiChu";
             this.rtbGhiChu.Size = new System.Drawing.Size(105, 60);
             this.rtbGhiChu.TabIndex = 41;
@@ -261,6 +262,7 @@
             // txtHanThanhLy
             // 
             this.txtHanThanhLy.Location = new System.Drawing.Point(307, 114);
+            this.txtHanThanhLy.MaxLength = 3;
             this.txtHanThanhLy.Name = "txtHanThanhLy";
             this.txtHanThanhLy.Size = new System.Drawing.Size(105, 20);
             this.txtHanThanhLy.TabIndex = 39;
@@ -278,6 +280,7 @@
             // txtNhaSanXuat
             // 
             this.txtNhaSanXuat.Location = new System.Drawing.Point(103, 196);
+            this.txtNhaSanXuat.MaxLength = 50;
             this.txtNhaSanXuat.Name = "txtNhaSanXuat";
             this.txtNhaSanXuat.Size = new System.Drawing.Size(105, 20);
             this.txtNhaSanXuat.TabIndex = 37;
@@ -294,6 +297,7 @@
             // txtNamSanXuat
             // 
             this.txtNamSanXuat.Location = new System.Drawing.Point(103, 235);
+            this.txtNamSanXuat.MaxLength = 4;
             this.txtNamSanXuat.Name = "txtNamSanXuat";
             this.txtNamSanXuat.Size = new System.Drawing.Size(105, 20);
             this.txtNamSanXuat.TabIndex = 35;
@@ -321,6 +325,7 @@
             // rtbThongSo
             // 
             this.rtbThongSo.Location = new System.Drawing.Point(307, 34);
+            this.rtbThongSo.MaxLength = 100;
             this.rtbThongSo.Name = "rtbThongSo";
             this.rtbThongSo.Size = new System.Drawing.Size(105, 60);
             this.rtbThongSo.TabIndex = 31;
@@ -330,6 +335,7 @@
             // 
             this.txtSoLuong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSoLuong.Location = new System.Drawing.Point(103, 114);
+            this.txtSoLuong.MaxLength = 4;
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(105, 20);
             this.txtSoLuong.TabIndex = 28;
@@ -426,6 +432,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(6, 32);
+            this.txtTimKiem.MaxLength = 50;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(212, 20);
             this.txtTimKiem.TabIndex = 0;
@@ -469,6 +476,7 @@
             // txtTenThietBi
             // 
             this.txtTenThietBi.Location = new System.Drawing.Point(103, 74);
+            this.txtTenThietBi.MaxLength = 100;
             this.txtTenThietBi.Name = "txtTenThietBi";
             this.txtTenThietBi.Size = new System.Drawing.Size(105, 20);
             this.txtTenThietBi.TabIndex = 3;

@@ -259,8 +259,8 @@ namespace QuanLyPhongMay
         {
             string loaiTK = "";
 
-            if (radMaThietBi.Checked)
-                loaiTK = "maThietBi";
+            if (radThietBi.Checked)
+                loaiTK = "thietBi";
             else if (radNgayNhap.Checked)
                 loaiTK = "ngayNhap";
             else if (radNguoiPhuTrach.Checked)
@@ -269,6 +269,8 @@ namespace QuanLyPhongMay
                 loaiTK = "nhaSanXuat";
             else if(radNhaCungCap.Checked)
                 loaiTK = "nhaCungCap";
+            else if (radCauHinh.Checked)
+                loaiTK = "cauHinh";
             else
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
