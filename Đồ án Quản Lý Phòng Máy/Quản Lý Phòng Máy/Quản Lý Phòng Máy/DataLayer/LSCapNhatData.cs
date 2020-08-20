@@ -65,5 +65,29 @@ namespace QuanLyPhongMay.DataLayer
 
             return cls.CapNhatDL(cmd);
         }
+
+        public DataSet LayDSTK(string key1, string key2, string loaiTK)
+        {
+            string select = "SELECT dtb_LichSuCapNhat.*, dtb_PhongMay.TenPhongMay, dtb_May.TenMay, dtb_ChiTietCapNhat.TenMay as TenMayCN, dtb_ChiTietCapNhat.MaCauHinh, dtb_CauHinh.TenCauHinh ",
+                from = "FROM dtb_LichSuCapNhat, dtb_PhongMay, dtb_May, dtb_ChiTietCapNhat, dtb_CauHinh ",
+                where = "WHERE dtb_LichSuCapNhat.MaPhongMay = dtb_PhongMay.MaPhongMay AND dtb_LichSuCapNhat.MaMay = dtb_May.MaMay AND dtb_LichSuCapNhat.MaCapNhat = dtb_ChiTietCapNhat.MaCapNhat AND dtb_ChiTietCapNhat.MaCauHinh = dtb_CauHinh.MaCauHinh AND ";
+
+            switch (loaiTK)
+            {
+                case "may":
+                    where += "(dtb_LichSuCapNhat.MaMay like '%" + key1 + "%' OR dtb_ChiTietCapNhat.TenMay like N'%" + key1 + "%' OR dtb_May.TenMay like N'%" + key1 + "%')";
+                    break;
+                case "phong":
+                    where += "(dtb_LichSuCapNhat.MaPhongMay like '%" + key1 + "%' OR dtb_PhongMay.TenPhongMay like N'%" + key1 + "%')";
+                    break;
+                default:
+                    where += "NgayCapNhat BETWEEN '" + key1 + "' AND '" + key2 + "'";
+                    break;
+            }
+
+            SqlCommand cmd = new SqlCommand(select + from + where);
+
+            return cls.LayDuLieu(cmd);
+        }
     }
 }

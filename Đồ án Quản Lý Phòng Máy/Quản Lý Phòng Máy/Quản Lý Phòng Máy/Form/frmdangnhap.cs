@@ -23,8 +23,27 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        //Hàm xử lý quên mật khẩu.
+        private void btnQuenMatKhau_Click_1(object sender, EventArgs e)
+        {
+            //Ẩn frmDangNhap và mở frmQuenMatKhau.
+            frmQuenMatKhau frm = new frmQuenMatKhau();
+            this.Hide();
+            frm.Show();
+        }
+
+        //Hàm xử lý khi ấn nút thoát.
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void lblDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //Hàm xử lý khi ấn nút đăng nhập.
-        private void btn_DangNhap_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             //Kiểm tra thông tin đăng nhập.
             if (txtTenDangNhap.Text == "" || txtMatKhau.Text == "")
@@ -43,33 +62,6 @@ namespace QuanLyPhongMay
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu.", "Đăng Nhập Thất Bại");
             }
-        }
-
-        //Hàm xử lý quên mật khẩu.
-        private void btnQuenMatKhau_Click_1(object sender, EventArgs e)
-        {
-            //Ẩn frmDangNhap và mở frmQuenMatKhau.
-            frmQuenMatKhau frm = new frmQuenMatKhau();
-            this.Hide();
-            frm.Show();
-        }
-
-        //Hàm xử lý khi ấn nút thoát.
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        //Hàm không sử dụng. --------------------------------------------------------------------------------------------------//
-        private void btnQuenMatKhau_Click(object sender, EventArgs e)
-        {
-        }
-        private void lblDangNhap_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void frmDangNhap_Load(object sender, EventArgs e)
-        {
         }
     }
 }

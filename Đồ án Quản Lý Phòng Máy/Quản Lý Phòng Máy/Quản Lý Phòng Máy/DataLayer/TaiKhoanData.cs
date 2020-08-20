@@ -125,19 +125,5 @@ namespace QuanLyPhongMay.DataLayer
 
 
         }
-
-        /*public int DoiThongTin(TaiKhoan gv)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "update dtb_TaiKhoan set HoVaTen=@ten,GioiTinh=@gt,NgaySinh=@ngsinh,DiaChi=@diachi,SDT=@sdt,MatKhau=@matkhau where TenDangNhap=@tendangnhap";
-            cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = gv.TenGV;
-            cmd.Parameters.Add("gioitinh", SqlDbType.Int).Value = gv.Gioitinh;
-            cmd.Parameters.Add("ngsinh", SqlDbType.Date).Value = gv.Ngaysinh;
-            cmd.Parameters.Add("diachi", SqlDbType.NVarChar).Value = gv.Diachi;
-            cmd.Parameters.Add("sdt", SqlDbType.NChar).Value = gv.SDT;
-            cmd.Parameters.Add("matkhau", SqlDbType.VarChar).Value = gv.MatKhau;
-           
-            return cls.CapNhatDL(cmd);
-        }*/
     }
 }

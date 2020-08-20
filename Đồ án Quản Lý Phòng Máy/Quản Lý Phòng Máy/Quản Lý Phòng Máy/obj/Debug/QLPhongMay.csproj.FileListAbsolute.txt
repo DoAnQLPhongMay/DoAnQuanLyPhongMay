@@ -155,3 +155,4 @@ C:\Users\BV\Desktop\New folder\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng M�
 C:\Users\BV\Desktop\New folder\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QLPhongMay.csproj.GenerateResource.cache
 C:\Users\BV\Desktop\New folder\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.exe
 C:\Users\BV\Desktop\New folder\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\Quản Lý Phòng Máy.pdb
+C:\Users\BV\Desktop\DoAnQuanLyPhongMay\Đồ án Quản Lý Phòng Máy\Quản Lý Phòng Máy\Quản Lý Phòng Máy\obj\Debug\QuanLyPhongMay.FormTrangChu.resources

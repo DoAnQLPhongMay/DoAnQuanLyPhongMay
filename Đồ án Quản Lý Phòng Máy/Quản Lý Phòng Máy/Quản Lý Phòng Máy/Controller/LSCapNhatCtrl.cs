@@ -28,5 +28,11 @@ namespace QuanLyPhongMay.Controller
             lsCNData.ThemLSCapNhat(lsCapNhat);
             lsCNData.ThemChiTietLSCapNhat(lsCapNhat);
         }
+
+        //Hàm xử lý tìm kiếm.
+        public void TimKiem(DataGridView dgv, string key1, string key2, string loaiTK)
+        {
+            dgv.DataSource = lsCNData.LayDSTK(key1, key2, loaiTK).Tables[0];
+        }
     }
 }
