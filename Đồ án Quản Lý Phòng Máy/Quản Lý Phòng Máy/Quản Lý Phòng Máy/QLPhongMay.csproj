@@ -82,6 +82,12 @@
     <Compile Include="DataLayer\ThietBiData.cs" />
     <Compile Include="DataLayer\TrangThaiData.cs" />
     <Compile Include="Class\DataProvider.cs" />
+    <Compile Include="Form\FormTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="Class\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmQLCauHinh.resx">
       <DependentUpon>frmQLCauHinh.cs</DependentUpon>
     </EmbeddedResource>

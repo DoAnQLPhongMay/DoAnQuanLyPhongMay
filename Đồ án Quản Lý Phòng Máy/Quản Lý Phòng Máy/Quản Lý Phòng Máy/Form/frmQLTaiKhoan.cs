@@ -91,7 +91,6 @@ namespace QuanLyPhongMay
             if (user.PhanQuyen)
             {
                 frmThemTaiKhoan themtk = new frmThemTaiKhoan();
-                this.Hide();
                 themtk.Show();
             }
             else

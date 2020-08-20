@@ -129,19 +129,12 @@ namespace QuanLyPhongMay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            frm_QLTaiKhoan frm;
+            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (user.TenUser != "")
+            if (dlg == System.Windows.Forms.DialogResult.Yes)
             {
-                frm = new frm_QLTaiKhoan(user);
+                this.Close();
             }
-            else
-            {
-                frm = new frm_QLTaiKhoan();
-            }
-
-            this.Hide();
-            frm.Show();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
