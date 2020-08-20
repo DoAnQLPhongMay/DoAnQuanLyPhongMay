@@ -187,10 +187,10 @@ namespace QuanLyPhongMay
         {
             string loaiTK = "";
 
-            if (radMaThanhLy.Checked)
-                loaiTK = "maThanhLy";
+            if (radCauHinh.Checked)
+                loaiTK = "cauHinh";
             else if (radThietBi.Checked)
-                loaiTK = "maThietBi";
+                loaiTK = "thietBi";
             else if (radNgayThanhLy.Checked)
                 loaiTK = "ngayThanhLy";
             else if (radNguoiPhuTrach.Checked)
