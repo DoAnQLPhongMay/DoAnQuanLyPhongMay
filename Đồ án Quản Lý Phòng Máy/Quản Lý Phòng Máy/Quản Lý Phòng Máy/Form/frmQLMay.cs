@@ -132,10 +132,13 @@ namespace QuanLyPhongMay
                 MessageBox.Show("Tên máy đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if(Convert.ToInt32(txtSoLuong.Text) + phongCtrl.GetCountMay(Convert.ToInt32(cboPhong.SelectedValue)) > phongCtrl.GetSL(Convert.ToInt32(cboPhong.SelectedValue)))
+            else if(txtSoLuong.Text != "")
             {
-                MessageBox.Show("Số lượng máy cần tạo lớn hơn số máy phòng có thể chứa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                if(Convert.ToInt32(txtSoLuong.Text) + phongCtrl.GetCountMay(Convert.ToInt32(cboPhong.SelectedValue)) > phongCtrl.GetSL(Convert.ToInt32(cboPhong.SelectedValue)))
+                {
+                    MessageBox.Show("Số lượng máy cần tạo lớn hơn số máy phòng có thể chứa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
 
             return true;
@@ -170,14 +173,12 @@ namespace QuanLyPhongMay
         {
             if (KiemTra())
             {
-                int slTao = Convert.ToInt32(txtSoLuong.Text);//2
-                int slHienTai = phongCtrl.GetCountMay(Convert.ToInt32(cboPhong.SelectedValue));//0
-                MessageBox.Show(slTao.ToString() + slHienTai.ToString());
+                int slTao = Convert.ToInt32(txtSoLuong.Text);
+                int slHienTai = phongCtrl.GetCountMay(Convert.ToInt32(cboPhong.SelectedValue));
 
                 for (int i = slHienTai + 1; i <= slHienTai + slTao; i++)
                 {
                     string tenMay = cboPhong.Text + "-" + i.ToString();
-                    MessageBox.Show(tenMay);
                     ThemMoi(tenMay);
                 }
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

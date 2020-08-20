@@ -234,8 +234,11 @@ namespace QuanLyPhongMay
         {
 
         }
-
         private void lblQLPhongMay_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void radTenKhoa_CheckedChanged(object sender, EventArgs e)
         {
 
         }

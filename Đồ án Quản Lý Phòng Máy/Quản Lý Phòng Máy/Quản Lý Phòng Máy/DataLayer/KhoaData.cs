@@ -107,7 +107,7 @@ namespace QuanLyPhongMay.DataLayer
             switch (loaiTK)
             {
                 default:
-                    where += "TenKhoa = N'" + key + "'";
+                    where += "TenKhoa like N'%" + key + "%'";
                     break;
             }
 

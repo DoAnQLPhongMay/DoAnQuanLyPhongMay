@@ -153,20 +153,20 @@ namespace QuanLyPhongMay.DataLayer
         //Hàm xử lý tìm kiếm.
         public DataSet LayDSTK(string key, string loaiTK)
         {
-            string select = "SELECT dtb_PhongMay.*, dtb_TrangThai.TenTrangThai ",
-                from = "FROM dtb_PhongMay, dtb_TrangThai ",
-                where = "WHERE dtb_PhongMay.TrangThai = dtb_TrangThai.MaTrangThai ";
+            string select = "SELECT dtb_PhongMay.*, dtb_TrangThai.TenTrangThai, dtb_Khoa.TenKhoa ",
+                from = "FROM dtb_PhongMay, dtb_TrangThai, dtb_Khoa ",
+                where = "WHERE dtb_PhongMay.TrangThai = dtb_TrangThai.MaTrangThai AND dtb_PhongMay.Khoa = dtb_Khoa.MaKhoa ";
 
             switch (loaiTK)
             {
-                case "maPhong":
-                    where += "AND dtb_PhongMay.MaPhongMay = " + key + "";
+                case "tenKhoa":
+                    where += "AND dtb_Khoa.TenKhoa like N'%" + key + "%'";
                     break;
                 case "tenPhong":
-                    where += "AND dtb_PhongMay.TenPhongMay = '" + key + "'";
+                    where += "AND dtb_PhongMay.TenPhongMay like N'%" + key + "%'";
                     break;
                 default:
-                    where += "AND dtb_PhongMay.TrangThai = " + key + "";
+                    where += "AND dtb_PhongMay.TrangThai like '%" + key + "%' OR dtb_TrangThai.TenTrangThai like N'%" + key + "%'";
                     break;
             }
 

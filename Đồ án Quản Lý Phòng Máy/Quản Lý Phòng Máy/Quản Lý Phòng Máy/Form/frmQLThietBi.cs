@@ -39,15 +39,15 @@ namespace QuanLyPhongMay
         //Hàm lấy và gán các giá trị từ Datagridview.
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
-            txtMaThietBi.Text = dgvDSThietBi.CurrentRow.Cells[0].Value.ToString();
-            txtTenThietBi.Text = dgvDSThietBi.CurrentRow.Cells[1].Value.ToString();
-            rtbThongSo.Text = dgvDSThietBi.CurrentRow.Cells[2].Value.ToString();
-            txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells[3].Value.ToString();
-            cboLoaiThietBi.Text = dgvDSThietBi.CurrentRow.Cells[4].Value.ToString();
-            txtNhaSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[6].Value.ToString();
-            txtNamSanXuat.Text = dgvDSThietBi.CurrentRow.Cells[5].Value.ToString();
-            txtHanThanhLy.Text = dgvDSThietBi.CurrentRow.Cells[7].Value.ToString();
-            rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells[8].Value.ToString();
+            txtMaThietBi.Text = dgvDSThietBi.CurrentRow.Cells["MaThietBi"].Value.ToString();
+            txtTenThietBi.Text = dgvDSThietBi.CurrentRow.Cells["TenThietBi"].Value.ToString();
+            rtbThongSo.Text = dgvDSThietBi.CurrentRow.Cells["TSThietBi"].Value.ToString();
+            txtSoLuong.Text = dgvDSThietBi.CurrentRow.Cells["SoLuong"].Value.ToString();
+            cboLoaiThietBi.SelectedValue = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells["MaLoai"].Value);
+            txtNhaSanXuat.Text = dgvDSThietBi.CurrentRow.Cells["NhaSanXuat"].Value.ToString();
+            txtNamSanXuat.Text = dgvDSThietBi.CurrentRow.Cells["NamSanXuat"].Value.ToString();
+            txtHanThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["HanThanhLy"].Value.ToString();
+            rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells["GhiChu"].Value.ToString();
 
             loaiThietBi = cboLoaiThietBi.Text;
             btnThemMoi.Enabled = false;
@@ -68,9 +68,8 @@ namespace QuanLyPhongMay
             txtHanThanhLy.Clear();
             rtbGhiChu.Clear();
             radLoaiThietBi.Checked = false;
-            radMaThietBi.Checked = false;
+            radThietBi.Checked = false;
             radNhaSanXuat.Checked = false;
-            radTenThietBi.Checked = false;
 
             btnThemMoi.Enabled = true;
             btnXoa.Enabled = true;
@@ -85,12 +84,17 @@ namespace QuanLyPhongMay
 
             if(txtTenThietBi.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tên thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else if(cboLoaiThietBi.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn loại thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn loại thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else if(txtNhaSanXuat.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập nhà sản xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else
@@ -128,7 +132,7 @@ namespace QuanLyPhongMay
                 thietBi.GhiChu = rtbGhiChu.Text;
 
                 thietBiCtrl.Them(thietBi);
-                MessageBox.Show("Thêm thiết bị thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Thêm thiết bị thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lamMoi();
             }
         }
@@ -140,16 +144,23 @@ namespace QuanLyPhongMay
             {
                 if (dgvDSThietBi.CurrentRow != null)
                 {
-                    DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa thiết bị này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    
-                    if (dlg == System.Windows.Forms.DialogResult.Yes)
+                    if (thietBiCtrl.KTThietBi(Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells["MaThietBi"].Value)))
                     {
-                        int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
-                        thietBiCtrl.Xoa(maThietBi);
+                        MessageBox.Show("Thiết bị đang được sử dụng không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        DialogResult dlg = MessageBox.Show("Sau khi xóa sẽ không thể khôi phục.\nBạn thật sự muốn xóa thiết bị này?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        thietBiCtrl.HienThiDgv(dgvDSThietBi);
-                        lamMoi();
+                        if (dlg == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            int maThietBi = Convert.ToInt32(dgvDSThietBi.CurrentRow.Cells[0].Value);
+                            thietBiCtrl.Xoa(maThietBi);
+
+                            MessageBox.Show("Xóa thiết bị thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            thietBiCtrl.HienThiDgv(dgvDSThietBi);
+                            lamMoi();
+                        }
                     }
                 }
                 else
@@ -159,7 +170,7 @@ namespace QuanLyPhongMay
             }
             else
             {
-                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn không được cấp quyền để xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -168,7 +179,7 @@ namespace QuanLyPhongMay
         {
             if (thietBiCtrl.KTThietBi(Convert.ToInt32(txtMaThietBi.Text)) && loaiThietBi != cboLoaiThietBi.Text)
             {
-                MessageBox.Show("Thiết bị đang được sử dụng không thể thay loại thiết bị.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thiết bị đang được sử dụng không thể thay loại thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (kiemTra())
             {
@@ -197,14 +208,12 @@ namespace QuanLyPhongMay
         {
             string loaiTK = "";
 
-            if (radMaThietBi.Checked)
-                loaiTK = "maThietBi";
-            else if (radTenThietBi.Checked)
-                loaiTK = "tenThietBi";
+            if (radThietBi.Checked)
+                loaiTK = "thietBi";
             else if (radNhaSanXuat.Checked)
                 loaiTK = "nhaSanXuat";
             else if (radLoaiThietBi.Checked)
-                loaiTK = "maLoai";
+                loaiTK = "loaiThietBi";
             else
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

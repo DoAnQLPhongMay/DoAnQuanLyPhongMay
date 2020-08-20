@@ -30,9 +30,13 @@
         {
             this.lblQLPhongMay = new System.Windows.Forms.Label();
             this.grpQLPhongMay = new System.Windows.Forms.GroupBox();
+            this.cboKhoa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.radTenKhoa = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.radTrangThai = new System.Windows.Forms.RadioButton();
             this.radTenPhong = new System.Windows.Forms.RadioButton();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -51,10 +55,6 @@
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.lblMaPhong = new System.Windows.Forms.Label();
             this.dgvDSPhong = new System.Windows.Forms.DataGridView();
-            this.cboKhoa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radTenKhoa = new System.Windows.Forms.RadioButton();
             this.MaPhongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +108,23 @@
             this.grpQLPhongMay.Text = "Quán Lý Phòng Máy";
             this.grpQLPhongMay.Enter += new System.EventHandler(this.grp_QLPhongMay_Enter);
             // 
+            // cboKhoa
+            // 
+            this.cboKhoa.FormattingEnabled = true;
+            this.cboKhoa.Location = new System.Drawing.Point(103, 110);
+            this.cboKhoa.Name = "cboKhoa";
+            this.cboKhoa.Size = new System.Drawing.Size(201, 21);
+            this.cboKhoa.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Khoa:";
+            // 
             // btnChiTiet
             // 
             this.btnChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -150,6 +167,27 @@
             this.grpTimKiem.TabIndex = 25;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
+            // 
+            // radTenKhoa
+            // 
+            this.radTenKhoa.AutoSize = true;
+            this.radTenKhoa.Location = new System.Drawing.Point(224, 56);
+            this.radTenKhoa.Name = "radTenKhoa";
+            this.radTenKhoa.Size = new System.Drawing.Size(54, 17);
+            this.radTenKhoa.TabIndex = 33;
+            this.radTenKhoa.TabStop = true;
+            this.radTenKhoa.Text = "Khoa";
+            this.radTenKhoa.UseVisualStyleBackColor = true;
+            this.radTenKhoa.CheckedChanged += new System.EventHandler(this.radTenKhoa_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Từ Khóa:";
             // 
             // radTrangThai
             // 
@@ -334,43 +372,6 @@
             this.dgvDSPhong.Size = new System.Drawing.Size(532, 170);
             this.dgvDSPhong.TabIndex = 2;
             this.dgvDSPhong.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
-            // 
-            // cboKhoa
-            // 
-            this.cboKhoa.FormattingEnabled = true;
-            this.cboKhoa.Location = new System.Drawing.Point(103, 110);
-            this.cboKhoa.Name = "cboKhoa";
-            this.cboKhoa.Size = new System.Drawing.Size(201, 21);
-            this.cboKhoa.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Khoa:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Từ Khóa:";
-            // 
-            // radTenKhoa
-            // 
-            this.radTenKhoa.AutoSize = true;
-            this.radTenKhoa.Location = new System.Drawing.Point(224, 56);
-            this.radTenKhoa.Name = "radTenKhoa";
-            this.radTenKhoa.Size = new System.Drawing.Size(54, 17);
-            this.radTenKhoa.TabIndex = 33;
-            this.radTenKhoa.TabStop = true;
-            this.radTenKhoa.Text = "Khoa";
-            this.radTenKhoa.UseVisualStyleBackColor = true;
             // 
             // MaPhongMay
             // 

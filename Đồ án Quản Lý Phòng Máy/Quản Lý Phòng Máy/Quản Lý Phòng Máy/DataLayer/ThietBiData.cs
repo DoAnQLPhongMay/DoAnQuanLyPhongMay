@@ -25,8 +25,8 @@ namespace QuanLyPhongMay.DataLayer
         public bool KTThietBi(int maThietBi)
         {
             string select = "SELECT * ",
-                from = "FROM dtb_ChiTietMay ",
-                where = "WHERE MaThietBi = '" + maThietBi + "'";
+                from = "FROM dtb_CauHinh ",
+                where = "WHERE ManHinh = '" + maThietBi + "' OR Chuot = '" + maThietBi + "' OR BanPhim = '" + maThietBi + "' OR Thung = '" + maThietBi + "' OR CPU = '" + maThietBi + "' OR MainBoard = '" + maThietBi + "' OR RAM = '" + maThietBi + "' OR OCung = '" + maThietBi + "' OR VGA = '" + maThietBi + "' OR PSU = '" + maThietBi + "' OR HeDieuHanh = '" + maThietBi + "'";
             SqlCommand cmd = new SqlCommand(select + from + where);
 
             return cls.KiemTra(cmd);
@@ -138,23 +138,20 @@ namespace QuanLyPhongMay.DataLayer
         //Hàm xử lý tìm kiếm thiết bị.
         public DataSet LayDSTK(string key, string loaiTK)
         {
-            string select = "SELECT * ",
+            string select = "SELECT dtb_ThietBi.*, dtb_LoaiThietBi.TenLoaiThietBi ",
                 from = "FROM dtb_ThietBi, dtb_LoaiThietBi ",
                 where = "WHERE dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai AND ";
 
             switch (loaiTK)
             {
-                case "maThietBi":
-                    where += "dtb_ThietBi.MaThietBi = '" + key + "'";
-                    break;
-                case "tenThietBi":
-                    where += "dtb_ThietBi.TenThietBi = N'" + key + "'";
+                case "thietBi":
+                    where += "(dtb_ThietBi.MaThietBi like '%" + key + "%' OR dtb_ThietBi.TenThietBi like N'%" + key + "%')";
                     break;
                 case "nhaSanXuat":
-                    where += "dtb_ThietBi.NhaSanXuat = N'" + key + "'";
+                    where += "dtb_ThietBi.NhaSanXuat like N'%" + key + "%'";
                     break;
                 default:
-                    where += "dtb_ThietBi.MaLoai = '" + key + "'";
+                    where += "(dtb_ThietBi.MaLoai like '%" + key + "%' OR dtb_LoaiThietBi.TenLoaiThietBi like N'%" + key + "%')";
                     break;
             }
 
