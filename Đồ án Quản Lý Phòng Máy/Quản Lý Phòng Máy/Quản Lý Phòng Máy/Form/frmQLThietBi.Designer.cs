@@ -58,6 +58,7 @@
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.lblThongSo = new System.Windows.Forms.Label();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.lblTuKhoa = new System.Windows.Forms.Label();
             this.radLoaiThietBi = new System.Windows.Forms.RadioButton();
             this.radNhaSanXuat = new System.Windows.Forms.RadioButton();
             this.radThietBi = new System.Windows.Forms.RadioButton();
@@ -70,7 +71,6 @@
             this.lblTenThietBi = new System.Windows.Forms.Label();
             this.txtMaThietBi = new System.Windows.Forms.TextBox();
             this.lblMaThietBi = new System.Windows.Forms.Label();
-            this.lblTuKhoa = new System.Windows.Forms.Label();
             this.grpThongTinThietBi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSThietBi)).BeginInit();
             this.grpTimKiem.SuspendLayout();
@@ -264,6 +264,7 @@
             this.txtHanThanhLy.Name = "txtHanThanhLy";
             this.txtHanThanhLy.Size = new System.Drawing.Size(105, 20);
             this.txtHanThanhLy.TabIndex = 39;
+            this.txtHanThanhLy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // lblHanThanhLy
             // 
@@ -296,6 +297,7 @@
             this.txtNamSanXuat.Name = "txtNamSanXuat";
             this.txtNamSanXuat.Size = new System.Drawing.Size(105, 20);
             this.txtNamSanXuat.TabIndex = 35;
+            this.txtNamSanXuat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // lblNamSanXuat
             // 
@@ -331,6 +333,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(105, 20);
             this.txtSoLuong.TabIndex = 28;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // lblSoLuong
             // 
@@ -365,6 +368,15 @@
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm Kiếm";
             this.grpTimKiem.Enter += new System.EventHandler(this.grp_TimKiem_Enter);
+            // 
+            // lblTuKhoa
+            // 
+            this.lblTuKhoa.AutoSize = true;
+            this.lblTuKhoa.Location = new System.Drawing.Point(6, 16);
+            this.lblTuKhoa.Name = "lblTuKhoa";
+            this.lblTuKhoa.Size = new System.Drawing.Size(59, 13);
+            this.lblTuKhoa.TabIndex = 44;
+            this.lblTuKhoa.Text = "Từ Khóa:";
             // 
             // radLoaiThietBi
             // 
@@ -486,15 +498,6 @@
             this.lblMaThietBi.Size = new System.Drawing.Size(76, 13);
             this.lblMaThietBi.TabIndex = 0;
             this.lblMaThietBi.Text = "Mã Thiết Bị:";
-            // 
-            // lblTuKhoa
-            // 
-            this.lblTuKhoa.AutoSize = true;
-            this.lblTuKhoa.Location = new System.Drawing.Point(6, 16);
-            this.lblTuKhoa.Name = "lblTuKhoa";
-            this.lblTuKhoa.Size = new System.Drawing.Size(59, 13);
-            this.lblTuKhoa.TabIndex = 44;
-            this.lblTuKhoa.Text = "Từ Khóa:";
             // 
             // frmQLThietBi
             // 

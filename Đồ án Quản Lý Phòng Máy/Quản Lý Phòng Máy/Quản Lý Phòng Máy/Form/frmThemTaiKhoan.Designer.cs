@@ -117,6 +117,7 @@
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
             this.txtMaTaiKhoan.Size = new System.Drawing.Size(182, 21);
             this.txtMaTaiKhoan.TabIndex = 24;
+            this.txtMaTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label3
             // 
@@ -232,6 +233,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(182, 21);
             this.txtSDT.TabIndex = 4;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label1
             // 

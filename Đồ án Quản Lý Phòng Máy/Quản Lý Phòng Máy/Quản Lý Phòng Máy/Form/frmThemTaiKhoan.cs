@@ -146,5 +146,14 @@ namespace QuanLyPhongMay
             cboLoaiTaiKhoan.DisplayMember = "Value";
             cboLoaiTaiKhoan.ValueMember = "Key";
         }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

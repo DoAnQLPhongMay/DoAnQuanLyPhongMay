@@ -55,6 +55,14 @@ namespace QuanLyPhongMay
             btnCapNhat.Enabled = true;
         }
 
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         //Hàm xử lý làm mới các text.
         private void lamMoi()
         {
@@ -95,6 +103,16 @@ namespace QuanLyPhongMay
             else if(txtNhaSanXuat.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập nhà sản xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else if (Convert.ToInt32(txtNamSanXuat.Text) < 2000 || Convert.ToInt32(txtNamSanXuat.Text) > 3000)
+            {
+                MessageBox.Show("Năm sản xuất không hơp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                kTra = false;
+            }
+            else if(Convert.ToInt32(txtHanThanhLy.Text) == 0 || Convert.ToInt32(txtHanThanhLy.Text) > 30)
+            {
+                MessageBox.Show("Hạn thanh lý không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
             else
@@ -247,5 +265,6 @@ namespace QuanLyPhongMay
         private void dgv_Click(object sender, EventArgs e)
         {
         }
+
     }
 }

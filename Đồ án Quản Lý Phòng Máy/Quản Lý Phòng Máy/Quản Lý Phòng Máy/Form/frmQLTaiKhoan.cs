@@ -43,6 +43,7 @@ namespace QuanLyPhongMay
             cboQuyenHan.ValueMember = "Key";
             HienThiThongTin();
         }
+        
         void HienThiThongTin()
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
@@ -58,6 +59,26 @@ namespace QuanLyPhongMay
                 cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LoaiTK"].Value);
             }
         }
+
+        void lamMoi()
+        {
+            txtUsername.Clear();
+            txtMaTK.Clear();
+            txtSDT.Clear();
+            txtEmail.Clear();
+            txtHoTen.Clear();
+            txtDiaChi.Clear();
+            txt_TiemKiem.Clear();
+
+            radHoTen.Checked = false;
+            radNam.Checked = false;
+            radNu.Checked = false;
+            radSDT.Checked = false;
+            cboQuyenHan.Text = "";
+
+            tkctrl.HienThi(dgvDSTaiKhoan);
+        }
+        
         void checkRadio()
         {
             string gtri = dgvDSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
@@ -67,9 +88,16 @@ namespace QuanLyPhongMay
       
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            frmThemTaiKhoan themtk = new frmThemTaiKhoan();
-            this.Hide();
-            themtk.Show();
+            if (user.PhanQuyen)
+            {
+                frmThemTaiKhoan themtk = new frmThemTaiKhoan();
+                this.Hide();
+                themtk.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không được cấp quyền!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
@@ -77,7 +105,7 @@ namespace QuanLyPhongMay
            
             if (user.PhanQuyen == false)
             {
-                MessageBox.Show("không được xóa", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn không được cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dgvDSTaiKhoan.CurrentRow != null)
             {
@@ -97,43 +125,48 @@ namespace QuanLyPhongMay
 
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
-            TaiKhoan tk = new TaiKhoan();
-            tk.TenGV = txtHoTen.Text;
-            tk.Gioitinh = (radNam.Checked) ? true : false;
-            tk.SDT = txtSDT.Text;
-            tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
-            tk.Diachi = txtDiaChi.Text;
-            tk.TenDangNhap = txtUsername.Text;
-            tk.Email = txtEmail.Text;
-
-            string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-
-            DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dlg == System.Windows.Forms.DialogResult.Yes)
+            if (user.PhanQuyen || user.TenTK == txtUsername.Text)
             {
-                if (tkctrl.Luu(tk) > 0)
+                TaiKhoan tk = new TaiKhoan();
+                tk.TenGV = txtHoTen.Text;
+                tk.Gioitinh = (radNam.Checked) ? true : false;
+                tk.SDT = txtSDT.Text;
+                tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
+                tk.Diachi = txtDiaChi.Text;
+                tk.TenDangNhap = txtUsername.Text;
+                tk.Email = txtEmail.Text;
+
+                string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+
+                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tkctrl.HienThi(dgvDSTaiKhoan);
-                    HienThiThongTin();
+                    if (tkctrl.Luu(tk) > 0)
+                    {
+                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tkctrl.HienThi(dgvDSTaiKhoan);
+                        HienThiThongTin();
+                    }
                 }
             }
-
-            
-             
+            else
+            {
+                MessageBox.Show("Bạn không được cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             string tieuchi = "";
-            if (rad_TenTaiKhoan.Checked)
-                tieuchi = "hovaten";
-            else if (rad_SDT.Checked)
+            if (radHoTen.Checked)
+                tieuchi = "hoTen";
+            else if (radSDT.Checked)
                 tieuchi = "sdt";
             else
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
             }
+
             if (txt_TiemKiem.Text.Length != 0 && tieuchi != "")
             {
 
@@ -161,6 +194,20 @@ namespace QuanLyPhongMay
         private void grpThongTinTaiKhoan_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            lamMoi();
         }
     }
 }

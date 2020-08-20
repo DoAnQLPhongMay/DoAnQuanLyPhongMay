@@ -39,8 +39,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.rad_SDT = new System.Windows.Forms.RadioButton();
-            this.rad_TenTaiKhoan = new System.Windows.Forms.RadioButton();
+            this.radSDT = new System.Windows.Forms.RadioButton();
+            this.radHoTen = new System.Windows.Forms.RadioButton();
             this.txt_TiemKiem = new System.Windows.Forms.TextBox();
             this.txtMaTK = new System.Windows.Forms.TextBox();
             this.lblMaTK = new System.Windows.Forms.Label();
@@ -148,6 +148,7 @@
             this.btnLamMoi.TabIndex = 25;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // cboQuyenHan
             // 
@@ -199,8 +200,8 @@
             // grp_TimKiem
             // 
             this.grp_TimKiem.Controls.Add(this.btn_TimKiem);
-            this.grp_TimKiem.Controls.Add(this.rad_SDT);
-            this.grp_TimKiem.Controls.Add(this.rad_TenTaiKhoan);
+            this.grp_TimKiem.Controls.Add(this.radSDT);
+            this.grp_TimKiem.Controls.Add(this.radHoTen);
             this.grp_TimKiem.Controls.Add(this.txt_TiemKiem);
             this.grp_TimKiem.Location = new System.Drawing.Point(6, 208);
             this.grp_TimKiem.Name = "grp_TimKiem";
@@ -222,29 +223,29 @@
             this.btn_TimKiem.UseVisualStyleBackColor = false;
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
-            // rad_SDT
+            // radSDT
             // 
-            this.rad_SDT.AutoSize = true;
-            this.rad_SDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_SDT.Location = new System.Drawing.Point(408, 28);
-            this.rad_SDT.Name = "rad_SDT";
-            this.rad_SDT.Size = new System.Drawing.Size(103, 19);
-            this.rad_SDT.TabIndex = 2;
-            this.rad_SDT.TabStop = true;
-            this.rad_SDT.Text = "Số Điện Thoại";
-            this.rad_SDT.UseVisualStyleBackColor = true;
+            this.radSDT.AutoSize = true;
+            this.radSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSDT.Location = new System.Drawing.Point(357, 28);
+            this.radSDT.Name = "radSDT";
+            this.radSDT.Size = new System.Drawing.Size(103, 19);
+            this.radSDT.TabIndex = 2;
+            this.radSDT.TabStop = true;
+            this.radSDT.Text = "Số Điện Thoại";
+            this.radSDT.UseVisualStyleBackColor = true;
             // 
-            // rad_TenTaiKhoan
+            // radHoTen
             // 
-            this.rad_TenTaiKhoan.AutoSize = true;
-            this.rad_TenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_TenTaiKhoan.Location = new System.Drawing.Point(275, 28);
-            this.rad_TenTaiKhoan.Name = "rad_TenTaiKhoan";
-            this.rad_TenTaiKhoan.Size = new System.Drawing.Size(105, 19);
-            this.rad_TenTaiKhoan.TabIndex = 1;
-            this.rad_TenTaiKhoan.TabStop = true;
-            this.rad_TenTaiKhoan.Text = "Tên Tài Khoản";
-            this.rad_TenTaiKhoan.UseVisualStyleBackColor = true;
+            this.radHoTen.AutoSize = true;
+            this.radHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radHoTen.Location = new System.Drawing.Point(275, 28);
+            this.radHoTen.Name = "radHoTen";
+            this.radHoTen.Size = new System.Drawing.Size(76, 19);
+            this.radHoTen.TabIndex = 1;
+            this.radHoTen.TabStop = true;
+            this.radHoTen.Text = "Họ và tên";
+            this.radHoTen.UseVisualStyleBackColor = true;
             // 
             // txt_TiemKiem
             // 
@@ -260,6 +261,7 @@
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.Size = new System.Drawing.Size(136, 21);
             this.txtMaTK.TabIndex = 17;
+            this.txtMaTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // lblMaTK
             // 
@@ -330,6 +332,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(136, 21);
             this.txtSDT.TabIndex = 8;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // lblSDT
             // 
@@ -520,8 +523,8 @@
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grp_TimKiem;
-        private System.Windows.Forms.RadioButton rad_SDT;
-        private System.Windows.Forms.RadioButton rad_TenTaiKhoan;
+        private System.Windows.Forms.RadioButton radSDT;
+        private System.Windows.Forms.RadioButton radHoTen;
         private System.Windows.Forms.TextBox txt_TiemKiem;
         private System.Windows.Forms.TextBox txtMaTK;
         private System.Windows.Forms.Label lblMaTK;

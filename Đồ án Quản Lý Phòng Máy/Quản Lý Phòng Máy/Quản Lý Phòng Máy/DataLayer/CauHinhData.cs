@@ -140,10 +140,10 @@ namespace QuanLyPhongMay.DataLayer
             switch (loaiTK)
             {
                 case "tenCauHinh":
-                    where += "TenCauHinh = N'" + key + "'";
+                    where += "TenCauHinh like '%" + key + "%'";
                     break;
                 default:
-                    where += "ManHinh = N'" + key + "' OR Chuot = N'" + key + "' OR BanPhim = N'" + key + "' OR Thung = N'" + key + "' OR CPU = N'" + key + "' OR MainBoard = N'" + key + "' OR RAM = N'" + key + "' OR OCung = N'" + key + "' OR VGA = N'" + key + "' OR PSU = N'" + key + "' OR HeDieuHanh = N'" + key + "'";
+                    where += "ManHinh like '" + key + "' OR Chuot like '" + key + "' OR BanPhim like '" + key + "' OR Thung like '" + key + "' OR CPU like '" + key + "' OR MainBoard like '" + key + "' OR RAM like '" + key + "' OR OCung like '" + key + "' OR VGA like '" + key + "' OR PSU like '" + key + "' OR HeDieuHanh like '" + key + "'";
                     break;
             }
 

@@ -35,15 +35,15 @@ namespace QuanLyPhongMay.DataLayer
 
         public DataSet LayDSTK(string tukhoa, string tieuchi)
         {
-            string sql = "select TenDangNhap, MaTaiKhoan, HoVaTen, GioiTinh, SDT, Email, NgaySinh, DiaChi, TenQuyen from dtb_Quyen, dtb_TaiKhoan where dtb_Quyen.MaQuyen = dtb_TaiKhoan.MaQuyen ";
+            string sql = "select * from dtb_TaiKhoan where ";
 
             switch (tieuchi)
             {
-                case "hovaten":
-                    sql += " And HoVaTen = N'" + tukhoa + "'";
+                case "hoTen":
+                    sql += "HoVaTen like N'%" + tukhoa + "%'";
                     break;
                 default:
-                    sql += " And SDT = '" + tukhoa + "'";
+                    sql += "SDT like '%" + tukhoa + "%'";
                     break;
             }
             SqlCommand sqlcmd = new SqlCommand(sql);
