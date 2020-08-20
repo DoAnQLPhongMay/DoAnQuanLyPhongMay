@@ -562,7 +562,7 @@
             this.MaThietBi});
             this.dgvDSNThietBi.Location = new System.Drawing.Point(12, 355);
             this.dgvDSNThietBi.Name = "dgvDSNThietBi";
-            this.dgvDSNThietBi.Size = new System.Drawing.Size(756, 184);
+            this.dgvDSNThietBi.Size = new System.Drawing.Size(816, 153);
             this.dgvDSNThietBi.TabIndex = 2;
             this.dgvDSNThietBi.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
@@ -677,9 +677,9 @@
             this.dataGridViewTextBoxColumn12,
             this.MaTB,
             this.MaCH});
-            this.dgvDSNCauHinh.Location = new System.Drawing.Point(12, 572);
+            this.dgvDSNCauHinh.Location = new System.Drawing.Point(12, 527);
             this.dgvDSNCauHinh.Name = "dgvDSNCauHinh";
-            this.dgvDSNCauHinh.Size = new System.Drawing.Size(756, 184);
+            this.dgvDSNCauHinh.Size = new System.Drawing.Size(816, 184);
             this.dgvDSNCauHinh.TabIndex = 3;
             this.dgvDSNCauHinh.DoubleClick += new System.EventHandler(this.dgv_DoubleClickCH);
             // 
@@ -791,7 +791,7 @@
             // 
             this.lblDSCauHinh.AutoSize = true;
             this.lblDSCauHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDSCauHinh.Location = new System.Drawing.Point(12, 556);
+            this.lblDSCauHinh.Location = new System.Drawing.Point(9, 511);
             this.lblDSCauHinh.Name = "lblDSCauHinh";
             this.lblDSCauHinh.Size = new System.Drawing.Size(63, 13);
             this.lblDSCauHinh.TabIndex = 58;
@@ -801,7 +801,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 778);
+            this.ClientSize = new System.Drawing.Size(832, 749);
             this.Controls.Add(this.lblDSCauHinh);
             this.Controls.Add(this.lblDSThietbi);
             this.Controls.Add(this.dgvDSNCauHinh);

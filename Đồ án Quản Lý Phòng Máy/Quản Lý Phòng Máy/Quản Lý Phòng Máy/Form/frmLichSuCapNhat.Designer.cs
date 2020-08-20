@@ -30,6 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtmDenNgay = new System.Windows.Forms.DateTimePicker();
+            this.dtmTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.radPhong = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.radNgay = new System.Windows.Forms.RadioButton();
@@ -47,12 +53,6 @@
             this.MaCauHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radPhong = new System.Windows.Forms.RadioButton();
-            this.dtmTuNgay = new System.Windows.Forms.DateTimePicker();
-            this.dtmDenNgay = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSCapNhat)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,64 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Location = new System.Drawing.Point(484, 69);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(107, 40);
+            this.btnLamMoi.TabIndex = 10;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Đến Ngày:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Từ Ngày:";
+            // 
+            // dtmDenNgay
+            // 
+            this.dtmDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmDenNgay.Location = new System.Drawing.Point(79, 90);
+            this.dtmDenNgay.Name = "dtmDenNgay";
+            this.dtmDenNgay.Size = new System.Drawing.Size(122, 20);
+            this.dtmDenNgay.TabIndex = 7;
+            // 
+            // dtmTuNgay
+            // 
+            this.dtmTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmTuNgay.Location = new System.Drawing.Point(79, 64);
+            this.dtmTuNgay.Name = "dtmTuNgay";
+            this.dtmTuNgay.Size = new System.Drawing.Size(122, 20);
+            this.dtmTuNgay.TabIndex = 6;
+            // 
+            // radPhong
+            // 
+            this.radPhong.AutoSize = true;
+            this.radPhong.Location = new System.Drawing.Point(262, 39);
+            this.radPhong.Name = "radPhong";
+            this.radPhong.Size = new System.Drawing.Size(61, 17);
+            this.radPhong.TabIndex = 5;
+            this.radPhong.TabStop = true;
+            this.radPhong.Text = "Phòng";
+            this.radPhong.UseVisualStyleBackColor = true;
+            this.radPhong.CheckedChanged += new System.EventHandler(this.radMay_CheckedChanged);
             // 
             // label2
             // 
@@ -235,64 +293,6 @@
             this.TenDangNhap.Name = "TenDangNhap";
             this.TenDangNhap.ReadOnly = true;
             this.TenDangNhap.Visible = false;
-            // 
-            // radPhong
-            // 
-            this.radPhong.AutoSize = true;
-            this.radPhong.Location = new System.Drawing.Point(262, 39);
-            this.radPhong.Name = "radPhong";
-            this.radPhong.Size = new System.Drawing.Size(61, 17);
-            this.radPhong.TabIndex = 5;
-            this.radPhong.TabStop = true;
-            this.radPhong.Text = "Phòng";
-            this.radPhong.UseVisualStyleBackColor = true;
-            this.radPhong.CheckedChanged += new System.EventHandler(this.radMay_CheckedChanged);
-            // 
-            // dtmTuNgay
-            // 
-            this.dtmTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmTuNgay.Location = new System.Drawing.Point(79, 64);
-            this.dtmTuNgay.Name = "dtmTuNgay";
-            this.dtmTuNgay.Size = new System.Drawing.Size(122, 20);
-            this.dtmTuNgay.TabIndex = 6;
-            // 
-            // dtmDenNgay
-            // 
-            this.dtmDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmDenNgay.Location = new System.Drawing.Point(79, 90);
-            this.dtmDenNgay.Name = "dtmDenNgay";
-            this.dtmDenNgay.Size = new System.Drawing.Size(122, 20);
-            this.dtmDenNgay.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Từ Ngày:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Đến Ngày:";
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Location = new System.Drawing.Point(484, 69);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(107, 40);
-            this.btnLamMoi.TabIndex = 10;
-            this.btnLamMoi.Text = "Làm Mới";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // frmLichSuCapNhat
             // 

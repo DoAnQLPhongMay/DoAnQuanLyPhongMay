@@ -225,6 +225,8 @@ namespace QuanLyPhongMay
             if (Application.OpenForms["frmLichSuCapNhat"] == null)
                 btnLichSuCapNhat.BackColor = Color.FromArgb(4, 41, 68);
         }
+
+        
     }
 
 }

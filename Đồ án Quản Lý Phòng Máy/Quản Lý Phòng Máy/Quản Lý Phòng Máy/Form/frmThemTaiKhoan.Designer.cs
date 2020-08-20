@@ -58,6 +58,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cboLoaiTaiKhoan);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label9);
@@ -331,6 +333,7 @@
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThemTaiKhoan);
             this.Name = "frmThemTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.frmThemTaiKhoan_Load);
             this.groupBox2.ResumeLayout(false);
