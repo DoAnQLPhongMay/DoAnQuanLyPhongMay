@@ -148,7 +148,7 @@
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
             this.btnKhoiPhuc.Size = new System.Drawing.Size(211, 37);
             this.btnKhoiPhuc.TabIndex = 10;
-            this.btnKhoiPhuc.Text = "Khôi Phục";
+            this.btnKhoiPhuc.Text = "Đổi Mật Khẩu";
             this.btnKhoiPhuc.UseVisualStyleBackColor = false;
             this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
             // 

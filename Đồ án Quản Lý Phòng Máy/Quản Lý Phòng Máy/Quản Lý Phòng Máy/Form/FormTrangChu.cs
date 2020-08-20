@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhongMay.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,18 @@ namespace QuanLyPhongMay
 {
     public partial class FormTrangChu : Form
     {
+        User user = new User();
+
         public FormTrangChu()
         {
             InitializeComponent();
         }
 
-
+        public FormTrangChu(User user)
+        {
+            this.user = user;
+            InitializeComponent();
+        }
 
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
@@ -218,7 +225,6 @@ namespace QuanLyPhongMay
             if (Application.OpenForms["frmLichSuCapNhat"] == null)
                 btnLichSuCapNhat.BackColor = Color.FromArgb(4, 41, 68);
         }
-
     }
 
 }

@@ -10,19 +10,19 @@ namespace QuanLyPhongMay.Class
     {
         //Khởi tạo biến giá trị.
         private string tenTK, tenUser;
-        private bool phanQuyen;
+        private int phanQuyen;
 
         //Hàm xử lý getter và setter
         public string TenTK { get => tenTK; set => tenTK = value; }
         public string TenUser { get => tenUser; set => tenUser = value; }
-        public bool PhanQuyen { get => phanQuyen; set => phanQuyen = value; }
+        public int PhanQuyen { get => phanQuyen; set => phanQuyen = value; }
 
         //Khởi tạo mặc định của class.
         public User()
         {
             this.TenTK = "vmkhoi";
             this.TenUser = "";
-            this.PhanQuyen = true;
+            this.PhanQuyen = 1;
         }
 
         public User(User user)
@@ -37,7 +37,7 @@ namespace QuanLyPhongMay.Class
         {
             this.TenTK = "";
             this.TenUser = "";
-            this.PhanQuyen = false;
+            this.PhanQuyen = 0;
         }
     }
 }

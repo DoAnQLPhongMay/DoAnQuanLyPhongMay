@@ -162,7 +162,7 @@ namespace QuanLyPhongMay
         //Hàm xử lý chức năng xóa.
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (user.PhanQuyen)
+            if (user.PhanQuyen == 1)
             {
                 if (dgvDSCauHinh.CurrentRow != null)
                 {

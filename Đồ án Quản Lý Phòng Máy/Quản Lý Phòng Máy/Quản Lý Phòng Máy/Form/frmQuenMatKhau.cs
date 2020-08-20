@@ -19,7 +19,7 @@ namespace QuanLyPhongMay
         public frmQuenMatKhau()
         {
             InitializeComponent();
-            MessageBox.Show("Để khôi phục mật khẩu vui lòng nhập:\n -Tên tài khoản.\n -Email.\n -Số điện thoại.");
+            MessageBox.Show("Để đổi mật khẩu vui lòng nhập:\n -Tên tài khoản.\n -Email.\n -Số điện thoại.");
         }
 
         //Hàm xử lý khi ấn nút thoát.

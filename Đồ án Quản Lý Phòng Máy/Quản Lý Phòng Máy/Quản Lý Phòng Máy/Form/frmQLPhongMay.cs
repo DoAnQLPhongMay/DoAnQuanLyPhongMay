@@ -138,7 +138,7 @@ namespace QuanLyPhongMay
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (user.PhanQuyen)
+            if (user.PhanQuyen == 1)
             {
                 if (dgvDSPhong.CurrentRow != null)
                 {

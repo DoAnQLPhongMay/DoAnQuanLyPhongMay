@@ -52,7 +52,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.Desktop;
             this.txtEmail.Location = new System.Drawing.Point(169, 131);
-            this.txtEmail.MaxLength = 20;
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(179, 23);
             this.txtEmail.TabIndex = 4;
@@ -119,11 +119,11 @@
             this.lblQuenMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuenMatKhau.ForeColor = System.Drawing.Color.White;
             this.lblQuenMatKhau.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblQuenMatKhau.Location = new System.Drawing.Point(81, 40);
+            this.lblQuenMatKhau.Location = new System.Drawing.Point(59, 40);
             this.lblQuenMatKhau.Name = "lblQuenMatKhau";
-            this.lblQuenMatKhau.Size = new System.Drawing.Size(215, 31);
+            this.lblQuenMatKhau.Size = new System.Drawing.Size(271, 31);
             this.lblQuenMatKhau.TabIndex = 0;
-            this.lblQuenMatKhau.Text = "Quên Mật Khẩu";
+            this.lblQuenMatKhau.Text = "Kiểm Tra Tài Khoản";
             this.lblQuenMatKhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblQuenMatKhau.Click += new System.EventHandler(this.lblDangNhap_Click);
             // 
@@ -160,7 +160,7 @@
             this.txtSDT.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.ForeColor = System.Drawing.SystemColors.Desktop;
             this.txtSDT.Location = new System.Drawing.Point(169, 160);
-            this.txtSDT.MaxLength = 20;
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(179, 23);
             this.txtSDT.TabIndex = 10;

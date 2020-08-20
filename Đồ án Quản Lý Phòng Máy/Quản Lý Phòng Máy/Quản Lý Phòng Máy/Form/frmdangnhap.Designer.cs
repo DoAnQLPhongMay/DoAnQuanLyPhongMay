@@ -163,7 +163,7 @@
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.Size = new System.Drawing.Size(211, 39);
             this.btnQuenMatKhau.TabIndex = 9;
-            this.btnQuenMatKhau.Text = "Quên Mật Khẩu";
+            this.btnQuenMatKhau.Text = "Đổi Mật Khẩu";
             this.btnQuenMatKhau.UseVisualStyleBackColor = false;
             this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click_1);
             // 

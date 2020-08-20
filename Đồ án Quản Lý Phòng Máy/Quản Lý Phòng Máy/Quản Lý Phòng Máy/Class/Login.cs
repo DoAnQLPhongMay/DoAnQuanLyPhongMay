@@ -26,7 +26,7 @@ namespace QuanLyPhongMay.Class
             {
                 user.TenUser = ds.Tables[0].Rows[0]["HoVaTen"].ToString();
                 user.TenTK = ds.Tables[0].Rows[0]["TenDangNhap"].ToString();
-                user.PhanQuyen = Convert.ToBoolean(ds.Tables[0].Rows[0]["LoaiTK"].ToString());
+                user.PhanQuyen = Convert.ToInt32(ds.Tables[0].Rows[0]["LoaiTK"]);
                 return true;
             }
 

@@ -34,6 +34,7 @@ namespace QuanLyPhongMay
             else if (log.DangNhap(txtTenDangNhap.Text, txtMatKhau.Text, user))
             {
                 //Nếu đăng nhập thành công thì ẩn frmDangNhap và mở frmTrangChu.
+                //FormTrangChu frm = new FormTrangChu(user);
                 frmTrangChu frm = new frmTrangChu(user);
                 this.Hide();
                 frm.Show();
