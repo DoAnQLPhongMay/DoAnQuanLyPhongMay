@@ -15,10 +15,13 @@ namespace QuanLyPhongMay
 {
     public partial class frmThemTaiKhoan : Form
     {
+        //Khởi tạo các biến giá trị.
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
         Quyenctrl quyenctrl = new Quyenctrl();
         User user = new User();
+        string text;
 
+        //Hàm khởi tạo mặc định.
         public frmThemTaiKhoan()
         {
             InitializeComponent();
@@ -30,6 +33,34 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        //Hàm xử lý load giao diện.
+        private void frmThemTaiKhoan_Load(object sender, EventArgs e)
+        {
+            Dictionary<int, string> test = new Dictionary<int, string>();
+            test.Add(0, "User");
+            test.Add(1, "Admin");
+            cboLoaiTaiKhoan.DataSource = new BindingSource(test, null);
+            cboLoaiTaiKhoan.DisplayMember = "Value";
+            cboLoaiTaiKhoan.ValueMember = "Key";
+        }
+
+        //Hàm xử lý chỉ cho nhập dữ liệu số.
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Hàm xử lý thông báo lỗi.
+        private void ThongBao(string text)
+        {
+            MessageBox.Show(text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Hàm xử lý kiểm tra dữ liệu.
         bool KiemTra()
         {
             bool ktra = true;
@@ -78,6 +109,7 @@ namespace QuanLyPhongMay
             return ktra;
         }
 
+        //Hàm làm mới các text.
         private void LamMoi()
         {
             txtTenDangNhap.Clear();
@@ -90,33 +122,44 @@ namespace QuanLyPhongMay
             cboLoaiTaiKhoan.Text = "";
         }
 
+        //Hàm xử lý lưu dữ liệu.
+        private void GanDuLieu(TaiKhoan tk)
+        {
+
+            tk.TenGV = txtTenTaiKhoan.Text;
+            tk.MaGV = txtMaTaiKhoan.Text;
+            tk.Gioitinh = (rdNam.Checked) ? true : false;
+            tk.SDT = txtSDT.Text;
+            tk.Email = txtEmail.Text;
+            tk.Ngaysinh = Convert.ToDateTime(dtNgaySinh.Value);
+            tk.Diachi = txtDiaChi.Text;
+            tk.TenDangNhap = txtTenDangNhap.Text;
+            tk.MatKhau = txtMatKhau.Text;
+            tk.Loaitaikhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
+        }
+
+        //Hàm xử lý thêm mới.
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             if (KiemTra())
             {
                 TaiKhoan tk = new TaiKhoan();
-                tk.TenGV = txtTenTaiKhoan.Text;
-                tk.MaGV = txtMaTaiKhoan.Text;
-                tk.Gioitinh = (rdNam.Checked) ? true : false;
-                tk.SDT = txtSDT.Text;
-                tk.Email = txtEmail.Text;
-                tk.Ngaysinh = Convert.ToDateTime(dtNgaySinh.Value);
-                tk.Diachi = txtDiaChi.Text;
-                tk.TenDangNhap = txtTenDangNhap.Text;
-                tk.MatKhau = txtMatKhau.Text;
-                tk.Loaitaikhoan = Convert.ToInt32(cboLoaiTaiKhoan.SelectedValue);
+                GanDuLieu(tk);
 
                 {
                     switch (tkctrl.Them(tk))
                     {
                         case -1:
-                            MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            text = "Tên đăng nhập đã tồn tại!";
+                            ThongBao(text);
                             break;
                         case 0:
-                            MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            text = "Số điện thoại không hợp lệ!";
+                            ThongBao(text);
                             break;
                         case 2:
-                            MessageBox.Show("Mã Tài Khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            text = "Mã Tài Khoản đã tồn tại";
+                            ThongBao(text);
                             break;
                         case 1:
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -127,35 +170,16 @@ namespace QuanLyPhongMay
             }
         }
 
+        //Hàm xử lý đóng giao diện.
         private void btnThoat_Click(object sender, EventArgs e)
         {
              this.Close();
         }
 
+        //Hàm xử lý làm mới text.
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LamMoi();
-        }
-
-        public bool txtLoaiTaiKhoan { get; set; }
-
-        private void frmThemTaiKhoan_Load(object sender, EventArgs e)
-        {
-            Dictionary<int,string> test = new Dictionary<int, string>();
-            test.Add(0, "User");
-            test.Add(1, "Admin");
-            cboLoaiTaiKhoan.DataSource = new BindingSource(test, null);
-            cboLoaiTaiKhoan.DisplayMember = "Value";
-            cboLoaiTaiKhoan.ValueMember = "Key";
-        }
-
-        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

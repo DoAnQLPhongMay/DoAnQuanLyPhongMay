@@ -16,12 +16,13 @@ namespace QuanLyPhongMay
 {
     public partial class frm_QLTaiKhoan : Form
     {
-        /*SqlConnection conn = DBUtils.GetDBConnection();
-        public User user;*/
+        //Khởi tạo các biến giá trị.
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
         User user = new User();
+        string text;
         int loaiTK;
 
+        //Hàm khởi tạo mặc định.
         public frm_QLTaiKhoan()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace QuanLyPhongMay
             InitializeComponent();
         }
 
+        //Hàm xử lý load giao diện.
         private void frm_QLTaiKhoan_Load(object sender, EventArgs e)
         {
             tkctrl.HienThi(dgvDSTaiKhoan);
@@ -45,7 +47,8 @@ namespace QuanLyPhongMay
             HienThiThongTin();
         }
 
-        void HienThiThongTin()
+        //Hàm xử lý load dữ liệu từ dgv lên các text.
+        private void HienThiThongTin()
         {
             if (dgvDSTaiKhoan.CurrentRow != null)
             {
@@ -57,12 +60,28 @@ namespace QuanLyPhongMay
                 txtEmail.Text = dgvDSTaiKhoan.CurrentRow.Cells["Email"].Value.ToString();
                 dtmNgaySinh.Value = Convert.ToDateTime(dgvDSTaiKhoan.CurrentRow.Cells["NgaySinh"].Value);
                 txtDiaChi.Text = dgvDSTaiKhoan.CurrentRow.Cells["DiaChi"].Value.ToString();
-                cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LoaiTK"].Value);
-                loaiTK = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LoaiTK"].Value);
+                cboQuyenHan.SelectedValue = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LTK"].Value);
+                loaiTK = Convert.ToInt32(dgvDSTaiKhoan.CurrentRow.Cells["LTK"].Value);
             }
         }
 
-        void lamMoi()
+        private void dgvDSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void dgvDSTaiKhoan_Click(object sender, EventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        private void dgvDSTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HienThiThongTin();
+        }
+
+        //Hàm xử lý làm mới các text.
+        private void LamMoi()
         {
             txtUsername.Clear();
             txtMaTK.Clear();
@@ -81,6 +100,61 @@ namespace QuanLyPhongMay
             tkctrl.HienThi(dgvDSTaiKhoan);
         }
 
+        //Hàm hiển thị thông báo lỗi.
+        private void ThongBao(string text)
+        {
+            MessageBox.Show(text, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Hàm xử lý kiểm tra dữ liệu.
+        private bool KiemTra()
+        {
+            if(txtSDT.TextLength < 10)
+            {
+                text = "Bạn không được cấp quyền!";
+                ThongBao(text);
+                return false;
+            }
+            else if(txtEmail.Text == "")
+            {
+                text = "Vui lòng nhập Email!";
+                ThongBao(text);
+                return false;
+            }
+            else if (txtHoTen.Text == "")
+            {
+                text = "Vui lòng nhập Họ & Tên!";
+                ThongBao(text);
+                return false;
+            }
+
+            return true;
+        }
+
+        //Hàm xử lý lưu dữ liệu.
+        private void GanDuLieu(TaiKhoan tk)
+        {
+            tk.TenGV = txtHoTen.Text;
+            tk.Gioitinh = (radNam.Checked) ? true : false;
+            tk.SDT = txtSDT.Text;
+            tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
+            tk.Diachi = txtDiaChi.Text;
+            tk.TenDangNhap = txtUsername.Text;
+            tk.Email = txtEmail.Text;
+            tk.Loaitaikhoan = Convert.ToInt32(cboQuyenHan.SelectedValue);
+        }
+
+        //Hàm chỉ cho phép nhập số từ bàn phím.
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Hàm xử lý chọn giới tính.
         void checkRadio()
         {
             string gtri = dgvDSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
@@ -88,6 +162,7 @@ namespace QuanLyPhongMay
             radNu.Checked = (gtri == "False") ? true : false;
         }
 
+        //Hàm gọi giao diện thêm mới.
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (user.PhanQuyen == 1)
@@ -97,21 +172,25 @@ namespace QuanLyPhongMay
             }
             else
             {
-                MessageBox.Show("Bạn không được cấp quyền!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Bạn không được cấp quyền!";
+                ThongBao(text);
             }
         }
 
+        //Hàm xử lý xóa.
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
 
             if (user.PhanQuyen == 0)
             {
-                MessageBox.Show("Bạn không được cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Bạn không được cấp quyền!";
+                ThongBao(text);
             }
             else if (dgvDSTaiKhoan.CurrentRow != null)
             {
                 string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
                 if (dlg == System.Windows.Forms.DialogResult.Yes)
                 {
                     tkctrl.Xoa(tendn);
@@ -124,8 +203,10 @@ namespace QuanLyPhongMay
 
         }
 
+        //Hàm xử lý cập nhật.
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
+            //3 if kiểm tra phân quyền.
             if (user.PhanQuyen == 1 || user.TenTK == txtUsername.Text)
             {
                 if ((loaiTK == 0 && loaiTK == Convert.ToInt32(cboQuyenHan.SelectedValue) || user.PhanQuyen == 1 || loaiTK == 1))
@@ -134,40 +215,40 @@ namespace QuanLyPhongMay
                     {
                         user.PhanQuyen = Convert.ToInt32(cboQuyenHan.SelectedValue);
                     }
-                    TaiKhoan tk = new TaiKhoan();
-                    tk.TenGV = txtHoTen.Text;
-                    tk.Gioitinh = (radNam.Checked) ? true : false;
-                    tk.SDT = txtSDT.Text;
-                    tk.Ngaysinh = Convert.ToDateTime(dtmNgaySinh.Value);
-                    tk.Diachi = txtDiaChi.Text;
-                    tk.TenDangNhap = txtUsername.Text;
-                    tk.Email = txtEmail.Text;
-                    tk.Loaitaikhoan = Convert.ToInt32(cboQuyenHan.SelectedValue);
 
-                    string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-
-                    DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dlg == System.Windows.Forms.DialogResult.Yes)
+                    if (KiemTra())
                     {
-                        if (tkctrl.Luu(tk) > 0)
+                        TaiKhoan tk = new TaiKhoan();
+                        GanDuLieu(tk);
+
+                        string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+
+                        DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dlg == System.Windows.Forms.DialogResult.Yes)
                         {
-                            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            tkctrl.HienThi(dgvDSTaiKhoan);
-                            HienThiThongTin();
+                            if (tkctrl.Luu(tk) > 0)
+                            {
+                                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                tkctrl.HienThi(dgvDSTaiKhoan);
+                                HienThiThongTin();
+                            }
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User không thể thay đổi quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    text = "User không thể thay đổi quyền!";
+                    ThongBao(text);
                 }
             }
             else
             {
-                MessageBox.Show("Bạn không được cấp quyền!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Bạn không được cấp quyền!";
+                ThongBao(text);
             }
         }
 
+        //Hàm xử lý tìm kiếm.
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             string tieuchi = "";
@@ -177,7 +258,8 @@ namespace QuanLyPhongMay
                 tieuchi = "sdt";
             else
             {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK);
+                text = "Vui lòng chọn loại tìm kiếm!";
+                ThongBao(text);
             }
 
             if (txt_TiemKiem.Text.Length != 0 && tieuchi != "")
@@ -189,38 +271,10 @@ namespace QuanLyPhongMay
 
         }
 
-        private void dgvDSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            HienThiThongTin();
-        }
-
-        private void dgvDSTaiKhoan_Click(object sender, EventArgs e)
-        {
-            HienThiThongTin();
-        }
-
-        private void dgvDSTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            HienThiThongTin();
-        }
-
-        private void grpThongTinTaiKhoan_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
+        //Hàm xử lý làm mới text.
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            lamMoi();
+            LamMoi();
         }
     }
 }

@@ -67,7 +67,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpThongTinTaiKhoan.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
@@ -119,7 +119,6 @@
             this.grpThongTinTaiKhoan.TabIndex = 1;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin Tài Khoản";
-            this.grpThongTinTaiKhoan.Enter += new System.EventHandler(this.grpThongTinTaiKhoan_Enter);
             // 
             // txtEmail
             // 
@@ -423,7 +422,7 @@
             this.Email,
             this.NgaySinh,
             this.DiaChi,
-            this.LoaiTK});
+            this.LTK});
             this.dgvDSTaiKhoan.Location = new System.Drawing.Point(12, 395);
             this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
             this.dgvDSTaiKhoan.Size = new System.Drawing.Size(741, 242);
@@ -486,12 +485,13 @@
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.ReadOnly = true;
             // 
-            // LoaiTK
+            // LTK
             // 
-            this.LoaiTK.DataPropertyName = "LoaiTK";
-            this.LoaiTK.HeaderText = "Loại TK";
-            this.LoaiTK.Name = "LoaiTK";
-            this.LoaiTK.ReadOnly = true;
+            this.LTK.DataPropertyName = "LoaiTK";
+            this.LTK.HeaderText = "LoaiTK";
+            this.LTK.Name = "LTK";
+            this.LTK.ReadOnly = true;
+            this.LTK.Visible = false;
             // 
             // frm_QLTaiKhoan
             // 
@@ -556,6 +556,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LTK;
     }
 }
