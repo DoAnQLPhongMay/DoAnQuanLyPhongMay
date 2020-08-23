@@ -13,16 +13,19 @@ namespace QuanLyPhongMay.Controller
     class TaiKhoanCtrl
     {
         TaiKhoanData GVData = new TaiKhoanData();
+
         public void HienThiComboBox(ComboBox cb)
         {
             cb.DataSource = GVData.LayDSTK().Tables[0];
             cb.DisplayMember = "tentaikhoan";
             cb.ValueMember = "MaTaiKhoan";
         }
+
         public void HienThiTK(DataGridView dgv,string tukhoa, string tieuchi)
         {
             dgv.DataSource = GVData.LayDSTK(tukhoa, tieuchi).Tables[0];
         }
+
         public TaiKhoan DuLieuGV(string ten)
         {
             DataSet ds = GVData.LayDLMotDong(ten);
@@ -39,10 +42,12 @@ namespace QuanLyPhongMay.Controller
             gv.Loaitaikhoan = Convert.ToInt32(ds.Tables[0].Rows[0]["LoaiTaiKhoan"]);
             return gv;
         }
+
         public void HienThi(DataGridView dgv)
         {
          dgv.DataSource = GVData.LayDSGiangVien().Tables[0];
         }
+
         public int Them(TaiKhoan gv)
         {
             if (!KiemTraSDT(gv.SDT))
@@ -53,10 +58,12 @@ namespace QuanLyPhongMay.Controller
                 return 2;
             return GVData.Them(gv);
         }
+
         public int Xoa(string tendn)
         {
             return GVData.Xoa(tendn);
         }
+
         public int Luu(TaiKhoan gv)
         {
             if (!KiemTraSDT(gv.SDT))
@@ -73,14 +80,32 @@ namespace QuanLyPhongMay.Controller
                 return false;
             return true;
         }
+
         public bool KiemTraTonTai(string taikhoan)
         {
             return GVData.KiemTra(taikhoan);
         }
+
+        public bool KTLSThanhLy(string taikhoan)
+        {
+            return GVData.KTLSThanhLy(taikhoan);
+        }
+
+        public bool KTLSNhap(string taikhoan)
+        {
+            return GVData.KTLSNhap(taikhoan);
+        }
+
+        public bool KTLSCapNhat(string taikhoan)
+        {
+            return GVData.KTLSCapNhat(taikhoan);
+        }
+
         public bool KiemTraMaQuyen(int maquyen)
         {
             return GVData.KiemTraQuyen(maquyen);
         }
+
         public bool KiemTraMatk(string matk)
         {
             return GVData.KiemTraMaTaiKhoan(matk);

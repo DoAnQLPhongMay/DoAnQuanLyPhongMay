@@ -49,6 +49,7 @@ namespace QuanLyPhongMay.DataLayer
             SqlCommand sqlcmd = new SqlCommand(sql);
             return cls.LayDuLieu(sqlcmd);
         }
+
         public int Xoa(string tendn)
         {
             SqlCommand cmd = new SqlCommand();
@@ -56,6 +57,7 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = tendn;
             return cls.CapNhatDL(cmd);
         }
+
         public int Them(TaiKhoan gv)
         {
             SqlCommand cmd = new SqlCommand();
@@ -100,9 +102,47 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("tendangnhap", SqlDbType.VarChar).Value = tk;
             
             return  (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
-
-            
         }
+
+        public bool KTLSThanhLy(string tk)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string select = "SELECT * ",
+                from = "FROM dtb_TaiKhoan, dbo.dtb_LichSuThanhLy ",
+                where = "WHERE dtb_TaiKhoan.TenDangNhap = dbo.dtb_LichSuThanhLy.NguoiPhuTrach AND dtb_TaiKhoan.TenDangNhap = @tenDangNhap";
+            cmd.CommandText = select + from + where;
+
+            cmd.Parameters.Add("tenDangNhap", SqlDbType.VarChar).Value = tk;
+
+            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+        }
+
+        public bool KTLSNhap(string tk)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string select = "SELECT * ",
+                from = "FROM dtb_TaiKhoan, dtb_LichSuNhap ",
+                where = "WHERE dtb_TaiKhoan.TenDangNhap = dtb_LichSuNhap.NguoiPhuTrach AND dtb_TaiKhoan.TenDangNhap = @tenDangNhap";
+            cmd.CommandText = select + from + where;
+
+            cmd.Parameters.Add("tenDangNhap", SqlDbType.VarChar).Value = tk;
+
+            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+        }
+
+        public bool KTLSCapNhat(string tk)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string select = "SELECT * ",
+                from = "FROM dtb_TaiKhoan, dtb_LichSuCapNhat ",
+                where = "WHERE dtb_TaiKhoan.TenDangNhap = dtb_LichSuCapNhat.TenDangNhap AND dtb_TaiKhoan.TenDangNhap = @tenDangNhap";
+            cmd.CommandText = select + from + where;
+
+            cmd.Parameters.Add("tenDangNhap", SqlDbType.VarChar).Value = tk;
+
+            return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
+        }
+
         public bool KiemTraMaTaiKhoan(string matk)
         {
             SqlCommand cmd = new SqlCommand();
@@ -114,6 +154,7 @@ namespace QuanLyPhongMay.DataLayer
 
 
         }
+
         public bool KiemTraQuyen(int maquyen)
         {
             SqlCommand cmd = new SqlCommand();
@@ -122,8 +163,6 @@ namespace QuanLyPhongMay.DataLayer
             cmd.Parameters.Add("maquyen", SqlDbType.VarChar).Value = maquyen;
             
             return (cls.LayDuLieu(cmd).Tables[0].Rows.Count > 0);
-
-
         }
     }
 }

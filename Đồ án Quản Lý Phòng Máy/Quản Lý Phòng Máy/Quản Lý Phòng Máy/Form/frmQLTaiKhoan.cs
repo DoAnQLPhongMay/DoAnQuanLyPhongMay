@@ -107,7 +107,7 @@ namespace QuanLyPhongMay
         }
 
         //Hàm xử lý kiểm tra dữ liệu.
-        private bool KiemTra()
+        private bool KTCapNhat()
         {
             if(txtSDT.TextLength < 10)
             {
@@ -124,6 +124,36 @@ namespace QuanLyPhongMay
             else if (txtHoTen.Text == "")
             {
                 text = "Vui lòng nhập Họ & Tên!";
+                ThongBao(text);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool KTXoa(string tk)
+        {
+            if (tkctrl.KTLSCapNhat(tk))
+            {
+                text = "Không thể xóa tài khỏan. \nTK có liên quan đến lịch sử cập nhật!";
+                ThongBao(text);
+                return false;
+            }
+            else if (tkctrl.KTLSNhap(tk))
+            {
+                text = "Không thể xóa tài khỏan. \nTK có liên quan đến lịch sử nhập!";
+                ThongBao(text);
+                return false;
+            }
+            else if (tkctrl.KTLSThanhLy(tk))
+            {
+                text = "Không thể xóa tài khỏan. \nTK có liên quan đến lịch sử thanh lý!";
+                ThongBao(text);
+                return false;
+            }
+            else if (user.TenTK == txtUsername.Text)
+            {
+                text = "Không thể xóa tài khỏan. \nTK đang sử dụng không thể xóa!";
                 ThongBao(text);
                 return false;
             }
@@ -189,18 +219,21 @@ namespace QuanLyPhongMay
             else if (dgvDSTaiKhoan.CurrentRow != null)
             {
                 string tendn = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
-                if (dlg == System.Windows.Forms.DialogResult.Yes)
+
+                if (KTXoa(tendn))
                 {
-                    tkctrl.Xoa(tendn);
+                    DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dlg == System.Windows.Forms.DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        tkctrl.HienThi(dgvDSTaiKhoan);
+                        tkctrl.Xoa(tendn);
+                        {
+                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            tkctrl.HienThi(dgvDSTaiKhoan);
+                        }
                     }
                 }
             }
-
         }
 
         //Hàm xử lý cập nhật.
@@ -217,7 +250,7 @@ namespace QuanLyPhongMay
                         user.PhanQuyen = Convert.ToInt32(cboQuyenHan.SelectedValue);
                     }
 
-                    if (KiemTra())
+                    if (KTCapNhat())
                     {
                         TaiKhoan tk = new TaiKhoan();
                         GanDuLieu(tk);
