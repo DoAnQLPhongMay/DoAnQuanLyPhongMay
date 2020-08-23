@@ -49,6 +49,7 @@ namespace QuanLyPhongMay
             txtHanThanhLy.Text = dgvDSThietBi.CurrentRow.Cells["HanThanhLy"].Value.ToString();
             rtbGhiChu.Text = dgvDSThietBi.CurrentRow.Cells["GhiChu"].Value.ToString();
 
+            txtSoLuong.ReadOnly = true;
             loaiThietBi = cboLoaiThietBi.Text;
             btnThemMoi.Enabled = false;
             btnXoa.Enabled = false;
@@ -79,6 +80,7 @@ namespace QuanLyPhongMay
             radThietBi.Checked = false;
             radNhaSanXuat.Checked = false;
 
+            txtSoLuong.ReadOnly = false;
             btnThemMoi.Enabled = true;
             btnXoa.Enabled = true;
             btnCapNhat.Enabled = false;

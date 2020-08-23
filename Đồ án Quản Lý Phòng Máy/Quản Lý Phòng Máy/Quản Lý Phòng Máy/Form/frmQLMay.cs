@@ -51,6 +51,8 @@ namespace QuanLyPhongMay
             cboTrangThai.SelectedValue = dgvDSMay.CurrentRow.Cells["MaTrangThai"].Value.ToString();
             cboCauHinh.SelectedValue = dgvDSMay.CurrentRow.Cells["MaCauHinh"].Value.ToString();
             rtbGhiChu.Text = dgvDSMay.CurrentRow.Cells["GhiChu"].Value.ToString();
+            int maCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+            HienThiThietBi(maCauHinh);
 
             txtTenMay.ReadOnly = false;
             txtSoLuong.ReadOnly = true;
@@ -72,6 +74,24 @@ namespace QuanLyPhongMay
             txt[9] = txtVGA;
             txt[10] = txtPSU;
             txt[11] = txtHDH;
+        }
+
+        private void HienThiThietBi(int maCauHinh)
+        {
+            int[] thietBi = new int[12];
+            thietBi = cauHinhCtrl.LayCauHinh(maCauHinh);
+
+            txtManHinh.Text = thietBiCtrl.LayTenTB(thietBi[1]);
+            txtChuot.Text = thietBiCtrl.LayTenTB(thietBi[2]);
+            txtBanPhim.Text = thietBiCtrl.LayTenTB(thietBi[3]);
+            txtCase.Text = thietBiCtrl.LayTenTB(thietBi[4]);
+            txtCPU.Text = thietBiCtrl.LayTenTB(thietBi[5]);
+            txtMainBoard.Text = thietBiCtrl.LayTenTB(thietBi[6]);
+            txtRAM.Text = thietBiCtrl.LayTenTB(thietBi[7]);
+            txtOCung.Text = thietBiCtrl.LayTenTB(thietBi[8]);
+            txtVGA.Text = thietBiCtrl.LayTenTB(thietBi[9]);
+            txtPSU.Text = thietBiCtrl.LayTenTB(thietBi[10]);
+            txtHDH.Text = thietBiCtrl.LayTenTB(thietBi[11]);
         }
 
         private void LamMoi()
@@ -300,20 +320,7 @@ namespace QuanLyPhongMay
         private void cbo_Selected(object sender, EventArgs e)
         {
             int maCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
-            int[] thietBi = new int[12];
-            thietBi = cauHinhCtrl.LayCauHinh(maCauHinh);
-
-            txtManHinh.Text = thietBiCtrl.LayTenTB(thietBi[1]);
-            txtChuot.Text = thietBiCtrl.LayTenTB(thietBi[2]);
-            txtBanPhim.Text = thietBiCtrl.LayTenTB(thietBi[3]);
-            txtCase.Text = thietBiCtrl.LayTenTB(thietBi[4]);
-            txtCPU.Text = thietBiCtrl.LayTenTB(thietBi[5]);
-            txtMainBoard.Text = thietBiCtrl.LayTenTB(thietBi[6]);
-            txtRAM.Text = thietBiCtrl.LayTenTB(thietBi[7]);
-            txtOCung.Text = thietBiCtrl.LayTenTB(thietBi[8]);
-            txtVGA.Text = thietBiCtrl.LayTenTB(thietBi[9]);
-            txtPSU.Text = thietBiCtrl.LayTenTB(thietBi[10]);
-            txtHDH.Text = thietBiCtrl.LayTenTB(thietBi[11]);
+            HienThiThietBi(maCauHinh);
         }
 
         private int SLCauHinh()
