@@ -67,18 +67,6 @@ namespace QuanLyPhongMay.DataLayer
             return cls.LayDuLieu(cmd);
         }
 
-        //Hàm xử lý lấy thông tin thiết bị của máy.
-        public DataSet LayThongTinMay()
-        {
-            string select = "SELECT dtb_May.*, dtb_ThietBi.TenThietBi, dtb_ChiTietMay.MaThietBi, dtb_ThietBi.MaLoai ",
-                from = "FROM dtb_May, dtb_ChiTietMay, dtb_ThietBi, dtb_LoaiThietBi ",
-                where = "WHERE dtb_May.MaMay =  dtb_ChiTietMay.MaMay AND dtb_ChiTietMay.MaThietBi = dtb_ThietBi.MaThietBi AND dtb_ThietBi.MaLoai = dtb_LoaiThietBi.MaLoai";
-
-            SqlCommand cmd = new SqlCommand(select + from + where);
-
-            return cls.LayDuLieu(cmd);
-        }
-
         //Hàm xử lý thêm mới thiết bị.
         public int Them(ThietBi thietBi)
         {

@@ -367,6 +367,7 @@
             this.cboCauHinh.Name = "cboCauHinh";
             this.cboCauHinh.Size = new System.Drawing.Size(114, 21);
             this.cboCauHinh.TabIndex = 35;
+            this.cboCauHinh.SelectionChangeCommitted += new System.EventHandler(this.cbo_Selected);
             // 
             // txtManHinh
             // 

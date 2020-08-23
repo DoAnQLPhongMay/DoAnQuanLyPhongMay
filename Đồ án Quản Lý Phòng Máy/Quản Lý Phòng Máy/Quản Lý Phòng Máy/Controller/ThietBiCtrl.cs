@@ -45,22 +45,20 @@ namespace QuanLyPhongMay.Controller
             return thongTin;
         }
 
-        public TTThietBi LayThongTinMay(int maMay, int maLoai)
+        public string LayTenTB(int maThietBi)
         {
-            TTThietBi thongTin = new TTThietBi();
-            DataSet ds = thietBiData.LayThongTinMay();
+            string tenThietBi = "";
+            DataSet ds = thietBiData.LayThongTin();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (Convert.ToInt32(dr["MaMay"]) == maMay && Convert.ToInt32(dr["MaLoai"]) == maLoai)
+                if (Convert.ToInt32(dr["MaThietBi"]) == maThietBi)
                 {
-                    thongTin.MaThietBi = Convert.ToInt32(dr["MaThietBi"]);
-                    thongTin.TenThietBi = dr["TenThietBi"].ToString();
-                    thongTin.MaLoai = Convert.ToInt32(dr["MaLoai"]);
+                    tenThietBi = dr["TenThietBi"].ToString();
                 }
             }
 
-            return thongTin;
+            return tenThietBi;
         }
 
         //Hàm xử lý hiển thị ds thiết bị lên datagridview.

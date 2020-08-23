@@ -143,8 +143,35 @@ namespace QuanLyPhongMay
 
             return true;
         }
+        
+        private bool KiemTraCauHinh()
+        {
+            int slCauHinh = SLCauHinh();
+            int slSuDung = SLSuDung();
+            int slCan;
+            string error;
 
-        void ThemMoi(string tenMay)
+            if(txtSoLuong.Text == "")
+            {
+                error = "Cập nhật thất bại.\n";
+                slCan = 1;
+            }
+            else
+            {
+                error = "Thêm mới thất bại.\n";
+                slCan = Convert.ToInt32(txtSoLuong.Text);
+            }
+
+            if(slCan > slCauHinh - slSuDung)
+            {
+                MessageBox.Show(error + "Số lượng cấu hình: " + slCauHinh.ToString() + "\nSố đang sử dụng: " + slSuDung.ToString() + "\nSố lượng cần dùng: " + slCan.ToString(), "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ThemMoi(string tenMay)
         {
             May may = new May();
             LichSuCapNhat ls = new LichSuCapNhat();
@@ -171,7 +198,7 @@ namespace QuanLyPhongMay
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            if (KiemTra())
+            if (KiemTra() && KiemTraCauHinh())
             {
                 int slTao = Convert.ToInt32(txtSoLuong.Text);
                 int slHienTai = phongCtrl.GetCountMay(Convert.ToInt32(cboPhong.SelectedValue));
@@ -216,7 +243,7 @@ namespace QuanLyPhongMay
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            if (KiemTra())
+            if (KiemTra() && KiemTraCauHinh())
             {
                 May may = new May();
                 LichSuCapNhat ls = new LichSuCapNhat();
@@ -268,6 +295,52 @@ namespace QuanLyPhongMay
             {
                 e.Handled = true;
             }
+        }
+
+        private void cbo_Selected(object sender, EventArgs e)
+        {
+            int maCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+            int[] thietBi = new int[12];
+            thietBi = cauHinhCtrl.LayCauHinh(maCauHinh);
+
+            txtManHinh.Text = thietBiCtrl.LayTenTB(thietBi[1]);
+            txtChuot.Text = thietBiCtrl.LayTenTB(thietBi[2]);
+            txtBanPhim.Text = thietBiCtrl.LayTenTB(thietBi[3]);
+            txtCase.Text = thietBiCtrl.LayTenTB(thietBi[4]);
+            txtCPU.Text = thietBiCtrl.LayTenTB(thietBi[5]);
+            txtMainBoard.Text = thietBiCtrl.LayTenTB(thietBi[6]);
+            txtRAM.Text = thietBiCtrl.LayTenTB(thietBi[7]);
+            txtOCung.Text = thietBiCtrl.LayTenTB(thietBi[8]);
+            txtVGA.Text = thietBiCtrl.LayTenTB(thietBi[9]);
+            txtPSU.Text = thietBiCtrl.LayTenTB(thietBi[10]);
+            txtHDH.Text = thietBiCtrl.LayTenTB(thietBi[11]);
+        }
+
+        private int SLCauHinh()
+        {
+            int maCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+            int[] thietBi = new int[12];
+            thietBi = cauHinhCtrl.LayCauHinh(maCauHinh);
+            int sl = thietBiCtrl.LayThongTin(thietBi[1]).SoLuong;
+
+            for (int i = 2; i < 12; i++)
+            {
+                if (sl > thietBiCtrl.LayThongTin(thietBi[i]).SoLuong)
+                {
+                    sl = thietBiCtrl.LayThongTin(thietBi[i]).SoLuong;
+                }
+            }
+
+            return sl;
+        }
+
+        private int SLSuDung()
+        {
+            int sl;
+            int maCauHinh = Convert.ToInt32(cboCauHinh.SelectedValue);
+            sl = cauHinhCtrl.DemCH(maCauHinh);
+
+            return sl;
         }
     }
 }
