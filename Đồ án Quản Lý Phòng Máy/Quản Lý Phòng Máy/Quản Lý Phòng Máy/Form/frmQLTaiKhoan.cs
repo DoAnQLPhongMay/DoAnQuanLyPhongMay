@@ -111,7 +111,7 @@ namespace QuanLyPhongMay
         {
             if(txtSDT.TextLength < 10)
             {
-                text = "Bạn không được cấp quyền!";
+                text = "SDT không hợp lệ!";
                 ThongBao(text);
                 return false;
             }
@@ -155,7 +155,7 @@ namespace QuanLyPhongMay
         }
 
         //Hàm xử lý chọn giới tính.
-        void checkRadio()
+        private void checkRadio()
         {
             string gtri = dgvDSTaiKhoan.CurrentRow.Cells[3].Value.ToString();
             radNam.Checked = (gtri == "True") ? true : false;
@@ -207,6 +207,7 @@ namespace QuanLyPhongMay
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
             //3 if kiểm tra phân quyền.
+            //if(nếu là admin || tk cập nhật = người login)
             if (user.PhanQuyen == 1 || user.TenTK == txtUsername.Text)
             {
                 if ((loaiTK == 0 && loaiTK == Convert.ToInt32(cboQuyenHan.SelectedValue) || user.PhanQuyen == 1 || loaiTK == 1))
@@ -267,8 +268,6 @@ namespace QuanLyPhongMay
 
                 tkctrl.HienThiTK(dgvDSTaiKhoan, txt_TiemKiem.Text, tieuchi);
             }
-
-
         }
 
         //Hàm xử lý làm mới text.

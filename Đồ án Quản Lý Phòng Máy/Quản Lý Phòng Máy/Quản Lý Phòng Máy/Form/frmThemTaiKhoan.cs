@@ -17,7 +17,6 @@ namespace QuanLyPhongMay
     {
         //Khởi tạo các biến giá trị.
         TaiKhoanCtrl tkctrl = new TaiKhoanCtrl();
-        Quyenctrl quyenctrl = new Quyenctrl();
         User user = new User();
         string text;
 
@@ -61,48 +60,62 @@ namespace QuanLyPhongMay
         }
 
         //Hàm xử lý kiểm tra dữ liệu.
-        bool KiemTra()
+        private bool KiemTra()
         {
             bool ktra = true;
 
             if (txtTenTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập họ & tên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập họ & tên!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (txtMaTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mã tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập mã tài khoản!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (txtSDT.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Số điện thoại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập Số điện thoại!";
+                ThongBao(text);
+                ktra = false;
+            }
+            else if(txtSDT.TextLength < 10)
+            {
+                text = "SĐT không hợp lệ!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (txtEmail.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Email.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập Email!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (dtNgaySinh.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập ngày sinh.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập ngày sinh!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (cboLoaiTaiKhoan.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn loại TK.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng chọn loại TK!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (txtTenDangNhap.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Tên đăng nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập Tên đăng nhập!";
+                ThongBao(text);
                 ktra = false;
             }
             else if (txtMatKhau.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập mật khẩu!";
+                ThongBao(text);
                 ktra = false;
             }
 

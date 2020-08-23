@@ -13,6 +13,7 @@ namespace QuanLyPhongMay
         KhoaCtrl khoaCtrl = new KhoaCtrl();
         User user = new User();
         string tenKhoa;
+        string text;
 
         //Hàm xử lý khởi tạo mặc định của form.
         public frmQLKhoa()
@@ -61,19 +62,27 @@ namespace QuanLyPhongMay
             khoaCtrl.HienThiDgv(dgvDSKhoa);
         }
 
+        //Hàm xuất thông báo lỗi.
+        private void ThongBao(string text)
+        {
+            MessageBox.Show(text, "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         //Hàm kiểm tra dữ liệu các text.
-        public bool kiemTra()
+        private bool kiemTra()
         {
             bool kTra = true;
 
             if (txtTenKhoa.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên khoa.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng nhập tên khoa!";
+                ThongBao(text);
                 kTra = false;
             }
             else if (khoaCtrl.KTTenKhoa(txtTenKhoa.Text) && tenKhoa != txtTenKhoa.Text)
             {
-                MessageBox.Show("Tên khoa đã tồn tại.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Tên khoa đã tồn tại!";
+                ThongBao(text);
                 kTra = false;
             }
 
@@ -116,17 +125,20 @@ namespace QuanLyPhongMay
                     }
                     else
                     {
-                        MessageBox.Show("Không thể xóa. Vẫn còn phòng thuộc khoa này.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        text = "Không thể xóa. Vẫn còn phòng thuộc khoa này!";
+                        ThongBao(text);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vùi lòng chọn khoa muốn xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    text = "Vui lòng chọn khoa muốn xóa!";
+                    ThongBao(text);
                 }
             }
             else
             {
-                MessageBox.Show("Bạn không được cấp quyền để xóa.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Bạn không được cấp quyền để xóa!";
+                ThongBao(text);
             }
         }
 
@@ -135,12 +147,25 @@ namespace QuanLyPhongMay
         {
             if (kiemTra())
             {
-                khoa.MaKhoa = Convert.ToInt32(txtMaKhoa.Text);
-                khoa.TenKhoa = txtTenKhoa.Text;
+                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
+                if (dlg == System.Windows.Forms.DialogResult.Yes)
+                {
+                    khoa.MaKhoa = Convert.ToInt32(txtMaKhoa.Text);
+                    khoa.TenKhoa = txtTenKhoa.Text;
 
-                MessageBox.Show("Cập nhập khoa thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                khoaCtrl.CapNhat(khoa);
-                lamMoi();
+                    if (khoaCtrl.CapNhat(khoa)  > 0)
+                    {
+                        MessageBox.Show("Cập nhập khoa thành công.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        text = "Cập nhật thất bại. Vui lòng thử lại!";
+                        ThongBao(text);
+                    }
+
+                    lamMoi();
+                }
             }
         }
 
@@ -155,7 +180,8 @@ namespace QuanLyPhongMay
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                text = "Vui lòng chọn loại tìm kiếm!";
+                ThongBao(text);
             }
 
             if (txtTimKiem.Text.Length != 0 && loaiTK != "")
@@ -168,12 +194,6 @@ namespace QuanLyPhongMay
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             lamMoi();
-        }
-
-        //-------------------------------------- Hàm không xử dụng --------------------------------------//
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

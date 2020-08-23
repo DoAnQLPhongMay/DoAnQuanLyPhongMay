@@ -69,7 +69,6 @@
             this.grbThongTin.TabIndex = 8;
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Thông Tin";
-            this.grbThongTin.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtMaKhoa
             // 
