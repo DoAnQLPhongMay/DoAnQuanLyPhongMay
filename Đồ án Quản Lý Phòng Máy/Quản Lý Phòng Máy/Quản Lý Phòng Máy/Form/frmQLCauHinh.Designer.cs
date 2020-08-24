@@ -603,6 +603,7 @@
             this.Controls.Add(this.dgvDSCauHinh);
             this.Controls.Add(this.grbThongTin);
             this.Name = "frmQLCauHinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Cấu Hình";
             this.Load += new System.EventHandler(this.frmThemMay_Load);
             this.grbThongTin.ResumeLayout(false);

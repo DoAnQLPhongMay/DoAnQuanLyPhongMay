@@ -146,21 +146,21 @@ namespace QuanLyPhongMay
         {
             bool kTra = true;
 
-            if (txtNamSX.Text == "")
+            if (cboCauHinh.Text != "")
+            {
+                cboTenThietBi.Enabled = false;
+            }
+            if (cboTenThietBi.Text != "")
+            {
+                cboCauHinh.Enabled = false;
+            }
+
+            else if (txtNamSX.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập năm sản xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 kTra = false;
             }
-            else if (cboTenThietBi.Text == "" || cboCauHinh.Text == "")
-            {
-                MessageBox.Show("Vui lòng chọn nhập thiết bị hoặc nhập cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kTra = false;
-            }
-            //else if (cboTenThietBi.Text != "" && cboCauHinh.Text != "")
-            //{
-            //    MessageBox.Show("Vui lòng để trống 1 trong 2 mục thiết bị hoặc cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    kTra = false;
-            //}
+            
             else if (txtSoLuong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập số lương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

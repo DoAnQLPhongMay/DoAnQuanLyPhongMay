@@ -260,6 +260,7 @@
             this.Controls.Add(this.dgvDSKhoa);
             this.Controls.Add(this.grbThongTin);
             this.Name = "frmQLKhoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khoa";
             this.Load += new System.EventHandler(this.frmThemMay_Load);
             this.grbThongTin.ResumeLayout(false);

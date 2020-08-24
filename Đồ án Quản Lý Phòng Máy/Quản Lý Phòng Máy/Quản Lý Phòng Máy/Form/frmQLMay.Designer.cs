@@ -670,6 +670,7 @@
             this.Controls.Add(this.lblQLMay);
             this.Controls.Add(this.grpQLMay);
             this.Name = "frmQLMay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Máy";
             this.Load += new System.EventHandler(this.frmQLMay_Load);
             this.grpQLMay.ResumeLayout(false);

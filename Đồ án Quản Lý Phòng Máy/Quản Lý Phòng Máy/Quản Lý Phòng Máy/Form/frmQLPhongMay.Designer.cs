@@ -444,6 +444,7 @@
             this.Controls.Add(this.grpQLPhongMay);
             this.Controls.Add(this.lblQLPhongMay);
             this.Name = "frmQLPhongMay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Phòng Máy";
             this.Load += new System.EventHandler(this.frm_QLPhongMay_Load);
             this.grpQLPhongMay.ResumeLayout(false);

@@ -232,6 +232,7 @@
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThemMay);
             this.Name = "frmThemMay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThemMay";
             this.Load += new System.EventHandler(this.frmThemMay_Load);
             this.groupBox2.ResumeLayout(false);

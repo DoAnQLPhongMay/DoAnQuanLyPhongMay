@@ -116,7 +116,7 @@
             // 
             // txtMaTaiKhoan
             // 
-            this.txtMaTaiKhoan.Location = new System.Drawing.Point(110, 41);
+            this.txtMaTaiKhoan.Location = new System.Drawing.Point(107, 41);
             this.txtMaTaiKhoan.MaxLength = 20;
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
             this.txtMaTaiKhoan.Size = new System.Drawing.Size(182, 21);
@@ -126,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 44);
+            this.label3.Location = new System.Drawing.Point(16, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 25;
@@ -255,7 +255,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 197);
+            this.label4.Location = new System.Drawing.Point(7, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 15);
             this.label4.TabIndex = 13;
@@ -272,7 +272,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 83);
+            this.label15.Location = new System.Drawing.Point(44, 80);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 15);
             this.label15.TabIndex = 1;

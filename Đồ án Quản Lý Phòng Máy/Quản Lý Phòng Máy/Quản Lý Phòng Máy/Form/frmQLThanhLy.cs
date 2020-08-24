@@ -167,16 +167,15 @@ namespace QuanLyPhongMay
             thongTin = thietBiCtrl.LayThongTin(Convert.ToInt32(cboTenThietBi.SelectedValue));
             int[] thietBi = new int[12];
 
-            if (cboTenThietBi.Text == "" || cboCauHinh.Text == "")
+           if(cboCauHinh.Text != "")
             {
-                MessageBox.Show("Vui lòng chọn thanh lý thiết bị hoặc nhập cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kTra = false;
+                cboTenThietBi.Enabled = false;
             }
-            //else if (cboTenThietBi.Text == "" && cboCauHinh.Text != "")
-            //{
-            //    MessageBox.Show("Vui lòng để trống 1 trong 2 mục thiết bị hoặc cấu hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    kTra = false;
-            //}
+            if (cboTenThietBi.Text != "")
+            {
+                cboCauHinh.Enabled = false;
+            }
+
             else if (txtSoLuong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập số lương.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);

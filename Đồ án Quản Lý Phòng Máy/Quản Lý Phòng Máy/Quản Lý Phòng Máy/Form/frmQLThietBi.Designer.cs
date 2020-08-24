@@ -515,6 +515,7 @@
             this.Controls.Add(this.lblQLThietBi);
             this.Controls.Add(this.grpThongTinThietBi);
             this.Name = "frmQLThietBi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Thiết Bị";
             this.Load += new System.EventHandler(this.frm_QLMay_Load);
             this.grpThongTinThietBi.ResumeLayout(false);
